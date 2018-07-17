@@ -1,4 +1,5 @@
 #Sketch Import
+
 # Import file "FutureFinder-Squarespace"
 sketch = Framer.Importer.load("imported/FutureFinder-Squarespace@2x", scale: 1)
 
@@ -31,12 +32,21 @@ for i in [0..data.records.length-1]
 flow = new FlowComponent
 flow.showNext(ResultsProfile)
 
+#Flow
 
-sketch.skill3.onClick (event, layer) ->
-	sketch.skill3.animate
-		rotation: 90
-		options:
-			time: 1
+# Switch screens on click example
+# layerA.onClick ->
+# 	flow.showNext(layerB)
+
+
+#Animations
+
+# On click animation example
+# sketch.skill3.onClick (event, layer) ->
+# 	sketch.skill3.animate
+# 		rotation: 90
+# 		options:
+# 			time: 1
 			
 	
 
