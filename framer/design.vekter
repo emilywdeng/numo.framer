@@ -1049,9 +1049,9 @@
                         "os" : "10_13",
                         "size" : {
                           "height" : 19,
-                          "width" : 238
+                          "width" : 130
                         },
-                        "width" : 237
+                        "width" : 0
                       },
                       "entityMap" : {
 
@@ -1061,9 +1061,7 @@
                     "top" : null,
                     "visible" : true,
                     "width" : 130,
-                    "widthFactor" : null,
-                    "x" : 149,
-                    "y" : 50
+                    "widthFactor" : null
                   }
                 ],
                 "clip" : false,
@@ -1253,9 +1251,9 @@
                         "os" : "10_13",
                         "size" : {
                           "height" : 19,
-                          "width" : 238
+                          "width" : 130
                         },
-                        "width" : 237
+                        "width" : 0
                       },
                       "entityMap" : {
 
@@ -1265,9 +1263,7 @@
                     "top" : null,
                     "visible" : true,
                     "width" : 130,
-                    "widthFactor" : null,
-                    "x" : 149,
-                    "y" : 50
+                    "widthFactor" : null
                   }
                 ],
                 "clip" : false,
@@ -1457,9 +1453,9 @@
                         "os" : "10_13",
                         "size" : {
                           "height" : 19,
-                          "width" : 238
+                          "width" : 232
                         },
-                        "width" : 237
+                        "width" : 231
                       },
                       "entityMap" : {
 
@@ -1469,9 +1465,7 @@
                     "top" : 113,
                     "visible" : true,
                     "width" : 231,
-                    "widthFactor" : null,
-                    "x" : 149,
-                    "y" : 50
+                    "widthFactor" : null
                   }
                 ],
                 "clip" : false,
@@ -1644,7 +1638,7 @@
         "saturateEnabled" : 0,
         "sepia" : 0,
         "sepiaEnabled" : 0,
-        "targetName" : null,
+        "targetName" : "Screen_1",
         "top" : 0,
         "visible" : true,
         "width" : 375,
