@@ -2624,8 +2624,8 @@
 			{
 				"objectId": "64E62812-229F-4571-95A4-99A6FAD5CAC1",
 				"kind": "group",
-				"name": "CTA",
-				"originalName": "CTA",
+				"name": "CTA_test",
+				"originalName": "CTA_test",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 18,
@@ -2638,7 +2638,7 @@
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-CTA-njrfnji4.png",
+					"path": "images/Layer-CTA_test-njrfnji4.png",
 					"frame": {
 						"x": 18,
 						"y": 2537,
@@ -2646,12 +2646,49 @@
 						"height": 155
 					}
 				},
-				"children": []
+				"children": [
+					{
+						"objectId": "FA5DCCDE-9F92-419B-A9D5-65B0FFAE4CED",
+						"kind": "text",
+						"name": "text_test",
+						"originalName": "text_test",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 41,
+							"y": 2568,
+							"width": 280,
+							"height": 36
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "The best way to explore is through hands-on learning.",
+							"css": [
+								"/* The best way to expl: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 16px;",
+								"color: #46474A;",
+								"letter-spacing: 0;",
+								"line-height: 20px;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-text_test-rke1rend.png",
+							"frame": {
+								"x": 41,
+								"y": 2568,
+								"width": 280,
+								"height": 36
+							}
+						},
+						"children": []
+					}
+				]
 			},
 			{
 				"objectId": "22A092FC-DA49-46FA-B7C0-C1403D64DBA2",
 				"kind": "group",
-				"name": "CTA1",
+				"name": "CTA",
 				"originalName": "CTA",
 				"maskFrame": null,
 				"layerFrame": {
@@ -3168,96 +3205,115 @@
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(255, 255, 255, 1)",
-		"image": {
-			"path": "images/Layer-Expand-rdzbqjzd.png",
-			"frame": {
-				"x": 499,
-				"y": 1128,
-				"width": 375,
-				"height": 1514
-			}
-		},
 		"children": [
 			{
-				"objectId": "30DD2D0D-2D93-4AE1-A1E9-B06A5F1FE3CB",
+				"objectId": "F8447288-4E6E-4CF5-A0B2-7CA22DC08845",
 				"kind": "group",
-				"name": "evaluation",
-				"originalName": "evaluation",
+				"name": "Group3",
+				"originalName": "Group",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": 0,
-					"y": 0,
-					"width": 375,
-					"height": 1847
-				},
-				"visible": false,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-evaluation-mzberdje.png",
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"width": 375,
-						"height": 1847
-					}
-				},
-				"children": []
-			},
-			{
-				"objectId": "C89E61AC-7EAE-498F-BF11-6AD34FE37891",
-				"kind": "group",
-				"name": "cta",
-				"originalName": "cta",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 20,
-					"y": 1233,
-					"width": 336,
-					"height": 181
+					"x": -1,
+					"y": -1,
+					"width": 377,
+					"height": 1516
 				},
 				"visible": true,
 				"metadata": {
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-cta-qzg5rtyx.png",
+					"path": "images/Layer-Group-rjg0ndcy.png",
 					"frame": {
-						"x": 20,
-						"y": 1233,
-						"width": 336,
-						"height": 181
+						"x": -1,
+						"y": -1,
+						"width": 377,
+						"height": 1516
 					}
 				},
-				"children": []
-			},
-			{
-				"objectId": "51F9201B-C001-42A0-9536-D852E09AFE3F",
-				"kind": "group",
-				"name": "article2",
-				"originalName": "article",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 27,
-					"y": 77,
-					"width": 314,
-					"height": 1100
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-article-ntfgotiw.png",
-					"frame": {
-						"x": 27,
-						"y": 77,
-						"width": 314,
-						"height": 1100
+				"children": [
+					{
+						"objectId": "30DD2D0D-2D93-4AE1-A1E9-B06A5F1FE3CB",
+						"kind": "group",
+						"name": "evaluation",
+						"originalName": "evaluation",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 0,
+							"y": 0,
+							"width": 375,
+							"height": 1847
+						},
+						"visible": false,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-evaluation-mzberdje.png",
+							"frame": {
+								"x": 0,
+								"y": 0,
+								"width": 375,
+								"height": 1847
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "C89E61AC-7EAE-498F-BF11-6AD34FE37891",
+						"kind": "group",
+						"name": "cta",
+						"originalName": "cta",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 20,
+							"y": 1233,
+							"width": 336,
+							"height": 181
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-cta-qzg5rtyx.png",
+							"frame": {
+								"x": 20,
+								"y": 1233,
+								"width": 336,
+								"height": 181
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "51F9201B-C001-42A0-9536-D852E09AFE3F",
+						"kind": "group",
+						"name": "article2",
+						"originalName": "article",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 27,
+							"y": 77,
+							"width": 314,
+							"height": 1100
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-article-ntfgotiw.png",
+							"frame": {
+								"x": 27,
+								"y": 77,
+								"width": 314,
+								"height": 1100
+							}
+						},
+						"children": []
 					}
-				},
-				"children": []
+				]
 			}
 		]
 	},
@@ -3413,7 +3469,7 @@
 							{
 								"objectId": "47EFCE84-29C9-4C85-8095-0B351804C309",
 								"kind": "group",
-								"name": "Group3",
+								"name": "Group4",
 								"originalName": "Group",
 								"maskFrame": null,
 								"layerFrame": {
@@ -3622,7 +3678,7 @@
 							{
 								"objectId": "278CFE98-FF35-4B69-B767-1DB6D55A3576",
 								"kind": "group",
-								"name": "Group4",
+								"name": "Group5",
 								"originalName": "Group",
 								"maskFrame": null,
 								"layerFrame": {
