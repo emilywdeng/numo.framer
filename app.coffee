@@ -83,17 +83,14 @@ for i in [0..data.records.length-1]
 flow = new FlowComponent
 flow.showNext(onboarding)
 
-# CTAs to "Create Account" and "Sign In"
+#add transitions between onboarding and create account
 sketch.ButtonCreateAccount.onClick (event, layer) ->
-	flow.showNext(login)
-	
-sketch.ButtonSignIn.onClick (event, layer) ->
 	flow.showNext(login)
 
 sketch.login.onSwipeRight (event, layer) ->
 	flow.showPrevious()
 
-#Create PageComponent for Onboarding
+#create PageComponent for onboarding cards
 onboardingPages = new PageComponent
 	parent: onboarding
 	scrollVertical: false
@@ -102,20 +99,22 @@ onboardingPages = new PageComponent
 	width: Screen.width
 	height: 495
 
+#set onboarding pages to invisible and smaller scale
 for layer in ƒƒ('*onboardingPage*')
 	layer.opacity = 0
 	layer.scale = 0.95
 	onboardingPage1.opacity	= 1
 	onboardingPage1.scale = 1
 
-#Add onboarding pages to Page Component
+#add onboarding pages to PageComponent
 onboardingPages.addPage(onboardingPage1)
 onboardingPages.addPage(onboardingPage2)
 onboardingPages.addPage(onboardingPage3)
 onboardingPages.addPage(onboardingPage4)
 onboardingPages.addPage(onboardingPage5)
 
-dot = new Layer
+#create active dot indicator for pagination
+activeDot = new Layer
 	width: 8
 	height: 8
 	borderRadius: 20
@@ -123,66 +122,43 @@ dot = new Layer
 	backgroundColor: '#4AC8AC'
 	y: 494
 	x: 154
-dot.states = 
+
+#define states for active dot
+activeDot.states = 
 	page1: x: 154
 	page2: x: 169
 	page3: x: 185
 	page4: x: 200
 	page5: x: 216
 	
-	
-#listen for page change + transition pages
+#listen for onboarding page change
 onboardingPages.on "change:currentPage",->
 	current = onboardingPages.currentPage
 	previous = onboardingPages.previousPage
+	
+	#transition animations between pages
 	previous.animate
 		opacity: 0
 		scale: 0.95
 	current.animate
 		opacity: 1
 		scale: 1
-		
+	
+	#move pagintation indicator dot to correct placement
 	currentPage = onboardingPages.horizontalPageIndex(current) + 1
 	currentPage = 'page' + currentPage
-	dot.states.switchInstant currentPage
+	activeDot.states.switchInstant currentPage
 
-	
-	
-
-# 	prevIndicator = onboardingPages.horizontalPageIndex(current) + 1
-# 	currindicator = 'sketch.onboardingPagination.onboardingPagination' + currindicator
-# 	prevIndicator = 'sketch.onboardingPagination.onboardingPagination' + prevIndicator
-# 	
-# 	print onboardingPages.currentPage.name
-# 	print i + " should be active... "
- 
 
 # Set opacity to default hidden
-
-
-
 for layer in ƒƒ('*Filled')
 	layer.opacity = 0
 
 for layer in ƒƒ('*Active')
 	layer.opacity = 0
 
-# sketch.onboarding0CreateAccount1.onClick (event, layer) ->
-# 	flow.showNext(login)
-
-# onboarding0.onClick ->
-# 	flow.showNext(onboarding1)
 
 
-
-
-# for i in [0..onboarding.length-1]
-# 	print onboarding[i]
-# 	onboarding[i].onClick ->
-# 		if i < 4
-# 			flow.showNext(onboarding[i+1])
-# 		else
-# 			flow.showNext(onboarding4)
 
 # Switch screens on click example
 # layerA.onClick ->
