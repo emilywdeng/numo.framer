@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ f70c64e)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20f70c64e)@2x", scale: 1)
+# Import file "Final Screens (Master @ 50a0cca)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2050a0cca)@2x", scale: 1)
 
 
 Utils.globalLayers(sketch)
@@ -83,63 +83,83 @@ for i in [0..data.records.length-1]
 flow = new FlowComponent
 flow.showNext(onboarding)
 
-sketch.onboardingButtonCreateAccount.onClick (event, layer) ->
+# CTAs to "Create Account" and "Sign In"
+sketch.ButtonCreateAccount.onClick (event, layer) ->
 	flow.showNext(login)
-
-sketch.onboardingButtonSignIn.onClick (event, layer) ->
+	
+sketch.ButtonSignIn.onClick (event, layer) ->
 	flow.showNext(login)
 
 sketch.login.onSwipeRight (event, layer) ->
 	flow.showPrevious()
 
-#Create PageComponent
-page = new PageComponent
+#Create PageComponent for Onboarding
+onboardingPages = new PageComponent
 	parent: onboarding
 	scrollVertical: false
 	x: Align.center
 	y: Align.top
 	width: Screen.width
-	height: 466
+	height: 495
 
-# page.animationOptions =
-#    curve: "spring(100,10,0)"
-#    time: 0.25
+for layer in ƒƒ('*onboardingPage*')
+	layer.opacity = 0
+	layer.scale = 0.95
+	onboardingPage1.opacity	= 1
+	onboardingPage1.scale = 1
 
-sketch.onboardingGraphic1.parent = page.content
+#Add onboarding pages to Page Component
+onboardingPages.addPage(onboardingPage1)
+onboardingPages.addPage(onboardingPage2)
+onboardingPages.addPage(onboardingPage3)
+onboardingPages.addPage(onboardingPage4)
+onboardingPages.addPage(onboardingPage5)
 
-page.addPage(onboardingGraphic2, "right")
-page.addPage(onboardingGraphic3, "right")
-page.addPage(onboardingGraphic4, "right")
-page.addPage(onboardingGraphic5, "right")
+dot = new Layer
+	width: 8
+	height: 8
+	borderRadius: 20
+	parent: onboarding
+	backgroundColor: '#4AC8AC'
+	y: 494
+	x: 154
+dot.states = 
+	page1: x: 154
+	page2: x: 169
+	page3: x: 185
+	page4: x: 200
+	page5: x: 216
+	
+	
+#listen for page change + transition pages
+onboardingPages.on "change:currentPage",->
+	current = onboardingPages.currentPage
+	previous = onboardingPages.previousPage
+	previous.animate
+		opacity: 0
+		scale: 0.95
+	current.animate
+		opacity: 1
+		scale: 1
+		
+	currentPage = onboardingPages.horizontalPageIndex(current) + 1
+	currentPage = 'page' + currentPage
+	dot.states.switchInstant currentPage
 
+	
+	
 
-# 
-# sketch.onboarding1.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding2)
-# 
-# sketch.onboarding2.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding3)
-# 
-# sketch.onboarding3.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding4)
-# 
-# sketch.onboarding4.onSwipeLeft (event, layer) ->
-# 	flow.showNext(login)
-# 
-# sketch.onboarding1.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding2.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding3.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding4.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
+# 	prevIndicator = onboardingPages.horizontalPageIndex(current) + 1
+# 	currindicator = 'sketch.onboardingPagination.onboardingPagination' + currindicator
+# 	prevIndicator = 'sketch.onboardingPagination.onboardingPagination' + prevIndicator
+# 	
+# 	print onboardingPages.currentPage.name
+# 	print i + " should be active... "
+ 
 
 # Set opacity to default hidden
+
+
 
 for layer in ƒƒ('*Filled')
 	layer.opacity = 0
@@ -202,3 +222,6 @@ for layer in ƒƒ('*Active')
 # 	player.playVideo()
 
 
+#Onboarding Swipe Cards
+
+# Swipe through cards
