@@ -1,6 +1,7 @@
-# Import file "Final Screens (Master @ 50a0cca)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2050a0cca)@2x", scale: 1)
 
+
+# Import file "Final Screens (Framer-Navigation @ 8a321fe)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Framer-Navigation%20@%208a321fe)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -13,7 +14,6 @@ Utils.globalLayers(sketch)
 # 	"deviceImageHeight": 648*3
 # 
 # Framer.Device.deviceType = "futureFinderDevice"
-
 
 
 
@@ -77,6 +77,22 @@ for i in [0..data.records.length-1]
 # 	height: 225 
 
 
+
+#default Settings
+# Set opacity to default hidden for overlayed state elements
+for layer in ƒƒ('*Filled')
+	layer.opacity = 0
+
+for layer in ƒƒ('*Active')
+	layer.opacity = 0
+
+for layer in ƒƒ('*WarningNotification')
+	layer.opacity = 0
+	
+for layer in ƒƒ('*Done')
+	layer.opacity = 0
+
+
 # FlowComponent
 
 # Create FlowComponent
@@ -84,7 +100,7 @@ flow = new FlowComponent
 flow.showNext(onboarding)
 
 #add transitions between onboarding and create account
-sketch.ButtonCreateAccount.onClick (event, layer) ->
+sketch.buttonCreateAccount.onClick (event, layer) ->
 	flow.showNext(login)
 
 sketch.login.onSwipeRight (event, layer) ->
@@ -150,17 +166,19 @@ onboardingPages.on "change:currentPage",->
 	activeDot.states.switchInstant currentPage
 
 
-# Set opacity to default hidden
-for layer in ƒƒ('*Filled')
-	layer.opacity = 0
 
-for layer in ƒƒ('*Active')
-	layer.opacity = 0
+#add transitions between create account and interests
+sketch.buttonGetStarted.onClick (event, layer) ->
+	flow.showNext(interest)
+	
+#add transitions between interests and futures
+sketch.buttonSaveInterests.onClick (event, layer) ->
+	flow.showNext(futures)
+	
 
+#sketch.ButtonCreateAccount.onClick (event, layer) ->
 
-
-
-# Switch screens on click example
+#Switch screens on click example
 # layerA.onClick ->
 # 	flow.showNext(layerB)
 
@@ -172,8 +190,6 @@ for layer in ƒƒ('*Active')
 # 
 # Expand.onClick ->
 # 	flow.showPrevious()
-
-
 
 
 #Animations
