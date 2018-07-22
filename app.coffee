@@ -77,7 +77,6 @@ for i in [0..data.records.length-1]
 # 	height: 225 
 
 
-
 #default Settings
 # Set opacity to default hidden for overlayed state elements
 for layer in ƒƒ('*Filled')
@@ -93,18 +92,22 @@ for layer in ƒƒ('*Done')
 	layer.opacity = 0
 
 
-# FlowComponent
-
-# Create FlowComponent
+#create Overarching FlowComponent
 flow = new FlowComponent
-flow.showNext(onboarding)
+
+#create onboarding FlowComponent and add to overarching flow
+onboardingFlow = new FlowComponent
+flow.showNext(onboardingFlow)
+
+# add onboarding screens to onboarding Flow Component
+onboardingFlow.showNext(onboarding)
 
 #add transitions between onboarding and create account
 sketch.buttonCreateAccount.onClick (event, layer) ->
-	flow.showNext(login)
+	onboardingFlow.showNext(login)
 
 sketch.login.onSwipeRight (event, layer) ->
-	flow.showPrevious()
+	onboardingFlow.showPrevious()
 
 #create PageComponent for onboarding cards
 onboardingPages = new PageComponent
@@ -167,15 +170,41 @@ onboardingPages.on "change:currentPage",->
 
 #add transitions between create account and interests
 sketch.buttonGetStarted.onClick (event, layer) ->
-	flow.showNext(interest)
-	
+	onboardingFlow.showNext(interest)
+
+mainFlow = ""
 #add transitions between interests and futures
 sketch.buttonSaveInterests.onClick (event, layer) ->
-	flow.showNext(futures)
-
+	mainFlow = new FlowComponent
+	flow.showNext(mainFlow)
+	
+	mainFlow.showNext(futures)
+	
 	#assigning screen headers and navigation
-	flow.header = sketch.header
-	flow.footer = sketch.navBar
+	mainFlow.header = sketch.header
+	mainFlow.footer = sketch.navBar
+
+####################################
+##MAIN FUTURE / PROFILE SECTION
+
+#custom transtions between futures and me
+mainNavTransition = (nav, layerA, layerB) ->
+	transition = 
+		layerA: 
+			show: 
+				scale:1.0
+				opacity: 1
+			hide: 
+					scale: 0.5
+					opacity: 0 
+		layerB: 
+			show: 
+				scale:1.0
+				opacity: 1
+			hide: 
+					scale: 0.5
+					opacity: 0 
+				
 
 #assign states to the button styles
 for layer in ƒƒ('navButton*')
@@ -199,13 +228,13 @@ sketch.navButtonMe.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "me"
 	sketch.navButtonFuture.states.switch "inactive"
 	sketch.navButtonMe.states.switch "active"
-	flow.showNext(profile)
+	mainFlow.showNext(profile)
 
 sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "future"
 	sketch.navButtonFuture.states.switch "active"
 	sketch.navButtonMe.states.switch "inactive"
-	flow.showNext(futures)
+	mainFlow.showPrevious(futures)
 
 
 #Switch screens on click example
