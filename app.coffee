@@ -1,6 +1,7 @@
-# Import file "Final Screens (Master @ f70c64e)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20f70c64e)@2x", scale: 1)
 
+
+# Import file "Final Screens (Framer-Navigation @ 8a321fe)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Framer-Navigation%20@%208a321fe)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -13,7 +14,6 @@ Utils.globalLayers(sketch)
 # 	"deviceImageHeight": 648*3
 # 
 # Framer.Device.deviceType = "futureFinderDevice"
-
 
 
 
@@ -77,94 +77,142 @@ for i in [0..data.records.length-1]
 # 	height: 225 
 
 
-# FlowComponent
 
-# Create FlowComponent
-flow = new FlowComponent
-flow.showNext(onboarding)
-
-sketch.onboardingButtonCreateAccount.onClick (event, layer) ->
-	flow.showNext(login)
-
-sketch.onboardingButtonSignIn.onClick (event, layer) ->
-	flow.showNext(login)
-
-sketch.login.onSwipeRight (event, layer) ->
-	flow.showPrevious()
-
-#Create PageComponent
-page = new PageComponent
-	parent: onboarding
-	scrollVertical: false
-	x: Align.center
-	y: Align.top
-	width: Screen.width
-	height: 466
-
-# page.animationOptions =
-#    curve: "spring(100,10,0)"
-#    time: 0.25
-
-sketch.onboardingGraphic1.parent = page.content
-
-page.addPage(onboardingGraphic2, "right")
-page.addPage(onboardingGraphic3, "right")
-page.addPage(onboardingGraphic4, "right")
-page.addPage(onboardingGraphic5, "right")
-
-
-# 
-# sketch.onboarding1.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding2)
-# 
-# sketch.onboarding2.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding3)
-# 
-# sketch.onboarding3.onSwipeLeft (event, layer) ->
-# 	flow.showNext(onboarding4)
-# 
-# sketch.onboarding4.onSwipeLeft (event, layer) ->
-# 	flow.showNext(login)
-# 
-# sketch.onboarding1.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding2.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding3.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# sketch.onboarding4.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-
-# Set opacity to default hidden
-
+#default Settings
+# Set opacity to default hidden for overlayed state elements
 for layer in ƒƒ('*Filled')
 	layer.opacity = 0
 
 for layer in ƒƒ('*Active')
 	layer.opacity = 0
 
-# sketch.onboarding0CreateAccount1.onClick (event, layer) ->
+for layer in ƒƒ('*WarningNotification')
+	layer.opacity = 0
+	
+for layer in ƒƒ('*Done')
+	layer.opacity = 0
+
+
+# FlowComponent
+
+# Create FlowComponent
+flow = new FlowComponent
+# flow.showNext(onboarding)
+# 
+# #add transitions between onboarding and create account
+# sketch.buttonCreateAccount.onClick (event, layer) ->
 # 	flow.showNext(login)
+# 
+# sketch.login.onSwipeRight (event, layer) ->
+# 	flow.showPrevious()
+# 
+# #create PageComponent for onboarding cards
+# onboardingPages = new PageComponent
+# 	parent: onboarding
+# 	scrollVertical: false
+# 	x: Align.center
+# 	y: Align.top
+# 	width: Screen.width
+# 	height: 495
+# 
+# #set onboarding pages to invisible and smaller scale
+# for layer in ƒƒ('*onboardingPage*')
+# 	layer.opacity = 0
+# 	layer.scale = 0.95
+# 	onboardingPage1.opacity	= 1
+# 	onboardingPage1.scale = 1
+# 
+# #add onboarding pages to PageComponent
+# onboardingPages.addPage(onboardingPage1)
+# onboardingPages.addPage(onboardingPage2)
+# onboardingPages.addPage(onboardingPage3)
+# onboardingPages.addPage(onboardingPage4)
+# onboardingPages.addPage(onboardingPage5)
+# 
+# #create active dot indicator for pagination
+# activeDot = new Layer
+# 	width: 8
+# 	height: 8
+# 	borderRadius: 20
+# 	parent: onboarding
+# 	backgroundColor: '#4AC8AC'
+# 	y: 494
+# 	x: 154
+# 
+# #define states for active dot
+# activeDot.states = 
+# 	page1: x: 154
+# 	page2: x: 169
+# 	page3: x: 185
+# 	page4: x: 200
+# 	page5: x: 216
+# 	
+# #listen for onboarding page change
+# onboardingPages.on "change:currentPage",->
+# 	current = onboardingPages.currentPage
+# 	previous = onboardingPages.previousPage
+# 	
+# 	#transition animations between pages
+# 	previous.animate
+# 		opacity: 0
+# 		scale: 0.95
+# 	current.animate
+# 		opacity: 1
+# 		scale: 1
+# 	
+# 	#move pagintation indicator dot to correct placement
+# 	currentPage = onboardingPages.horizontalPageIndex(current) + 1
+# 	currentPage = 'page' + currentPage
+# 	activeDot.states.switchInstant currentPage
+# 
+# 
+# 
+# #add transitions between create account and interests
+# sketch.buttonGetStarted.onClick (event, layer) ->
+# 	flow.showNext(interest)
+# 	
+# #add transitions between interests and futures
+# sketch.buttonSaveInterests.onClick (event, layer) ->
+flow.showNext(futures)
 
-# onboarding0.onClick ->
-# 	flow.showNext(onboarding1)
 
+#assigning screen headers and navigation
+flow.header = sketch.header
+flow.footer = sketch.navBar
 
+#assign states to the button styles
+for layer in ƒƒ('navButton*')
+	layer.states = 
+		inactive: opacity: 0.5
+		active: opacity: 1
 
+#default nav me to inactive
+sketch.navButtonMe.states.switch "inactive"
 
-# for i in [0..onboarding.length-1]
-# 	print onboarding[i]
-# 	onboarding[i].onClick ->
-# 		if i < 4
-# 			flow.showNext(onboarding[i+1])
-# 		else
-# 			flow.showNext(onboarding4)
+#assign states and animations to the nav indicator
+sketch.navActiveIndicator.states =
+	future: x: 0
+	me: x: 184
+sketch.navActiveIndicator.states.animationOptions =
+	curve: Bezier.ease
+	time: .5
 
-# Switch screens on click example
+#transition between futures and profile
+sketch.navButtonMe.onClick (event, layer) ->
+	sketch.navActiveIndicator.states.switch "me"
+	sketch.navButtonFuture.states.switch "inactive"
+	sketch.navButtonMe.states.switch "active"
+	flow.showNext(profile)
+
+sketch.navButtonFuture.onClick (event, layer) ->
+	sketch.navActiveIndicator.states.switch "future"
+	sketch.navButtonFuture.states.switch "active"
+	sketch.navButtonMe.states.switch "inactive"
+	flow.showNext(futures)
+
+#sketch.ButtonCreateAccount.onClick (event, layer) ->
+
+#Switch screens on click example
 # layerA.onClick ->
 # 	flow.showNext(layerB)
 
@@ -176,8 +224,6 @@ for layer in ƒƒ('*Active')
 # 
 # Expand.onClick ->
 # 	flow.showPrevious()
-
-
 
 
 #Animations
@@ -202,3 +248,6 @@ for layer in ƒƒ('*Active')
 # 	player.playVideo()
 
 
+#Onboarding Swipe Cards
+
+# Swipe through cards
