@@ -1,10 +1,10 @@
 
 
-# Import file "Final Screens (Framer-Navigation @ 8a321fe)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Framer-Navigation%20@%208a321fe)@2x", scale: 1)
+
+# Import file "Final Screens (Master @ a30fd53)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
-
 # Defining a custom device
 # Framer.DeviceView.Devices["futureFinderDevice"] = 
 # 	"deviceType": "apple-iphone-8"
@@ -90,6 +90,10 @@ for layer in ƒƒ('*WarningNotification')
 	
 for layer in ƒƒ('*Done')
 	layer.opacity = 0
+	
+for layer in ƒƒ('*Highlight')
+	layer.opacity = 0
+
 
 
 #create Overarching FlowComponent
@@ -178,11 +182,10 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 	mainFlow = new FlowComponent
 	flow.showNext(mainFlow)
 	
-	mainFlow.showNext(futures)
-	
 	#assigning screen headers and navigation
 	mainFlow.header = sketch.header
 	mainFlow.footer = sketch.navBar
+	mainFlow.showNext(futures)
 
 ####################################
 ##MAIN FUTURE / PROFILE SECTION
