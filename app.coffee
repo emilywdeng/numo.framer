@@ -28,18 +28,18 @@ Utils.insertCSS """
 	}
 """
 
-#Airtable
-# Import from Airtable 
-data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-
-# print data.records.length 
-
-#personality questions array 
-questionText = []
-
-for i in [0..data.records.length-1]
-	questionText.push(data.records[i].fields.QuestionText)
-
+# #Airtable
+# # Import from Airtable 
+# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+# 
+# # print data.records.length 
+# 
+# #personality questions array 
+# questionText = []
+# 
+# for i in [0..data.records.length-1]
+# 	questionText.push(data.records[i].fields.QuestionText)
+ 
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
 
@@ -180,6 +180,7 @@ mainFlow = ""
 #add transitions between interests and futures
 sketch.buttonSaveInterests.onClick (event, layer) ->
 	mainFlow = new FlowComponent
+		backgroundColor: '#F8F8F8'
 	flow.showNext(mainFlow)
 	
 	#assigning screen headers and navigation
