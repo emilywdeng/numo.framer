@@ -98316,7 +98316,7 @@ window.__imported__["Final Screens (Master @ a30fd53)@2x/layers.json.js"] = [
 					"x": 27,
 					"y": 0,
 					"width": 327,
-					"height": 93
+					"height": 33
 				},
 				"visible": true,
 				"metadata": {
@@ -98328,7 +98328,7 @@ window.__imported__["Final Screens (Master @ a30fd53)@2x/layers.json.js"] = [
 						"x": 27,
 						"y": 0,
 						"width": 327,
-						"height": 93
+						"height": 33
 					}
 				},
 				"children": []
