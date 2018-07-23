@@ -3,9 +3,9 @@
   "updateDelay" : 0.3,
   "designModeSelected" : 0,
   "cachedDeviceHeight" : 667,
+  "contentScale" : 1,
   "fullScreen" : false,
   "cachedDeviceWidth" : 375,
-  "contentScale" : 1,
   "deviceType" : "apple-iphone-8-space-gray",
   "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
@@ -16,10 +16,10 @@
   "selectedHand" : "",
   "showBezel" : false,
   "foldedCodeRanges" : [
-    "{1, 475}",
-    "{477, 210}",
-    "{688, 349}",
-    "{1038, 1093}"
+    "{2, 452}",
+    "{455, 210}",
+    "{666, 371}",
+    "{1039, 1093}"
   ],
   "deviceScale" : "fit"
 }

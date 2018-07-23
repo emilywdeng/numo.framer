@@ -1,10 +1,10 @@
 
 
-# Import file "Final Screens (Framer-Navigation @ 8a321fe)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Framer-Navigation%20@%208a321fe)@2x", scale: 1)
+
+# Import file "Final Screens (Master @ a30fd53)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
-
 # Defining a custom device
 # Framer.DeviceView.Devices["futureFinderDevice"] = 
 # 	"deviceType": "apple-iphone-8"
@@ -28,18 +28,18 @@ Utils.insertCSS """
 	}
 """
 
-#Airtable
-# Import from Airtable 
-data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-
-# print data.records.length 
-
-#personality questions array 
-questionText = []
-
-for i in [0..data.records.length-1]
-	questionText.push(data.records[i].fields.QuestionText)
-
+# #Airtable
+# # Import from Airtable 
+# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+# 
+# # print data.records.length 
+# 
+# #personality questions array 
+# questionText = []
+# 
+# for i in [0..data.records.length-1]
+# 	questionText.push(data.records[i].fields.QuestionText)
+ 
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
 
@@ -77,7 +77,6 @@ for i in [0..data.records.length-1]
 # 	height: 225 
 
 
-
 #default Settings
 # Set opacity to default hidden for overlayed state elements
 for layer in ƒƒ('*Filled')
@@ -91,94 +90,125 @@ for layer in ƒƒ('*WarningNotification')
 	
 for layer in ƒƒ('*Done')
 	layer.opacity = 0
+	
+for layer in ƒƒ('*Highlight')
+	layer.opacity = 0
 
 
-# FlowComponent
 
-# Create FlowComponent
+#create Overarching FlowComponent
 flow = new FlowComponent
-# flow.showNext(onboarding)
-# 
-# #add transitions between onboarding and create account
-# sketch.buttonCreateAccount.onClick (event, layer) ->
-# 	flow.showNext(login)
-# 
-# sketch.login.onSwipeRight (event, layer) ->
-# 	flow.showPrevious()
-# 
-# #create PageComponent for onboarding cards
-# onboardingPages = new PageComponent
-# 	parent: onboarding
-# 	scrollVertical: false
-# 	x: Align.center
-# 	y: Align.top
-# 	width: Screen.width
-# 	height: 495
-# 
-# #set onboarding pages to invisible and smaller scale
-# for layer in ƒƒ('*onboardingPage*')
-# 	layer.opacity = 0
-# 	layer.scale = 0.95
-# 	onboardingPage1.opacity	= 1
-# 	onboardingPage1.scale = 1
-# 
-# #add onboarding pages to PageComponent
-# onboardingPages.addPage(onboardingPage1)
-# onboardingPages.addPage(onboardingPage2)
-# onboardingPages.addPage(onboardingPage3)
-# onboardingPages.addPage(onboardingPage4)
-# onboardingPages.addPage(onboardingPage5)
-# 
-# #create active dot indicator for pagination
-# activeDot = new Layer
-# 	width: 8
-# 	height: 8
-# 	borderRadius: 20
-# 	parent: onboarding
-# 	backgroundColor: '#4AC8AC'
-# 	y: 494
-# 	x: 154
-# 
-# #define states for active dot
-# activeDot.states = 
-# 	page1: x: 154
-# 	page2: x: 169
-# 	page3: x: 185
-# 	page4: x: 200
-# 	page5: x: 216
-# 	
-# #listen for onboarding page change
-# onboardingPages.on "change:currentPage",->
-# 	current = onboardingPages.currentPage
-# 	previous = onboardingPages.previousPage
-# 	
-# 	#transition animations between pages
-# 	previous.animate
-# 		opacity: 0
-# 		scale: 0.95
-# 	current.animate
-# 		opacity: 1
-# 		scale: 1
-# 	
-# 	#move pagintation indicator dot to correct placement
-# 	currentPage = onboardingPages.horizontalPageIndex(current) + 1
-# 	currentPage = 'page' + currentPage
-# 	activeDot.states.switchInstant currentPage
-# 
-# 
-# 
-# #add transitions between create account and interests
-# sketch.buttonGetStarted.onClick (event, layer) ->
-# 	flow.showNext(interest)
-# 	
-# #add transitions between interests and futures
-# sketch.buttonSaveInterests.onClick (event, layer) ->
-flow.showNext(futures)
 
+#create onboarding FlowComponent and add to overarching flow
+onboardingFlow = new FlowComponent
+flow.showNext(onboardingFlow)
 
-#assigning screen headers and navigation
-flow.header = sketch.header
-flow.footer = sketch.navBar
+# add onboarding screens to onboarding Flow Component
+onboardingFlow.showNext(onboarding)
+
+#add transitions between onboarding and create account
+sketch.buttonCreateAccount.onClick (event, layer) ->
+	onboardingFlow.showNext(login)
+
+sketch.login.onSwipeRight (event, layer) ->
+	onboardingFlow.showPrevious()
+
+#create PageComponent for onboarding cards
+onboardingPages = new PageComponent
+	parent: onboarding
+	scrollVertical: false
+	x: Align.center
+	y: Align.top
+	width: Screen.width
+	height: 495
+
+#set onboarding pages to invisible and smaller scale
+for layer in ƒƒ('*onboardingPage*')
+	layer.opacity = 0
+	layer.scale = 0.95
+	onboardingPage1.opacity	= 1
+	onboardingPage1.scale = 1
+
+#add onboarding pages to PageComponent
+onboardingPages.addPage(onboardingPage1)
+onboardingPages.addPage(onboardingPage2)
+onboardingPages.addPage(onboardingPage3)
+onboardingPages.addPage(onboardingPage4)
+onboardingPages.addPage(onboardingPage5)
+
+#create active dot indicator for pagination
+activeDot = new Layer
+	width: 8
+	height: 8
+	borderRadius: 20
+	parent: onboarding
+	backgroundColor: '#4AC8AC'
+	y: 494
+	x: 154
+
+#define states for active dot
+activeDot.states = 
+	page1: x: 154
+	page2: x: 169
+	page3: x: 185
+	page4: x: 200
+	page5: x: 216
+	
+#listen for onboarding page change
+onboardingPages.on "change:currentPage",->
+	current = onboardingPages.currentPage
+	previous = onboardingPages.previousPage
+	
+	#transition animations between pages
+	previous.animate
+		opacity: 0
+		scale: 0.95
+	current.animate
+		opacity: 1
+		scale: 1
+	
+	#move pagintation indicator dot to correct placement
+	currentPage = onboardingPages.horizontalPageIndex(current) + 1
+	currentPage = 'page' + currentPage
+	activeDot.states.switchInstant currentPage
+
+#add transitions between create account and interests
+sketch.buttonGetStarted.onClick (event, layer) ->
+	onboardingFlow.showNext(interest)
+
+mainFlow = ""
+#add transitions between interests and futures
+sketch.buttonSaveInterests.onClick (event, layer) ->
+	mainFlow = new FlowComponent
+		backgroundColor: '#F8F8F8'
+	flow.showNext(mainFlow)
+	
+	#assigning screen headers and navigation
+	mainFlow.header = sketch.header
+	mainFlow.footer = sketch.navBar
+	mainFlow.showNext(futures)
+
+####################################
+##MAIN FUTURE / PROFILE SECTION
+
+#custom transtions between futures and me
+mainNavTransition = (nav, layerA, layerB) ->
+	transition = 
+		layerA: 
+			show: 
+				scale:1.0
+				opacity: 1
+			hide: 
+					scale: 0.5
+					opacity: 0 
+		layerB: 
+			show: 
+				scale:1.0
+				opacity: 1
+			hide: 
+					scale: 0.5
+					opacity: 0 
+				
 
 #assign states to the button styles
 for layer in ƒƒ('navButton*')
@@ -202,29 +232,18 @@ sketch.navButtonMe.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "me"
 	sketch.navButtonFuture.states.switch "inactive"
 	sketch.navButtonMe.states.switch "active"
-	flow.showNext(profile)
+	mainFlow.showNext(profile)
 
 sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "future"
 	sketch.navButtonFuture.states.switch "active"
 	sketch.navButtonMe.states.switch "inactive"
-	flow.showNext(futures)
+	mainFlow.showPrevious(futures)
 
-#sketch.ButtonCreateAccount.onClick (event, layer) ->
 
 #Switch screens on click example
 # layerA.onClick ->
 # 	flow.showNext(layerB)
-
-# ResultsProfile.onClick ->
-# 	flow.showNext(Feed)
-# 
-# article1.onClick ->
-# 	flow.showNext(Expand)
-# 
-# Expand.onClick ->
-# 	flow.showPrevious()
-
 
 #Animations
 
