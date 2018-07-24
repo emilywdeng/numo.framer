@@ -1,3 +1,5 @@
+# Import file "Final Screens (Master @ 8ff5c69)"
+sketch1 = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%208ff5c69)@1x", scale: 1)
 
 # Import file "Final Screens (Master @ a30fd53)"
 sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
