@@ -1,5 +1,4 @@
-# Import file "Final Screens (Master @ 8ff5c69)"
-sketch1 = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%208ff5c69)@1x", scale: 1)
+
 
 # Import file "Final Screens (Master @ a30fd53)"
 sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
@@ -89,6 +88,14 @@ InputModule = require "input"
 #   x: 90  # x position
 #   width: 500
 #   height: 60
+
+#User Profile Object
+user = 
+	interests: []
+	personality: []
+	drives: []
+	workstyles: []
+	favoriteJobs: []
 
 
 #default Settings
@@ -197,15 +204,15 @@ sketch.buttonGetStarted.onClick (event, layer) ->
 
 mainFlow = ""
 #add transitions between interests and futures
-sketch.buttonSaveInterests.onClick (event, layer) ->
-	mainFlow = new FlowComponent
-		backgroundColor: '#F8F8F8'
-	flow.showNext(mainFlow)
-	
-	#assigning screen headers and navigation
-	mainFlow.header = sketch.header
-	mainFlow.footer = sketch.navBar
-	mainFlow.showNext(futures)
+# sketch.buttonSaveInterests.onClick (event, layer) ->
+# 	mainFlow = new FlowComponent
+# 		backgroundColor: '#F8F8F8'
+# 	flow.showNext(mainFlow)
+# 	
+# 	#assigning screen headers and navigation
+# 	mainFlow.header = sketch.header
+# 	mainFlow.footer = sketch.navBar
+# 	mainFlow.showNext(futures)
 
 
 #MAIN FUTURE / PROFILE NAVIGATION
@@ -237,8 +244,8 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navButtonMe.states.switch "inactive"
 	mainFlow.showPrevious(futures)
 
-####dev comment!
-flow.showNext(futures)
+# ####dev comment!
+# flow.showNext(futures)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -855,7 +862,7 @@ sketch.question10SkipButton.onClick (event,layer) ->
 
 
 
-#CREATE ACCOUNT
+#CREATE ACCOUNT SCREEN
 #Click first name
 inputName = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1094,3 +1101,66 @@ inputRetypePassword.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
+#SELECT INTERESTS SCREEN
+#Interest tag states
+for tag in ƒƒ('interestTag*Default')
+	#Add states
+	tag.states.add
+		active: {opacity: 0}
+		default: {opacity: 1}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+
+for tag in ƒƒ('interestTag*Active')
+	#Add states
+	tag.states.add
+		active: {opacity: 1}
+		default: {opacity: 0}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+#Save interests button
+sketch.buttonSaveInterests.onClick (event, layer) ->
+	#Initialize arrays and counters
+	user.interests = []
+	nameInterest = []
+	statusInterest = []
+	numInterest = 0
+	count = 0
+	#Collect name and status of all interests to arrays
+	for tag in ƒƒ('interestTag*Active')
+		statusInterest.push(tag.states.current.name)
+		nameInterest.push(tag.name)
+	#Check how many interests are active
+	for i in statusInterest
+		#If active, increment count and add to user profile
+		if i == "active"
+			numInterest = numInterest + 1
+			user.interests.push(nameInterest[count])
+		count = count + 1
+	#Show warning if < 3 interests
+	if numInterest < 3
+		sketch.interestWarningNotification.animate
+			opacity: 1
+			options:
+				time: .3
+				curve: Bezier.ease
+	#Allow user to continue if >= 3
+	else
+		mainFlow = new FlowComponent
+			backgroundColor: '#F8F8F8'
+		flow.showNext(mainFlow)
+		#assigning screen headers and navigation
+		mainFlow.header = sketch.header
+		mainFlow.footer = sketch.navBar
+		mainFlow.showNext(futures)
+
+
