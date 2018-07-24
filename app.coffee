@@ -119,21 +119,21 @@ for layer in ƒƒ('*Highlight')
 flow = new FlowComponent
 
 # Show first screen for dev
-flow.showNext(interest)
+# flow.showNext(interest)
 
-# #create onboarding FlowComponent and add to overarching flow
-# onboardingFlow = new FlowComponent
-# flow.showNext(onboardingFlow)
-# 
-# # add onboarding screens to onboarding Flow Component
-# onboardingFlow.showNext(onboarding)
-# 
-# #add transitions between onboarding and create account
-# sketch.buttonCreateAccount.onClick (event, layer) ->
-# 	onboardingFlow.showNext(login)
-# 
-# sketch.login.onSwipeRight (event, layer) ->
-# 	onboardingFlow.showPrevious()
+#create onboarding FlowComponent and add to overarching flow
+onboardingFlow = new FlowComponent
+flow.showNext(onboardingFlow)
+
+# add onboarding screens to onboarding Flow Component
+onboardingFlow.showNext(onboarding)
+
+#add transitions between onboarding and create account
+sketch.buttonCreateAccount.onClick (event, layer) ->
+	onboardingFlow.showNext(login)
+
+sketch.login.onSwipeRight (event, layer) ->
+	onboardingFlow.showPrevious()
 
 #create PageComponent for onboarding cards
 onboardingPages = new PageComponent
