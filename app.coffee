@@ -1,21 +1,7 @@
-
-
 # Import file "Final Screens (Master @ a30fd53)"
 sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
 
-
 Utils.globalLayers(sketch)
-# Defining a custom device
-# Framer.DeviceView.Devices["futureFinderDevice"] = 
-# 	"deviceType": "apple-iphone-8"
-# 	"screenWidth": 375*3
-# 	"screenHeight": 648*3
-# 	"deviceImageWidth": 375*3
-# 	"deviceImageHeight": 648*3
-# 
-# Framer.Device.deviceType = "futureFinderDevice"
-
-
 
 
 # Custom Font
@@ -89,14 +75,137 @@ InputModule = require "input"
 #   width: 500
 #   height: 60
 
+{TextLayer} = require "TextLayer"
+ 
+
+#Responsive
+screen_width = Framer.Device.screen.width 
+screen_height = Framer.Device.screen.height
+
+default_w = 375
+default_h = 667
+
+ratio = screen_width / default_w
+
+Framer.Defaults.Layer.force2d = true
+
+# Framer.Device.contentScale = ratio
+
+all = new Layer
+	width: default_w  # <-- The width will be 750 
+	height: default_h # <-- The height will be 1334
+	scale: ratio      # <-- The ratio we got from the equation
+	originY: 0        # <-- This moves the origin of scale to top left
+	y: 0              # <-- Make this layer to the top
+all.centerX()       # <-- And we center the X position
+
+
+# for responsiveness, may not need this
+# for layer in ƒƒ()
+# 	if layer.name != "all"
+# 		this.parent = all
+
+# Custom Functions
+
 #User Profile Object
 user = 
+	interestsRaw: []
 	interests: []
 	personality: []
 	drives: []
 	workstyles: []
 	favoriteJobs: []
 
+convertInterests = (array) ->
+	for tag in array
+		if tag == "interestTagCommunityActive"
+			user.interests.push("Community Service")
+		if tag == "interestTagGamesActive"
+			user.interests.push("Games")
+		if tag == "interestTagScienceActive"
+			user.interests.push("Science")
+		if tag == "interestTagAnimalsActive"
+			user.interests.push("Animals")
+		if tag == "interestTagSpaceActive"
+			user.interests.push("Space")
+		if tag == "interestTagWritingActive"
+			user.interests.push("Writing")
+		if tag == "interestTagPoliticsActive"
+			user.interests.push("Politics")
+		if tag == "interestTagEntrepreneurshipActive"
+			user.interests.push("Entrepreneurship")
+		if tag == "interestTagDesignActive"
+			user.interests.push("Design")
+		if tag == "interestTagSportsActive"
+			user.interests.push("Sports")
+		if tag == "interestTagFashionActive"
+			user.interests.push("Fashion")
+		if tag == "interestTagEnvironmentalismActive"
+			user.interests.push("Environmentalism")
+		if tag == "interestTagHistoryActive"
+			user.interests.push("History")
+		if tag == "interestTagFoodActive"
+			user.interests.push("Food")
+		if tag == "interestTagMedicineActive"
+			user.interests.push("Medicine")
+		if tag == "interestTagTravelActive"
+			user.interests.push("Travel")
+		if tag == "interestTagTeachingActive"
+			user.interests.push("Teaching")
+		if tag == "interestTagEngineeringActive"
+			user.interests.push("Engineering")
+		if tag == "interestTagTechnologyActive"
+			user.interests.push("Technology")
+		if tag == "interestTagArtActive"
+			user.interests.push("Art")
+
+
+
+#Check that interests was inputted
+populateInterests = ->
+	initialX = 37
+	initialY = 76
+	lastWidth = 0
+	lastHeight = 0
+	if user.interests.length != 0
+		for i in [0..user.interests.length-1]
+			interestBg = new Layer
+				backgroundColor: "4AC8AC"
+				parent: sketch.profile
+				borderRadius: 5
+				height: 32
+			interestTxt = new TextLayer
+				text: user.interests[i]
+				color: "#fff"
+				textAlign: "center"
+				fontFamily: "Gotham-Med"
+				fontSize: 12
+				parent: interestBg
+				autoSize: true
+				autoSizeHeight: true
+				paddingTop: 9
+				paddingBottom: 4
+				paddingLeft: 10
+				paddingRight: 10
+			interestBg.x = initialX + lastWidth
+			interestBg.y = initialY + lastHeight
+			interestBg.width = interestTxt.width
+			lastWidth = lastWidth + interestBg.width + 10
+			if (interestBg.x + interestBg.width) > 333
+				lastWidth = 0
+				lastHeight = lastHeight + 32 + 10
+				interestBg.x = initialX + lastWidth
+				interestBg.y = initialY + lastHeight
+				lastWidth = lastWidth + interestBg.width + 10
+			if interestBg.y > 150
+				interestBg.opacity = 0
+				sketch.profileInterestsSeeMore.opacity = 1
+
+
+#Preloader
+Framer.Extras.Preloader.enable()
+Framer.Extras.Preloader.addImage("images/preloader-logo.png")
+Framer.Extras.Preloader.setLogo("images/preloader-logo.png")
 
 #default Settings
 # Set opacity to default hidden for overlayed state elements
@@ -118,14 +227,23 @@ for layer in ƒƒ('*Highlight')
 for layer in ƒƒ('*Selected')
 	layer.opacity = 0
 
+#Hide profile interests
+for layer in ƒƒ('profileInterestsTag*')
+	layer.opacity = 0
+
+sketch.profileInterestsSeeMore.opacity = 0
 
 #create Overarching FlowComponent
 flow = new FlowComponent
+# Try this code once all screens are in the flow component
+# 	parent: all
+# 	width: all.width
+# 	height: all.height
 
 # Show first screen for dev
 # flow.showNext(interest)
 
-#create onboarding FlowComponent and add to overarching flow
+# create onboarding FlowComponent and add to overarching flow
 onboardingFlow = new FlowComponent
 flow.showNext(onboardingFlow)
 
@@ -203,17 +321,6 @@ sketch.buttonGetStarted.onClick (event, layer) ->
 	onboardingFlow.showNext(interest)
 
 mainFlow = ""
-#add transitions between interests and futures
-# sketch.buttonSaveInterests.onClick (event, layer) ->
-# 	mainFlow = new FlowComponent
-# 		backgroundColor: '#F8F8F8'
-# 	flow.showNext(mainFlow)
-# 	
-# 	#assigning screen headers and navigation
-# 	mainFlow.header = sketch.header
-# 	mainFlow.footer = sketch.navBar
-# 	mainFlow.showNext(futures)
-
 
 #MAIN FUTURE / PROFILE NAVIGATION
 #assign states to the button styles and default me to inactive
@@ -237,6 +344,7 @@ sketch.navButtonMe.onClick (event, layer) ->
 	sketch.navButtonFuture.states.switch "inactive"
 	sketch.navButtonMe.states.switch "active"
 	mainFlow.showNext(profile)
+	print user
 
 sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "future"
@@ -848,20 +956,6 @@ sketch.question10SkipButton.onClick (event,layer) ->
 	flow.showNext(jobCardLoading)
 
 
-#Animations
-
-# On click animation example
-# sketch.skill3.onClick (event, layer) ->
-# 	sketch.skill3.animate
-# 		rotation: 90
-# 		options:
-# 			time: 1
-
-
-
-
-
-
 #CREATE ACCOUNT SCREEN
 #Click first name
 inputName = new InputModule.Input
@@ -1130,7 +1224,7 @@ for tag in ƒƒ('interestTag*Active')
 #Save interests button
 sketch.buttonSaveInterests.onClick (event, layer) ->
 	#Initialize arrays and counters
-	user.interests = []
+	user.interestsRaw = []
 	nameInterest = []
 	statusInterest = []
 	numInterest = 0
@@ -1144,7 +1238,7 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		#If active, increment count and add to user profile
 		if i == "active"
 			numInterest = numInterest + 1
-			user.interests.push(nameInterest[count])
+			user.interestsRaw.push(nameInterest[count])
 		count = count + 1
 	#Show warning if < 3 interests
 	if numInterest < 3
@@ -1155,6 +1249,10 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 				curve: Bezier.ease
 	#Allow user to continue if >= 3
 	else
+		#Convert raw interests to interests
+		convertInterests(user.interestsRaw)
+		#Populate interests on profile
+		populateInterests()
 		mainFlow = new FlowComponent
 			backgroundColor: '#F8F8F8'
 		flow.showNext(mainFlow)
@@ -1162,5 +1260,6 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
+
 
 
