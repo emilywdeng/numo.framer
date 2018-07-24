@@ -1,30 +1,3 @@
-
-# Custom Font
-# Loading the TTF files in the /fonts/ folder
-# and giving them a unique font family name
-Utils.insertCSS """
-	@font-face {
-		font-family: "Gotham-Med";
-		src: url("gotham/Gotham-Medium.otf");
-	}
-	@font-face {
-		font-family: "Gotham-Book";
-		src: url("gotham/Gotham-Book.otf");
-	}
-"""
-
-# #Airtable
-# # Import from Airtable 
-# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-# 
-# # print data.records.length 
-# 
-# #personality questions array 
-# questionText = []
-# 
-# for i in [0..data.records.length-1]
-# 	questionText.push(data.records[i].fields.QuestionText)
- 
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
 
@@ -70,6 +43,35 @@ InputModule = require "input"
 #   width: 500
 #   height: 60
 
+{TextLayer} = require "TextLayer"
+
+# Custom Font
+# Loading the TTF files in the /fonts/ folder
+# and giving them a unique font family name
+Utils.insertCSS """
+	@font-face {
+		font-family: "Gotham-Med";
+		src: url("gotham/Gotham-Medium.otf");
+	}
+	@font-face {
+		font-family: "Gotham-Book";
+		src: url("gotham/Gotham-Book.otf");
+	}
+"""
+
+# #Airtable
+# # Import from Airtable 
+# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+# 
+# # print data.records.length 
+# 
+# #personality questions array 
+# questionText = []
+# 
+# for i in [0..data.records.length-1]
+# 	questionText.push(data.records[i].fields.QuestionText)
+ 
+
 #Responsive
 screen_width = Framer.Device.screen.width 
 screen_height = Framer.Device.screen.height
@@ -101,13 +103,102 @@ Utils.globalLayers(sketch)
 # 	if layer.name != "all"
 # 		this.parent = all
 
+# Custom Functions
+
 #User Profile Object
 user = 
+	interestsRaw: []
 	interests: []
 	personality: []
 	drives: []
 	workstyles: []
 	favoriteJobs: []
+
+convertInterests = (array) ->
+	for tag in array
+		if tag == "interestTagCommunityActive"
+			user.interests.push("Community Service")
+		if tag == "interestTagGamesActive"
+			user.interests.push("Games")
+		if tag == "interestTagScienceActive"
+			user.interests.push("Science")
+		if tag == "interestTagAnimalsActive"
+			user.interests.push("Animals")
+		if tag == "interestTagSpaceActive"
+			user.interests.push("Space")
+		if tag == "interestTagWritingActive"
+			user.interests.push("Writing")
+		if tag == "interestTagPoliticsActive"
+			user.interests.push("Politics")
+		if tag == "interestTagEntrepreneurshipActive"
+			user.interests.push("Entrepreneurship")
+		if tag == "interestTagDesignActive"
+			user.interests.push("Design")
+		if tag == "interestTagSportsActive"
+			user.interests.push("Sports")
+		if tag == "interestTagFashionActive"
+			user.interests.push("Fashion")
+		if tag == "interestTagEnvironmentalismActive"
+			user.interests.push("Environmentalism")
+		if tag == "interestTagHistoryActive"
+			user.interests.push("History")
+		if tag == "interestTagFoodActive"
+			user.interests.push("Food")
+		if tag == "interestTagMedicineActive"
+			user.interests.push("Medicine")
+		if tag == "interestTagTravelActive"
+			user.interests.push("Travel")
+		if tag == "interestTagTeachingActive"
+			user.interests.push("Teaching")
+		if tag == "interestTagEngineeringActive"
+			user.interests.push("Engineering")
+		if tag == "interestTagTechnologyActive"
+			user.interests.push("Technology")
+		if tag == "interestTagArtActive"
+			user.interests.push("Art")
+
+
+
+#Check that interests was inputted
+populateInterests = ->
+	initialX = 37
+	initialY = 76
+	lastWidth = 0
+	lastHeight = 0
+	if user.interests.length != 0
+		for i in [0..user.interests.length-1]
+			interestBg = new Layer
+				backgroundColor: "4AC8AC"
+				parent: sketch.profile
+				borderRadius: 5
+				height: 32
+			interestTxt = new TextLayer
+				text: user.interests[i]
+				color: "#fff"
+				textAlign: "center"
+				fontFamily: "Gotham-Med"
+				fontSize: 12
+				parent: interestBg
+				autoSize: true
+				autoSizeHeight: true
+				paddingTop: 9
+				paddingBottom: 4
+				paddingLeft: 10
+				paddingRight: 10
+			interestBg.x = initialX + lastWidth
+			interestBg.y = initialY + lastHeight
+			interestBg.width = interestTxt.width
+			lastWidth = lastWidth + interestBg.width + 10
+			if (interestBg.x + interestBg.width) > 333
+				lastWidth = 0
+				lastHeight = lastHeight + 32 + 10
+				interestBg.x = initialX + lastWidth
+				interestBg.y = initialY + lastHeight
+				lastWidth = lastWidth + interestBg.width + 10
+			if interestBg.y > 150
+				interestBg.opacity = 0
+				sketch.profileInterestsSeeMore.opacity = 1
+
 
 #Preloader
 Framer.Extras.Preloader.enable()
@@ -131,6 +222,12 @@ for layer in ƒƒ('*Done')
 for layer in ƒƒ('*Highlight')
 	layer.opacity = 0
 
+#Hide profile interests
+for layer in ƒƒ('profileInterestsTag*')
+	layer.opacity = 0
+
+sketch.profileInterestsSeeMore.opacity = 0
+
 
 
 #create Overarching FlowComponent
@@ -141,21 +238,21 @@ flow = new FlowComponent
 # 	height: all.height
 
 # Show first screen for dev
-# flow.showNext(interest)
+flow.showNext(interest)
 
-#create onboarding FlowComponent and add to overarching flow
-onboardingFlow = new FlowComponent
-flow.showNext(onboardingFlow)
-
-# add onboarding screens to onboarding Flow Component
-onboardingFlow.showNext(onboarding)
-
-#add transitions between onboarding and create account
-sketch.buttonCreateAccount.onClick (event, layer) ->
-	onboardingFlow.showNext(login)
-
-sketch.login.onSwipeRight (event, layer) ->
-	onboardingFlow.showPrevious()
+# # create onboarding FlowComponent and add to overarching flow
+# onboardingFlow = new FlowComponent
+# flow.showNext(onboardingFlow)
+# 
+# # add onboarding screens to onboarding Flow Component
+# onboardingFlow.showNext(onboarding)
+# 
+# #add transitions between onboarding and create account
+# sketch.buttonCreateAccount.onClick (event, layer) ->
+# 	onboardingFlow.showNext(login)
+# 
+# sketch.login.onSwipeRight (event, layer) ->
+# 	onboardingFlow.showPrevious()
 
 #create PageComponent for onboarding cards
 onboardingPages = new PageComponent
@@ -277,6 +374,7 @@ sketch.navButtonMe.onClick (event, layer) ->
 	sketch.navButtonFuture.states.switch "inactive"
 	sketch.navButtonMe.states.switch "active"
 	mainFlow.showNext(profile)
+	print user
 
 sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "future"
@@ -585,7 +683,7 @@ for tag in ƒƒ('interestTag*Active')
 #Save interests button
 sketch.buttonSaveInterests.onClick (event, layer) ->
 	#Initialize arrays and counters
-	user.interests = []
+	user.interestsRaw = []
 	nameInterest = []
 	statusInterest = []
 	numInterest = 0
@@ -599,7 +697,7 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		#If active, increment count and add to user profile
 		if i == "active"
 			numInterest = numInterest + 1
-			user.interests.push(nameInterest[count])
+			user.interestsRaw.push(nameInterest[count])
 		count = count + 1
 	#Show warning if < 3 interests
 	if numInterest < 3
@@ -610,6 +708,10 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 				curve: Bezier.ease
 	#Allow user to continue if >= 3
 	else
+		#Convert raw interests to interests
+		convertInterests(user.interestsRaw)
+		#Populate interests on profile
+		populateInterests()
 		mainFlow = new FlowComponent
 			backgroundColor: '#F8F8F8'
 		flow.showNext(mainFlow)
@@ -617,5 +719,6 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
+
 
 
