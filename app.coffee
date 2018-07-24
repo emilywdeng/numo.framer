@@ -1,5 +1,6 @@
-# Import file "Final Screens (Master @ ecd9222)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20ecd9222)@2x", scale: 1)
+
+# Import file "Final Screens (Master @ a30fd53)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
 
 
 Utils.globalLayers(sketch)
@@ -105,6 +106,8 @@ for layer in ƒƒ('*Done')
 for layer in ƒƒ('*Highlight')
 	layer.opacity = 0
 
+for layer in ƒƒ('*Selected')
+	layer.opacity = 0
 
 
 #create Overarching FlowComponent
@@ -202,35 +205,13 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 	mainFlow.footer = sketch.navBar
 	mainFlow.showNext(futures)
 
-####################################
-##MAIN FUTURE / PROFILE SECTION
 
-#custom transtions between futures and me
-mainNavTransition = (nav, layerA, layerB) ->
-	transition = 
-		layerA: 
-			show: 
-				scale:1.0
-				opacity: 1
-			hide: 
-					scale: 0.5
-					opacity: 0 
-		layerB: 
-			show: 
-				scale:1.0
-				opacity: 1
-			hide: 
-					scale: 0.5
-					opacity: 0 
-				
-
-#assign states to the button styles
+#MAIN FUTURE / PROFILE NAVIGATION
+#assign states to the button styles and default me to inactive
 for layer in ƒƒ('navButton*')
 	layer.states = 
 		inactive: opacity: 0.5
 		active: opacity: 1
-
-#default nav me to inactive
 sketch.navButtonMe.states.switch "inactive"
 
 #assign states and animations to the nav indicator
@@ -254,12 +235,609 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navButtonMe.states.switch "inactive"
 	mainFlow.showPrevious(futures)
 
+####dev comment!
+flow.showNext(futures)
 
+#QUESTIONS FLOW
+dailyQuizFlow = ""
+questionsFlow = ""
+questionCurrent = 0
+sketch.futuresQuestions.onClick (event, layer) ->
+	if dailyQuizFlow is "" 
+			dailyQuizFlow = new FlowComponent
+			questionsFlow = new FlowComponent
+				x: 0
+				y: 70
+				height: 470
+				width: Screen.width
+				scrollVertical: false
+				scrollHorizontal: false
+				parent: questionsBackground
+				backgroundColor: '#FFFFFF'
+			flow.showNext(dailyQuizFlow)
+			dailyQuizFlow.showNext(questionsBackground)
+			questionsFlow.showNext(question1)
+			questionCurrent += 1
+		else
+			flow.showNext(dailyQuizFlow)
 
+#close questions button
+questionsClose.onClick (event,layer) ->
+	flow.showPrevious()
 
-#Switch screens on click example
-# layerA.onClick ->
-# 	flow.showNext(layerB)
+#question1 select answers
+question1Option1Default.onClick (event, layer) ->
+	question1Option1Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question1 Option1 answer
+	questionCurrent += 1
+	questionProgress1.opacity = 0
+	questionsFlow.showNext(question2)
+	
+
+question1Option2Default.onClick (event, layer) ->
+	question1Option2Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question1 Option2 answer
+	questionCurrent += 1
+	questionProgress1.opacity = 0
+	questionsFlow.showNext(question2)
+
+#question2 select answers
+question2Option1Default.onClick (event, layer) ->
+	question2Option1Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question2 Option1 answer
+	questionCurrent += 1
+	questionProgress2.opacity = 0
+	questionsFlow.showNext(question3)
+
+question2Option2Default.onClick (event, layer) ->
+	question2Option2Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question2 Option2 answer
+	questionCurrent += 1
+	questionProgress2.opacity = 0
+	questionsFlow.showNext(question3)
+
+#question3 select answers
+#create slider3 element
+slider3 = new SliderComponent
+	x: 110
+	y: 155
+	width: 18
+	height: 280
+	max: 2
+	min: -2
+	parent: question3
+slider3.knob.size = 25
+slider3.knob.backgroundColor = '#B8B8B8'
+slider3.backgroundColor = '#F1EDEF'
+slider3.fill.backgroundColor = '#F1EDEF'
+slider3.knob.shadowBlur = 0
+slider3.knob.shadowX = 0
+slider3.knob.shadowY = 0
+slider3.knob.draggable.momentum = false
+
+#animate arrows when user reaches the screen
+sketch.question3UpArrow.animate
+	y: -10
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+sketch.question3DownArrow.animate
+	y: +30
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+#create displayvalue layer and state
+displayValue3 = new TextLayer
+	text: ''
+	fontSize: 14
+	fontFamily: 'Gotham'
+	color: '#4AC8AC'
+	x: 70
+	parent: slider3.knob
+
+displayValue3.states = 
+	closed: opacity: 0
+displayValue3.animationOptions = 
+	time: 0.2
+
+#when users changes the value, change display value and hide arrows
+slider3.onValueChange ->
+	slider3.knob.backgroundColor = '#4AC8AC'
+	sketch.question3ArrowIcons.animate
+		opacity: 0
+		options:
+			time: 0.25
+	# varibles for labels
+	answerHigh = 'Independent'
+	answerLow = 'Group'
+	if Math.round(slider3.value) is -2
+		displayValue3.text = 'Mostly ' + answerHigh
+	else if Math.round(slider3.value) is -1
+		displayValue3.text = 'More ' + answerHigh
+	else if Math.round(slider3.value) is 1
+		displayValue3.text = 'More ' + answerLow
+	else if Math.round(slider3.value) is 2
+		displayValue3.text = 'Mostly ' + answerLow
+	else
+		displayValue3.text = 'Neutral'
+
+#when user starts dragging knob, show display value, and hide question 3 button if displayed
+slider3.knob.on Events.DragStart, ->
+	displayValue3.states.switchInstant "default"
+	sketch.question3ButtonActive.animate
+		opacity: 0
+		options: time: .25
+	
+#when user stops dragging knob, hide display value, and show question 3 button
+slider3.knob.on Events.DragEnd, ->
+	displayValue3.states.switch "closed"
+	sketch.question3ButtonActive.animate
+		opacity: 1
+		options: time: 0.5
+
+# submit the current value for question 3
+question3ButtonActive.onClick (event, layer) ->
+	question3ButtonSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question3 value
+	questionCurrent += 1
+	questionProgress3.opacity = 0
+	questionsFlow.showNext(question4)
+	
+#question4 select answers
+question4Option1Default.onClick (event, layer) ->
+	question4Option1Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question4 Option1 answer
+	questionCurrent += 1
+	questionProgress4.opacity = 0
+	questionsFlow.showNext(question5)
+
+question4Option2Default.onClick (event, layer) ->
+	question4Option2Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question4 Option2 answer
+	questionCurrent += 1
+	questionProgress4.opacity = 0
+	questionsFlow.showNext(question5)
+	
+#question5 select answers
+#create slider5 element
+slider5 = new SliderComponent
+	x: 110
+	y: 155
+	width: 18
+	height: 280
+	max: 2
+	min: -2
+	parent: question5
+slider5.knob.size = 25
+slider5.knob.backgroundColor = '#B8B8B8'
+slider5.backgroundColor = '#F1EDEF'
+slider5.fill.backgroundColor = '#F1EDEF'
+slider5.knob.shadowBlur = 0
+slider5.knob.shadowX = 0
+slider5.knob.shadowY = 0
+slider5.knob.draggable.momentum = false
+
+#animate arrows when user reaches the screen
+sketch.question5UpArrow.animate
+	y: -10
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+sketch.question5DownArrow.animate
+	y: +30
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+
+#create displayvalue layer and state
+displayValue5 = new TextLayer
+	text: ''
+	fontSize: 14
+	fontFamily: 'Gotham'
+	color: '#4AC8AC'
+	x: 70
+	parent: slider5.knob
+
+displayValue5.states = 
+	closed: opacity: 0
+displayValue5.animationOptions = 
+	time: 0.2
+
+#when users changes the value, change display value and hide arrows
+slider5.onValueChange ->
+	slider5.knob.backgroundColor = '#4AC8AC'
+	sketch.question5ArrowIcons.animate
+		opacity: 0
+		options:
+			time: 0.25
+	# varibles for labels
+	answerHigh = 'Art'
+	answerLow = 'Math'
+	if Math.round(slider5.value) is -2
+		displayValue5.text = 'Mostly ' + answerHigh
+	else if Math.round(slider5.value) is -1
+		displayValue5.text = 'More ' + answerHigh
+	else if Math.round(slider5.value) is 1
+		displayValue5.text = 'More ' + answerLow
+	else if Math.round(slider5.value) is 2
+		displayValue5.text = 'Mostly ' + answerLow
+	else
+		displayValue5.text = 'Neutral'
+
+#when user starts dragging knob, show display value, and hide question5 button if displayed
+slider5.knob.on Events.DragStart, ->
+	displayValue5.states.switchInstant "default"
+	sketch.question5ButtonActive.animate
+		opacity: 0
+		options: time: .25
+#when user stops dragging knob, hide display value, and show question5 button
+slider5.knob.on Events.DragEnd, ->
+	displayValue5.states.switch "closed"
+	sketch.question5ButtonActive.animate
+		opacity: 1
+		options: time: 0.5
+
+# submit the current value for question5
+question5ButtonActive.onClick (event, layer) ->
+	question5ButtonSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question5 value
+	questionCurrent += 1
+	question5Progress.opacity = 0
+	questionsFlow.showNext(question6)
+
+#question6 select answers
+#create slider6 element
+slider6 = new SliderComponent
+	x: 110
+	y: 155
+	width: 18
+	height: 280
+	max: 2
+	min: -2
+	parent: question6
+slider6.knob.size = 25
+slider6.knob.backgroundColor = '#B8B8B8'
+slider6.backgroundColor = '#F1EDEF'
+slider6.fill.backgroundColor = '#F1EDEF'
+slider6.knob.shadowBlur = 0
+slider6.knob.shadowX = 0
+slider6.knob.shadowY = 0
+slider6.knob.draggable.momentum = false
+
+#animate arrows when user reaches the screen
+sketch.question6UpArrow.animate
+	y: -10
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+sketch.question6DownArrow.animate
+	y: +30
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+#create displayvalue layer and state
+displayValue6 = new TextLayer
+	text: ''
+	fontSize: 14
+	fontFamily: 'Gotham'
+	color: '#4AC8AC'
+	x: 70
+	parent: slider6.knob
+
+displayValue6.states = 
+	closed: opacity: 0
+displayValue6.animationOptions = 
+	time: 0.2
+
+#when users changes the value, change display value and hide arrows
+slider6.onValueChange ->
+	slider6.knob.backgroundColor = '#4AC8AC'
+	sketch.question6ArrowIcons.animate
+		opacity: 0
+		options:
+			time: 0.25
+	# varibles for labels
+	answerHigh = 'Agree'
+	answerLow = 'Disagree'
+	if Math.round(slider6.value) is -2
+		displayValue6.text = 'Strongly ' + answerHigh
+	else if Math.round(slider6.value) is -1
+		displayValue6.text = 'Somewhat ' + answerHigh
+	else if Math.round(slider6.value) is 1
+		displayValue6.text = 'Somewhat ' + answerLow
+	else if Math.round(slider6.value) is 2
+		displayValue6.text = 'Strongly ' + answerLow
+	else
+		displayValue6.text = 'Neutral'
+
+#when user starts dragging knob, show display value, and hide question6 button if displayed
+slider6.knob.on Events.DragStart, ->
+	displayValue6.states.switchInstant "default"
+	sketch.question6ButtonActive.animate
+		opacity: 0
+		options: time: .25
+#when user stops dragging knob, hide display value, and show question6 button
+slider6.knob.on Events.DragEnd, ->
+	displayValue6.states.switch "closed"
+	sketch.question6ButtonActive.animate
+		opacity: 1
+		options: time: 0.5
+
+# submit the current value for question6
+question6ButtonActive.onClick (event, layer) ->
+	question6ButtonSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question6 value
+	questionCurrent += 1
+	question6Progress.opacity = 0
+	questionsFlow.showNext(question7)
+
+#question7 select answers
+question7Option1Default.onClick (event, layer) ->
+	question7Option1Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question7 Option1 answer
+	questionCurrent += 1
+	questionProgress4.opacity = 0
+	questionsFlow.showNext(question8)
+
+question7Option2Default.onClick (event, layer) ->
+	question7Option2Selected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question7 Option2 answer
+	questionCurrent += 1
+	question7Progress.opacity = 0
+	questionsFlow.showNext(question8)
+
+#question8 select answers
+#create slider8 element
+slider8 = new SliderComponent
+	x: 110
+	y: 155
+	width: 18
+	height: 280
+	max: 2
+	min: -2
+	parent: question8
+slider8.knob.size = 25
+slider8.knob.backgroundColor = '#B8B8B8'
+slider8.backgroundColor = '#F1EDEF'
+slider8.fill.backgroundColor = '#F1EDEF'
+slider8.knob.shadowBlur = 0
+slider8.knob.shadowX = 0
+slider8.knob.shadowY = 0
+slider8.knob.draggable.momentum = false
+
+#animate arrows when user reaches the screen
+sketch.question8UpArrow.animate
+	y: -10
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+sketch.question8DownArrow.animate
+	y: +30
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+#create displayvalue layer and state
+displayValue8 = new TextLayer
+	text: ''
+	fontSize: 14
+	fontFamily: 'Gotham'
+	color: '#4AC8AC'
+	x: 70
+	parent: slider8.knob
+
+displayValue8.states = 
+	closed: opacity: 0
+displayValue8.animationOptions = 
+	time: 0.2
+
+#when users changes the value, change display value and hide arrows
+slider8.onValueChange ->
+	slider8.knob.backgroundColor = '#4AC8AC'
+	sketch.question8ArrowIcons.animate
+		opacity: 0
+		options:
+			time: 0.25
+	# varibles for labels
+	answerHigh = 'Important'
+	answerLow = 'Not Important'
+	if Math.round(slider8.value) is -2
+		displayValue8.text = 'Very ' + answerHigh
+	else if Math.round(slider8.value) is -1
+		displayValue8.text = 'Somewhat ' + answerHigh
+	else if Math.round(slider8.value) is 1
+		displayValue8.text = 'Somewhat ' + answerLow
+	else if Math.round(slider8.value) is 2
+		displayValue8.text = 'Very ' + answerLow
+	else
+		displayValue8.text = 'Neutral'
+
+#when user starts dragging knob, show display value, and hide question8 button if displayed
+slider8.knob.on Events.DragStart, ->
+	displayValue8.states.switchInstant "default"
+	sketch.question8ButtonActive.animate
+		opacity: 0
+		options: time: .25
+#when user stops dragging knob, hide display value, and show question8 button
+slider8.knob.on Events.DragEnd, ->
+	displayValue8.states.switch "closed"
+	sketch.question8ButtonActive.animate
+		opacity: 1
+		options: time: 0.5
+
+# submit the current value for question8
+question8ButtonActive.onClick (event, layer) ->
+	question8ButtonSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question8 value
+	questionCurrent += 1
+	question8Progress.opacity = 0
+	questionsFlow.showNext(question9)
+
+#question9 select answers
+#create slider9 element
+slider9 = new SliderComponent
+	x: 110
+	y: 155
+	width: 18
+	height: 280
+	max: 2
+	min: -2
+	parent: question9
+slider9.knob.size = 25
+slider9.knob.backgroundColor = '#B8B8B8'
+slider9.backgroundColor = '#F1EDEF'
+slider9.fill.backgroundColor = '#F1EDEF'
+slider9.knob.shadowBlur = 0
+slider9.knob.shadowX = 0
+slider9.knob.shadowY = 0
+slider9.knob.draggable.momentum = false
+
+#animate arrows when user reaches the screen
+sketch.question9UpArrow.animate
+	y: -10
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+sketch.question9DownArrow.animate
+	y: +30
+	opacity: .5
+	options:
+		time: 1.5
+		curve: Bezier.ease
+		repeat: 2
+#create displayvalue layer and state
+displayValue9 = new TextLayer
+	text: ''
+	fontSize: 14
+	fontFamily: 'Gotham'
+	color: '#4AC8AC'
+	x: 70
+	parent: slider9.knob
+
+displayValue9.states = 
+	closed: opacity: 0
+displayValue9.animationOptions = 
+	time: 0.2
+
+#when users changes the value, change display value and hide arrows
+slider9.onValueChange ->
+	slider9.knob.backgroundColor = '#4AC8AC'
+	sketch.question9ArrowIcons.animate
+		opacity: 0
+		options:
+			time: 0.25
+	# varibles for labels
+	answerHigh = 'Agree'
+	answerLow = 'Disagree'
+	if Math.round(slider9.value) is -2
+		displayValue9.text = 'Strongly ' + answerHigh
+	else if Math.round(slider9.value) is -1
+		displayValue9.text = 'Somewhat ' + answerHigh
+	else if Math.round(slider9.value) is 1
+		displayValue9.text = 'Somewhat ' + answerLow
+	else if Math.round(slider9.value) is 2
+		displayValue9.text = 'Strongly ' + answerLow
+	else
+		displayValue9.text = 'Neutral'
+
+#when user starts dragging knob, show display value, and hide question9 button if displayed
+slider9.knob.on Events.DragStart, ->
+	displayValue9.states.switchInstant "default"
+	sketch.question9ButtonActive.animate
+		opacity: 0
+		options: time: .25
+#when user stops dragging knob, hide display value, and show question9 button
+slider9.knob.on Events.DragEnd, ->
+	displayValue9.states.switch "closed"
+	sketch.question9ButtonActive.animate
+		opacity: 1
+		options: time: 0.5
+
+# submit the current value for question9
+question9ButtonActive.onClick (event, layer) ->
+	question9ButtonSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	#INSERT logic to save question9 value
+	questionCurrent += 1
+	question9Progress.opacity = 0
+	questionsFlow.showNext(question10)
+
+#question10 select answers
+# Youtube IDK HOW TO MAKE THIS WORK
+youtube = new YouTubePlayer
+	parent: question10ContentPreview
+	video: "9lVTE_bq3lw"
+	x: Align.center
+	width: 300
+	height: 140 
+	controls: 1
+
+# when they click play...
+youtube.onClick ->
+	player.playVideo()
+	#hide skip button, show like / dislike buttons
+	sketch.question10SkipButton.opacity = 0
+	print "hello"
+	
+#skip question don't watch video
+sketch.question10SkipButton.onClick (event,layer) ->
+	flow.showNext(jobCardLoading)
+
 
 #Animations
 
@@ -271,21 +849,9 @@ sketch.navButtonFuture.onClick (event, layer) ->
 # 			time: 1
 
 
-# Youtube 
-# youtube = new YouTubePlayer
-# 	parent: sketch.questionVideoVideo
-# 	video: "g4a7_HH9Wbg"
-# 	width: 286
-# 	height: 140
-# 	controls: 1
-# 
-# youtube.onClick ->
-# 	player.playVideo()
 
 
-#Onboarding Swipe Cards
 
-# Swipe through cards
 
 #CREATE ACCOUNT
 #Click first name
