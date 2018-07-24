@@ -1,20 +1,3 @@
-# Import file "Final Screens (Master @ 643a98b)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20643a98b)@2x", scale: 1)
-
-
-Utils.globalLayers(sketch)
-# Defining a custom device
-# Framer.DeviceView.Devices["futureFinderDevice"] = 
-# 	"deviceType": "apple-iphone-8"
-# 	"screenWidth": 375*3
-# 	"screenHeight": 648*3
-# 	"deviceImageWidth": 375*3
-# 	"deviceImageHeight": 648*3
-# 
-# Framer.Device.deviceType = "futureFinderDevice"
-
-
-
 
 # Custom Font
 # Loading the TTF files in the /fonts/ folder
@@ -87,6 +70,37 @@ InputModule = require "input"
 #   width: 500
 #   height: 60
 
+#Responsive
+screen_width = Framer.Device.screen.width 
+screen_height = Framer.Device.screen.height
+
+default_w = 375
+default_h = 667
+
+ratio = screen_width / default_w
+
+Framer.Defaults.Layer.force2d = true
+
+# Framer.Device.contentScale = ratio
+
+all = new Layer
+	width: default_w  # <-- The width will be 750 
+	height: default_h # <-- The height will be 1334
+	scale: ratio      # <-- The ratio we got from the equation
+	originY: 0        # <-- This moves the origin of scale to top left
+	y: 0              # <-- Make this layer to the top
+all.centerX()       # <-- And we center the X position
+
+# Import file "Final Screens (Master @ 643a98b)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20643a98b)@2x", scale: 1)
+
+Utils.globalLayers(sketch)
+
+# for responsiveness, may not need this
+# for layer in ƒƒ()
+# 	if layer.name != "all"
+# 		this.parent = all
+
 #User Profile Object
 user = 
 	interests: []
@@ -95,6 +109,10 @@ user =
 	workstyles: []
 	favoriteJobs: []
 
+#Preloader
+Framer.Extras.Preloader.enable()
+Framer.Extras.Preloader.addImage("images/preloader-logo.png")
+Framer.Extras.Preloader.setLogo("images/preloader-logo.png")
 
 #default Settings
 # Set opacity to default hidden for overlayed state elements
@@ -117,6 +135,10 @@ for layer in ƒƒ('*Highlight')
 
 #create Overarching FlowComponent
 flow = new FlowComponent
+# Try this code once all screens are in the flow component
+# 	parent: all
+# 	width: all.width
+# 	height: all.height
 
 # Show first screen for dev
 # flow.showNext(interest)
