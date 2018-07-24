@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ ecd9222)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20ecd9222)@2x", scale: 1)
+# Import file "Final Screens (Master @ 643a98b)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20643a98b)@2x", scale: 1)
 
 
 Utils.globalLayers(sketch)
@@ -87,6 +87,14 @@ InputModule = require "input"
 #   width: 500
 #   height: 60
 
+#User Profile Object
+user = 
+	interests: []
+	personality: []
+	drives: []
+	workstyles: []
+	favoriteJobs: []
+
 
 #default Settings
 # Set opacity to default hidden for overlayed state elements
@@ -111,21 +119,21 @@ for layer in ƒƒ('*Highlight')
 flow = new FlowComponent
 
 # Show first screen for dev
-# flow.showNext(interest)
+flow.showNext(interest)
 
-#create onboarding FlowComponent and add to overarching flow
-onboardingFlow = new FlowComponent
-flow.showNext(onboardingFlow)
-
-# add onboarding screens to onboarding Flow Component
-onboardingFlow.showNext(onboarding)
-
-#add transitions between onboarding and create account
-sketch.buttonCreateAccount.onClick (event, layer) ->
-	onboardingFlow.showNext(login)
-
-sketch.login.onSwipeRight (event, layer) ->
-	onboardingFlow.showPrevious()
+# #create onboarding FlowComponent and add to overarching flow
+# onboardingFlow = new FlowComponent
+# flow.showNext(onboardingFlow)
+# 
+# # add onboarding screens to onboarding Flow Component
+# onboardingFlow.showNext(onboarding)
+# 
+# #add transitions between onboarding and create account
+# sketch.buttonCreateAccount.onClick (event, layer) ->
+# 	onboardingFlow.showNext(login)
+# 
+# sketch.login.onSwipeRight (event, layer) ->
+# 	onboardingFlow.showPrevious()
 
 #create PageComponent for onboarding cards
 onboardingPages = new PageComponent
@@ -192,15 +200,15 @@ sketch.buttonGetStarted.onClick (event, layer) ->
 
 mainFlow = ""
 #add transitions between interests and futures
-sketch.buttonSaveInterests.onClick (event, layer) ->
-	mainFlow = new FlowComponent
-		backgroundColor: '#F8F8F8'
-	flow.showNext(mainFlow)
-	
-	#assigning screen headers and navigation
-	mainFlow.header = sketch.header
-	mainFlow.footer = sketch.navBar
-	mainFlow.showNext(futures)
+# sketch.buttonSaveInterests.onClick (event, layer) ->
+# 	mainFlow = new FlowComponent
+# 		backgroundColor: '#F8F8F8'
+# 	flow.showNext(mainFlow)
+# 	
+# 	#assigning screen headers and navigation
+# 	mainFlow.header = sketch.header
+# 	mainFlow.footer = sketch.navBar
+# 	mainFlow.showNext(futures)
 
 ####################################
 ##MAIN FUTURE / PROFILE SECTION
@@ -287,7 +295,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 
 # Swipe through cards
 
-#CREATE ACCOUNT
+#CREATE ACCOUNT SCREEN
 #Click first name
 inputName = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -526,3 +534,66 @@ inputRetypePassword.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
+#SELECT INTERESTS SCREEN
+#Interest tag states
+for tag in ƒƒ('interestTag*Default')
+	#Add states
+	tag.states.add
+		active: {opacity: 0}
+		default: {opacity: 1}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+
+for tag in ƒƒ('interestTag*Active')
+	#Add states
+	tag.states.add
+		active: {opacity: 1}
+		default: {opacity: 0}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+#Save interests button
+sketch.buttonSaveInterests.onClick (event, layer) ->
+	#Initialize arrays and counters
+	user.interests = []
+	nameInterest = []
+	statusInterest = []
+	numInterest = 0
+	count = 0
+	#Collect name and status of all interests to arrays
+	for tag in ƒƒ('interestTag*Active')
+		statusInterest.push(tag.states.current.name)
+		nameInterest.push(tag.name)
+	#Check how many interests are active
+	for i in statusInterest
+		#If active, increment count and add to user profile
+		if i == "active"
+			numInterest = numInterest + 1
+			user.interests.push(nameInterest[count])
+		count = count + 1
+	#Show warning if < 3 interests
+	if numInterest < 3
+		sketch.interestWarningNotification.animate
+			opacity: 1
+			options:
+				time: .3
+				curve: Bezier.ease
+	#Allow user to continue if >= 3
+	else
+		mainFlow = new FlowComponent
+			backgroundColor: '#F8F8F8'
+		flow.showNext(mainFlow)
+		#assigning screen headers and navigation
+		mainFlow.header = sketch.header
+		mainFlow.footer = sketch.navBar
+		mainFlow.showNext(futures)
+
+
