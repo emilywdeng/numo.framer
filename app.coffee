@@ -1,34 +1,4 @@
-# Import file "Final Screens (Master @ a30fd53)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
 
-Utils.globalLayers(sketch)
-
-
-# Custom Font
-# Loading the TTF files in the /fonts/ folder
-# and giving them a unique font family name
-Utils.insertCSS """
-	@font-face {
-		font-family: "Gotham-Med";
-		src: url("gotham/Gotham-Medium.otf");
-	}
-	@font-face {
-		font-family: "Gotham-Book";
-		src: url("gotham/Gotham-Book.otf");
-	}
-"""
-
-# #Airtable
-# # Import from Airtable 
-# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-# 
-# # print data.records.length 
-# 
-# #personality questions array 
-# questionText = []
-# 
-# for i in [0..data.records.length-1]
-# 	questionText.push(data.records[i].fields.QuestionText)
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -76,7 +46,37 @@ InputModule = require "input"
 #   height: 60
 
 {TextLayer} = require "TextLayer"
- 
+
+# Import file "Final Screens (Master @ a30fd53)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
+
+Utils.globalLayers(sketch)
+
+# Custom Font
+# Loading the TTF files in the /fonts/ folder
+# and giving them a unique font family name
+Utils.insertCSS """
+	@font-face {
+		font-family: "Gotham-Med";
+		src: url("gotham/Gotham-Medium.otf");
+	}
+	@font-face {
+		font-family: "Gotham-Book";
+		src: url("gotham/Gotham-Book.otf");
+	}
+"""
+
+# #Airtable
+# # Import from Airtable 
+# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+# 
+# # print data.records.length 
+# 
+# #personality questions array 
+# questionText = []
+# 
+# for i in [0..data.records.length-1]
+# 	questionText.push(data.records[i].fields.QuestionText)
 
 #Responsive
 screen_width = Framer.Device.screen.width 
@@ -105,8 +105,6 @@ all.centerX()       # <-- And we center the X position
 # 	if layer.name != "all"
 # 		this.parent = all
 
-# Custom Functions
-
 #User Profile Object
 user = 
 	interestsRaw: []
@@ -115,6 +113,8 @@ user =
 	drives: []
 	workstyles: []
 	favoriteJobs: []
+
+# Custom Functions
 
 convertInterests = (array) ->
 	for tag in array
@@ -201,13 +201,12 @@ populateInterests = ->
 				interestBg.opacity = 0
 				sketch.profileInterestsSeeMore.opacity = 1
 
-
 #Preloader
 Framer.Extras.Preloader.enable()
 Framer.Extras.Preloader.addImage("images/preloader-logo.png")
 Framer.Extras.Preloader.setLogo("images/preloader-logo.png")
 
-#default Settings
+# Default opacity
 # Set opacity to default hidden for overlayed state elements
 for layer in ƒƒ('*Filled')
 	layer.opacity = 0
@@ -243,6 +242,7 @@ flow = new FlowComponent
 # Show first screen for dev
 # flow.showNext(interest)
 
+#ONBOARDING SCREENS
 # create onboarding FlowComponent and add to overarching flow
 onboardingFlow = new FlowComponent
 flow.showNext(onboardingFlow)
@@ -344,7 +344,6 @@ sketch.navButtonMe.onClick (event, layer) ->
 	sketch.navButtonFuture.states.switch "inactive"
 	sketch.navButtonMe.states.switch "active"
 	mainFlow.showNext(profile)
-	print user
 
 sketch.navButtonFuture.onClick (event, layer) ->
 	sketch.navActiveIndicator.states.switch "future"
@@ -496,7 +495,6 @@ slider3.onValueChange ->
 
 #when user starts dragging knob, show display value, and hide question 3 button if displayed
 slider3.knob.on Events.DragStart, ->
-	displayValue3.states.switchInstant "default"
 	sketch.question3ButtonActive.animate
 		opacity: 0
 		options: time: .25
@@ -612,7 +610,6 @@ slider5.onValueChange ->
 
 #when user starts dragging knob, show display value, and hide question5 button if displayed
 slider5.knob.on Events.DragStart, ->
-	displayValue5.states.switchInstant "default"
 	sketch.question5ButtonActive.animate
 		opacity: 0
 		options: time: .25
@@ -705,7 +702,6 @@ slider6.onValueChange ->
 
 #when user starts dragging knob, show display value, and hide question6 button if displayed
 slider6.knob.on Events.DragStart, ->
-	displayValue6.states.switchInstant "default"
 	sketch.question6ButtonActive.animate
 		opacity: 0
 		options: time: .25
@@ -735,7 +731,7 @@ question7Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question7 Option1 answer
 	questionCurrent += 1
-	questionProgress4.opacity = 0
+	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
 
 question7Option2Default.onClick (event, layer) ->
@@ -819,7 +815,6 @@ slider8.onValueChange ->
 
 #when user starts dragging knob, show display value, and hide question8 button if displayed
 slider8.knob.on Events.DragStart, ->
-	displayValue8.states.switchInstant "default"
 	sketch.question8ButtonActive.animate
 		opacity: 0
 		options: time: .25
@@ -912,7 +907,6 @@ slider9.onValueChange ->
 
 #when user starts dragging knob, show display value, and hide question9 button if displayed
 slider9.knob.on Events.DragStart, ->
-	displayValue9.states.switchInstant "default"
 	sketch.question9ButtonActive.animate
 		opacity: 0
 		options: time: .25
@@ -934,7 +928,7 @@ question9ButtonActive.onClick (event, layer) ->
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
 
-#question10 select answers
+#question10 select answers THIS NEEDS WORK EMILYYYYYY
 # Youtube IDK HOW TO MAKE THIS WORK
 youtube = new YouTubePlayer
 	parent: question10ContentPreview
@@ -949,7 +943,6 @@ youtube.onClick ->
 	player.playVideo()
 	#hide skip button, show like / dislike buttons
 	sketch.question10SkipButton.opacity = 0
-	print "hello"
 	
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
