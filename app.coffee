@@ -1,3 +1,7 @@
+# Import file "Final Screens (Master @ 9444037)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%209444037)@2x", scale: 1)
+
+Utils.globalLayers(sketch)
 
  
 #Modules
@@ -46,11 +50,6 @@ InputModule = require "input"
 #   height: 60
 
 {TextLayer} = require "TextLayer"
-
-# Import file "Final Screens (Master @ a30fd53)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
-
-Utils.globalLayers(sketch)
 
 # Custom Font
 # Loading the TTF files in the /fonts/ folder
@@ -109,13 +108,20 @@ all.centerX()       # <-- And we center the X position
 user = 
 	interestsRaw: []
 	interests: []
-	personality: []
-	drives: []
 	workstyles: []
+	drives: []
+	personality: ["Organizer", "Helper", "Persuader"]
 	favoriteJobs: []
+
+# Workstyles Input:
+# [0] Independent or Collaborative
+# [1] Empathic or Logical
+# [2] Detail Oriented or Big Picture
+
 
 # Custom Functions
 
+# Function to translate sketch object names for interests to usable strings
 convertInterests = (array) ->
 	for tag in array
 		if tag == "interestTagCommunityActive"
@@ -159,15 +165,17 @@ convertInterests = (array) ->
 		if tag == "interestTagArtActive"
 			user.interests.push("Art")
 
-
-
-#Check that interests was inputted
+#Function to dynamically display interests on profile
 populateInterests = ->
 	initialX = 37
 	initialY = 76
 	lastWidth = 0
 	lastHeight = 0
 	if user.interests.length != 0
+		#Hide profile interests
+		for layer in ƒƒ('profileInterestsTag*')
+			layer.opacity = 0
+		sketch.profileInterestsSeeMore.opacity = 0
 		for i in [0..user.interests.length-1]
 			interestBg = new Layer
 				backgroundColor: "4AC8AC"
@@ -201,6 +209,95 @@ populateInterests = ->
 				interestBg.opacity = 0
 				sketch.profileInterestsSeeMore.opacity = 1
 
+#Function to dynamically display workstyles on profile
+populateWorkstyles = ->
+	if user.workstyles.length != 0
+		sketch.profileWorkstylesDisabled.opacity = 0
+		sketch.profileWorkstylesFilled.opacity = 1
+		if user.workstyles[0] == "Independent"
+			sketch.profileMeWorkstyle1Toggle.x = 50
+		if user.workstyles[0] == "Collaborative"
+			sketch.profileMeWorkstyle1Toggle.x = 250
+		if user.workstyles[1] == "Empathic"
+			sketch.profileMeWorkstyle2Toggle.x = 95
+		if user.workstyles[1] == "Logical"
+			sketch.profileMeWorkstyle2Toggle.x = 230
+		if user.workstyles[2] == "Detail Oriented"
+			sketch.profileMeWorkstyle3Toggle.x = 65
+		if user.workstyles[2] == "Big Picture"
+			sketch.profileMeWorkstyle3Toggle.x = 200
+
+#Function to dynamically display drives on profile
+populateDrives = ->
+	if user.drives.length != 0
+		sketch.profileDrivesDisabled.opacity = 0
+		sketch.profileDrivesFilled.opacity = 1
+		if user.drives[0] != ""
+			sketch.profileMeDrive1NumberFilled.opacity = 1
+			drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
+			drive0.text = user.drives[0]
+		if user.drives[1] != ""
+			sketch.profileMeDrive2NumberFilled.opacity = 1
+			drive1 = sketch.profileMeDrive2Filled.convertToTextLayer()
+			drive1.text = user.drives[1]
+		if user.drives[2] != ""
+			sketch.profileMeDrive3NumberFilled.opacity = 1
+			drive2 = sketch.profileMeDrive3Filled.convertToTextLayer()
+			drive2.text = user.drives[2]
+			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
+
+#Functions to turn highlight on
+highlightInterests = ->
+	sketch.profileInterestsHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileInterestsHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+highlightWorkstyles = ->
+	sketch.profileWorkstylesHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileWorkstylesHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+highlightDrives = ->
+	sketch.profileDrivesHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileDrivesHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+		
+highlightPersonality = ->
+	sketch.profilePersonalityHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profilePersonalityHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+
+# highlightInterests()
+# highlightWorkstyles()
+# highlightDrives()
+# highlightPersonality()
+
 #Preloader
 Framer.Extras.Preloader.enable()
 Framer.Extras.Preloader.addImage("images/preloader-logo.png")
@@ -226,11 +323,6 @@ for layer in ƒƒ('*Highlight')
 for layer in ƒƒ('*Selected')
 	layer.opacity = 0
 
-#Hide profile interests
-for layer in ƒƒ('profileInterestsTag*')
-	layer.opacity = 0
-
-sketch.profileInterestsSeeMore.opacity = 0
 
 #create Overarching FlowComponent
 flow = new FlowComponent
@@ -239,8 +331,6 @@ flow = new FlowComponent
 # 	width: all.width
 # 	height: all.height
 
-# Show first screen for dev
-# flow.showNext(interest)
 
 #ONBOARDING SCREENS
 # create onboarding FlowComponent and add to overarching flow
@@ -352,7 +442,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(futures)
+flow.showNext(profile)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -1255,4 +1345,22 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.showNext(futures)
 
 
+# drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
+# drive0.text = user.drives[0]
 
+if user.personality.length != 0
+	if user.personality[0]
+		personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
+		personality0.text = user.personality[0]
+		#change image here depending on what personality it is
+		personalityImg0 = new Layer
+				parent: sketch.profile
+				height: 61
+				width: 61
+				x: 56
+				y: 727
+				image: "images/Organizer.png"
+
+populateInterests()
+populateWorkstyles()
+populateDrives()
