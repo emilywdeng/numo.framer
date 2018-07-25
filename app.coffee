@@ -110,7 +110,7 @@ user =
 	interests: []
 	workstyles: []
 	drives: []
-	personality: ["Organizer", "Helper", "Persuader"]
+	personality: []
 	favoriteJobs: []
 
 # Workstyles Input:
@@ -246,6 +246,45 @@ populateDrives = ->
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
 
+populatePersonality = ->
+	if user.personality.length != 0
+		if user.personality[0]
+			personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
+			personality0.autoSize = true
+			personality0.text = user.personality[0]
+			personality0.x = 32 - (personality0.width/2)
+			personalityImg0 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 56
+					y: 727
+			personalityImg0.image = getPersonalityImg(user.personality[0])
+		if user.personality[1]
+			personality1 = sketch.profileMePersonality2Text.convertToTextLayer()
+			personality1.autoSize = true
+			personality1.text = user.personality[1]
+			personality1.x = 32 - (personality1.width/2)
+			personalityImg1 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 158
+					y: 727
+			personalityImg1.image = getPersonalityImg(user.personality[1])
+		if user.personality[2]
+			personality2 = sketch.profileMePersonality3Text.convertToTextLayer()
+			personality2.autoSize = true
+			personality2.text = user.personality[2]
+			personality2.x = 32 - (personality2.width/2)
+			personalityImg2 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 260
+					y: 727
+			personalityImg2.image = getPersonalityImg(user.personality[2])
+
 #Functions to turn highlight on
 highlightInterests = ->
 	sketch.profileInterestsHighlight.animate
@@ -297,6 +336,21 @@ highlightPersonality = ->
 # highlightWorkstyles()
 # highlightDrives()
 # highlightPersonality()
+
+#Retrieve appropriate image for personality on profile
+getPersonalityImg = (personality) ->
+	if personality == "Doer"
+		return "images/Doer.png"
+	if personality == "Thinker"
+		return "images/Thinker.png"
+	if personality == "Creator"
+		return "images/Creator.png"
+	if personality == "Persuader"
+		return "images/Persuader.png"
+	if personality == "Helper"
+		return "images/Helper.png"
+	if personality == "Organizer"
+		return "images/Organizer.png"
 
 #Preloader
 Framer.Extras.Preloader.enable()
@@ -1348,19 +1402,9 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 # drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
 # drive0.text = user.drives[0]
 
-if user.personality.length != 0
-	if user.personality[0]
-		personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
-		personality0.text = user.personality[0]
-		#change image here depending on what personality it is
-		personalityImg0 = new Layer
-				parent: sketch.profile
-				height: 61
-				width: 61
-				x: 56
-				y: 727
-				image: "images/Organizer.png"
+
 
 populateInterests()
 populateWorkstyles()
 populateDrives()
+populatePersonality()
