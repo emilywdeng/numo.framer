@@ -121,51 +121,8 @@ user =
 
 # Custom Functions
 
-# Function to translate sketch object names for interests to usable strings
-convertInterests = (array) ->
-	for tag in array
-		if tag == "interestTagCommunityActive"
-			user.interests.push("Community Service")
-		if tag == "interestTagGamesActive"
-			user.interests.push("Games")
-		if tag == "interestTagScienceActive"
-			user.interests.push("Science")
-		if tag == "interestTagAnimalsActive"
-			user.interests.push("Animals")
-		if tag == "interestTagSpaceActive"
-			user.interests.push("Space")
-		if tag == "interestTagWritingActive"
-			user.interests.push("Writing")
-		if tag == "interestTagPoliticsActive"
-			user.interests.push("Politics")
-		if tag == "interestTagEntrepreneurshipActive"
-			user.interests.push("Entrepreneurship")
-		if tag == "interestTagDesignActive"
-			user.interests.push("Design")
-		if tag == "interestTagSportsActive"
-			user.interests.push("Sports")
-		if tag == "interestTagFashionActive"
-			user.interests.push("Fashion")
-		if tag == "interestTagEnvironmentalismActive"
-			user.interests.push("Environmentalism")
-		if tag == "interestTagHistoryActive"
-			user.interests.push("History")
-		if tag == "interestTagFoodActive"
-			user.interests.push("Food")
-		if tag == "interestTagMedicineActive"
-			user.interests.push("Medicine")
-		if tag == "interestTagTravelActive"
-			user.interests.push("Travel")
-		if tag == "interestTagTeachingActive"
-			user.interests.push("Teaching")
-		if tag == "interestTagEngineeringActive"
-			user.interests.push("Engineering")
-		if tag == "interestTagTechnologyActive"
-			user.interests.push("Technology")
-		if tag == "interestTagArtActive"
-			user.interests.push("Art")
-
 #Function to dynamically display interests on profile
+#Called after submitting interests
 populateInterests = ->
 	initialX = 37
 	initialY = 76
@@ -210,6 +167,7 @@ populateInterests = ->
 				sketch.profileInterestsSeeMore.opacity = 1
 
 #Function to dynamically display workstyles on profile
+#Called after completing daily questions
 populateWorkstyles = ->
 	if user.workstyles.length != 0
 		sketch.profileWorkstylesDisabled.opacity = 0
@@ -228,24 +186,40 @@ populateWorkstyles = ->
 			sketch.profileMeWorkstyle3Toggle.x = 200
 
 #Function to dynamically display drives on profile
+#Called after completing daily questions
 populateDrives = ->
+	print "Called populateDrives"
 	if user.drives.length != 0
 		sketch.profileDrivesDisabled.opacity = 0
 		sketch.profileDrivesFilled.opacity = 1
-		if user.drives[0] != ""
+		#if there is first drive
+		if typeof user.drives[0] isnt 'undefined'
 			sketch.profileMeDrive1NumberFilled.opacity = 1
 			drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
+			drive0.width = 275
 			drive0.text = user.drives[0]
-		if user.drives[1] != ""
+			print user.drives[0]
+			print "There is drives[0]"
+		#if there is second drive
+		if typeof user.drives[1] isnt 'undefined'
 			sketch.profileMeDrive2NumberFilled.opacity = 1
 			drive1 = sketch.profileMeDrive2Filled.convertToTextLayer()
+			drive1.width = 275
 			drive1.text = user.drives[1]
-		if user.drives[2] != ""
+			print user.drives[1]
+			print "There is drives[1]"
+		#if there is third drive
+		if typeof user.drives[2] isnt 'undefined'
 			sketch.profileMeDrive3NumberFilled.opacity = 1
 			drive2 = sketch.profileMeDrive3Filled.convertToTextLayer()
+			drive2.width = 275
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
+			print user.drives[2]
+			print "There is drives[2]"
 
+#Function to dynamically display personality on profile
+#Called after completing personality quiz
 populatePersonality = ->
 	if user.personality.length != 0
 		if user.personality[0]
@@ -332,11 +306,6 @@ highlightPersonality = ->
 			time: 1
 			curve: Bezier.ease
 
-# highlightInterests()
-# highlightWorkstyles()
-# highlightDrives()
-# highlightPersonality()
-
 #Retrieve appropriate image for personality on profile
 getPersonalityImg = (personality) ->
 	if personality == "Doer"
@@ -351,6 +320,50 @@ getPersonalityImg = (personality) ->
 		return "images/Helper.png"
 	if personality == "Organizer"
 		return "images/Organizer.png"
+
+# Function to translate sketch object names for interests to usable strings
+convertInterests = (array) ->
+	for tag in array
+		if tag == "interestTagCommunityActive"
+			user.interests.push("Community Service")
+		if tag == "interestTagGamesActive"
+			user.interests.push("Games")
+		if tag == "interestTagScienceActive"
+			user.interests.push("Science")
+		if tag == "interestTagAnimalsActive"
+			user.interests.push("Animals")
+		if tag == "interestTagSpaceActive"
+			user.interests.push("Space")
+		if tag == "interestTagWritingActive"
+			user.interests.push("Writing")
+		if tag == "interestTagPoliticsActive"
+			user.interests.push("Politics")
+		if tag == "interestTagEntrepreneurshipActive"
+			user.interests.push("Entrepreneurship")
+		if tag == "interestTagDesignActive"
+			user.interests.push("Design")
+		if tag == "interestTagSportsActive"
+			user.interests.push("Sports")
+		if tag == "interestTagFashionActive"
+			user.interests.push("Fashion")
+		if tag == "interestTagEnvironmentalismActive"
+			user.interests.push("Environmentalism")
+		if tag == "interestTagHistoryActive"
+			user.interests.push("History")
+		if tag == "interestTagFoodActive"
+			user.interests.push("Food")
+		if tag == "interestTagMedicineActive"
+			user.interests.push("Medicine")
+		if tag == "interestTagTravelActive"
+			user.interests.push("Travel")
+		if tag == "interestTagTeachingActive"
+			user.interests.push("Teaching")
+		if tag == "interestTagEngineeringActive"
+			user.interests.push("Engineering")
+		if tag == "interestTagTechnologyActive"
+			user.interests.push("Technology")
+		if tag == "interestTagArtActive"
+			user.interests.push("Art")
 
 #Preloader
 Framer.Extras.Preloader.enable()
@@ -496,7 +509,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-flow.showNext(profile)
+# flow.showNext(profile)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -532,6 +545,8 @@ question1Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question1 Option1 answer
+	user.workstyles[2] = "Detail Oriented"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -543,6 +558,8 @@ question1Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question1 Option2 answer
+	user.workstyles[2] = "Big Picture"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -554,6 +571,8 @@ question2Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question2 Option1 answer
+	user.workstyles[1] = "Empathic"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -564,6 +583,8 @@ question2Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question2 Option2 answer
+	user.workstyles[1] = "Logical"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -606,7 +627,7 @@ sketch.question3DownArrow.animate
 displayValue3 = new TextLayer
 	text: ''
 	fontSize: 14
-	fontFamily: 'Gotham'
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider3.knob
@@ -657,6 +678,11 @@ question3ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question3 value
+	if slider3.value < 0 #top
+		user.workstyles[0] = "Independent"
+	else #bottom
+		user.workstyles[0] = "Collaborative"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress3.opacity = 0
 	questionsFlow.showNext(question4)
@@ -668,6 +694,8 @@ question4Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question4 Option1 answer
+	user.workstyles[3] = "Steady"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -678,6 +706,8 @@ question4Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question4 Option2 answer
+	user.workstyles[3] = "Fast-Paced"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -721,7 +751,7 @@ sketch.question5DownArrow.animate
 displayValue5 = new TextLayer
 	text: ''
 	fontSize: 14
-	fontFamily: 'Gotham'
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider5.knob
@@ -771,6 +801,11 @@ question5ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question5 value
+	if slider5.value < 0 #top
+		user.workstyles[4] = "Creative"
+	else #bottom
+		user.workstyles[4] = "Linear"
+	print user.workstyles
 	questionCurrent += 1
 	question5Progress.opacity = 0
 	questionsFlow.showNext(question6)
@@ -813,7 +848,7 @@ sketch.question6DownArrow.animate
 displayValue6 = new TextLayer
 	text: ''
 	fontSize: 14
-	fontFamily: 'Gotham'
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider6.knob
@@ -863,6 +898,9 @@ question6ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question6 value
+	if slider6.value < 0 #top
+		user.drives.push("Power and influence")
+	print user.drives
 	questionCurrent += 1
 	question6Progress.opacity = 0
 	questionsFlow.showNext(question7)
@@ -874,6 +912,8 @@ question7Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question7 Option1 answer
+	user.drives.push("Feeling secure in future")
+	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -884,6 +924,8 @@ question7Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question7 Option2 answer
+	#does nothing
+	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -926,7 +968,7 @@ sketch.question8DownArrow.animate
 displayValue8 = new TextLayer
 	text: ''
 	fontSize: 14
-	fontFamily: 'Gotham'
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider8.knob
@@ -976,6 +1018,9 @@ question8ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question8 value
+	if slider8.value < 0 #top
+		user.drives.push("Relationships to people")
+	print user.drives
 	questionCurrent += 1
 	question8Progress.opacity = 0
 	questionsFlow.showNext(question9)
@@ -1018,7 +1063,7 @@ sketch.question9DownArrow.animate
 displayValue9 = new TextLayer
 	text: ''
 	fontSize: 14
-	fontFamily: 'Gotham'
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider9.knob
@@ -1068,6 +1113,9 @@ question9ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question9 value
+	if slider9.value < 0 #top
+		user.drives.push("Being creative")
+	print user.drives
 	questionCurrent += 1
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
@@ -1091,6 +1139,10 @@ youtube.onClick ->
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
 	flow.showNext(jobCardLoading)
+	populateWorkstyles()
+	populateDrives()
+	print user
+	flow.showNext(mainFlow)
 
 
 #CREATE ACCOUNT SCREEN
@@ -1397,14 +1449,3 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
-
-
-# drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
-# drive0.text = user.drives[0]
-
-
-
-populateInterests()
-populateWorkstyles()
-populateDrives()
-populatePersonality()
