@@ -3,8 +3,7 @@ sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2092ebaad)
 
 Utils.globalLayers(sketch)
 
-pointScale = 2
-
+pointScale = 1
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -139,7 +138,6 @@ user =
 # [0] Independent or Collaborative
 # [1] Empathic or Logical
 # [2] Detail Oriented or Big Picture
-
 
 # Custom Functions
 
@@ -560,8 +558,6 @@ for layer in ƒƒ('futuresFavoriteJob*')
 	layer.opacity = 0
 
 sketch.profileInterestsSeeMore.opacity = 0
-
-pointScale = 2
 
 #create Overarching FlowComponent
 flow = new FlowComponent
@@ -1338,10 +1334,10 @@ sketch.question10SkipButton.onClick (event,layer) ->
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
-
+flow.showNext(jobCardBackground)
 #JobCards Flow
-
 #creating the job card swiping
+#create page component + cards
 #define parameters for page and padding
 pageSize = 
 	width: Screen.width
@@ -1349,7 +1345,6 @@ pageSize =
 	
 padding = 15
 
-#create page component + cards
 jobCardSlider = new PageComponent
 	parent: jobCardBackground
 	width: pageSize.width - padding*2
@@ -1360,16 +1355,27 @@ jobCardSlider = new PageComponent
 	y: 98
 jobCardSlider.centerX()
 
+jobCardsPreviewImage = []
+jobCardsTitle = []
+jobCardsEducationTextTag = []
+jobCardsSalaryTextTag = []
+jobCardsGrowthTextTag = []
+jobCardsSummaryText = []
+jobCardsFavoriteHeartDefault = []
+jobCardsFavoriteHeartSelected = []
+jobCardsReadMoreButton = []
+
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
 	#create page wrapper for the cards
 	page = new Layer
+		name: 'page' + number
 		size: jobCardSlider.size
 		backgroundColor: "null"
 
 	if number > 0
 		page.opacity = 0.9
-	
+
 	#create cards for all the sections, except last
 	if number < 6
 			card = new Layer
@@ -1380,9 +1386,12 @@ for number in [0...7]
 				borderRadius: 7
 				name: 'job' + number
 			card.center()
-		
-	#create the job card layout
-	if number > 0 
+	
+	jobCardSlider.addPage(page)
+
+
+	#create the job card layouts + insight layouts
+	if number > 0 & number < 6 
 			#add the tags to every cards
 			for i in [0..2]
 				tagsEmpty = new Layer
@@ -1397,15 +1406,6 @@ for number in [0...7]
 					height: 18
 					y: Align.center
 					x: 5
-				tagText = new TextLayer
-					parent: tagIcon
-					text: 'HIGH'
-					y: 4
-					x: 20
-					fontFamily: 'Gotham-Book' 
-					fontSize: 10 * pointScale
-					color: '#656565'
-					textTransform: 'uppercase'
 					
 					
 				if i is 0
@@ -1413,22 +1413,50 @@ for number in [0...7]
 					tagsEmpty.x = 24
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagEducationIcon.png'
-					tagText.name = 'job' + number + 'EducationText'
+					tagText = jobCardsEducationTextTag[number] = new TextLayer
+						name: 'job' + number + 'EducationText'
+						parent: tagIcon
+						text: 'SUP'
+						y: 4
+						x: 20
+						fontFamily: 'Gotham-Book' 
+						fontSize: 10 * pointScale
+						color: '#656565'
+						textTransform: 'uppercase'
 				else if i is 1
 					tagsEmpty.name = 'job' + number + 'SalaryCareerTag'
 					tagsEmpty.x = 94
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagSalaryIcon.png'
-					tagText.name = 'job' + number + 'SalaryText'
+					tagText = jobCardsSalaryTextTag[number] = new TextLayer
+						name: 'job' + number + 'SalaryText'
+						parent: tagIcon
+						text: 'SAL'
+						y: 4
+						x: 20
+						fontFamily: 'Gotham-Book' 
+						fontSize: 10 * pointScale
+						color: '#656565'
+						textTransform: 'uppercase'
 				else 
 					tagsEmpty.name = 'job' + number + 'GrowthCareerTag'
 					tagsEmpty.x = 164
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagGrowthIcon.png'
 					tagText.name = 'job' + number + 'GrowthText'
+					tagText = jobCardsGrowthTextTag[number] = new TextLayer
+						name: 'job' + number + 'GrowthText'
+						parent: tagIcon
+						text: 'GRO'
+						y: 4
+						x: 20
+						fontFamily: 'Gotham-Book' 
+						fontSize: 10 * pointScale
+						color: '#656565'
+						textTransform: 'uppercase'
 		
 			#add preview image to every card
-			jobPreviewImage = new Layer
+			jobPreviewImage = jobCardsPreviewImage[number] = new Layer
 				parent: card
 				name: 'job' + number + 'PreviewImage'
 				width: 300
@@ -1439,7 +1467,7 @@ for number in [0...7]
 				image: 'images/jobPreviewImageExample.png' 
 				
 			#add title to every card
-			jobTitle = new TextLayer
+			jobTitle = jobCardsTitle[number] = new TextLayer
 				parent: card
 				name: 'job' + number + 'Title'
 				fontFamily: 'Gotham-Med'
@@ -1451,7 +1479,7 @@ for number in [0...7]
 				text: "Computer Programmer" ## INSERT HERE
 			
 			#add job description to every card
-			jobDescription = new TextLayer
+			jobDescription= jobCardsSummaryText[number] = new TextLayer
 				parent: card
 				name: 'job' + number + 'Description'
 				width: 290
@@ -1464,7 +1492,7 @@ for number in [0...7]
 				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
 			
 			#add read more to expand arrow
-			jobReadMoreButton = new Layer
+			jobReadMoreButton = jobCardsReadMoreButton[number] = new Layer
 				parent: card
 				name: 'job' + number + 'ReadMoreButton'
 				width: 110
@@ -1474,7 +1502,7 @@ for number in [0...7]
 				image: 'images/jobCardExpandButton.png'
 			
 			#add heart to favorite
-			jobFavoriteHeartDefault = new Layer
+			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[number] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartDefault'
 				x: 265
@@ -1482,7 +1510,7 @@ for number in [0...7]
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartDefault.png'
-			jobFavoriteHeartSelected = new Layer
+			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[number] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartSelected'
 				x: 265
@@ -1491,6 +1519,11 @@ for number in [0...7]
 				height: 29
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
+			#state for hearts on /off
+			jobFavoriteHeartSelected.states = 
+					selected: {opacity: 1}
+					default: {opacity: 0}
+
 		else #create an insight card
 			# add correct icon Object
 			
@@ -1500,7 +1533,18 @@ for number in [0...7]
 			## CREATE INSIGHT CARD HERE
 			## CREATE INSIGHT CARD HERE
 			
-	jobCardSlider.addPage(page)
+#emily this is how you populate the job cards
+# filling out the first
+jobCardsPreviewImage[1].image = Utils.randomImage()
+jobCardsTitle[1].text = "Custome Title yo"
+jobCardsEducationTextTag[1].text = "YO"
+jobCardsSalaryTextTag[1].text = "SUP"
+jobCardsGrowthTextTag[1].text = "HI"
+jobCardsSummaryText[1].text = "woahhhhhhh it's a summary that's randomly generated"
+
+
+
+
 
 #create pagination for the cards
 activeCard = new Layer
@@ -1563,18 +1607,17 @@ jobCardSlider.on "change:currentPage",->
 		for layer in Framer.CurrentContext.layers
 			layer.destroy() if layer.name is "backToFuturesButton"
 
-
-
-
-
-
-
-	
-
-
 #favorite jobs
 
+for number in [1...6]
+	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
+		this.stateCycle()
+
+
 #expand job card
+
+
+
 
 
 #CREATE ACCOUNT SCREEN
