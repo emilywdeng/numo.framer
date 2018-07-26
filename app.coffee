@@ -132,7 +132,7 @@ user =
 	workstyles: []
 	drives: []
 	personality: []
-	favorites: ["Electrician"]
+	favorites: ["Electrician", "Machinist", "Urban Planner", "Licensed Practical / Vocational Nurse", "Elementary School Teacher"]
 
 # Workstyles Input:
 # [0] Independent or Collaborative
@@ -289,6 +289,99 @@ populatePersonality = ->
 					y: 727
 			personalityImg2.image = getPersonalityImg(user.personality[2])
 
+#populateFavJobs
+
+favJobCards = [] #futuresFavoriteJob1
+favJobCards.push(sketch.futuresFavoriteJob1)
+favJobCards.push(sketch.futuresFavoriteJob2)
+favJobCards.push(sketch.futuresFavoriteJob3)
+favJobCards.push(sketch.futuresFavoriteJob4)
+favJobCards.push(sketch.futuresFavoriteJob5)
+
+favJobTitle = [] #profileFutureFavoriteJob1Title
+favJobTitle.push(sketch.profileFutureFavoriteJob1Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob2Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob3Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob4Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob5Title)
+
+favJobEdu = []
+favJobEdu.push(sketch.profileFutureFavoriteJob1EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob2EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob3EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob4EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob5EducationLevel)
+
+favJobSal = []
+favJobSal.push(sketch.profileFutureFavoriteJob1SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob2SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob3SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob4SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob5SalaryLevel)
+
+favJobGro = []
+favJobGro.push(sketch.profileFutureFavoriteJob1GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob2GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob3GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob4GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob5GrowthLevel)
+
+favJobImg = []
+favJobImg.push(sketch.profileFutureFavoriteJob1Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob2Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob3Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob4Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob5Photo)
+
+populateFavJobs = ->
+	#check that there are favorites
+	if user.favorites.length != 0
+		#loop through favorites
+		for i in [0..favJobCards.length-1]
+			#if the i-th favorite exists
+			if user.favorites[i]
+				#initialize variables to store info from airtable
+				fieldsJob = ""
+				fieldsEduShort = ""
+				fieldsSalShort = ""
+				fieldsGroShort = ""
+				fieldsImg = ""
+				#get matching info from airtable
+				for j in [0..jobData.records.length-1]
+					if user.favorites[i] == jobData.records[j].fields.Job
+						fieldsJob = jobData.records[j].fields.Job
+						fieldsEduShort = jobData.records[j].fields.EduShort
+						fieldsSalShort = jobData.records[j].fields.SalaryShort
+						fieldsGroShort = jobData.records[j].fields.OutlookShort
+						fieldsImg = jobData.records[j].fields.Image1[0].url
+	# 			print fieldsEduShort
+				#show job card
+				favJobCards[i].opacity = 1
+				#populate title
+				jobTitle = favJobTitle[i].convertToTextLayer()
+				jobTitle.fontSize = jobTitle.fontSize * pointScale
+				jobTitle.text = fieldsJob
+				#populate education
+				jobEdu = favJobEdu[i].convertToTextLayer()
+				jobEdu.fontSize = jobEdu.fontSize * pointScale
+				jobEdu.text = fieldsEduShort
+				#populate salary
+				jobSal = favJobSal[i].convertToTextLayer()
+				jobSal.fontSize = jobSal.fontSize * pointScale
+				jobSal.text = fieldsSalShort
+				#populate growth
+				jobGro = favJobGro[i].convertToTextLayer()
+				jobGro.fontSize = jobGro.fontSize * pointScale
+				jobGro.text = fieldsGroShort
+				#populate image
+				jobImg = new Layer
+					parent: favJobImg[i]
+					height: 79
+					width: 79
+					image: fieldsImg
+					borderRadius: 45.5
+		
+
 #Highlight functions
 highlightInterests = ->
 	sketch.profileInterestsHighlight.animate
@@ -336,7 +429,7 @@ highlightPersonality = ->
 			time: 1
 			curve: Bezier.ease
 
-#gerPersonalityImg
+#getPersonalityImg
 #Retrieve appropriate image for personality on profile
 getPersonalityImg = (personality) ->
 	if personality == "Doer"
@@ -1504,85 +1597,5 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
 
-favJobCards = [] #futuresFavoriteJob1
-favJobCards.push(sketch.futuresFavoriteJob1)
-favJobCards.push(sketch.futuresFavoriteJob2)
-favJobCards.push(sketch.futuresFavoriteJob3)
-favJobCards.push(sketch.futuresFavoriteJob4)
-favJobCards.push(sketch.futuresFavoriteJob5)
-
-favJobTitle = [] #profileFutureFavoriteJob1Title
-favJobTitle.push(sketch.profileFutureFavoriteJob1Title)
-favJobTitle.push(sketch.profileFutureFavoriteJob2Title)
-favJobTitle.push(sketch.profileFutureFavoriteJob3Title)
-favJobTitle.push(sketch.profileFutureFavoriteJob4Title)
-favJobTitle.push(sketch.profileFutureFavoriteJob5Title)
-
-favJobEdu = []
-favJobEdu.push(sketch.profileFutureFavoriteJob1EducationLevel)
-favJobEdu.push(sketch.profileFutureFavoriteJob2EducationLevel)
-favJobEdu.push(sketch.profileFutureFavoriteJob3EducationLevel)
-favJobEdu.push(sketch.profileFutureFavoriteJob4EducationLevel)
-favJobEdu.push(sketch.profileFutureFavoriteJob5EducationLevel)
-
-favJobSal = []
-favJobSal.push(sketch.profileFutureFavoriteJob1SalaryLevel)
-favJobSal.push(sketch.profileFutureFavoriteJob2SalaryLevel)
-favJobSal.push(sketch.profileFutureFavoriteJob3SalaryLevel)
-favJobSal.push(sketch.profileFutureFavoriteJob4SalaryLevel)
-favJobSal.push(sketch.profileFutureFavoriteJob5SalaryLevel)
-
-favJobGro = []
-favJobGro.push(sketch.profileFutureFavoriteJob1GrowthLevel)
-favJobGro.push(sketch.profileFutureFavoriteJob2GrowthLevel)
-favJobGro.push(sketch.profileFutureFavoriteJob3GrowthLevel)
-favJobGro.push(sketch.profileFutureFavoriteJob4GrowthLevel)
-favJobGro.push(sketch.profileFutureFavoriteJob5GrowthLevel)
-
-#check that there are favorites
-if user.favorites.length != 0
-	#loop through favorites
-	for i in [0..favJobCards.length-1]
-		#if the i-th favorite exists
-		if user.favorites[i]
-			#initialize variables to store info from airtable
-			fieldsJob = ""
-			fieldsEduShort = ""
-			fieldsSalShort = ""
-			fieldsGroShort = ""
-			fieldsImg = ""
-			#get matching info from airtable
-			for j in [0..jobData.records.length-1]
-				if user.favorites[i] == jobData.records[j].fields.Job
-					fieldsJob = jobData.records[j].fields.Job
-					fieldsEduShort = jobData.records[j].fields.EduShort
-					fieldsSalShort = jobData.records[j].fields.SalaryShort
-					fieldsGroShort = jobData.records[j].fields.OutlookShort
-					fieldsImg = jobData.records[j].fields.Image1[0].url
-# 			print fieldsEduShort
-			#show job card
-			favJobCards[i].opacity = 1
-			#populate title
-			jobTitle = favJobTitle[i].convertToTextLayer()
-			jobTitle.fontSize = jobTitle.fontSize * pointScale
-			jobTitle.text = fieldsJob
-			#populate education
-			jobEdu = favJobEdu[i].convertToTextLayer()
-			jobEdu.fontSize = jobEdu.fontSize * pointScale
-			jobEdu.text = fieldsEduShort
-			
-			
-
-
-# #select interest to display
-# randomInterest = Utils.randomChoice(user.interests)
-# interestID = 0
-# for i in [0..interestData.records.length-1]
-# 	if randomInterest == interestData.records[i].fields.Name
-# 		interestID = i
-# 
-# #populate title
-# captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer()
-# captionTitle.fontSize = captionTitle.fontSize * pointScale
-# captionTitle.text = interestData.records[interestID].fields.Title
+populateFavJobs()
 			
