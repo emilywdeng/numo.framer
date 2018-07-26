@@ -89,8 +89,8 @@ questionText = []
 
 # print interestData.records[0].fields.Name
 
-# #Responsive
-# 
+#Responsive
+
 # # Framer.Device.customize
 # # 	screenWidth: 375
 # # 	screenHeight: 667
@@ -125,13 +125,43 @@ questionText = []
 # # if Framer.Device.screen.height isnt 667* pointScale
 # # all.centerX()       # <-- And we center the X position
 
+
+
+# Default opacity
+# Set opacity to default hidden for overlayed state elements
+for layer in ƒƒ('*Filled')
+	layer.opacity = 0
+
+for layer in ƒƒ('*Active')
+	layer.opacity = 0
+
+for layer in ƒƒ('*WarningNotification')
+	layer.opacity = 0
+	
+for layer in ƒƒ('*Done')
+	layer.opacity = 0
+	
+for layer in ƒƒ('*Highlight')
+	layer.opacity = 0
+
+for layer in ƒƒ('*Selected')
+	layer.opacity = 0
+
+for layer in ƒƒ('futuresFavoriteJob*')
+	layer.opacity = 0
+
+for layer in ƒƒ('profileInterestsTag*')
+	layer.opacity = 0
+
+sketch.profileInterestsSeeMore.opacity = 0
+
 #User Profile Object
 user = 
 	interestsRaw: []
-	interests: []
-	workstyles: []
-	drives: []
-	personality: []
+	interests: ["Technology", "Engineering", "Medicine"]
+	workstyles: ["Collaborative"]
+	drives: ["Meaningful work"]
+	personality: ["Doer", "Creator", "Thinker"]
 	favorites: []
 	history: []
 
@@ -175,8 +205,6 @@ populateInterests = ->
 				paddingBottom: 4 * pointScale
 				paddingLeft: 10 / pointScale
 				paddingRight: 10 / pointScale
-# 				paddingLeft: 10
-# 				paddingRight: 10
 			interestBg.x = initialX + lastWidth
 			interestBg.y = initialY + lastHeight
 			interestBg.width = interestTxt.width
@@ -381,7 +409,52 @@ populateFavJobs = ->
 					width: 79
 					image: fieldsImg
 					borderRadius: 45.5
-		
+
+#getJobsSession
+
+getJobsSession = ->
+	#select what jobs to show
+	jobsPool = []
+	for i in [0..jobData.records.length-1]
+		if user.personality[0] == jobData.records[i].fields.HollandPri or user.personality[0] == jobData.records[i].fields.HollandSec or user.personality[1] == jobData.records[i].fields.HollandPri
+			#job passes personality
+			jobsPool.push(i)
+			for interest in user.interests
+				for tag in jobData.records[i].fields.InterestTags
+					if tag == interest
+						#job passes interest
+						jobsPool.push(i)
+			#check if have workstyles
+			if user.workstyles
+				for workstyle in user.workstyles
+					for tag in jobData.records[i].fields.WorkstyleTags
+						if tag == workstyle
+							#job passes interest
+							jobsPool.push(i)
+			#check if have drives
+			if user.drives
+				for drive in user.drives
+					for tag in jobData.records[i].fields.DriveTags
+						if tag == drive
+							#job passes interest
+							jobsPool.push(i)
+	jobsPoolHDJ = []
+	for id in jobsPool
+		if jobData.records[id].fields.HDJ
+			jobsPoolHDJ.push(id)
+	# print jobsPoolHDJ
+	#array to what jobs to show in session
+	jobSession = []
+	#store first guaranteed HDJ job
+	jobSession.push(Utils.randomChoice(jobsPoolHDJ))
+	#store next 4 jobs
+	while jobSession.length < 5
+		randomJob = Utils.randomChoice(jobsPool)
+		if randomJob not in jobSession
+			jobSession.push(randomJob)
+	return jobSession
+
+print getJobsSession()
 
 #Highlight functions
 highlightInterests = ->
@@ -535,33 +608,9 @@ populateInterests = ->
 Framer.Extras.Preloader.enable()
 Framer.Extras.Preloader.addImage("images/preloader-logo.png")
 Framer.Extras.Preloader.setLogo("images/preloader-logo.png")
+#Disable hints with double tap
+Framer.Extras.Hints.disable()
 
-# Default opacity
-# Set opacity to default hidden for overlayed state elements
-for layer in ƒƒ('*Filled')
-	layer.opacity = 0
-
-for layer in ƒƒ('*Active')
-	layer.opacity = 0
-
-for layer in ƒƒ('*WarningNotification')
-	layer.opacity = 0
-	
-for layer in ƒƒ('*Done')
-	layer.opacity = 0
-	
-for layer in ƒƒ('*Highlight')
-	layer.opacity = 0
-
-for layer in ƒƒ('*Selected')
-	layer.opacity = 0
-
-for layer in ƒƒ('futuresFavoriteJob*')
-	layer.opacity = 0
-
-sketch.profileInterestsSeeMore.opacity = 0
-
-pointScale = 2
 
 #create Overarching FlowComponent
 flow = new FlowComponent
