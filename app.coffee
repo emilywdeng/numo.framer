@@ -1,5 +1,4 @@
 
-
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -48,8 +47,8 @@ InputModule = require "input"
 
 {TextLayer} = require "TextLayer"
 
-# Import file "Final Screens (Master @ af469e4)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20af469e4)@2x", scale: 1)
+# Import file "Final Screens (Master @ d8bdd71)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20d8bdd71)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -946,7 +945,6 @@ youtube.onClick ->
 	sketch.question10SkipButton.opacity = 0
 
 jobFlow = ""
-jobFlow = new FlowComponent #take this out
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
 	
@@ -959,7 +957,6 @@ sketch.question10SkipButton.onClick (event,layer) ->
 
 
 #JobCards Flow
-jobFlow.showNext(jobCardBackground)
 
 #creating the job card swiping
 #define parameters for page and padding
@@ -1127,17 +1124,17 @@ activeCard = new Layer
 	parent: jobCardBackground
 	backgroundColor: '#4AC8AC'
 	y: 75
-	x: 145
+	x: 138
 
 #define states for paginatino dot
 activeCard.states = 
-	job1: {x: 145, opacity: 1}
-	job2: {x: 161, opacity: 1}
-	job3: {x: 175, opacity: 1}
-	job4: {x: 191, opacity: 1}
-	job5: {x: 207, opacity: 1}
-	job6: {x: 223, opacity: 1}
-	job7: opacity: 0
+	job1: x: 138
+	job2: x: 152
+	job3: x: 167
+	job4: x: 184
+	job5: x: 200
+	job6: x: 215
+	job7: x: 231
 
 #listen for  page change
 jobCardSlider.on "change:currentPage",->

@@ -2285,9 +2285,9 @@ window.__imported__["Final Screens (Master @ af469e4)@2x/layers.json.js"] = [
 				"originalName": "jobCardsPagination*",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": 146,
+					"x": 138,
 					"y": 76,
-					"width": 84,
+					"width": 99,
 					"height": 6
 				},
 				"visible": true,
@@ -2297,9 +2297,9 @@ window.__imported__["Final Screens (Master @ af469e4)@2x/layers.json.js"] = [
 				"image": {
 					"path": "images/Layer-jobCardsPagination-mzrfmefb.png",
 					"frame": {
-						"x": 146,
+						"x": 138,
 						"y": 76,
-						"width": 84,
+						"width": 99,
 						"height": 6
 					}
 				},
