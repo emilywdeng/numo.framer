@@ -1,7 +1,9 @@
-# Import file "Final Screens (Master @ 9444037)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%209444037)@2x", scale: 1)
+# Import file "Final Screens (Master @ 92ebaad)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2092ebaad)@1x", scale: 1)
 
 Utils.globalLayers(sketch)
+
+pointScale = 2
 
  
 #Modules
@@ -63,28 +65,50 @@ Utils.insertCSS """
 		font-family: "Gotham-Book";
 		src: url("gotham/Gotham-Book.otf");
 	}
+	@font-face {
+		font-family: "Gotham-Bold";
+		src: url("gotham/Gotham-Bold.otf");
+	}
 """
 
-# #Airtable
-# # Import from Airtable 
-# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-# 
-# # print data.records.length 
-# 
-# #personality questions array 
-# questionText = []
-# 
+#Airtable
+# Import from Airtable 
+airtPersonality = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+interestData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Interest?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+# print data.records.length 
+
+#personality questions array 
+questionText = []
+
 # for i in [0..data.records.length-1]
 # 	questionText.push(data.records[i].fields.QuestionText)
 
+# print interestData.records[0].fields.Name
+
 #Responsive
-screen_width = Framer.Device.screen.width 
+
+# Framer.Device.customize
+# 	screenWidth: 375
+# 	screenHeight: 667
+# 	devicePixelRatio: 1
+
+
+# print Framer.Device
+# print Framer.Device.screen
+# 
+# print Framer.Device.screen.width
+# print Framer.Device.screen.height
+
+screen_width = Framer.Device.screen.width
 screen_height = Framer.Device.screen.height
 
-default_w = 375
-default_h = 667
+default_w = 375 *pointScale
+default_h = 667 *pointScale
 
-ratio = screen_width / default_w
+ratio = screen_height / default_h
+# print "Ratio: " + ratio
 
 Framer.Defaults.Layer.force2d = true
 
@@ -93,21 +117,16 @@ Framer.Defaults.Layer.force2d = true
 all = new Layer
 	width: default_w  # <-- The width will be 750 
 	height: default_h # <-- The height will be 1334
-	scale: ratio      # <-- The ratio we got from the equation
+	scale: 1      # <-- The ratio we got from the equation
 	originY: 0        # <-- This moves the origin of scale to top left
 	y: 0              # <-- Make this layer to the top
-all.centerX()       # <-- And we center the X position
-
-
-# for responsiveness, may not need this
-# for layer in ƒƒ()
-# 	if layer.name != "all"
-# 		this.parent = all
+# if Framer.Device.screen.height isnt 667* pointScale
+# all.centerX()       # <-- And we center the X position
 
 #User Profile Object
 user = 
 	interestsRaw: []
-	interests: []
+	interests: ["Art", "Design", "Fashion"]
 	workstyles: []
 	drives: []
 	personality: []
@@ -121,6 +140,7 @@ user =
 
 # Custom Functions
 
+#populateInterests
 #Function to dynamically display interests on profile
 #Called after submitting interests
 populateInterests = ->
@@ -144,7 +164,7 @@ populateInterests = ->
 				color: "#fff"
 				textAlign: "center"
 				fontFamily: "Gotham-Med"
-				fontSize: 12
+				fontSize: 12 * pointScale
 				parent: interestBg
 				autoSize: true
 				autoSizeHeight: true
@@ -166,6 +186,7 @@ populateInterests = ->
 				interestBg.opacity = 0
 				sketch.profileInterestsSeeMore.opacity = 1
 
+#populateWorkstyles
 #Function to dynamically display workstyles on profile
 #Called after completing daily questions
 populateWorkstyles = ->
@@ -185,6 +206,7 @@ populateWorkstyles = ->
 		if user.workstyles[2] == "Big Picture"
 			sketch.profileMeWorkstyle3Toggle.x = 200
 
+#populateDrives
 #Function to dynamically display drives on profile
 #Called after completing daily questions
 populateDrives = ->
@@ -196,34 +218,36 @@ populateDrives = ->
 		if typeof user.drives[0] isnt 'undefined'
 			sketch.profileMeDrive1NumberFilled.opacity = 1
 			drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
+			drive0.fontSize = drive0.fontSize * pointScale
 			drive0.width = 275
 			drive0.text = user.drives[0]
 			print user.drives[0]
-			print "There is drives[0]"
 		#if there is second drive
 		if typeof user.drives[1] isnt 'undefined'
 			sketch.profileMeDrive2NumberFilled.opacity = 1
 			drive1 = sketch.profileMeDrive2Filled.convertToTextLayer()
+			drive1.fontSize = drive1.fontSize * pointScale
 			drive1.width = 275
 			drive1.text = user.drives[1]
 			print user.drives[1]
-			print "There is drives[1]"
 		#if there is third drive
 		if typeof user.drives[2] isnt 'undefined'
 			sketch.profileMeDrive3NumberFilled.opacity = 1
 			drive2 = sketch.profileMeDrive3Filled.convertToTextLayer()
+			drive2.fontSize = drive2.fontSize * pointScale
 			drive2.width = 275
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
 			print user.drives[2]
-			print "There is drives[2]"
 
+#populatePersonality
 #Function to dynamically display personality on profile
 #Called after completing personality quiz
 populatePersonality = ->
 	if user.personality.length != 0
 		if user.personality[0]
 			personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
+			personality0.fontSize = personality0.fontSize * pointScale
 			personality0.autoSize = true
 			personality0.text = user.personality[0]
 			personality0.x = 32 - (personality0.width/2)
@@ -236,6 +260,7 @@ populatePersonality = ->
 			personalityImg0.image = getPersonalityImg(user.personality[0])
 		if user.personality[1]
 			personality1 = sketch.profileMePersonality2Text.convertToTextLayer()
+			personality1.fontSize = personality1.fontSize * pointScale
 			personality1.autoSize = true
 			personality1.text = user.personality[1]
 			personality1.x = 32 - (personality1.width/2)
@@ -248,6 +273,7 @@ populatePersonality = ->
 			personalityImg1.image = getPersonalityImg(user.personality[1])
 		if user.personality[2]
 			personality2 = sketch.profileMePersonality3Text.convertToTextLayer()
+			personality1.fontSize = personality1.fontSize * pointScale
 			personality2.autoSize = true
 			personality2.text = user.personality[2]
 			personality2.x = 32 - (personality2.width/2)
@@ -259,7 +285,7 @@ populatePersonality = ->
 					y: 727
 			personalityImg2.image = getPersonalityImg(user.personality[2])
 
-#Functions to turn highlight on
+#Highlight functions
 highlightInterests = ->
 	sketch.profileInterestsHighlight.animate
 		opacity: 1
@@ -306,6 +332,7 @@ highlightPersonality = ->
 			time: 1
 			curve: Bezier.ease
 
+#gerPersonalityImg
 #Retrieve appropriate image for personality on profile
 getPersonalityImg = (personality) ->
 	if personality == "Doer"
@@ -321,6 +348,7 @@ getPersonalityImg = (personality) ->
 	if personality == "Organizer"
 		return "images/Organizer.png"
 
+#convertInterests
 # Function to translate sketch object names for interests to usable strings
 convertInterests = (array) ->
 	for tag in array
@@ -1120,18 +1148,33 @@ question9ButtonActive.onClick (event, layer) ->
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
 
-#question10 select answers THIS NEEDS WORK EMILYYYYYY
-# Youtube IDK HOW TO MAKE THIS WORK
-youtube = new YouTubePlayer
+#question10 select answers
+
+randomInterest = Utils.randomChoice(user.interests)
+# print "random interest is " + randomInterest
+interestID = 0
+for i in [0..interestData.records.length-1]
+	if randomInterest == interestData.records[i].fields.Name
+		interestID = i
+# 		print interestID
+
+captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer(true)
+captionTitle.fontSize = captionTitle.fontSize * pointScale
+captionTitle.text = interestData.records[interestID].fields.Title
+
+# Youtube
+youtubeQ10 = new YouTubePlayer
 	parent: question10ContentPreview
-	video: "9lVTE_bq3lw"
-	x: Align.center
-	width: 300
-	height: 140 
-	controls: 1
+	video: interestData.records[interestID].fields.VideoID
+# 	x: Align.center
+# 	y: Align.center
+	width: 303
+	height: 140
+
+
 
 # when they click play...
-youtube.onClick ->
+youtubeQ10.onClick ->
 	player.playVideo()
 	#hide skip button, show like / dislike buttons
 	sketch.question10SkipButton.opacity = 0
