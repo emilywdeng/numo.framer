@@ -73,9 +73,11 @@ Utils.insertCSS """
 
 #Airtable
 # Import from Airtable 
-airtPersonality = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+personalityData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
 
 interestData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Interest?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+jobData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Jobs?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
 
 # print data.records.length 
 
@@ -130,7 +132,7 @@ user =
 	workstyles: []
 	drives: []
 	personality: []
-	favoriteJobs: []
+	favorites: ["Electrician"]
 
 # Workstyles Input:
 # [0] Independent or Collaborative
@@ -420,6 +422,8 @@ for layer in ƒƒ('*Highlight')
 for layer in ƒƒ('*Selected')
 	layer.opacity = 0
 
+for layer in ƒƒ('futuresFavoriteJob*')
+	layer.opacity = 0
 
 #create Overarching FlowComponent
 flow = new FlowComponent
@@ -539,7 +543,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(question10)
+flow.showNext(futures)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -1499,3 +1503,86 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
+
+favJobCards = [] #futuresFavoriteJob1
+favJobCards.push(sketch.futuresFavoriteJob1)
+favJobCards.push(sketch.futuresFavoriteJob2)
+favJobCards.push(sketch.futuresFavoriteJob3)
+favJobCards.push(sketch.futuresFavoriteJob4)
+favJobCards.push(sketch.futuresFavoriteJob5)
+
+favJobTitle = [] #profileFutureFavoriteJob1Title
+favJobTitle.push(sketch.profileFutureFavoriteJob1Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob2Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob3Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob4Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob5Title)
+
+favJobEdu = []
+favJobEdu.push(sketch.profileFutureFavoriteJob1EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob2EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob3EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob4EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob5EducationLevel)
+
+favJobSal = []
+favJobSal.push(sketch.profileFutureFavoriteJob1SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob2SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob3SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob4SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob5SalaryLevel)
+
+favJobGro = []
+favJobGro.push(sketch.profileFutureFavoriteJob1GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob2GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob3GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob4GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob5GrowthLevel)
+
+#check that there are favorites
+if user.favorites.length != 0
+	#loop through favorites
+	for i in [0..favJobCards.length-1]
+		#if the i-th favorite exists
+		if user.favorites[i]
+			#initialize variables to store info from airtable
+			fieldsJob = ""
+			fieldsEduShort = ""
+			fieldsSalShort = ""
+			fieldsGroShort = ""
+			fieldsImg = ""
+			#get matching info from airtable
+			for j in [0..jobData.records.length-1]
+				if user.favorites[i] == jobData.records[j].fields.Job
+					fieldsJob = jobData.records[j].fields.Job
+					fieldsEduShort = jobData.records[j].fields.EduShort
+					fieldsSalShort = jobData.records[j].fields.SalaryShort
+					fieldsGroShort = jobData.records[j].fields.OutlookShort
+					fieldsImg = jobData.records[j].fields.Image1[0].url
+# 			print fieldsEduShort
+			#show job card
+			favJobCards[i].opacity = 1
+			#populate title
+			jobTitle = favJobTitle[i].convertToTextLayer()
+			jobTitle.fontSize = jobTitle.fontSize * pointScale
+			jobTitle.text = fieldsJob
+			#populate education
+			jobEdu = favJobEdu[i].convertToTextLayer()
+			jobEdu.fontSize = jobEdu.fontSize * pointScale
+			jobEdu.text = fieldsEduShort
+			
+			
+
+
+# #select interest to display
+# randomInterest = Utils.randomChoice(user.interests)
+# interestID = 0
+# for i in [0..interestData.records.length-1]
+# 	if randomInterest == interestData.records[i].fields.Name
+# 		interestID = i
+# 
+# #populate title
+# captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer()
+# captionTitle.fontSize = captionTitle.fontSize * pointScale
+# captionTitle.text = interestData.records[interestID].fields.Title
+			
