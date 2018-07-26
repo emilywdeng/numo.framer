@@ -946,25 +946,20 @@ youtube.onClick ->
 	sketch.question10SkipButton.opacity = 0
 
 jobFlow = ""
-jobFlow = new FlowComponent	
+jobFlow = new FlowComponent #take this out
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
+	
 	flow.showNext(jobCardLoading)
 	#wait 5 seconds to show jobscards
 	Utils.delay 5, ->
 		jobFlow = new FlowComponent
 		flow.showNext(jobFlow)
-		jobFlow.showNext(jobCardPreview)
-
-
-
-flow.showNext(jobFlow)
-jobFlow.showNext(jobCardBackground)
+		jobFlow.showNext(jobCardBackground)
 
 
 #JobCards Flow
-#set a consistent header
-jobFlow.header = header
+jobFlow.showNext(jobCardBackground)
 
 #creating the job card swiping
 #define parameters for page and padding
@@ -1161,6 +1156,12 @@ jobCardSlider.on "change:currentPage",->
 	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
 	currentPage = 'job' + currentPage
 	activeCard.states.switchInstant currentPage
+	
+	#show done when done swiping
+	if currentPage is 'job7'
+		jobCardBackgroundDone.opacity = 1
+	else
+		jobCardBackgroundDone.opacity = 0
 
 
 

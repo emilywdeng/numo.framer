@@ -2124,6 +2124,33 @@ window.__imported__["Final Screens (Master @ af469e4)@2x/layers.json.js"] = [
 		"backgroundColor": "rgba(248, 248, 248, 1)",
 		"children": [
 			{
+				"objectId": "5BB1A0AF-CACE-42D2-9FDF-75EA6DF28FF1",
+				"kind": "group",
+				"name": "jobCardsHeader",
+				"originalName": "jobCardsHeader",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 0,
+					"y": 0,
+					"width": 375,
+					"height": 60
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-jobCardsHeader-nujcmuew.png",
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"width": 375,
+						"height": 60
+					}
+				},
+				"children": []
+			},
+			{
 				"objectId": "E78591C0-BEB3-499D-9535-6E770E43F543",
 				"kind": "group",
 				"name": "jobCardBackgroundDone",
