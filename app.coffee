@@ -1333,6 +1333,8 @@ sketch.question10SkipButton.onClick (event,layer) ->
 	#wait 5 seconds to show jobscards
 	Utils.delay 5, ->
 		jobFlow = new FlowComponent
+			scrollVertical: false
+			scrollHorizontal: false
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
