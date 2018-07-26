@@ -234,7 +234,7 @@ sketch.profileInterestsSeeMore.opacity = 0
 
 #create Overarching FlowComponent
 flow = new FlowComponent
-# Try this code once all screens are in the flow component
+# # Try this code once all screens are in the flow component
 # 	parent: all
 # 	width: all.width
 # 	height: all.height
