@@ -957,6 +957,7 @@ sketch.question10SkipButton.onClick (event,layer) ->
 
 
 #JobCards Flow
+# jobFlow.showNext(jobCardBackground)
 
 #creating the job card swiping
 #define parameters for page and padding
@@ -982,7 +983,8 @@ for number in [0...7]
 	#create page wrapper for the cards
 	page = new Layer
 		size: jobCardSlider.size
-		backgroundColor: "none"
+		backgroundColor: "null"
+
 	if number > 0
 		page.opacity = 0.9
 	
@@ -992,9 +994,7 @@ for number in [0...7]
 				superLayer: page
 				width: page.width - padding
 				height: 548
-				#update background and remove opacity when done. 
 				backgroundColor: '#FFFFFF'
-
 				borderRadius: 7
 				name: 'job' + number
 			card.center()
@@ -1136,6 +1136,7 @@ activeCard.states =
 	job6: x: 215
 	job7: x: 231
 
+
 #listen for  page change
 jobCardSlider.on "change:currentPage",->
 	current = jobCardSlider.currentPage
@@ -1153,14 +1154,54 @@ jobCardSlider.on "change:currentPage",->
 	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
 	currentPage = 'job' + currentPage
 	activeCard.states.switchInstant currentPage
-	
 	#show done when done swiping
+	
 	if currentPage is 'job7'
 		jobCardBackgroundDone.opacity = 1
-	else
+		backToFuturesButton = new Layer
+			parent: jobCardBackground 
+			name: "backToFuturesButton"
+			backgroundColor: "null"
+			width: 207
+			height: 63
+			x: 84
+			y: 456
+		backToFuturesButton.onClick (event, layer) ->
+			flow.showNext(mainFlow)
+			futuresQuestionsDone.opacity = 1
+			futuresQuestions.visible = false
+	else 
 		jobCardBackgroundDone.opacity = 0
+		for layer in Framer.CurrentContext.layers
+			layer.destroy() if layer.name is "backToFuturesButton"
 
 
+
+
+
+
+
+	
+
+
+
+		
+
+		
+			
+
+		
+		
+
+
+#favorite jobs
+
+#expand job card
+
+
+#go back to futures
+
+# 	flow.showNext(futures)
 
 #CREATE ACCOUNT SCREEN
 #Click first name

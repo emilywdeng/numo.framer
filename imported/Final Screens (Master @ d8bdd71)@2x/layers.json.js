@@ -2192,35 +2192,16 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"metadata": {
 							"opacity": 1
 						},
-						"children": [
-							{
-								"objectId": "5EEDDFD3-F386-4042-B257-3AC73C728A94",
-								"kind": "group",
-								"name": "jobCardPreviewFInalPageGraphic",
-								"originalName": "jobCardPreviewFInalPageGraphic",
-								"maskFrame": null,
-								"layerFrame": {
-									"x": 149,
-									"y": 145,
-									"width": 78,
-									"height": 114
-								},
-								"visible": true,
-								"metadata": {
-									"opacity": 1
-								},
-								"image": {
-									"path": "images/Layer-jobCardPreviewFInalPageGraphic-nuvfrerg.png",
-									"frame": {
-										"x": 149,
-										"y": 145,
-										"width": 78,
-										"height": 114
-									}
-								},
-								"children": []
+						"image": {
+							"path": "images/Layer-jobCardBackgroundRockIcon-n0e3m0e2.png",
+							"frame": {
+								"x": 149,
+								"y": 145,
+								"width": 78,
+								"height": 114
 							}
-						]
+						},
+						"children": []
 					},
 					{
 						"objectId": "C262A31A-9D8D-4F83-BCBD-9DBA8CABE001",
@@ -5315,10 +5296,10 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 		"originalName": "futures",
 		"maskFrame": null,
 		"layerFrame": {
-			"x": -539,
+			"x": -538,
 			"y": 758,
 			"width": 375,
-			"height": 980
+			"height": 1116
 		},
 		"visible": true,
 		"metadata": {},
@@ -5358,8 +5339,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"originalName": "navBar",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": -3,
-					"y": 919,
+					"x": -4,
+					"y": 1055,
 					"width": 380,
 					"height": 61
 				},
@@ -5370,8 +5351,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"image": {
 					"path": "images/Layer-navBar-mzqzqzyw.png",
 					"frame": {
-						"x": -3,
-						"y": 919,
+						"x": -4,
+						"y": 1055,
 						"width": 380,
 						"height": 61
 					}
@@ -5384,8 +5365,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"originalName": "navActiveIndicator",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": -3,
-							"y": 919,
+							"x": -4,
+							"y": 1055,
 							"width": 191,
 							"height": 8
 						},
@@ -5396,8 +5377,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"image": {
 							"path": "images/Layer-navActiveIndicator-qtuwndu2.png",
 							"frame": {
-								"x": -3,
-								"y": 919,
+								"x": -4,
+								"y": 1055,
 								"width": 191,
 								"height": 8
 							}
@@ -5411,8 +5392,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"originalName": "navButtonMe",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 189,
-							"y": 926,
+							"x": 188,
+							"y": 1062,
 							"width": 188,
 							"height": 54
 						},
@@ -5423,8 +5404,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"image": {
 							"path": "images/Layer-navButtonMe-rjkzrjfc.png",
 							"frame": {
-								"x": 189,
-								"y": 926,
+								"x": 188,
+								"y": 1062,
 								"width": 188,
 								"height": 54
 							}
@@ -5438,8 +5419,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"originalName": "navButtonFuture",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 1,
-							"y": 926,
+							"x": 0,
+							"y": 1062,
 							"width": 188,
 							"height": 54
 						},
@@ -5450,8 +5431,8 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"image": {
 							"path": "images/Layer-navButtonFuture-rtlerdg0.png",
 							"frame": {
-								"x": 1,
-								"y": 926,
+								"x": 0,
+								"y": 1062,
 								"width": 188,
 								"height": 54
 							}
@@ -5495,7 +5476,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
-					"y": 30,
+					"y": 86,
 					"width": 327,
 					"height": 346
 				},
@@ -5512,7 +5493,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 73,
-							"y": 80,
+							"y": 136,
 							"width": 233,
 							"height": 261
 						},
@@ -5524,7 +5505,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-futureQuestionsGraphic-quvcnjhf.png",
 							"frame": {
 								"x": 73,
-								"y": 80,
+								"y": 136,
 								"width": 233,
 								"height": 261
 							}
@@ -5539,7 +5520,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 27,
-							"y": 30,
+							"y": 86,
 							"width": 327,
 							"height": 346
 						},
@@ -5551,7 +5532,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureNewQuestionsBackground-mtdenezd.png",
 							"frame": {
 								"x": 27,
-								"y": 30,
+								"y": 86,
 								"width": 327,
 								"height": 346
 							}
@@ -5568,7 +5549,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 30,
-					"y": 409,
+					"y": 465,
 					"width": 312,
 					"height": 14
 				},
@@ -5580,7 +5561,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 					"path": "images/Layer-futuresFavoriteHeader-n0m0njew.png",
 					"frame": {
 						"x": 30,
-						"y": 409,
+						"y": 465,
 						"width": 312,
 						"height": 14
 					}
@@ -5595,7 +5576,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 439,
+					"y": 495,
 					"width": 333,
 					"height": 99
 				},
@@ -5607,7 +5588,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 					"path": "images/Layer-futuresFavoriteJob1-mtmyqkq0.png",
 					"frame": {
 						"x": 22,
-						"y": 439,
+						"y": 495,
 						"width": 333,
 						"height": 99
 					}
@@ -5621,7 +5602,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 439,
+							"y": 495,
 							"width": 333,
 							"height": 99
 						},
@@ -5633,7 +5614,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Highlight-qjy5otiw.png",
 							"frame": {
 								"x": 22,
-								"y": 439,
+								"y": 495,
 								"width": 333,
 								"height": 99
 							}
@@ -5653,7 +5634,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 452,
+							"y": 508,
 							"width": 79,
 							"height": 79
 						},
@@ -5665,7 +5646,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Photo-rjuxrte3.png",
 							"frame": {
 								"x": 37,
-								"y": 452,
+								"y": 508,
 								"width": 79,
 								"height": 79
 							}
@@ -5680,7 +5661,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 468,
+							"y": 524,
 							"width": 187,
 							"height": 16
 						},
@@ -5701,7 +5682,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Title-rjcwrtm1.png",
 							"frame": {
 								"x": 124,
-								"y": 468,
+								"y": 524,
 								"width": 187,
 								"height": 16
 							}
@@ -5716,7 +5697,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 499,
+							"y": 555,
 							"width": 60,
 							"height": 20
 						},
@@ -5733,7 +5714,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 506,
+									"y": 562,
 									"width": 21,
 									"height": 7
 								},
@@ -5754,7 +5735,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1EducationLevel-oti5qtaz.png",
 									"frame": {
 										"x": 151,
-										"y": 506,
+										"y": 562,
 										"width": 21,
 										"height": 7
 									}
@@ -5769,7 +5750,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 499,
+									"y": 555,
 									"width": 60,
 									"height": 20
 								},
@@ -5781,7 +5762,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-quiwqjvg.png",
 									"frame": {
 										"x": 124,
-										"y": 499,
+										"y": 555,
 										"width": 60,
 										"height": 20
 									}
@@ -5795,7 +5776,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 503,
+											"y": 559,
 											"width": 17,
 											"height": 12
 										},
@@ -5812,7 +5793,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 503,
+													"y": 559,
 													"width": 17,
 													"height": 12
 												},
@@ -5824,7 +5805,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mjdfmje4.png",
 													"frame": {
 														"x": 127,
-														"y": 503,
+														"y": 559,
 														"width": 17,
 														"height": 12
 													}
@@ -5845,7 +5826,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 499,
+							"y": 555,
 							"width": 60,
 							"height": 20
 						},
@@ -5862,7 +5843,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 505,
+									"y": 561,
 									"width": 25,
 									"height": 9
 								},
@@ -5883,7 +5864,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1GrowthLevel-rtuxqtmw.png",
 									"frame": {
 										"x": 289,
-										"y": 505,
+										"y": 561,
 										"width": 25,
 										"height": 9
 									}
@@ -5898,7 +5879,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 499,
+									"y": 555,
 									"width": 60,
 									"height": 20
 								},
@@ -5910,7 +5891,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-qzrcodu5.png",
 									"frame": {
 										"x": 264,
-										"y": 499,
+										"y": 555,
 										"width": 60,
 										"height": 20
 									}
@@ -5924,7 +5905,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 505,
+											"y": 561,
 											"width": 15,
 											"height": 8
 										},
@@ -5936,7 +5917,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-m0i1qtew.png",
 											"frame": {
 												"x": 267,
-												"y": 505,
+												"y": 561,
 												"width": 15,
 												"height": 8
 											}
@@ -5955,7 +5936,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 499,
+							"y": 555,
 							"width": 60,
 							"height": 20
 						},
@@ -5972,7 +5953,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 505,
+									"y": 561,
 									"width": 25,
 									"height": 9
 								},
@@ -5993,7 +5974,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1SalaryLevel-nzdenerg.png",
 									"frame": {
 										"x": 219,
-										"y": 505,
+										"y": 561,
 										"width": 25,
 										"height": 9
 									}
@@ -6008,7 +5989,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 499,
+									"y": 555,
 									"width": 60,
 									"height": 20
 								},
@@ -6020,7 +6001,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1SalaryStatic-mtuznjyz.png",
 									"frame": {
 										"x": 194,
-										"y": 499,
+										"y": 555,
 										"width": 60,
 										"height": 20
 									}
@@ -6034,7 +6015,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 502,
+											"y": 558,
 											"width": 8,
 											"height": 15
 										},
@@ -6051,7 +6032,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 502,
+													"y": 558,
 													"width": 8,
 													"height": 15
 												},
@@ -6063,7 +6044,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-njvgmenf.png",
 													"frame": {
 														"x": 200,
-														"y": 502,
+														"y": 558,
 														"width": 8,
 														"height": 15
 													}
@@ -6086,7 +6067,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 545,
+					"y": 601,
 					"width": 333,
 					"height": 99
 				},
@@ -6103,7 +6084,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 545,
+							"y": 601,
 							"width": 333,
 							"height": 99
 						},
@@ -6115,7 +6096,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Highlight-rdgxqkfg.png",
 							"frame": {
 								"x": 22,
-								"y": 545,
+								"y": 601,
 								"width": 333,
 								"height": 99
 							}
@@ -6130,7 +6111,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 602,
+							"y": 658,
 							"width": 60,
 							"height": 20
 						},
@@ -6147,7 +6128,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 609,
+									"y": 665,
 									"width": 21,
 									"height": 7
 								},
@@ -6168,7 +6149,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2EducationLevel-m0m5nke2.png",
 									"frame": {
 										"x": 151,
-										"y": 609,
+										"y": 665,
 										"width": 21,
 										"height": 7
 									}
@@ -6183,7 +6164,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 602,
+									"y": 658,
 									"width": 60,
 									"height": 20
 								},
@@ -6195,7 +6176,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-ntm5nju5.png",
 									"frame": {
 										"x": 124,
-										"y": 602,
+										"y": 658,
 										"width": 60,
 										"height": 20
 									}
@@ -6209,7 +6190,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 606,
+											"y": 662,
 											"width": 17,
 											"height": 12
 										},
@@ -6226,7 +6207,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 606,
+													"y": 662,
 													"width": 17,
 													"height": 12
 												},
@@ -6238,7 +6219,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-nurgrde3.png",
 													"frame": {
 														"x": 127,
-														"y": 606,
+														"y": 662,
 														"width": 17,
 														"height": 12
 													}
@@ -6259,7 +6240,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 602,
+							"y": 658,
 							"width": 60,
 							"height": 20
 						},
@@ -6276,7 +6257,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 608,
+									"y": 664,
 									"width": 25,
 									"height": 9
 								},
@@ -6297,7 +6278,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2SalaryLevel-rtrdnjdd.png",
 									"frame": {
 										"x": 219,
-										"y": 608,
+										"y": 664,
 										"width": 25,
 										"height": 9
 									}
@@ -6312,7 +6293,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 602,
+									"y": 658,
 									"width": 60,
 									"height": 20
 								},
@@ -6324,7 +6305,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-nufgnjuy.png",
 									"frame": {
 										"x": 194,
-										"y": 602,
+										"y": 658,
 										"width": 60,
 										"height": 20
 									}
@@ -6338,7 +6319,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 605,
+											"y": 661,
 											"width": 8,
 											"height": 15
 										},
@@ -6355,7 +6336,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 605,
+													"y": 661,
 													"width": 8,
 													"height": 15
 												},
@@ -6367,7 +6348,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-oevbmtu3.png",
 													"frame": {
 														"x": 200,
-														"y": 605,
+														"y": 661,
 														"width": 8,
 														"height": 15
 													}
@@ -6388,7 +6369,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 602,
+							"y": 658,
 							"width": 60,
 							"height": 20
 						},
@@ -6405,7 +6386,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 608,
+									"y": 664,
 									"width": 25,
 									"height": 9
 								},
@@ -6426,7 +6407,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2GrowthLevel-qzlfmjhg.png",
 									"frame": {
 										"x": 289,
-										"y": 608,
+										"y": 664,
 										"width": 25,
 										"height": 9
 									}
@@ -6441,7 +6422,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 602,
+									"y": 658,
 									"width": 60,
 									"height": 20
 								},
@@ -6453,7 +6434,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-ndvfodzf.png",
 									"frame": {
 										"x": 264,
-										"y": 602,
+										"y": 658,
 										"width": 60,
 										"height": 20
 									}
@@ -6467,7 +6448,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 608,
+											"y": 664,
 											"width": 15,
 											"height": 8
 										},
@@ -6479,7 +6460,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-mevbnezf.png",
 											"frame": {
 												"x": 267,
-												"y": 608,
+												"y": 664,
 												"width": 15,
 												"height": 8
 											}
@@ -6498,7 +6479,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 571,
+							"y": 627,
 							"width": 101,
 							"height": 16
 						},
@@ -6519,7 +6500,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Title-rkzbouu3.png",
 							"frame": {
 								"x": 125,
-								"y": 571,
+								"y": 627,
 								"width": 101,
 								"height": 16
 							}
@@ -6539,7 +6520,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 555,
+							"y": 611,
 							"width": 79,
 							"height": 79
 						},
@@ -6551,7 +6532,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Photo-rtm5qtkz.png",
 							"frame": {
 								"x": 37,
-								"y": 555,
+								"y": 611,
 								"width": 79,
 								"height": 79
 							}
@@ -6566,7 +6547,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 548,
+							"y": 604,
 							"width": 327,
 							"height": 93
 						},
@@ -6578,7 +6559,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Card-rdngrjfd.png",
 							"frame": {
 								"x": 25,
-								"y": 548,
+								"y": 604,
 								"width": 327,
 								"height": 93
 							}
@@ -6595,7 +6576,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 651,
+					"y": 707,
 					"width": 333,
 					"height": 99
 				},
@@ -6612,7 +6593,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 651,
+							"y": 707,
 							"width": 333,
 							"height": 99
 						},
@@ -6624,7 +6605,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Highlight-qkm1rjbd.png",
 							"frame": {
 								"x": 22,
-								"y": 651,
+								"y": 707,
 								"width": 333,
 								"height": 99
 							}
@@ -6639,7 +6620,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 674,
+							"y": 730,
 							"width": 115,
 							"height": 14
 						},
@@ -6660,7 +6641,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Title-mjjfnuvd.png",
 							"frame": {
 								"x": 125,
-								"y": 674,
+								"y": 730,
 								"width": 115,
 								"height": 14
 							}
@@ -6675,7 +6656,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 705,
+							"y": 761,
 							"width": 60,
 							"height": 20
 						},
@@ -6692,7 +6673,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 712,
+									"y": 768,
 									"width": 21,
 									"height": 7
 								},
@@ -6713,7 +6694,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3EducationLevel-nuixney0.png",
 									"frame": {
 										"x": 151,
-										"y": 712,
+										"y": 768,
 										"width": 21,
 										"height": 7
 									}
@@ -6728,7 +6709,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 705,
+									"y": 761,
 									"width": 60,
 									"height": 20
 								},
@@ -6740,7 +6721,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-rdnfotrd.png",
 									"frame": {
 										"x": 124,
-										"y": 705,
+										"y": 761,
 										"width": 60,
 										"height": 20
 									}
@@ -6754,7 +6735,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 709,
+											"y": 765,
 											"width": 17,
 											"height": 12
 										},
@@ -6771,7 +6752,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 709,
+													"y": 765,
 													"width": 17,
 													"height": 12
 												},
@@ -6783,7 +6764,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-nzneqju1.png",
 													"frame": {
 														"x": 127,
-														"y": 709,
+														"y": 765,
 														"width": 17,
 														"height": 12
 													}
@@ -6809,7 +6790,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 658,
+							"y": 714,
 							"width": 79,
 							"height": 79
 						},
@@ -6821,7 +6802,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Photo-mzc0rufe.png",
 							"frame": {
 								"x": 37,
-								"y": 658,
+								"y": 714,
 								"width": 79,
 								"height": 79
 							}
@@ -6836,7 +6817,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 705,
+							"y": 761,
 							"width": 60,
 							"height": 20
 						},
@@ -6853,7 +6834,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 711,
+									"y": 767,
 									"width": 25,
 									"height": 9
 								},
@@ -6874,7 +6855,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3SalaryLevel-ntfdqzm5.png",
 									"frame": {
 										"x": 219,
-										"y": 711,
+										"y": 767,
 										"width": 25,
 										"height": 9
 									}
@@ -6889,7 +6870,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 705,
+									"y": 761,
 									"width": 60,
 									"height": 20
 								},
@@ -6901,7 +6882,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-mza2othf.png",
 									"frame": {
 										"x": 194,
-										"y": 705,
+										"y": 761,
 										"width": 60,
 										"height": 20
 									}
@@ -6915,7 +6896,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 708,
+											"y": 764,
 											"width": 8,
 											"height": 15
 										},
@@ -6932,7 +6913,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 708,
+													"y": 764,
 													"width": 8,
 													"height": 15
 												},
@@ -6944,7 +6925,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-qjayrduz.png",
 													"frame": {
 														"x": 200,
-														"y": 708,
+														"y": 764,
 														"width": 8,
 														"height": 15
 													}
@@ -6965,7 +6946,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 705,
+							"y": 761,
 							"width": 60,
 							"height": 20
 						},
@@ -6982,7 +6963,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 711,
+									"y": 767,
 									"width": 25,
 									"height": 9
 								},
@@ -7003,7 +6984,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3GrowthLevel-qjqzmdjf.png",
 									"frame": {
 										"x": 289,
-										"y": 711,
+										"y": 767,
 										"width": 25,
 										"height": 9
 									}
@@ -7018,7 +6999,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 705,
+									"y": 761,
 									"width": 60,
 									"height": 20
 								},
@@ -7030,7 +7011,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-nemyqzzd.png",
 									"frame": {
 										"x": 264,
-										"y": 705,
+										"y": 761,
 										"width": 60,
 										"height": 20
 									}
@@ -7044,7 +7025,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 711,
+											"y": 767,
 											"width": 15,
 											"height": 8
 										},
@@ -7056,7 +7037,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-mzawnum0.png",
 											"frame": {
 												"x": 267,
-												"y": 711,
+												"y": 767,
 												"width": 15,
 												"height": 8
 											}
@@ -7075,7 +7056,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 651,
+							"y": 707,
 							"width": 327,
 							"height": 93
 						},
@@ -7087,7 +7068,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Card-nzcxndbe.png",
 							"frame": {
 								"x": 25,
-								"y": 651,
+								"y": 707,
 								"width": 327,
 								"height": 93
 							}
@@ -7104,7 +7085,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 754,
+					"y": 810,
 					"width": 333,
 					"height": 102
 				},
@@ -7121,7 +7102,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 757,
+							"y": 813,
 							"width": 333,
 							"height": 99
 						},
@@ -7133,7 +7114,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Highlight-mtywqzi2.png",
 							"frame": {
 								"x": 22,
-								"y": 757,
+								"y": 813,
 								"width": 333,
 								"height": 99
 							}
@@ -7148,7 +7129,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 777,
+							"y": 833,
 							"width": 115,
 							"height": 14
 						},
@@ -7169,7 +7150,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Title-ney1rdm5.png",
 							"frame": {
 								"x": 125,
-								"y": 777,
+								"y": 833,
 								"width": 115,
 								"height": 14
 							}
@@ -7189,7 +7170,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 761,
+							"y": 817,
 							"width": 79,
 							"height": 79
 						},
@@ -7201,7 +7182,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Photo-ruy5meje.png",
 							"frame": {
 								"x": 37,
-								"y": 761,
+								"y": 817,
 								"width": 79,
 								"height": 79
 							}
@@ -7216,7 +7197,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 808,
+							"y": 864,
 							"width": 60,
 							"height": 20
 						},
@@ -7233,7 +7214,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 815,
+									"y": 871,
 									"width": 21,
 									"height": 7
 								},
@@ -7254,7 +7235,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4EducationLevel-rjk2rtnc.png",
 									"frame": {
 										"x": 151,
-										"y": 815,
+										"y": 871,
 										"width": 21,
 										"height": 7
 									}
@@ -7269,7 +7250,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 808,
+									"y": 864,
 									"width": 60,
 									"height": 20
 								},
@@ -7281,7 +7262,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-rjdeotux.png",
 									"frame": {
 										"x": 124,
-										"y": 808,
+										"y": 864,
 										"width": 60,
 										"height": 20
 									}
@@ -7295,7 +7276,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 812,
+											"y": 868,
 											"width": 17,
 											"height": 12
 										},
@@ -7312,7 +7293,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 812,
+													"y": 868,
 													"width": 17,
 													"height": 12
 												},
@@ -7324,7 +7305,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-rjjcmdky.png",
 													"frame": {
 														"x": 127,
-														"y": 812,
+														"y": 868,
 														"width": 17,
 														"height": 12
 													}
@@ -7345,7 +7326,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 808,
+							"y": 864,
 							"width": 60,
 							"height": 20
 						},
@@ -7362,7 +7343,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 814,
+									"y": 870,
 									"width": 25,
 									"height": 9
 								},
@@ -7383,7 +7364,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4GrowthLevel-nuu2ota5.png",
 									"frame": {
 										"x": 289,
-										"y": 814,
+										"y": 870,
 										"width": 25,
 										"height": 9
 									}
@@ -7398,7 +7379,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 808,
+									"y": 864,
 									"width": 60,
 									"height": 20
 								},
@@ -7410,7 +7391,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-mdm1merf.png",
 									"frame": {
 										"x": 264,
-										"y": 808,
+										"y": 864,
 										"width": 60,
 										"height": 20
 									}
@@ -7424,7 +7405,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 814,
+											"y": 870,
 											"width": 15,
 											"height": 8
 										},
@@ -7436,7 +7417,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-qzy0rtaw.png",
 											"frame": {
 												"x": 267,
-												"y": 814,
+												"y": 870,
 												"width": 15,
 												"height": 8
 											}
@@ -7455,7 +7436,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 808,
+							"y": 864,
 							"width": 60,
 							"height": 20
 						},
@@ -7472,7 +7453,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 814,
+									"y": 870,
 									"width": 25,
 									"height": 9
 								},
@@ -7493,7 +7474,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4SalaryLevel-nduwouez.png",
 									"frame": {
 										"x": 219,
-										"y": 814,
+										"y": 870,
 										"width": 25,
 										"height": 9
 									}
@@ -7508,7 +7489,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 808,
+									"y": 864,
 									"width": 60,
 									"height": 20
 								},
@@ -7520,7 +7501,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-nza2odbg.png",
 									"frame": {
 										"x": 194,
-										"y": 808,
+										"y": 864,
 										"width": 60,
 										"height": 20
 									}
@@ -7534,7 +7515,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 811,
+											"y": 867,
 											"width": 8,
 											"height": 15
 										},
@@ -7551,7 +7532,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 811,
+													"y": 867,
 													"width": 8,
 													"height": 15
 												},
@@ -7563,7 +7544,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-revcmju1.png",
 													"frame": {
 														"x": 200,
-														"y": 811,
+														"y": 867,
 														"width": 8,
 														"height": 15
 													}
@@ -7584,7 +7565,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 754,
+							"y": 810,
 							"width": 327,
 							"height": 93
 						},
@@ -7596,7 +7577,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Card-n0u5ote0.png",
 							"frame": {
 								"x": 25,
-								"y": 754,
+								"y": 810,
 								"width": 327,
 								"height": 93
 							}
@@ -7613,7 +7594,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 857,
+					"y": 913,
 					"width": 333,
 					"height": 105
 				},
@@ -7630,7 +7611,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 863,
+							"y": 919,
 							"width": 333,
 							"height": 99
 						},
@@ -7642,7 +7623,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Highlight-rky4qkuz.png",
 							"frame": {
 								"x": 22,
-								"y": 863,
+								"y": 919,
 								"width": 333,
 								"height": 99
 							}
@@ -7657,7 +7638,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 880,
+							"y": 936,
 							"width": 115,
 							"height": 14
 						},
@@ -7678,7 +7659,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Title-rjy0mdk3.png",
 							"frame": {
 								"x": 125,
-								"y": 880,
+								"y": 936,
 								"width": 115,
 								"height": 14
 							}
@@ -7698,7 +7679,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 864,
+							"y": 920,
 							"width": 79,
 							"height": 79
 						},
@@ -7710,7 +7691,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Photo-qzzgmjfg.png",
 							"frame": {
 								"x": 37,
-								"y": 864,
+								"y": 920,
 								"width": 79,
 								"height": 79
 							}
@@ -7725,7 +7706,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 911,
+							"y": 967,
 							"width": 60,
 							"height": 20
 						},
@@ -7742,7 +7723,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 918,
+									"y": 974,
 									"width": 21,
 									"height": 7
 								},
@@ -7763,7 +7744,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5EducationLevel-muu5n0ng.png",
 									"frame": {
 										"x": 151,
-										"y": 918,
+										"y": 974,
 										"width": 21,
 										"height": 7
 									}
@@ -7778,7 +7759,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 911,
+									"y": 967,
 									"width": 60,
 									"height": 20
 								},
@@ -7790,7 +7771,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-rtg2rujb.png",
 									"frame": {
 										"x": 124,
-										"y": 911,
+										"y": 967,
 										"width": 60,
 										"height": 20
 									}
@@ -7804,7 +7785,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 915,
+											"y": 971,
 											"width": 17,
 											"height": 12
 										},
@@ -7821,7 +7802,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 915,
+													"y": 971,
 													"width": 17,
 													"height": 12
 												},
@@ -7833,7 +7814,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-ouvbrje4.png",
 													"frame": {
 														"x": 127,
-														"y": 915,
+														"y": 971,
 														"width": 17,
 														"height": 12
 													}
@@ -7854,7 +7835,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 911,
+							"y": 967,
 							"width": 60,
 							"height": 20
 						},
@@ -7871,7 +7852,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 917,
+									"y": 973,
 									"width": 25,
 									"height": 9
 								},
@@ -7892,7 +7873,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5GrowthLevel-mzbdm0mz.png",
 									"frame": {
 										"x": 289,
-										"y": 917,
+										"y": 973,
 										"width": 25,
 										"height": 9
 									}
@@ -7907,7 +7888,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 911,
+									"y": 967,
 									"width": 60,
 									"height": 20
 								},
@@ -7919,7 +7900,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-otlcnji4.png",
 									"frame": {
 										"x": 264,
-										"y": 911,
+										"y": 967,
 										"width": 60,
 										"height": 20
 									}
@@ -7933,7 +7914,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 917,
+											"y": 973,
 											"width": 15,
 											"height": 8
 										},
@@ -7945,7 +7926,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-nzi1ruqw.png",
 											"frame": {
 												"x": 267,
-												"y": 917,
+												"y": 973,
 												"width": 15,
 												"height": 8
 											}
@@ -7964,7 +7945,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 911,
+							"y": 967,
 							"width": 60,
 							"height": 20
 						},
@@ -7981,7 +7962,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 917,
+									"y": 973,
 									"width": 25,
 									"height": 9
 								},
@@ -8002,7 +7983,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5SalaryLevel-ndhfnkqw.png",
 									"frame": {
 										"x": 219,
-										"y": 917,
+										"y": 973,
 										"width": 25,
 										"height": 9
 									}
@@ -8017,7 +7998,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 911,
+									"y": 967,
 									"width": 60,
 									"height": 20
 								},
@@ -8029,7 +8010,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-qzrdnemw.png",
 									"frame": {
 										"x": 194,
-										"y": 911,
+										"y": 967,
 										"width": 60,
 										"height": 20
 									}
@@ -8043,7 +8024,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 914,
+											"y": 970,
 											"width": 8,
 											"height": 15
 										},
@@ -8060,7 +8041,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 914,
+													"y": 970,
 													"width": 8,
 													"height": 15
 												},
@@ -8072,7 +8053,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mtderjbc.png",
 													"frame": {
 														"x": 200,
-														"y": 914,
+														"y": 970,
 														"width": 8,
 														"height": 15
 													}
@@ -8093,7 +8074,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 857,
+							"y": 913,
 							"width": 327,
 							"height": 93
 						},
@@ -8105,7 +8086,7 @@ window.__imported__["Final Screens (Master @ d8bdd71)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Card-nuy2nda1.png",
 							"frame": {
 								"x": 25,
-								"y": 857,
+								"y": 913,
 								"width": 327,
 								"height": 93
 							}
