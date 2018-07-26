@@ -179,7 +179,7 @@ populateInterests = ->
 				color: "#fff"
 				textAlign: "center"
 				fontFamily: "Gotham-Med"
-				fontSize: 12
+				fontSize: 12 * pointScale
 				parent: interestBg
 				autoSize: true
 				autoSizeHeight: true
@@ -231,6 +231,8 @@ for layer in ƒƒ('profileInterestsTag*')
 	layer.opacity = 0
 
 sketch.profileInterestsSeeMore.opacity = 0
+
+pointScale = 2
 
 #create Overarching FlowComponent
 flow = new FlowComponent
@@ -370,12 +372,12 @@ sketch.futuresQuestions.onClick (event, layer) ->
 				scrollHorizontal: false
 				parent: questionsBackground
 				backgroundColor: '#FFFFFF'
-			flow.showNext(dailyQuizFlow)
+			flow.showOverlayCenter(dailyQuizFlow)
 			dailyQuizFlow.showNext(questionsBackground)
 			questionsFlow.showNext(question1)
 			questionCurrent += 1
 		else
-			flow.showNext(dailyQuizFlow)
+			flow.showOverlayCenter(dailyQuizFlow)
 
 #close questions button
 questionsClose.onClick (event,layer) ->
@@ -461,8 +463,8 @@ sketch.question3DownArrow.animate
 #create displayvalue layer and state
 displayValue3 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider3.knob
@@ -576,8 +578,8 @@ sketch.question5DownArrow.animate
 #create displayvalue layer and state
 displayValue5 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider5.knob
@@ -668,8 +670,8 @@ sketch.question6DownArrow.animate
 #create displayvalue layer and state
 displayValue6 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider6.knob
@@ -781,8 +783,8 @@ sketch.question8DownArrow.animate
 #create displayvalue layer and state
 displayValue8 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider8.knob
@@ -873,8 +875,8 @@ sketch.question9DownArrow.animate
 #create displayvalue layer and state
 displayValue9 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider9.knob
@@ -957,7 +959,6 @@ sketch.question10SkipButton.onClick (event,layer) ->
 
 
 #JobCards Flow
-# jobFlow.showNext(jobCardBackground)
 
 #creating the job card swiping
 #define parameters for page and padding
@@ -1021,7 +1022,7 @@ for number in [0...7]
 					y: 4
 					x: 20
 					fontFamily: 'Gotham-Book' 
-					fontSize: 10
+					fontSize: 10 * pointScale
 					color: '#656565'
 					textTransform: 'uppercase'
 					
@@ -1061,7 +1062,7 @@ for number in [0...7]
 				parent: card
 				name: 'job' + number + 'Title'
 				fontFamily: 'Gotham-Med'
-				fontSize: 28
+				fontSize: 28 * pointScale
 				color: "black"
 				width: 232
 				x: 24
@@ -1074,8 +1075,8 @@ for number in [0...7]
 				name: 'job' + number + 'Description'
 				width: 290
 				fontFamily: 'Gotham-Book'
-				fontSize: 14
-				lineHeight: "20px"
+				fontSize: 14 * pointScale
+				lineHeight: 1.4
 				color: '#46474A'
 				x: 24
 				y: 380
@@ -1110,7 +1111,11 @@ for number in [0...7]
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
 		else #create an insight card
-			## CREATE INSIGHT CARD HERE
+			# add correct icon Object
+			
+			#add icon
+			
+			
 			## CREATE INSIGHT CARD HERE
 			## CREATE INSIGHT CARD HERE
 			
@@ -1184,24 +1189,10 @@ jobCardSlider.on "change:currentPage",->
 	
 
 
-
-		
-
-		
-			
-
-		
-		
-
-
 #favorite jobs
 
 #expand job card
 
-
-#go back to futures
-
-# 	flow.showNext(futures)
 
 #CREATE ACCOUNT SCREEN
 #Click first name
