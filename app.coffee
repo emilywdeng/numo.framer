@@ -132,7 +132,8 @@ user =
 	workstyles: []
 	drives: []
 	personality: []
-	favorites: ["Electrician", "Machinist", "Urban Planner", "Licensed Practical / Vocational Nurse", "Elementary School Teacher"]
+	favorites: []
+	history: []
 
 # Workstyles Input:
 # [0] Independent or Collaborative
@@ -1596,6 +1597,3 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
-
-populateFavJobs()
-			
