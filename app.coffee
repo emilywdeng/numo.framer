@@ -215,7 +215,7 @@ populateWorkstyles = ->
 #Function to dynamically display drives on profile
 #Called after completing daily questions
 populateDrives = ->
-	print "Called populateDrives"
+# 	print "Called populateDrives"
 	if user.drives.length != 0
 		sketch.profileDrivesDisabled.opacity = 0
 		sketch.profileDrivesFilled.opacity = 1
@@ -226,7 +226,7 @@ populateDrives = ->
 			drive0.fontSize = drive0.fontSize * pointScale
 			drive0.width = 275
 			drive0.text = user.drives[0]
-			print user.drives[0]
+# 			print user.drives[0]
 		#if there is second drive
 		if typeof user.drives[1] isnt 'undefined'
 			sketch.profileMeDrive2NumberFilled.opacity = 1
@@ -234,7 +234,7 @@ populateDrives = ->
 			drive1.fontSize = drive1.fontSize * pointScale
 			drive1.width = 275
 			drive1.text = user.drives[1]
-			print user.drives[1]
+# 			print user.drives[1]
 		#if there is third drive
 		if typeof user.drives[2] isnt 'undefined'
 			sketch.profileMeDrive3NumberFilled.opacity = 1
@@ -243,7 +243,7 @@ populateDrives = ->
 			drive2.width = 275
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
-			print user.drives[2]
+# 			print user.drives[2]
 
 #populatePersonality
 #Function to dynamically display personality on profile
@@ -718,7 +718,7 @@ question1Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question1 Option1 answer
 	user.workstyles[2] = "Detail Oriented"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -731,7 +731,7 @@ question1Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question1 Option2 answer
 	user.workstyles[2] = "Big Picture"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -744,7 +744,7 @@ question2Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question2 Option1 answer
 	user.workstyles[1] = "Empathic"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -756,7 +756,7 @@ question2Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question2 Option2 answer
 	user.workstyles[1] = "Logical"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -854,7 +854,7 @@ question3ButtonActive.onClick (event, layer) ->
 		user.workstyles[0] = "Independent"
 	else #bottom
 		user.workstyles[0] = "Collaborative"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress3.opacity = 0
 	questionsFlow.showNext(question4)
@@ -867,7 +867,7 @@ question4Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question4 Option1 answer
 	user.workstyles[3] = "Steady"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -879,7 +879,7 @@ question4Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question4 Option2 answer
 	user.workstyles[3] = "Fast-Paced"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -977,7 +977,7 @@ question5ButtonActive.onClick (event, layer) ->
 		user.workstyles[4] = "Creative"
 	else #bottom
 		user.workstyles[4] = "Linear"
-	print user.workstyles
+# 	print user.workstyles
 	questionCurrent += 1
 	question5Progress.opacity = 0
 	questionsFlow.showNext(question6)
@@ -1072,7 +1072,7 @@ question6ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question6 value
 	if slider6.value < 0 #top
 		user.drives.push("Power and influence")
-	print user.drives
+# 	print user.drives
 	questionCurrent += 1
 	question6Progress.opacity = 0
 	questionsFlow.showNext(question7)
@@ -1085,7 +1085,7 @@ question7Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question7 Option1 answer
 	user.drives.push("Feeling secure in future")
-	print user.drives
+# 	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -1097,7 +1097,7 @@ question7Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question7 Option2 answer
 	#does nothing
-	print user.drives
+# 	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -1192,7 +1192,7 @@ question8ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question8 value
 	if slider8.value < 0 #top
 		user.drives.push("Relationships to people")
-	print user.drives
+# 	print user.drives
 	questionCurrent += 1
 	question8Progress.opacity = 0
 	questionsFlow.showNext(question9)
@@ -1287,7 +1287,7 @@ question9ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question9 value
 	if slider9.value < 0 #top
 		user.drives.push("Being creative")
-	print user.drives
+# 	print user.drives
 	questionCurrent += 1
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
