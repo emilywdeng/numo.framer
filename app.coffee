@@ -87,46 +87,46 @@ questionText = []
 
 # print interestData.records[0].fields.Name
 
-#Responsive
-
-# Framer.Device.customize
-# 	screenWidth: 375
-# 	screenHeight: 667
-# 	devicePixelRatio: 1
-
-
-# print Framer.Device
-# print Framer.Device.screen
+# #Responsive
 # 
-# print Framer.Device.screen.width
-# print Framer.Device.screen.height
-
-screen_width = Framer.Device.screen.width
-screen_height = Framer.Device.screen.height
-
-default_w = 375 *pointScale
-default_h = 667 *pointScale
-
-ratio = screen_height / default_h
-# print "Ratio: " + ratio
-
-Framer.Defaults.Layer.force2d = true
-
-# Framer.Device.contentScale = ratio
-
-all = new Layer
-	width: default_w  # <-- The width will be 750 
-	height: default_h # <-- The height will be 1334
-	scale: 1      # <-- The ratio we got from the equation
-	originY: 0        # <-- This moves the origin of scale to top left
-	y: 0              # <-- Make this layer to the top
-# if Framer.Device.screen.height isnt 667* pointScale
-# all.centerX()       # <-- And we center the X position
+# # Framer.Device.customize
+# # 	screenWidth: 375
+# # 	screenHeight: 667
+# # 	devicePixelRatio: 1
+# 
+# 
+# # print Framer.Device
+# # print Framer.Device.screen
+# # 
+# # print Framer.Device.screen.width
+# # print Framer.Device.screen.height
+# 
+# screen_width = Framer.Device.screen.width
+# screen_height = Framer.Device.screen.height
+# 
+# default_w = 375 *pointScale
+# default_h = 667 *pointScale
+# 
+# ratio = screen_height / default_h
+# # print "Ratio: " + ratio
+# 
+# Framer.Defaults.Layer.force2d = true
+# 
+# # Framer.Device.contentScale = ratio
+# 
+# all = new Layer
+# 	width: default_w  # <-- The width will be 750 
+# 	height: default_h # <-- The height will be 1334
+# 	scale: 1      # <-- The ratio we got from the equation
+# 	originY: 0        # <-- This moves the origin of scale to top left
+# 	y: 0              # <-- Make this layer to the top
+# # if Framer.Device.screen.height isnt 667* pointScale
+# # all.centerX()       # <-- And we center the X position
 
 #User Profile Object
 user = 
 	interestsRaw: []
-	interests: ["Art", "Design", "Fashion"]
+	interests: []
 	workstyles: []
 	drives: []
 	personality: []
@@ -168,10 +168,12 @@ populateInterests = ->
 				parent: interestBg
 				autoSize: true
 				autoSizeHeight: true
-				paddingTop: 9
-				paddingBottom: 4
-				paddingLeft: 10
-				paddingRight: 10
+				paddingTop: 9 * pointScale
+				paddingBottom: 4 * pointScale
+				paddingLeft: 10 / pointScale
+				paddingRight: 10 / pointScale
+# 				paddingLeft: 10
+# 				paddingRight: 10
 			interestBg.x = initialX + lastWidth
 			interestBg.y = initialY + lastHeight
 			interestBg.width = interestTxt.width
@@ -537,7 +539,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(profile)
+# flow.showNext(question10)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -1149,29 +1151,31 @@ question9ButtonActive.onClick (event, layer) ->
 	questionsFlow.showNext(question10)
 
 #question10 select answers
-
+#select interest to display
 randomInterest = Utils.randomChoice(user.interests)
-# print "random interest is " + randomInterest
 interestID = 0
 for i in [0..interestData.records.length-1]
 	if randomInterest == interestData.records[i].fields.Name
 		interestID = i
-# 		print interestID
 
-captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer(true)
+#populate title
+captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer()
 captionTitle.fontSize = captionTitle.fontSize * pointScale
 captionTitle.text = interestData.records[interestID].fields.Title
 
+#populate description
+captionBody = sketch.questionVideoContentCaptionBody.convertToTextLayer()
+captionBody.fontSize = captionBody.fontSize * pointScale
+captionBody.text = interestData.records[interestID].fields.Description
+
 # Youtube
 youtubeQ10 = new YouTubePlayer
-	parent: question10ContentPreview
+	parent: sketch.question10ContentPreview
 	video: interestData.records[interestID].fields.VideoID
 # 	x: Align.center
 # 	y: Align.center
-	width: 303
-	height: 140
-
-
+	width: 303 * pointScale
+	height: 140 * pointScale
 
 # when they click play...
 youtubeQ10.onClick ->
@@ -1248,6 +1252,7 @@ inputName.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click email
 inputEmail = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1307,6 +1312,7 @@ inputEmail.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click password
 inputPassword = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1367,6 +1373,7 @@ inputPassword.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click retype password
 inputRetypePassword = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
