@@ -1,3 +1,9 @@
+# Import file "Final Screens (Master @ 92ebaad)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2092ebaad)@1x", scale: 1)
+
+Utils.globalLayers(sketch)
+
+pointScale = 2
 
  
 #Modules
@@ -47,11 +53,6 @@ InputModule = require "input"
 
 {TextLayer} = require "TextLayer"
 
-# Import file "Final Screens (Master @ d8bdd71)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20d8bdd71)@2x", scale: 1)
-
-Utils.globalLayers(sketch)
-
 # Custom Font
 # Loading the TTF files in the /fonts/ folder
 # and giving them a unique font family name
@@ -64,58 +65,389 @@ Utils.insertCSS """
 		font-family: "Gotham-Book";
 		src: url("gotham/Gotham-Book.otf");
 	}
+	@font-face {
+		font-family: "Gotham-Bold";
+		src: url("gotham/Gotham-Bold.otf");
+	}
 """
 
-# #Airtable
-# # Import from Airtable 
-# data = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
-# 
-# # print data.records.length 
-# 
-# #personality questions array 
-# questionText = []
-# 
+#Airtable
+# Import from Airtable 
+personalityData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Personality?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+interestData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Interest?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+jobData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Jobs?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
+
+# print data.records.length 
+
+#personality questions array 
+questionText = []
+
 # for i in [0..data.records.length-1]
 # 	questionText.push(data.records[i].fields.QuestionText)
 
-#Responsive
-screen_width = Framer.Device.screen.width 
-screen_height = Framer.Device.screen.height
+# print interestData.records[0].fields.Name
 
-default_w = 375
-default_h = 667
-
-ratio = screen_width / default_w
-
-Framer.Defaults.Layer.force2d = true
-
-# Framer.Device.contentScale = ratio
-
-all = new Layer
-	width: default_w  # <-- The width will be 750 
-	height: default_h # <-- The height will be 1334
-	scale: ratio      # <-- The ratio we got from the equation
-	originY: 0        # <-- This moves the origin of scale to top left
-	y: 0              # <-- Make this layer to the top
-all.centerX()       # <-- And we center the X position
-
-
-# for responsiveness, may not need this
-# for layer in ƒƒ()
-# 	if layer.name != "all"
-# 		this.parent = all
+# #Responsive
+# 
+# # Framer.Device.customize
+# # 	screenWidth: 375
+# # 	screenHeight: 667
+# # 	devicePixelRatio: 1
+# 
+# 
+# # print Framer.Device
+# # print Framer.Device.screen
+# # 
+# # print Framer.Device.screen.width
+# # print Framer.Device.screen.height
+# 
+# screen_width = Framer.Device.screen.width
+# screen_height = Framer.Device.screen.height
+# 
+# default_w = 375 *pointScale
+# default_h = 667 *pointScale
+# 
+# ratio = screen_height / default_h
+# # print "Ratio: " + ratio
+# 
+# Framer.Defaults.Layer.force2d = true
+# 
+# # Framer.Device.contentScale = ratio
+# 
+# all = new Layer
+# 	width: default_w  # <-- The width will be 750 
+# 	height: default_h # <-- The height will be 1334
+# 	scale: 1      # <-- The ratio we got from the equation
+# 	originY: 0        # <-- This moves the origin of scale to top left
+# 	y: 0              # <-- Make this layer to the top
+# # if Framer.Device.screen.height isnt 667* pointScale
+# # all.centerX()       # <-- And we center the X position
 
 #User Profile Object
 user = 
 	interestsRaw: []
 	interests: []
-	personality: []
-	drives: []
 	workstyles: []
-	favoriteJobs: []
+	drives: []
+	personality: []
+	favorites: []
+	history: []
+
+# Workstyles Input:
+# [0] Independent or Collaborative
+# [1] Empathic or Logical
+# [2] Detail Oriented or Big Picture
+
 
 # Custom Functions
 
+#populateInterests
+#Function to dynamically display interests on profile
+#Called after submitting interests
+populateInterests = ->
+	initialX = 37
+	initialY = 76
+	lastWidth = 0
+	lastHeight = 0
+	if user.interests.length != 0
+		#Hide profile interests
+		for layer in ƒƒ('profileInterestsTag*')
+			layer.opacity = 0
+		sketch.profileInterestsSeeMore.opacity = 0
+		for i in [0..user.interests.length-1]
+			interestBg = new Layer
+				backgroundColor: "4AC8AC"
+				parent: sketch.profile
+				borderRadius: 5
+				height: 32
+			interestTxt = new TextLayer
+				text: user.interests[i]
+				color: "#fff"
+				textAlign: "center"
+				fontFamily: "Gotham-Med"
+				fontSize: 12 * pointScale
+				parent: interestBg
+				autoSize: true
+				autoSizeHeight: true
+				paddingTop: 9 * pointScale
+				paddingBottom: 4 * pointScale
+				paddingLeft: 10 / pointScale
+				paddingRight: 10 / pointScale
+# 				paddingLeft: 10
+# 				paddingRight: 10
+			interestBg.x = initialX + lastWidth
+			interestBg.y = initialY + lastHeight
+			interestBg.width = interestTxt.width
+			lastWidth = lastWidth + interestBg.width + 10
+			if (interestBg.x + interestBg.width) > 333
+				lastWidth = 0
+				lastHeight = lastHeight + 32 + 10
+				interestBg.x = initialX + lastWidth
+				interestBg.y = initialY + lastHeight
+				lastWidth = lastWidth + interestBg.width + 10
+			if interestBg.y > 150
+				interestBg.opacity = 0
+				sketch.profileInterestsSeeMore.opacity = 1
+
+#populateWorkstyles
+#Function to dynamically display workstyles on profile
+#Called after completing daily questions
+populateWorkstyles = ->
+	if user.workstyles.length != 0
+		sketch.profileWorkstylesDisabled.opacity = 0
+		sketch.profileWorkstylesFilled.opacity = 1
+		if user.workstyles[0] == "Independent"
+			sketch.profileMeWorkstyle1Toggle.x = 50
+		if user.workstyles[0] == "Collaborative"
+			sketch.profileMeWorkstyle1Toggle.x = 250
+		if user.workstyles[1] == "Empathic"
+			sketch.profileMeWorkstyle2Toggle.x = 95
+		if user.workstyles[1] == "Logical"
+			sketch.profileMeWorkstyle2Toggle.x = 230
+		if user.workstyles[2] == "Detail Oriented"
+			sketch.profileMeWorkstyle3Toggle.x = 65
+		if user.workstyles[2] == "Big Picture"
+			sketch.profileMeWorkstyle3Toggle.x = 200
+
+#populateDrives
+#Function to dynamically display drives on profile
+#Called after completing daily questions
+populateDrives = ->
+	print "Called populateDrives"
+	if user.drives.length != 0
+		sketch.profileDrivesDisabled.opacity = 0
+		sketch.profileDrivesFilled.opacity = 1
+		#if there is first drive
+		if typeof user.drives[0] isnt 'undefined'
+			sketch.profileMeDrive1NumberFilled.opacity = 1
+			drive0 = sketch.profileMeDrive1Filled.convertToTextLayer()
+			drive0.fontSize = drive0.fontSize * pointScale
+			drive0.width = 275
+			drive0.text = user.drives[0]
+			print user.drives[0]
+		#if there is second drive
+		if typeof user.drives[1] isnt 'undefined'
+			sketch.profileMeDrive2NumberFilled.opacity = 1
+			drive1 = sketch.profileMeDrive2Filled.convertToTextLayer()
+			drive1.fontSize = drive1.fontSize * pointScale
+			drive1.width = 275
+			drive1.text = user.drives[1]
+			print user.drives[1]
+		#if there is third drive
+		if typeof user.drives[2] isnt 'undefined'
+			sketch.profileMeDrive3NumberFilled.opacity = 1
+			drive2 = sketch.profileMeDrive3Filled.convertToTextLayer()
+			drive2.fontSize = drive2.fontSize * pointScale
+			drive2.width = 275
+			drive2.text = user.drives[2]
+			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
+			print user.drives[2]
+
+#populatePersonality
+#Function to dynamically display personality on profile
+#Called after completing personality quiz
+populatePersonality = ->
+	if user.personality.length != 0
+		if user.personality[0]
+			personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
+			personality0.fontSize = personality0.fontSize * pointScale
+			personality0.autoSize = true
+			personality0.text = user.personality[0]
+			personality0.x = 32 - (personality0.width/2)
+			personalityImg0 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 56
+					y: 727
+			personalityImg0.image = getPersonalityImg(user.personality[0])
+		if user.personality[1]
+			personality1 = sketch.profileMePersonality2Text.convertToTextLayer()
+			personality1.fontSize = personality1.fontSize * pointScale
+			personality1.autoSize = true
+			personality1.text = user.personality[1]
+			personality1.x = 32 - (personality1.width/2)
+			personalityImg1 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 158
+					y: 727
+			personalityImg1.image = getPersonalityImg(user.personality[1])
+		if user.personality[2]
+			personality2 = sketch.profileMePersonality3Text.convertToTextLayer()
+			personality1.fontSize = personality1.fontSize * pointScale
+			personality2.autoSize = true
+			personality2.text = user.personality[2]
+			personality2.x = 32 - (personality2.width/2)
+			personalityImg2 = new Layer
+					parent: sketch.profile
+					height: 61
+					width: 61
+					x: 260
+					y: 727
+			personalityImg2.image = getPersonalityImg(user.personality[2])
+
+#populateFavJobs
+
+favJobCards = [] #futuresFavoriteJob1
+favJobCards.push(sketch.futuresFavoriteJob1)
+favJobCards.push(sketch.futuresFavoriteJob2)
+favJobCards.push(sketch.futuresFavoriteJob3)
+favJobCards.push(sketch.futuresFavoriteJob4)
+favJobCards.push(sketch.futuresFavoriteJob5)
+
+favJobTitle = [] #profileFutureFavoriteJob1Title
+favJobTitle.push(sketch.profileFutureFavoriteJob1Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob2Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob3Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob4Title)
+favJobTitle.push(sketch.profileFutureFavoriteJob5Title)
+
+favJobEdu = []
+favJobEdu.push(sketch.profileFutureFavoriteJob1EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob2EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob3EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob4EducationLevel)
+favJobEdu.push(sketch.profileFutureFavoriteJob5EducationLevel)
+
+favJobSal = []
+favJobSal.push(sketch.profileFutureFavoriteJob1SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob2SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob3SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob4SalaryLevel)
+favJobSal.push(sketch.profileFutureFavoriteJob5SalaryLevel)
+
+favJobGro = []
+favJobGro.push(sketch.profileFutureFavoriteJob1GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob2GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob3GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob4GrowthLevel)
+favJobGro.push(sketch.profileFutureFavoriteJob5GrowthLevel)
+
+favJobImg = []
+favJobImg.push(sketch.profileFutureFavoriteJob1Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob2Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob3Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob4Photo)
+favJobImg.push(sketch.profileFutureFavoriteJob5Photo)
+
+populateFavJobs = ->
+	#check that there are favorites
+	if user.favorites.length != 0
+		#loop through favorites
+		for i in [0..favJobCards.length-1]
+			#if the i-th favorite exists
+			if user.favorites[i]
+				#initialize variables to store info from airtable
+				fieldsJob = ""
+				fieldsEduShort = ""
+				fieldsSalShort = ""
+				fieldsGroShort = ""
+				fieldsImg = ""
+				#get matching info from airtable
+				for j in [0..jobData.records.length-1]
+					if user.favorites[i] == jobData.records[j].fields.Job
+						fieldsJob = jobData.records[j].fields.Job
+						fieldsEduShort = jobData.records[j].fields.EduShort
+						fieldsSalShort = jobData.records[j].fields.SalaryShort
+						fieldsGroShort = jobData.records[j].fields.OutlookShort
+						fieldsImg = jobData.records[j].fields.Image1[0].url
+	# 			print fieldsEduShort
+				#show job card
+				favJobCards[i].opacity = 1
+				#populate title
+				jobTitle = favJobTitle[i].convertToTextLayer()
+				jobTitle.fontSize = jobTitle.fontSize * pointScale
+				jobTitle.text = fieldsJob
+				#populate education
+				jobEdu = favJobEdu[i].convertToTextLayer()
+				jobEdu.fontSize = jobEdu.fontSize * pointScale
+				jobEdu.text = fieldsEduShort
+				#populate salary
+				jobSal = favJobSal[i].convertToTextLayer()
+				jobSal.fontSize = jobSal.fontSize * pointScale
+				jobSal.text = fieldsSalShort
+				#populate growth
+				jobGro = favJobGro[i].convertToTextLayer()
+				jobGro.fontSize = jobGro.fontSize * pointScale
+				jobGro.text = fieldsGroShort
+				#populate image
+				jobImg = new Layer
+					parent: favJobImg[i]
+					height: 79
+					width: 79
+					image: fieldsImg
+					borderRadius: 45.5
+		
+
+#Highlight functions
+highlightInterests = ->
+	sketch.profileInterestsHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileInterestsHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+highlightWorkstyles = ->
+	sketch.profileWorkstylesHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileWorkstylesHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+highlightDrives = ->
+	sketch.profileDrivesHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profileDrivesHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+		
+highlightPersonality = ->
+	sketch.profilePersonalityHighlight.animate
+		opacity: 1
+		options:
+			time: 1
+			curve: Bezier.ease
+	sketch.profilePersonalityHighlight.animate
+		opacity: 0
+		options:
+			time: 1
+			curve: Bezier.ease
+
+#getPersonalityImg
+#Retrieve appropriate image for personality on profile
+getPersonalityImg = (personality) ->
+	if personality == "Doer"
+		return "images/Doer.png"
+	if personality == "Thinker"
+		return "images/Thinker.png"
+	if personality == "Creator"
+		return "images/Creator.png"
+	if personality == "Persuader"
+		return "images/Persuader.png"
+	if personality == "Helper"
+		return "images/Helper.png"
+	if personality == "Organizer"
+		return "images/Organizer.png"
+
+#convertInterests
+# Function to translate sketch object names for interests to usable strings
 convertInterests = (array) ->
 	for tag in array
 		if tag == "interestTagCommunityActive"
@@ -158,8 +490,6 @@ convertInterests = (array) ->
 			user.interests.push("Technology")
 		if tag == "interestTagArtActive"
 			user.interests.push("Art")
-
-
 
 #Check that interests was inputted
 populateInterests = ->
@@ -226,8 +556,7 @@ for layer in ƒƒ('*Highlight')
 for layer in ƒƒ('*Selected')
 	layer.opacity = 0
 
-#Hide profile interests
-for layer in ƒƒ('profileInterestsTag*')
+for layer in ƒƒ('futuresFavoriteJob*')
 	layer.opacity = 0
 
 sketch.profileInterestsSeeMore.opacity = 0
@@ -241,8 +570,6 @@ flow = new FlowComponent
 # 	width: all.width
 # 	height: all.height
 
-# Show first screen for dev
-# flow.showNext(interest)
 
 #ONBOARDING SCREENS
 # create onboarding FlowComponent and add to overarching flow
@@ -390,6 +717,8 @@ question1Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question1 Option1 answer
+	user.workstyles[2] = "Detail Oriented"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -401,6 +730,8 @@ question1Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question1 Option2 answer
+	user.workstyles[2] = "Big Picture"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -412,6 +743,8 @@ question2Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question2 Option1 answer
+	user.workstyles[1] = "Empathic"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -422,6 +755,8 @@ question2Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question2 Option2 answer
+	user.workstyles[1] = "Logical"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -515,6 +850,11 @@ question3ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question3 value
+	if slider3.value < 0 #top
+		user.workstyles[0] = "Independent"
+	else #bottom
+		user.workstyles[0] = "Collaborative"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress3.opacity = 0
 	questionsFlow.showNext(question4)
@@ -526,6 +866,8 @@ question4Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question4 Option1 answer
+	user.workstyles[3] = "Steady"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -536,6 +878,8 @@ question4Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question4 Option2 answer
+	user.workstyles[3] = "Fast-Paced"
+	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -629,6 +973,11 @@ question5ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question5 value
+	if slider5.value < 0 #top
+		user.workstyles[4] = "Creative"
+	else #bottom
+		user.workstyles[4] = "Linear"
+	print user.workstyles
 	questionCurrent += 1
 	question5Progress.opacity = 0
 	questionsFlow.showNext(question6)
@@ -721,6 +1070,9 @@ question6ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question6 value
+	if slider6.value < 0 #top
+		user.drives.push("Power and influence")
+	print user.drives
 	questionCurrent += 1
 	question6Progress.opacity = 0
 	questionsFlow.showNext(question7)
@@ -732,6 +1084,8 @@ question7Option1Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question7 Option1 answer
+	user.drives.push("Feeling secure in future")
+	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -742,6 +1096,8 @@ question7Option2Default.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question7 Option2 answer
+	#does nothing
+	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -834,6 +1190,9 @@ question8ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question8 value
+	if slider8.value < 0 #top
+		user.drives.push("Relationships to people")
+	print user.drives
 	questionCurrent += 1
 	question8Progress.opacity = 0
 	questionsFlow.showNext(question9)
@@ -926,22 +1285,42 @@ question9ButtonActive.onClick (event, layer) ->
 		options: 
 			time: .2
 	#INSERT logic to save question9 value
+	if slider9.value < 0 #top
+		user.drives.push("Being creative")
+	print user.drives
 	questionCurrent += 1
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
 
-#question10 select answers THIS NEEDS WORK EMILYYYYYY
-# Youtube IDK HOW TO MAKE THIS WORK
-youtube = new YouTubePlayer
-	parent: question10ContentPreview
-	video: "9lVTE_bq3lw"
-	x: Align.center
-	width: 300
-	height: 140 
-	controls: 1
+#question10 select answers
+#select interest to display
+randomInterest = Utils.randomChoice(user.interests)
+interestID = 0
+for i in [0..interestData.records.length-1]
+	if randomInterest == interestData.records[i].fields.Name
+		interestID = i
+
+#populate title
+captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer()
+captionTitle.fontSize = captionTitle.fontSize * pointScale
+captionTitle.text = interestData.records[interestID].fields.Title
+
+#populate description
+captionBody = sketch.questionVideoContentCaptionBody.convertToTextLayer()
+captionBody.fontSize = captionBody.fontSize * pointScale
+captionBody.text = interestData.records[interestID].fields.Description
+
+# Youtube
+youtubeQ10 = new YouTubePlayer
+	parent: sketch.question10ContentPreview
+	video: interestData.records[interestID].fields.VideoID
+# 	x: Align.center
+# 	y: Align.center
+	width: 303 * pointScale
+	height: 140 * pointScale
 
 # when they click play...
-youtube.onClick ->
+youtubeQ10.onClick ->
 	player.playVideo()
 	#hide skip button, show like / dislike buttons
 	sketch.question10SkipButton.opacity = 0
@@ -1172,6 +1551,8 @@ jobCardSlider.on "change:currentPage",->
 			x: 84
 			y: 456
 		backToFuturesButton.onClick (event, layer) ->
+			populateWorkstyles()
+			populateDrives()
 			flow.showNext(mainFlow)
 			futuresQuestionsDone.opacity = 1
 			futuresQuestions.visible = false
@@ -1254,6 +1635,7 @@ inputName.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click email
 inputEmail = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1313,6 +1695,7 @@ inputEmail.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click password
 inputPassword = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1373,6 +1756,7 @@ inputPassword.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
+
 #Click retype password
 inputRetypePassword = new InputModule.Input
 		setup: false # Change to true when positioning the input so you can see it
@@ -1498,6 +1882,3 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 		mainFlow.header = sketch.header
 		mainFlow.footer = sketch.navBar
 		mainFlow.showNext(futures)
-
-
-
