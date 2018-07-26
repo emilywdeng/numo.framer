@@ -47,8 +47,8 @@ InputModule = require "input"
 
 {TextLayer} = require "TextLayer"
 
-# Import file "Final Screens (Master @ a30fd53)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20a30fd53)@2x", scale: 1)
+# Import file "Final Screens (Master @ d8bdd71)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20d8bdd71)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -179,7 +179,7 @@ populateInterests = ->
 				color: "#fff"
 				textAlign: "center"
 				fontFamily: "Gotham-Med"
-				fontSize: 12
+				fontSize: 12 * pointScale
 				parent: interestBg
 				autoSize: true
 				autoSizeHeight: true
@@ -232,9 +232,11 @@ for layer in ƒƒ('profileInterestsTag*')
 
 sketch.profileInterestsSeeMore.opacity = 0
 
+pointScale = 2
+
 #create Overarching FlowComponent
 flow = new FlowComponent
-# Try this code once all screens are in the flow component
+# # Try this code once all screens are in the flow component
 # 	parent: all
 # 	width: all.width
 # 	height: all.height
@@ -370,12 +372,12 @@ sketch.futuresQuestions.onClick (event, layer) ->
 				scrollHorizontal: false
 				parent: questionsBackground
 				backgroundColor: '#FFFFFF'
-			flow.showNext(dailyQuizFlow)
+			flow.showOverlayCenter(dailyQuizFlow)
 			dailyQuizFlow.showNext(questionsBackground)
 			questionsFlow.showNext(question1)
 			questionCurrent += 1
 		else
-			flow.showNext(dailyQuizFlow)
+			flow.showOverlayCenter(dailyQuizFlow)
 
 #close questions button
 questionsClose.onClick (event,layer) ->
@@ -461,8 +463,8 @@ sketch.question3DownArrow.animate
 #create displayvalue layer and state
 displayValue3 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider3.knob
@@ -576,8 +578,8 @@ sketch.question5DownArrow.animate
 #create displayvalue layer and state
 displayValue5 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider5.knob
@@ -668,8 +670,8 @@ sketch.question6DownArrow.animate
 #create displayvalue layer and state
 displayValue6 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider6.knob
@@ -781,8 +783,8 @@ sketch.question8DownArrow.animate
 #create displayvalue layer and state
 displayValue8 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider8.knob
@@ -873,8 +875,8 @@ sketch.question9DownArrow.animate
 #create displayvalue layer and state
 displayValue9 = new TextLayer
 	text: ''
-	fontSize: 14
-	fontFamily: 'Gotham'
+	fontSize: 14 * pointScale
+	fontFamily: "Gotham-Med"
 	color: '#4AC8AC'
 	x: 70
 	parent: slider9.knob
@@ -943,10 +945,253 @@ youtube.onClick ->
 	player.playVideo()
 	#hide skip button, show like / dislike buttons
 	sketch.question10SkipButton.opacity = 0
-	
+
+jobFlow = ""
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
+	
 	flow.showNext(jobCardLoading)
+	#wait 5 seconds to show jobscards
+	Utils.delay 5, ->
+		jobFlow = new FlowComponent
+		flow.showNext(jobFlow)
+		jobFlow.showNext(jobCardBackground)
+
+
+#JobCards Flow
+
+#creating the job card swiping
+#define parameters for page and padding
+pageSize = 
+	width: Screen.width
+	height: 548
+	
+padding = 15
+
+#create page component + cards
+jobCardSlider = new PageComponent
+	parent: jobCardBackground
+	width: pageSize.width - padding*2
+	height: pageSize.height
+	scrollVertical: false
+	clip: false
+	x: padding
+	y: 98
+jobCardSlider.centerX()
+
+#create pages and cards in pages, then add to the page component
+for number in [0...7]
+	#create page wrapper for the cards
+	page = new Layer
+		size: jobCardSlider.size
+		backgroundColor: "null"
+
+	if number > 0
+		page.opacity = 0.9
+	
+	#create cards for all the sections, except last
+	if number < 6
+			card = new Layer
+				superLayer: page
+				width: page.width - padding
+				height: 548
+				backgroundColor: '#FFFFFF'
+				borderRadius: 7
+				name: 'job' + number
+			card.center()
+		
+	#create the job card layout
+	if number > 0 
+			#add the tags to every cards
+			for i in [0..2]
+				tagsEmpty = new Layer
+					parent: card
+					width: 60
+					height: 20
+					backgroundColor: '#F6F6F6'
+					borderRadius: 3
+				tagIcon = new Layer
+					parent: tagsEmpty
+					width: 18
+					height: 18
+					y: Align.center
+					x: 5
+				tagText = new TextLayer
+					parent: tagIcon
+					text: 'HIGH'
+					y: 4
+					x: 20
+					fontFamily: 'Gotham-Book' 
+					fontSize: 10 * pointScale
+					color: '#656565'
+					textTransform: 'uppercase'
+					
+					
+				if i is 0
+					tagsEmpty.name = 'job' + number + 'EducationCareerTag'
+					tagsEmpty.x = 24
+					tagsEmpty.y = 328
+					tagIcon.image = 'images/tagEducationIcon.png'
+					tagText.name = 'job' + number + 'EducationText'
+				else if i is 1
+					tagsEmpty.name = 'job' + number + 'SalaryCareerTag'
+					tagsEmpty.x = 94
+					tagsEmpty.y = 328
+					tagIcon.image = 'images/tagSalaryIcon.png'
+					tagText.name = 'job' + number + 'SalaryText'
+				else 
+					tagsEmpty.name = 'job' + number + 'GrowthCareerTag'
+					tagsEmpty.x = 164
+					tagsEmpty.y = 328
+					tagIcon.image = 'images/tagGrowthIcon.png'
+					tagText.name = 'job' + number + 'GrowthText'
+		
+			#add preview image to every card
+			jobPreviewImage = new Layer
+				parent: card
+				name: 'job' + number + 'PreviewImage'
+				width: 300
+				height: 225
+				x: Align.center
+				y: 12
+				borderRadius: 3
+				image: 'images/jobPreviewImageExample.png' 
+				
+			#add title to every card
+			jobTitle = new TextLayer
+				parent: card
+				name: 'job' + number + 'Title'
+				fontFamily: 'Gotham-Med'
+				fontSize: 28 * pointScale
+				color: "black"
+				width: 232
+				x: 24
+				y: 250
+				text: "Computer Programmer" ## INSERT HERE
+			
+			#add job description to every card
+			jobDescription = new TextLayer
+				parent: card
+				name: 'job' + number + 'Description'
+				width: 290
+				fontFamily: 'Gotham-Book'
+				fontSize: 14 * pointScale
+				lineHeight: 1.4
+				color: '#46474A'
+				x: 24
+				y: 380
+				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
+			
+			#add read more to expand arrow
+			jobReadMoreButton = new Layer
+				parent: card
+				name: 'job' + number + 'ReadMoreButton'
+				width: 110
+				height: 47
+				x: 108
+				y: 495
+				image: 'images/jobCardExpandButton.png'
+			
+			#add heart to favorite
+			jobFavoriteHeartDefault = new Layer
+				parent: card
+				name: 'job' + number + 'favoriteHeartDefault'
+				x: 265
+				y: 261
+				width: 35
+				height: 29
+				image: 'images/favoriteJobHeartDefault.png'
+			jobFavoriteHeartSelected = new Layer
+				parent: card
+				name: 'job' + number + 'favoriteHeartSelected'
+				x: 265
+				y: 261
+				width: 35
+				height: 29
+				image: 'images/favoriteJobHeartFilled.png'
+				opacity: 0
+		else #create an insight card
+			# add correct icon Object
+			
+			#add icon
+			
+			
+			## CREATE INSIGHT CARD HERE
+			## CREATE INSIGHT CARD HERE
+			
+	jobCardSlider.addPage(page)
+
+#create pagination for the cards
+activeCard = new Layer
+	width: 8
+	height: 8
+	borderRadius: 20
+	parent: jobCardBackground
+	backgroundColor: '#4AC8AC'
+	y: 75
+	x: 138
+
+#define states for paginatino dot
+activeCard.states = 
+	job1: x: 138
+	job2: x: 152
+	job3: x: 167
+	job4: x: 184
+	job5: x: 200
+	job6: x: 215
+	job7: x: 231
+
+
+#listen for  page change
+jobCardSlider.on "change:currentPage",->
+	current = jobCardSlider.currentPage
+	previous = jobCardSlider.previousPage
+	
+# 	transition animations between pages
+	previous.animate
+		opacity: .9
+		options: time: .5
+	current.animate
+		opacity: 1
+		options: time: .5
+	
+	#move pagintation indicator dot to correct placement
+	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
+	currentPage = 'job' + currentPage
+	activeCard.states.switchInstant currentPage
+	#show done when done swiping
+	
+	if currentPage is 'job7'
+		jobCardBackgroundDone.opacity = 1
+		backToFuturesButton = new Layer
+			parent: jobCardBackground 
+			name: "backToFuturesButton"
+			backgroundColor: "null"
+			width: 207
+			height: 63
+			x: 84
+			y: 456
+		backToFuturesButton.onClick (event, layer) ->
+			flow.showNext(mainFlow)
+			futuresQuestionsDone.opacity = 1
+			futuresQuestions.visible = false
+	else 
+		jobCardBackgroundDone.opacity = 0
+		for layer in Framer.CurrentContext.layers
+			layer.destroy() if layer.name is "backToFuturesButton"
+
+
+
+
+
+
+
+	
+
+
+#favorite jobs
+
+#expand job card
 
 
 #CREATE ACCOUNT SCREEN
