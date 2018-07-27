@@ -529,7 +529,7 @@ populateInterests = ->
 				interestBg.opacity = 0
 				sketch.profileInterestsSeeMore.opacity = 1
 
-#Preloader
+#Preloader + Opacity
 Framer.Extras.Preloader.enable()
 Framer.Extras.Preloader.addImage("images/preloader-logo.png")
 Framer.Extras.Preloader.setLogo("images/preloader-logo.png")
@@ -1391,7 +1391,8 @@ for number in [0...7]
 
 
 	#create the job card layouts + insight layouts
-	if number > 0 & number < 6 
+	# add "number > 0 &" back in when done
+	if  number < 6 
 			#add the tags to every cards
 			for i in [0..2]
 				tagsEmpty = new Layer
@@ -1582,6 +1583,7 @@ jobCardSlider.on "change:currentPage",->
 	
 	#move pagintation indicator dot to correct placement
 	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
+	
 	currentPage = 'job' + currentPage
 	activeCard.states.switchInstant currentPage
 	#show done when done swiping
@@ -1613,9 +1615,143 @@ for number in [1...6]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-
+cardExpandLayer = new Layer
+	parent: jobCardBackground
+	height: 550
+	width: 327
+	x: Align.center
+	y: 100
+	backgroundColor: 'null'	
+	index: 4
+	
+	
 #expand job card
+for number in [0...6]
+	jobCardsReadMoreButton[number].onClick (event,layer) ->
+		#get and expand card element
+		cardExpandLayer.animate
+			height: 1600
+			width: Screen.width
+			x: 0
+			y: 0
+			backgroundColor: 'white'
+			 
+		#get all tag elements
+		page = this.parent
+		
+		for child in page.subLayers
+			child.parent = cardExpandLayer
+		layerEducationTagBackground = this.parent.children[0]
+		layerEducationTagIcon = this.parent.children[0].children[0]
+		layerEducationTagText = this.parent.children[0].children[0].children[0]
+		layerSalaryTagBackground = this.parent.children[1]
+		layerSalaryTagIcon = this.parent.children[1].children[0]
+		layerSalaryTagText = this.parent.children[1].children[0].children[0]
+		layerGrowthTagBackground = this.parent.children[2]
+		layerGrowthTagIcon = this.parent.children[2].children[0]
+		layerGrowthTagText = this.parent.children[2].children[0].children[0]
+		
+		#expand all tag layers
+		layerEducationTagBackground.animate
+			width: 100
+			height: 75
+			x: 26
+			y: 408
+		layerSalaryTagBackground.animate
+			width: 100
+			height: 75
+			x: 134
+			y: 408
+		layerGrowthTagBackground.animate
+			width: 100
+			height: 75
+			x: 242
+			y: 408
+		layerEducationTagIcon.animate
+			x: 25
+			y: 5
+		layerSalaryTagIcon.animate
+			x: 25
+			y: 5
+		layerGrowthTagIcon.animate
+			x: 25
+			y: 5
+		
+		previewImage = this.parent.children[3]
+		previewImage.animate
+			x: 0
+			y: 0
+			width: Screen.width
+			height:	286
+			borderRadius: 0
+		jobTitle = this.parent.children[4]
+		jobTitle.animate
+			x: 26
+			y: 320
+			width: 264
+		description = this.parent.children[5]
+		description.animate
+			width: 327
+			x: 26
+			y: 515
+		readMoreButton = this.parent.children[6]
+		readMoreButton.opacity = 0
+		layerFavoriteButtonDefault = this.parent.children[7]
+		layerFavoriteButtonSelected = this.parent.children[8]
+		layerFavoriteButtonDefault.animate
+			x: 300
+			y: 320
+		layerFavoriteButtonSelected.animate
+			x: 300
+			y: 320
+		gradientOverlay = new Layer #gradient for job cards
+			parent: cardExpandLayer
+			image: 'images/pictureOverlay.png'
+			width: Screen.width
+			height: 61
+			opacity : 1
+			
+		closeButton = new Layer #close btn for job cards
+			parent: cardExpandLayer
+			image: 'images/jobClose.png'
+			height: 30
+			width: 30
+			x: 20
+			y: 20
+			
+		for i in [0...3]
+			textLayer = new TextLayer
+				fontSize: 20 * pointScale
+				fontFamily: "Gotham-Book"
+				width: 100
+				color: '#46474A'
+				text: "58k"
+				textAlign: "center"
+			unitText = new TextLayer
+				fontSize: 12 * pointScale
+				fontFamily: "Gotham-Book"
+				width: 100
+				color: '#46474A'
+				text: "dollars"
+				textAlign: "center"
+			if i is 0 # education text
+				textLayer.parent = layerEducationTagBackground
 
+				unitText.parent = layerEducationTagBackground
+			else if i is 1 #salary text
+				textLayer.parent = layerSalaryTagBackground
+				unitText.parent = layerSalaryTagBackground
+			else #growth text
+				textLayer.parent = layerGrowthTagBackground	
+				unitText.parent = layerGrowthTagBackground
+			textLayer.y = 30
+			unitText.y = 50
+			
+			
+			
+			
+			
+			
 
 
 
