@@ -593,7 +593,7 @@ storeJobSession = ->
 		user.history.push(jobSession[i])
 		#check status for active
 		if jobCardsFavoriteHeartSelected.length != 0
-			if jobCardsFavoriteHeartSelected[i].states.current.name == "selected"
+			if jobCardsFavoriteHeartSelected[i].states.current.name == "select"
 				user.favorites.push(jobData.records[jobSession[i]].fields.Job)
 #jobData.records[jobSession[i]].fields.Job
 
@@ -933,7 +933,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-flow.showNext(futures)
+# flow.showNext(futures)
 
 
 #PERSONALITY FLOW
@@ -1720,7 +1720,6 @@ jobCardSlider.on "change:currentPage",->
 
 sketch.futuresQuestions2.onClick (event, layer) -> 
 	if userSession == 1
-		print 'hellow'
 		if dailyQuizFlow is "" 
 				dailyQuizFlow = new FlowComponent
 				questionsFlow = new FlowComponent
