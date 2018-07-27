@@ -175,6 +175,30 @@ jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
 jobCardsReadMoreButton = []
+jobCards = []
+jobCardsPreviewImage = []
+jobCardsTitle = []
+jobCardsEducationBackground = []
+jobCardsEducationIcon = []
+jobCardsEducationTextTag = []
+jobCardsEducationTextDetailed = []
+jobCardsEducationUnit = []
+jobCardsSalaryBackground = []
+jobCardsSalaryIcon = []
+jobCardsSalaryTextTag = []
+jobCardsSalaryTextDetailed = []
+jobCardsSalaryUnit = []
+jobCardsGrowthBackground = []
+jobCardsGrowthIcon = []
+jobCardsGrowthTextTag = []
+jobCardsGrowthTextDetailed = []
+jobCardsGrowthUnit = []
+jobCardsSummaryText = []
+jobCardsFavoriteHeartDefault = []
+jobCardsFavoriteHeartSelected = []
+jobCardsDailyTasksList = []
+jobCardsSkills = []
+jobCardsCareerJourney = []
 #array to what jobs to show in session
 jobSession = []
 
@@ -1133,6 +1157,20 @@ for i in [0..19]
 				getJobSession()
 				#populate jobs into cards
 				populateJobSession()
+				#populate insight into first card
+				print user.personality[0]
+				if user.personality[0] == "Thinker"
+					jobCards[0].image = "images/thinker-insight.png"
+				if user.personality[0] == "Helper"
+					jobCards[0].image = "images/helper-insight.png"
+				if user.personality[0] == "Doer"
+					jobCards[0].image = "images/doer-insight.png"
+				if user.personality[0] == "Organizer"
+					jobCards[0].image = "images/organizer-insight.png"
+				if user.personality[0] == "Persuader"
+					jobCards[0].image = "images/persuader-insight.png"
+				if user.personality[0] == "Creator"
+					jobCards[0].image = "images/creator-insight.png"
 				jobFlow = new FlowComponent
 					scrollVertical: false
 					scrollHorizontal: false
@@ -1162,6 +1200,19 @@ for i in [0..19]
 				getJobSession()
 				#populate jobs into cards
 				populateJobSession()
+				#populate personality into first card
+				if user.personality[0] == "Thinker"
+					jobCards[0].image = "images/thinker-insight.png"
+				if user.personality[0] == "Helper"
+					jobCards[0].image = "images/helper-insight.png"
+				if user.personality[0] == "Doer"
+					jobCards[0].image = "images/doer-insight.png"
+				if user.personality[0] == "Organizer"
+					jobCards[0].image = "images/organizer-insight.png"
+				if user.personality[0] == "Persuader"
+					jobCards[0].image = "images/persuader-insight.png"
+				if user.personality[0] == "Creator"
+					jobCards[0].image = "images/creator-insight.png"
 				jobFlow = new FlowComponent
 					scrollVertical: false
 					scrollHorizontal: false
@@ -1880,30 +1931,6 @@ jobCardSlider = new PageComponent
 jobCardSlider.centerX()
 
 
-jobCardsPreviewImage = []
-jobCardsTitle = []
-jobCardsEducationBackground = []
-jobCardsEducationIcon = []
-jobCardsEducationTextTag = []
-jobCardsEducationTextDetailed = []
-jobCardsEducationUnit = []
-jobCardsSalaryBackground = []
-jobCardsSalaryIcon = []
-jobCardsSalaryTextTag = []
-jobCardsSalaryTextDetailed = []
-jobCardsSalaryUnit = []
-jobCardsGrowthBackground = []
-jobCardsGrowthIcon = []
-jobCardsGrowthTextTag = []
-jobCardsGrowthTextDetailed = []
-jobCardsGrowthUnit = []
-jobCardsSummaryText = []
-jobCardsFavoriteHeartDefault = []
-jobCardsFavoriteHeartSelected = []
-jobCardsDailyTasksList = []
-jobCardsSkills = []
-jobCardsCareerJourney = []
-
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
 	#create page wrapper for the cards
@@ -1915,7 +1942,7 @@ for number in [0...7]
 		page.opacity = 0.9
 	#create cards for all the sections, except last
 	if number < 6
-			card= new Layer
+			card = jobCards[number] = new Layer
 				superLayer: page
 				width: page.width - padding
 				height: 548
@@ -2151,30 +2178,28 @@ for number in [0...7]
 # 					opacity: 1
 # 					y: 646
 			
-		else if number = 1 #create an insight card
-			card.image = "images/doer-insight.png"
-# 			if userSession == 0
-# 				if user.personality[0] == "Thinker"
-# 					card.image = "images/thinker-insight.png"
-# 				if user.personality[0] == "Doer"
-# 					card.image = "images/doer-insight.png"
-# 				if user.personality[0] == "Creator"
-# 					card.image = "images/creator-insight.png"	
-# 				if user.personality[0] == "Persuader"
-# 					card.image = "images/persuader-insight.png"
-# 				if user.personality[0] == "Organizer"
-# 					card.image = "images/organizer-insight.png"	
-# 				if user.personality[0] == "Helper"
-# 					card.image = "images/helper-insight.png"	
+# 	if number is 0 #create an insight card
+# 		card.image = "images/doer-insight.png"
+# 		if userSession == 0
+# 			if user.personality[0] == "Thinker"
+# 				card.image = "images/thinker-insight.png"
+# 			if user.personality[0] == "Doer"
+# 				card.image = "images/doer-insight.png"
+# 			if user.personality[0] == "Creator"
+# 				card.image = "images/creator-insight.png"	
+# 			if user.personality[0] == "Persuader"
+# 				card.image = "images/persuader-insight.png"
+# 			if user.personality[0] == "Organizer"
+# 				card.image = "images/organizer-insight.png"	
+# 			if user.personality[0] == "Helper"
+# 				card.image = "images/helper-insight.png"	
 # 			else
 # 				card.image = "images/detail-oriented-insight.png"
-	# 			for workstyle in user.workstyles
-	# 				if workstyle == "Detail Oriented"
-	# 					card.image = "images/detail-oriented-insight.png"
-	# 				if workstyle == "Big Picture"
-	# 					card.image = "images/big-picture-insight.png"
-		else	
-			#empty
+# 			for workstyle in user.workstyles
+# 				if workstyle == "Detail Oriented"
+# 					card.image = "images/detail-oriented-insight.png"
+# 				if workstyle == "Big Picture"
+# 					card.image = "images/big-picture-insight.png"
 
 
 #create states for all Backgrounds + Icons
