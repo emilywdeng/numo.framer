@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 92ebaad)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2092ebaad)@1x", scale: 1)
+# Import file "Final Screens (Master @ 2824d8d)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202824d8d)@1x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -1378,6 +1378,9 @@ jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
 jobCardsReadMoreButton = []
+jobCardsDailyTasksList = []
+jobCardsSkills = []
+jobCardsCareerJourney = []
 
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
@@ -1596,7 +1599,26 @@ for number in [0...7]
 					opacity: 0
 				expanded:
 					opacity: 1
-					
+			
+			#dailyTasks
+			#create copy
+			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+			#rename question group
+			dTCopy.name = "job" + number + "Tasks"
+			dTCopy.parent = card
+			dTCopy.x = 26
+			dTCopy.x = 646
+# 			dTCopy.opacity = 0
+			#push to array
+			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
+			jobCardsDailyTasksList[number].states = 
+				card: 
+					opacity: 0
+					y: 800
+				expanded:
+					opacity: 1
+					y: 646
+			
 	
 				
 		else #create an insight card
@@ -1752,12 +1774,12 @@ for layer in jobCardsSummaryText #states for job titles
 
 #emily this is how you populate the job cards
 # filling out the first
-jobCardsPreviewImage[1].image = Utils.randomImage()
-jobCardsTitle[1].text = "Custome Title yo"
-jobCardsEducationTextTag[1].text = "YO"
-jobCardsSalaryTextTag[1].text = "SUP"
-jobCardsGrowthTextTag[1].text = "HI"
-jobCardsSummaryText[1].text = "woahhhhhhh it's a summary that's randomly generated"
+jobCardsPreviewImage[0].image = Utils.randomImage()
+jobCardsTitle[0].text = "Customeeee Title yo"
+jobCardsEducationTextTag[0].text = "YO"
+jobCardsSalaryTextTag[0].text = "SUP"
+jobCardsGrowthTextTag[0].text = "HI"
+jobCardsSummaryText[0].text = "woahhhhhhh it's a summary that's randomly generated"
 
 
 
@@ -1892,6 +1914,7 @@ for number in [0...6]
 		readMoreButton = this.parent.children[6]
 		layerFavoriteButtonDefault = this.parent.children[7]
 		layerFavoriteButtonSelected = this.parent.children[8]
+		jobTasks = this.parent.children[9]
 		
 		#expand layers to expanded state
 		readMoreButton.opacity = 0
@@ -1912,6 +1935,7 @@ for number in [0...6]
 		description.animate("expanded")
 		gradient.animate("expanded")
 		closeButton.animate("expanded")
+# 		jobTasks.animate("expanded")
 		
 		
 		layerFavoriteButtonDefault.animate
@@ -1941,7 +1965,8 @@ for number in [0...6]
 			description.animate("card")
 			closeButton.animate("card")
 			gradient.animate("card")
-			
+# 			jobTasks.animate("card")
+
 			layerFavoriteButtonDefault.animate
 				x: 265
 				y: 261
