@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 92ebaad)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2092ebaad)@1x", scale: 1)
+# Import file "Final Screens (Master @ 2824d8d)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202824d8d)@1x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -78,7 +78,6 @@ interestData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/app
 
 jobData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Jobs?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
 
-# print data.records.length 
 
 #personality questions array 
 questionText = []
@@ -86,7 +85,6 @@ questionText = []
 # for i in [0..data.records.length-1]
 # 	questionText.push(data.records[i].fields.QuestionText)
 
-# print interestData.records[0].fields.Name
 
 #Responsive
 
@@ -159,8 +157,8 @@ user =
 	workstyles: []
 	drives: []
 	personalityRaw: []
-	personality: []
-	favorites: ["Animal Control Worker", "Pharmacy Technician", "Elementary School Teacher"]
+	personality: ["Thinker", "Doer", "Creator"]
+	favorites: []
 	history: []
 # Workstyles Input:
 # [0] Independent or Collaborative
@@ -178,7 +176,7 @@ jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
 jobCardsReadMoreButton = []
 #array to what jobs to show in session
-jobSession = [0,1,2,3,4]
+jobSession = []
 
 # Custom Functions
 
@@ -252,7 +250,6 @@ populateWorkstyles = ->
 #Function to dynamically display drives on profile
 #Called after completing daily questions
 populateDrives = ->
-# 	print "Called populateDrives"
 	if user.drives.length != 0
 		sketch.profileDrivesDisabled.opacity = 0
 		sketch.profileDrivesFilled.opacity = 1
@@ -263,7 +260,6 @@ populateDrives = ->
 			drive0.fontSize = drive0.fontSize * pointScale
 			drive0.width = 275
 			drive0.text = user.drives[0]
-# 			print user.drives[0]
 		#if there is second drive
 		if typeof user.drives[1] isnt 'undefined'
 			sketch.profileMeDrive2NumberFilled.opacity = 1
@@ -271,7 +267,6 @@ populateDrives = ->
 			drive1.fontSize = drive1.fontSize * pointScale
 			drive1.width = 275
 			drive1.text = user.drives[1]
-# 			print user.drives[1]
 		#if there is third drive
 		if typeof user.drives[2] isnt 'undefined'
 			sketch.profileMeDrive3NumberFilled.opacity = 1
@@ -280,7 +275,6 @@ populateDrives = ->
 			drive2.width = 275
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
-# 			print user.drives[2]
 
 #calculatePersonality
 #Takes 0 or 1 answers from personality quiz, scores top 3 and stores into user.personality
@@ -447,6 +441,7 @@ favJobImg.push(sketch.profileFutureFavoriteJob5Photo)
 populateFavJobs = ->
 	#check that there are favorites
 	if user.favorites.length != 0
+		sketch.futuresFavoriteEmpty.opacity = 0
 		#loop through favorites
 		for i in [0..favJobCards.length-1]
 			#if the i-th favorite exists
@@ -465,7 +460,6 @@ populateFavJobs = ->
 						fieldsSalShort = jobData.records[j].fields.SalaryShort
 						fieldsGroShort = jobData.records[j].fields.OutlookShort
 						fieldsImg = jobData.records[j].fields.Image1[0].url
-	# 			print fieldsEduShort
 				#show job card
 				favJobCards[i].opacity = 1
 				#populate title
@@ -494,12 +488,12 @@ populateFavJobs = ->
 					image: fieldsImg
 					borderRadius: 45.5
 
-#getJobsSession
+#getJobSession
 #Returns array[5] with record ids of which jobs to show
 #call after user answers questions, before sees job cards
 
 
-getJobsSession = ->
+getJobSession = ->
 	#select what jobs to show
 	jobsPool = []
 	for i in [0..jobData.records.length-1]
@@ -516,28 +510,50 @@ getJobsSession = ->
 				for workstyle in user.workstyles
 					for tag in jobData.records[i].fields.WorkstyleTags
 						if tag == workstyle
-							#job passes interest
+							#job passes workstyle
 							jobsPool.push(i)
 			#check if have drives
 			if user.drives
 				for drive in user.drives
 					for tag in jobData.records[i].fields.DriveTags
 						if tag == drive
-							#job passes interest
+							#job passes drive
 							jobsPool.push(i)
 	jobsPoolHDJ = []
 	for id in jobsPool
 		if jobData.records[id].fields.HDJ
 			jobsPoolHDJ.push(id)
-	# print jobsPoolHDJ
 	#store first guaranteed HDJ job
-	jobSession.push(Utils.randomChoice(jobsPoolHDJ))
+	#make sure that there is something in the HDJ pool
+	if jobsPoolHDJ > 0
+		while jobSession.length < 1
+			randomJob = Utils.randomChoice(jobsPoolHDJ)
+			if randomJob not in jobSession and randomJob not in user.history
+				jobSession.push(randomJob)
 	#store next 4 jobs
 	while jobSession.length < 5
+		#if there are not enough jobs in the pool
+		if jobsPool < 5
+			#loop through all jobs and add all to pool
+			for i in [0..jobData.records.length-1]
+				jobsPool.push(i)
+		#choose random job
 		randomJob = Utils.randomChoice(jobsPool)
-		if randomJob not in jobSession
+		if randomJob not in jobSession and randomJob not in user.history
 			jobSession.push(randomJob)
-	return jobSession
+
+#populateJobSession
+#must be called after getJobSession
+#called after user completes questions
+populateJobSession = ->
+	if jobSession.length != 0
+		for i in [0..4]
+			jobCardsPreviewImage[i].image = jobData.records[jobSession[i]].fields.Image1[0].url
+			jobCardsTitle[i].text = jobData.records[jobSession[i]].fields.Job
+			jobCardsEducationTextTag[i].text = jobData.records[jobSession[i]].fields.EduShort
+			jobCardsSalaryTextTag[i].text = jobData.records[jobSession[i]].fields.SalaryShort
+			jobCardsGrowthTextTag[i].text = jobData.records[jobSession[i]].fields.OutlookShort
+			jobCardsSummaryText[i].text = jobData.records[jobSession[i]].fields.Description
 
 #storeJobSession
 #call after user reviews 5 job cards
@@ -659,8 +675,6 @@ convertInterests = (array) ->
 			user.interests.push("Technology")
 		if tag == "interestTagArtActive"
 			user.interests.push("Art")
-
-populateFavJobs()
 
 #Preloader
 Framer.Extras.Preloader.enable()
@@ -824,7 +838,6 @@ question1Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question1 Option1 answer
 	user.workstyles[2] = "Detail Oriented"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -837,7 +850,6 @@ question1Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question1 Option2 answer
 	user.workstyles[2] = "Big Picture"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress1.opacity = 0
 	questionsFlow.showNext(question2)
@@ -850,7 +862,6 @@ question2Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question2 Option1 answer
 	user.workstyles[1] = "Empathic"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -862,7 +873,6 @@ question2Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question2 Option2 answer
 	user.workstyles[1] = "Logical"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress2.opacity = 0
 	questionsFlow.showNext(question3)
@@ -960,7 +970,6 @@ question3ButtonActive.onClick (event, layer) ->
 		user.workstyles[0] = "Independent"
 	else #bottom
 		user.workstyles[0] = "Collaborative"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress3.opacity = 0
 	questionsFlow.showNext(question4)
@@ -973,7 +982,6 @@ question4Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question4 Option1 answer
 	user.workstyles[3] = "Steady"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -985,7 +993,6 @@ question4Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question4 Option2 answer
 	user.workstyles[3] = "Fast-Paced"
-# 	print user.workstyles
 	questionCurrent += 1
 	questionProgress4.opacity = 0
 	questionsFlow.showNext(question5)
@@ -1083,7 +1090,6 @@ question5ButtonActive.onClick (event, layer) ->
 		user.workstyles[4] = "Creative"
 	else #bottom
 		user.workstyles[4] = "Linear"
-# 	print user.workstyles
 	questionCurrent += 1
 	question5Progress.opacity = 0
 	questionsFlow.showNext(question6)
@@ -1178,7 +1184,6 @@ question6ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question6 value
 	if slider6.value < 0 #top
 		user.drives.push("Power and influence")
-# 	print user.drives
 	questionCurrent += 1
 	question6Progress.opacity = 0
 	questionsFlow.showNext(question7)
@@ -1191,7 +1196,6 @@ question7Option1Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question7 Option1 answer
 	user.drives.push("Feeling secure in future")
-# 	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -1203,7 +1207,6 @@ question7Option2Default.onClick (event, layer) ->
 			time: .2
 	#INSERT logic to save question7 Option2 answer
 	#does nothing
-# 	print user.drives
 	questionCurrent += 1
 	question7Progress.opacity = 0
 	questionsFlow.showNext(question8)
@@ -1298,7 +1301,6 @@ question8ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question8 value
 	if slider8.value < 0 #top
 		user.drives.push("Relationships to people")
-# 	print user.drives
 	questionCurrent += 1
 	question8Progress.opacity = 0
 	questionsFlow.showNext(question9)
@@ -1393,7 +1395,6 @@ question9ButtonActive.onClick (event, layer) ->
 	#INSERT logic to save question9 value
 	if slider9.value < 0 #top
 		user.drives.push("Being creative")
-# 	print user.drives
 	questionCurrent += 1
 	question9Progress.opacity = 0
 	questionsFlow.showNext(question10)
@@ -1437,7 +1438,8 @@ sketch.question10SkipButton.onClick (event,layer) ->
 	flow.showNext(jobCardLoading)
 	#wait 5 seconds to show jobscards
 	Utils.delay 5, ->
-		getJobsSession()
+		getJobSession()
+		populateJobSession()
 		jobFlow = new FlowComponent
 			scrollVertical: false
 			scrollHorizontal: false
@@ -1640,17 +1642,6 @@ for number in [0...7]
 			## CREATE INSIGHT CARD HERE
 			## CREATE INSIGHT CARD HERE
 
-########################################			
-#emily this is how you populate the job cards
-# filling out the first
-for i in [0..4]
-	jobCardsPreviewImage[i].image = jobData.records[jobSession[i]].fields.Image1[0].url
-	jobCardsTitle[i].text = jobData.records[jobSession[i]].fields.Job
-	jobCardsEducationTextTag[i].text = jobData.records[jobSession[i]].fields.EduShort
-	jobCardsSalaryTextTag[i].text = jobData.records[jobSession[i]].fields.SalaryShort
-	jobCardsGrowthTextTag[i].text = jobData.records[jobSession[i]].fields.OutlookShort
-	jobCardsSummaryText[i].text = jobData.records[jobSession[i]].fields.Description
-
 #create pagination for the cards
 activeCard = new Layer
 	width: 8
@@ -1719,7 +1710,6 @@ jobCardSlider.on "change:currentPage",->
 for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
-		print this.states.current.name
 
 
 #expand job card
