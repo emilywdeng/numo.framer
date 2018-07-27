@@ -1359,10 +1359,13 @@ jobCardSlider.centerX()
 
 jobCardsPreviewImage = []
 jobCardsTitle = []
+jobCardsEducationBackground = []
 jobCardsEducationTextTag = []
 jobCardsEducationTextDetailed = []
+jobCardsSalaryBackground = []
 jobCardsSalaryTextTag = []
 jobCardsSalaryTextDetailed = []
+jobCardsGrowthBackground = []
 jobCardsGrowthTextTag = []
 jobCardsGrowthTextDetailed = []
 jobCardsSummaryText = []
@@ -1429,68 +1432,57 @@ for number in [0...7]
 					height: 18
 					y: Align.center
 					x: tagIconOrigX
+				tagText = new TextLayer
+					parent: tagIcon
+					text: 'TXT'
+					y: 4
+					x: 20
+					fontFamily: 'Gotham-Book' 
+					fontSize: 10 * pointScale
+					color: '#656565'
+					textTransform: 'uppercase'
 				if i is 0 #create custom specs for education tag
 					tagsBackground.x = tagEducationOrigX
 					tagIcon.image = 'images/tagEducationIcon.png'
-					tagText = jobCardsEducationTextTag[number] = new TextLayer
-						parent: tagIcon
-						text: 'EDU'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
+					jobCardsEducationTextTag.push(tagText)
+					jobCardsEducationBackground.push(tagsBackground)
 				else if i is 1 #create custom specs for salary tag
 					tagsBackground.x = tagSalaryOrigX
 					tagIcon.image = 'images/tagSalaryIcon.png'
-					tagText = jobCardsSalaryTextTag[number] = new TextLayer
-						parent: tagIcon
-						text: 'SAL'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
+					jobCardsSalaryTextTag.push(tagText)
+					jobCardsSalaryBackground.push(tagsBackground)
 				else #create custom specs for growth tag
 					tagsBackground.x = tagGrowthOrigX
 					tagIcon.image = 'images/tagGrowthIcon.png'
-					tagText = jobCardsGrowthTextTag[number] = new TextLayer
-						parent: tagIcon
-						text: 'GRO'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
-			#create states for all Backgrounds + Icons
-			tagsBackground.states =
-				cardEdu: {
-					parent: card
-					height: tagOrigHeight
-					width: tagOrigWidth
-					y: tagOrigY
-					x: tagEducationOrigX
-				}
-				expandedEdu: {}
-				cardSal: {
-					parent: card
-					height: tagOrigHeight
-					width: tagOrigWidth
-					y: tagOrigY
-					x: tagSalaryOrigX
-				}
-				expandedSal: {}
-				cardGro: {
-					parent: card
-					height: tagOrigHeight
-					width: tagOrigWidth
-					y: tagOrigY
-					x: tagGrowthOrigX
-				}
-				expandedGro: {}
+					jobCardsGrowthTextTag.push(tagText)
+					jobCardsGrowthBackground.push(tagsBackground)
+
+# 				cardSal: {
+# 					parent: card
+# 					height: tagOrigHeight
+# 					width: tagOrigWidth
+# 					y: tagOrigY
+# 					x: tagSalaryOrigX
+# 				}
+# 				expandedSal: {
+# 					height: 75
+# 					width: 100
+# 					y: 408
+# 					x: 134
+# 				}
+# 				cardGro: {
+# 					parent: card
+# 					height: tagOrigHeight
+# 					width: tagOrigWidth
+# 					y: tagOrigY
+# 					x: tagGrowthOrigX
+# 				}
+# 				expandedGro: {
+# 					height: 75
+# 					width: 100
+# 					y: 408
+# 					x: 242
+# 				}
 			tagIcon.states =
 				cardIcon: {
 					x: tagIconOrigX
@@ -1574,7 +1566,26 @@ for number in [0...7]
 			
 			## CREATE INSIGHT CARD HERE 
 			## CREATE INSIGHT CARD HERE
-			
+
+#create states for all Backgrounds + Icons
+for layer in jobCardsEducationBackground
+	layer.states.cardEdu =
+		parent: card
+		height: tagOrigHeight
+		width: tagOrigWidth
+		y: tagOrigY
+		x: tagEducationOrigX
+	layer.states.expandedEdu =
+		height: 75
+		width: 100
+		y: 408
+		x: 26
+
+
+
+
+
+
 #emily this is how you populate the job cards
 # filling out the first
 jobCardsPreviewImage[1].image = Utils.randomImage()
@@ -1717,11 +1728,7 @@ for number in [0...6]
 		layerGrowthTagText = this.parent.children[2].children[0].children[0]
 		
 		#expand all tag layers
-		layerEducationTagBackground.animate
-			width: 100
-			height: 75
-			x: 26
-			y: 408
+		layerEducationTagBackground.animate("expandedEdu")
 		layerSalaryTagBackground.animate
 			width: 100
 			height: 75
@@ -1783,7 +1790,11 @@ for number in [0...6]
 			width: 30
 			x: 20
 			y: 20
-			
+		
+		closeButton.onClick (event, layer) ->
+			#add close states
+			layerEducationTagBackground.animate("cardEdu")
+		
 		for i in [0...3]
 			textLayer = new TextLayer
 				fontSize: 20 * pointScale
