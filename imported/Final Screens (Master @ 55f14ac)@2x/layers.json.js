@@ -2913,8 +2913,8 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 			{
 				"objectId": "C93BA0B7-4BE6-4508-AF29-0DC36094A609",
 				"kind": "group",
-				"name": "futuresQuestions",
-				"originalName": "futuresQuestions",
+				"name": "futuresQuestions1",
+				"originalName": "futuresQuestions1",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
@@ -2972,6 +2972,79 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"image": {
 							"path": "images/Layer-profileFutureNewQuestionsBackground-mdm5mkfc.png",
+							"frame": {
+								"x": 27,
+								"y": 26,
+								"width": 327,
+								"height": 346
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "D2D37C16-AAE4-4AE7-AE28-46837B748398",
+				"kind": "group",
+				"name": "futuresQuestions2",
+				"originalName": "futuresQuestions2",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 27,
+					"y": 26,
+					"width": 327,
+					"height": 346
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "7ADBDE75-1936-4A57-98B0-AF0A99268186",
+						"kind": "group",
+						"name": "futureQuestionsGraphic1",
+						"originalName": "futureQuestionsGraphic*",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 73,
+							"y": 76,
+							"width": 233,
+							"height": 261
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-futureQuestionsGraphic-n0feqkrf.png",
+							"frame": {
+								"x": 73,
+								"y": 76,
+								"width": 233,
+								"height": 261
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "D9BDD58E-485C-4673-9522-8F39E372EBFF",
+						"kind": "group",
+						"name": "profileFutureNewQuestionsBackground1",
+						"originalName": "profileFutureNewQuestionsBackground",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 27,
+							"y": 26,
+							"width": 327,
+							"height": 346
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-profileFutureNewQuestionsBackground-rdlcreq1.png",
 							"frame": {
 								"x": 27,
 								"y": 26,
