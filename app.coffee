@@ -1360,12 +1360,15 @@ jobCardSlider.centerX()
 jobCardsPreviewImage = []
 jobCardsTitle = []
 jobCardsEducationBackground = []
+jobCardsEducationIcon = []
 jobCardsEducationTextTag = []
 jobCardsEducationTextDetailed = []
 jobCardsSalaryBackground = []
+jobCardsSalaryIcon = []
 jobCardsSalaryTextTag = []
 jobCardsSalaryTextDetailed = []
 jobCardsGrowthBackground = []
+jobCardsGrowthIcon = []
 jobCardsGrowthTextTag = []
 jobCardsGrowthTextDetailed = []
 jobCardsSummaryText = []
@@ -1400,6 +1403,7 @@ for number in [0...7]
 			tagOrigHeight = 20
 			tagOrigWidth = 60
 			tagOrigY = 328
+			tagIconOrigY = 1
 			tagIconOrigX = 5
 			tagEducationOrigX = 24
 			tagSalaryOrigX = 94
@@ -1430,7 +1434,7 @@ for number in [0...7]
 					parent: tagsBackground
 					width: 18
 					height: 18
-					y: Align.center
+					y: tagIconOrigY
 					x: tagIconOrigX
 				tagText = new TextLayer
 					parent: tagIcon
@@ -1446,48 +1450,19 @@ for number in [0...7]
 					tagIcon.image = 'images/tagEducationIcon.png'
 					jobCardsEducationTextTag.push(tagText)
 					jobCardsEducationBackground.push(tagsBackground)
+					jobCardsEducationIcon.push(tagIcon)
 				else if i is 1 #create custom specs for salary tag
 					tagsBackground.x = tagSalaryOrigX
 					tagIcon.image = 'images/tagSalaryIcon.png'
 					jobCardsSalaryTextTag.push(tagText)
 					jobCardsSalaryBackground.push(tagsBackground)
+					jobCardsSalaryIcon.push(tagIcon)
 				else #create custom specs for growth tag
 					tagsBackground.x = tagGrowthOrigX
 					tagIcon.image = 'images/tagGrowthIcon.png'
 					jobCardsGrowthTextTag.push(tagText)
 					jobCardsGrowthBackground.push(tagsBackground)
-
-# 				cardSal: {
-# 					parent: card
-# 					height: tagOrigHeight
-# 					width: tagOrigWidth
-# 					y: tagOrigY
-# 					x: tagSalaryOrigX
-# 				}
-# 				expandedSal: {
-# 					height: 75
-# 					width: 100
-# 					y: 408
-# 					x: 134
-# 				}
-# 				cardGro: {
-# 					parent: card
-# 					height: tagOrigHeight
-# 					width: tagOrigWidth
-# 					y: tagOrigY
-# 					x: tagGrowthOrigX
-# 				}
-# 				expandedGro: {
-# 					height: 75
-# 					width: 100
-# 					y: 408
-# 					x: 242
-# 				}
-			tagIcon.states =
-				cardIcon: {
-					x: tagIconOrigX
-				}
-				expandIcon: {}
+					jobCardsGrowthIcon.push(tagIcon)
 				
 			
 			
@@ -1568,23 +1543,69 @@ for number in [0...7]
 			## CREATE INSIGHT CARD HERE
 
 #create states for all Backgrounds + Icons
-for layer in jobCardsEducationBackground
-	layer.states.cardEdu =
-		parent: card
-		height: tagOrigHeight
-		width: tagOrigWidth
-		y: tagOrigY
-		x: tagEducationOrigX
-	layer.states.expandedEdu =
-		height: 75
-		width: 100
-		y: 408
-		x: 26
-
-
-
-
-
+for layer in jobCardsEducationBackground #states for education tag
+	layer.states = 
+		card :
+			parent: card
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagEducationOrigX
+		expanded :
+			height: 75
+			width: 100
+			y: 408
+			x: 26
+for layer in jobCardsEducationIcon #states for education icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
+for layer in jobCardsSalaryBackground #states for salary tag
+	layer.states = 
+		card :
+			parent: card
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagSalaryOrigX
+		expanded :
+			height: 75
+			width: 100
+			x: 134			
+			y: 408
+for layer in jobCardsSalaryIcon #states for salary icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
+for layer in jobCardsGrowthBackground
+	layer.states = 
+		card :
+			parent: card
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagGrowthOrigX
+		expanded :
+			height: 75
+			width: 100
+			x: 242
+			y: 408
+for layer in jobCardsGrowthIcon #states for growth icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
 
 #emily this is how you populate the job cards
 # filling out the first
@@ -1713,43 +1734,27 @@ for number in [0...6]
 			width: Screen.width
 		
 			 
-		#get all elements and set new parent
+		#get all elements and set new parent of 'jobExpand' ScrollComponent
 		page = this.parent
 		for child in page.subLayers
 			child.parent = jobExpand.content
+		#get all layers
 		layerEducationTagBackground = this.parent.children[0]
 		layerEducationTagIcon = this.parent.children[0].children[0]
-		layerEducationTagText = this.parent.children[0].children[0].children[0]
 		layerSalaryTagBackground = this.parent.children[1]
 		layerSalaryTagIcon = this.parent.children[1].children[0]
-		layerSalaryTagText = this.parent.children[1].children[0].children[0]
 		layerGrowthTagBackground = this.parent.children[2]
 		layerGrowthTagIcon = this.parent.children[2].children[0]
-		layerGrowthTagText = this.parent.children[2].children[0].children[0]
-		
-		#expand all tag layers
-		layerEducationTagBackground.animate("expandedEdu")
-		layerSalaryTagBackground.animate
-			width: 100
-			height: 75
-			x: 134
-			y: 408
-		layerGrowthTagBackground.animate
-			width: 100
-			height: 75
-			x: 242
-			y: 408
-		layerEducationTagIcon.animate
-			x: 25
-			y: 5
-		layerSalaryTagIcon.animate
-			x: 25
-			y: 5
-		layerGrowthTagIcon.animate
-			x: 25
-			y: 5
-		
 		previewImage = this.parent.children[3]
+		#expand layers to expanded state
+		layerEducationTagBackground.animate("expanded")
+		layerSalaryTagBackground.animate("expanded")
+		layerGrowthTagBackground.animate("expanded")
+		layerEducationTagIcon.animate("expanded")
+		layerSalaryTagIcon.animate("expanded")
+		layerGrowthTagIcon.animate("expanded")
+
+		
 		previewImage.animate
 			x: 0
 			y: 0
@@ -1793,7 +1798,12 @@ for number in [0...6]
 		
 		closeButton.onClick (event, layer) ->
 			#add close states
-			layerEducationTagBackground.animate("cardEdu")
+			layerEducationTagBackground.animate("card")
+			layerSalaryTagBackground.animate("card")
+			layerGrowthTagBackground.animate("card")
+			layerEducationTagIcon.animate("card")
+			layerSalaryTagIcon.animate("card")
+			layerGrowthTagIcon.animate("card")
 		
 		for i in [0...3]
 			textLayer = new TextLayer
