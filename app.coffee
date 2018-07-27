@@ -161,15 +161,90 @@ user =
 	interests: ["Technology", "Engineering", "Medicine"]
 	workstyles: ["Collaborative"]
 	drives: ["Meaningful work"]
-	personality: ["Doer", "Creator", "Thinker"]
+	personalityRaw: [1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1]
+	personality: []
 	favorites: []
 	history: []
-
 # Workstyles Input:
 # [0] Independent or Collaborative
 # [1] Empathic or Logical
 # [2] Detail Oriented or Big Picture
 
+#calculatePersonality
+#Takes 0 or 1 answers from personality quiz, scores top 3 and stores into user.personality
+scoreArray = [0,0,0,0,0,0]
+#Doer, Thinker, Creator, Helper, Persuader, Organizer
+first = second = third = -Infinity
+calculatePersonality = ->
+	#loop through personality questions
+	for i in [0..19]
+		#check if answered yes and what personality that corresponds to
+		if personalityData.records[i].fields.HOLLANDYes isnt undefined and user.personalityRaw[i] == 1
+			#get point from database
+			points = personalityData.records[i].fields.Weight
+			for tag in personalityData.records[i].fields.HOLLANDYes
+				if tag == "Doer"
+					scoreArray[0] = scoreArray[0] + points
+				if tag == "Thinker"
+					scoreArray[1] = scoreArray[1] + points
+				if tag == "Creator"
+					scoreArray[2] = scoreArray[2] + points
+				if tag == "Helper"
+					scoreArray[3] = scoreArray[3] + points
+				if tag == "Persuader"
+					scoreArray[4] = scoreArray[4] + points
+				if tag == "Organizer"
+					scoreArray[5] = scoreArray[5] + points
+		#check if answered no and what personality that corresponds to
+		if personalityData.records[i].fields.HOLLANDNo isnt undefined and user.personalityRaw[i] == 0
+			#get point from database
+			points = personalityData.records[i].fields.Weight
+			for tag in personalityData.records[i].fields.HOLLANDNo
+				if tag == "Doer"
+					scoreArray[0] = scoreArray[0] + points
+				if tag == "Thinker"
+					scoreArray[1] = scoreArray[1] + points
+				if tag == "Creator"
+					scoreArray[2] = scoreArray[2] + points
+				if tag == "Helper"
+					scoreArray[3] = scoreArray[3] + points
+				if tag == "Persuader"
+					scoreArray[4] = scoreArray[4] + points
+				if tag == "Organizer"
+					scoreArray[5] = scoreArray[5] + points
+	#get top three scores
+	topScores = []
+	for i in [0..4]
+		if scoreArray[i] > first
+			third = second
+			second = first
+			first = scoreArray[i]
+			firstId = i
+		else if scoreArray[i] > second
+			third = second
+			second = scoreArray[i]
+			secondId = i
+		else if scoreArray[i] > third
+			third = scoreArray[i]
+			thirdId = i
+	topScores.push(firstId)
+	topScores.push(secondId)
+	topScores.push(thirdId)
+	for pos in topScores
+		if pos == 0
+			user.personality.push("Doer")
+		if pos == 1
+			user.personality.push("Thinker")
+		if pos == 2
+			user.personality.push("Creator")
+		if pos == 3
+			user.personality.push("Helper")
+		if pos == 4
+			user.personality.push("Persuader")
+		if pos == 5
+			user.personality.push("Organizer")
+
+calculatePersonality()
 
 # Custom Functions
 
@@ -272,6 +347,9 @@ populateDrives = ->
 			drive2.text = user.drives[2]
 			sketch.profileMeDrivesSeeMoreFilled.opacity = 1
 # 			print user.drives[2]
+
+
+	
 
 #populatePersonality
 #Function to dynamically display personality on profile
@@ -454,7 +532,7 @@ getJobsSession = ->
 			jobSession.push(randomJob)
 	return jobSession
 
-print getJobsSession()
+# print getJobsSession()
 
 #Highlight functions
 highlightInterests = ->
@@ -730,7 +808,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(futures)
+flow.showNext(futures)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
