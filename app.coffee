@@ -1338,6 +1338,7 @@ flow.showNext(jobCardBackground)
 #JobCards Flow
 #creating the job card swiping
 #create page component + cards
+
 #define parameters for page and padding
 pageSize = 
 	width: Screen.width
@@ -1345,6 +1346,7 @@ pageSize =
 	
 padding = 15
 
+#create job card slider
 jobCardSlider = new PageComponent
 	parent: jobCardBackground
 	width: pageSize.width - padding*2
@@ -1375,10 +1377,8 @@ for number in [0...7]
 		name: 'page' + number
 		size: jobCardSlider.size
 		backgroundColor: "null"
-
 	if number > 0
 		page.opacity = 0.9
-
 	#create cards for all the sections, except last
 	if number < 6
 			card = new Layer
@@ -1389,51 +1389,62 @@ for number in [0...7]
 				borderRadius: 7
 				name: 'job' + number
 			card.center()
-	
 	jobCardSlider.addPage(page)
-
-
 	#create the job card layouts + insight layouts
-	# add "number > 0 &" back in when done
+	#### add "number > 0 &" back in when done
 	if  number < 6 
-			#create tag elements
+			#create original card parameters for all elements
+			tagOrigHeight = 20
+			tagOrigWidth = 60
+			tagOrigY = 328
+			tagIconOrigX = 5
+			tagEducationOrigX = 24
+			tagSalaryOrigX = 94
+			tagGrowthOrigX = 164
+			imageOrigHeight = 225
+			imageOrigWidth = 300
+			imageOrigRadius = 3
+			imageOrigY = 12
+			titleOrigWidth = 232
+			titleOrigX = 24
+			titleOrigY = 250
+			descriptionOrigWidth = 290
+			descriptionOrigX = 24
+			descriptionOrigY = 380
+			heartOrigX = 265
+			heartOrigY = 261
+			
+			#create tags
 			for i in [0..2]
-				tagsEmpty = new Layer
+				tagsBackground = new Layer
 					parent: card
-					width: 60
-					height: 20
+					width: tagOrigWidth
+					height: tagOrigHeight
+					y: tagOrigY
 					backgroundColor: '#F6F6F6'
 					borderRadius: 3
 				tagIcon = new Layer
-					parent: tagsEmpty
+					parent: tagsBackground
 					width: 18
 					height: 18
 					y: Align.center
-					x: 5
-					
-					
-				if i is 0
-					tagsEmpty.name = 'job' + number + 'EducationCareerTag'
-					tagsEmpty.x = 24
-					tagsEmpty.y = 328
+					x: tagIconOrigX
+				if i is 0 #create custom specs for education tag
+					tagsBackground.x = tagEducationOrigX
 					tagIcon.image = 'images/tagEducationIcon.png'
 					tagText = jobCardsEducationTextTag[number] = new TextLayer
-						name: 'job' + number + 'EducationText'
 						parent: tagIcon
-						text: 'SUP'
+						text: 'EDU'
 						y: 4
 						x: 20
 						fontFamily: 'Gotham-Book' 
 						fontSize: 10 * pointScale
 						color: '#656565'
 						textTransform: 'uppercase'
-				else if i is 1
-					tagsEmpty.name = 'job' + number + 'SalaryCareerTag'
-					tagsEmpty.x = 94
-					tagsEmpty.y = 328
+				else if i is 1 #create custom specs for salary tag
+					tagsBackground.x = tagSalaryOrigX
 					tagIcon.image = 'images/tagSalaryIcon.png'
 					tagText = jobCardsSalaryTextTag[number] = new TextLayer
-						name: 'job' + number + 'SalaryText'
 						parent: tagIcon
 						text: 'SAL'
 						y: 4
@@ -1442,14 +1453,10 @@ for number in [0...7]
 						fontSize: 10 * pointScale
 						color: '#656565'
 						textTransform: 'uppercase'
-				else 
-					tagsEmpty.name = 'job' + number + 'GrowthCareerTag'
-					tagsEmpty.x = 164
-					tagsEmpty.y = 328
+				else #create custom specs for growth tag
+					tagsBackground.x = tagGrowthOrigX
 					tagIcon.image = 'images/tagGrowthIcon.png'
-					tagText.name = 'job' + number + 'GrowthText'
 					tagText = jobCardsGrowthTextTag[number] = new TextLayer
-						name: 'job' + number + 'GrowthText'
 						parent: tagIcon
 						text: 'GRO'
 						y: 4
@@ -1458,41 +1465,72 @@ for number in [0...7]
 						fontSize: 10 * pointScale
 						color: '#656565'
 						textTransform: 'uppercase'
+			#create states for all Backgrounds + Icons
+			tagsBackground.states =
+				cardEdu: {
+					parent: card
+					height: tagOrigHeight
+					width: tagOrigWidth
+					y: tagOrigY
+					x: tagEducationOrigX
+				}
+				expandedEdu: {}
+				cardSal: {
+					parent: card
+					height: tagOrigHeight
+					width: tagOrigWidth
+					y: tagOrigY
+					x: tagSalaryOrigX
+				}
+				expandedSal: {}
+				cardGro: {
+					parent: card
+					height: tagOrigHeight
+					width: tagOrigWidth
+					y: tagOrigY
+					x: tagGrowthOrigX
+				}
+				expandedGro: {}
+			tagIcon.states =
+				cardIcon: {
+					x: tagIconOrigX
+				}
+				expandIcon: {}
+				
+			
+			
 		
-			#add preview image to every card
+			#create preview images 
 			jobPreviewImage = jobCardsPreviewImage[number] = new Layer
 				parent: card
-				name: 'job' + number + 'PreviewImage'
-				width: 300
-				height: 225
+				width: imageOrigWidth
+				height: imageOrigHeight
 				x: Align.center
-				y: 12
-				borderRadius: 3
+				y: imageOrigY
+				borderRadius: imageOrigRadius
 				image: 'images/jobPreviewImageExample.png' 
 				
 			#add title to every card
 			jobTitle = jobCardsTitle[number] = new TextLayer
 				parent: card
-				name: 'job' + number + 'Title'
 				fontFamily: 'Gotham-Med'
 				fontSize: 28 * pointScale
-				color: "black"
-				width: 232
-				x: 24
-				y: 250
-				text: "Computer Programmer" ## INSERT HERE
+				color: "#46474A"
+				width: titleOrigWidth
+				x: titleOrigX
+				y: titleOrigY
+				text: "Computer Placeholder" 
 			
 			#add job description to every card
 			jobDescription= jobCardsSummaryText[number] = new TextLayer
 				parent: card
-				name: 'job' + number + 'Description'
-				width: 290
 				fontFamily: 'Gotham-Book'
 				fontSize: 14 * pointScale
 				lineHeight: 1.4
 				color: '#46474A'
-				x: 24
-				y: 380
+				width: descriptionOrigWidth
+				x: descriptionOrigX
+				y: descriptionOrigY
 				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
 			
 			#add read more to expand arrow
@@ -1509,21 +1547,21 @@ for number in [0...7]
 			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[number] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartDefault'
-				x: 265
-				y: 261
+				x: heartOrigX
+				y: heartOrigY
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartDefault.png'
 			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[number] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartSelected'
-				x: 265
-				y: 261
+				x: heartOrigX
+				y: heartOrigY
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
-			#state for hearts on /off
+			#state for selected hearts on off
 			jobFavoriteHeartSelected.states = 
 					selected: {opacity: 1}
 					default: {opacity: 0}
@@ -1534,7 +1572,7 @@ for number in [0...7]
 			#add icon
 			
 			
-			## CREATE INSIGHT CARD HERE
+			## CREATE INSIGHT CARD HERE 
 			## CREATE INSIGHT CARD HERE
 			
 #emily this is how you populate the job cards
@@ -1637,15 +1675,16 @@ for number in [1...6]
 
 jobExpand = new ScrollComponent
 	parent: jobCardBackground
-	height: 550
-	width: 327
+	height: 548
+	width: 330
 	x: Align.center
-	y: 100
-	opacity: 0
+	y: 98
+	opacity:0
 	index: 4
-	backgroundColor: 'null'
+# 	borderRadius: 10
 	scrollHorizontal: false
 jobExpand.placeBehind(jobCardSlider)
+jobExpand.content.draggable.overdrag = false
 
 
 #expand job card
