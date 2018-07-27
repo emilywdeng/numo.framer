@@ -1158,7 +1158,6 @@ for i in [0..19]
 				#populate jobs into cards
 				populateJobSession()
 				#populate insight into first card
-				print user.personality[0]
 				if user.personality[0] == "Thinker"
 					jobCards[0].image = "images/thinker-insight.png"
 				if user.personality[0] == "Helper"
