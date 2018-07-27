@@ -1358,8 +1358,11 @@ jobCardSlider.centerX()
 jobCardsPreviewImage = []
 jobCardsTitle = []
 jobCardsEducationTextTag = []
+jobCardsEducationTextDetailed = []
 jobCardsSalaryTextTag = []
+jobCardsSalaryTextDetailed = []
 jobCardsGrowthTextTag = []
+jobCardsGrowthTextDetailed = []
 jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
@@ -1393,7 +1396,7 @@ for number in [0...7]
 	#create the job card layouts + insight layouts
 	# add "number > 0 &" back in when done
 	if  number < 6 
-			#add the tags to every cards
+			#create tag elements
 			for i in [0..2]
 				tagsEmpty = new Layer
 					parent: card
@@ -1615,32 +1618,55 @@ for number in [1...6]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-cardExpandLayer = new Layer
+# ScrollComp = new ScrollComponent
+# 	parent: jobCardBackground
+# 	width: Screen.width
+# 	height: 0
+# 	opacity: 1
+# 	index: 0
+# 	backgroundColor: 'null'
+
+# cardExpandLayer = new Layer
+# 	parent: jobCardBackground
+# 	height: 550
+# 	width: 327
+# 	x: Align.center
+# 	y: 100
+# 	backgroundColor: 'null'	
+# 	index: 4
+
+jobExpand = new ScrollComponent
 	parent: jobCardBackground
 	height: 550
 	width: 327
 	x: Align.center
 	y: 100
-	backgroundColor: 'null'	
+	opacity: 0
 	index: 4
-	
-	
+	backgroundColor: 'null'
+	scrollHorizontal: false
+jobExpand.placeBehind(jobCardSlider)
+
+
 #expand job card
 for number in [0...6]
 	jobCardsReadMoreButton[number].onClick (event,layer) ->
 		#get and expand card element
-		cardExpandLayer.animate
-			height: 1600
-			width: Screen.width
+		jobExpand.bringToFront()
+		jobExpand.opacity = 1
+		jobExpand.animate
 			x: 0
 			y: 0
 			backgroundColor: 'white'
-			 
-		#get all tag elements
-		page = this.parent
+			opacity: 1
+			height: Screen.height
+			width: Screen.width
 		
+			 
+		#get all elements and set new parent
+		page = this.parent
 		for child in page.subLayers
-			child.parent = cardExpandLayer
+			child.parent = jobExpand.content
 		layerEducationTagBackground = this.parent.children[0]
 		layerEducationTagIcon = this.parent.children[0].children[0]
 		layerEducationTagText = this.parent.children[0].children[0].children[0]
@@ -1705,14 +1731,14 @@ for number in [0...6]
 			x: 300
 			y: 320
 		gradientOverlay = new Layer #gradient for job cards
-			parent: cardExpandLayer
+			parent: jobExpand.content
 			image: 'images/pictureOverlay.png'
 			width: Screen.width
 			height: 61
 			opacity : 1
 			
 		closeButton = new Layer #close btn for job cards
-			parent: cardExpandLayer
+			parent: jobExpand.content
 			image: 'images/jobClose.png'
 			height: 30
 			width: 30
@@ -1725,27 +1751,32 @@ for number in [0...6]
 				fontFamily: "Gotham-Book"
 				width: 100
 				color: '#46474A'
-				text: "58k"
+				text: ""
 				textAlign: "center"
 			unitText = new TextLayer
 				fontSize: 12 * pointScale
 				fontFamily: "Gotham-Book"
 				width: 100
 				color: '#46474A'
-				text: "dollars"
+				text: ""
 				textAlign: "center"
 			if i is 0 # education text
 				textLayer.parent = layerEducationTagBackground
-
 				unitText.parent = layerEducationTagBackground
+				textLayer.text = "6+"
+				unitText.text = "years"
 			else if i is 1 #salary text
 				textLayer.parent = layerSalaryTagBackground
 				unitText.parent = layerSalaryTagBackground
+				textLayer.text = "58k"
+				unitText.text = "dollars"
 			else #growth text
 				textLayer.parent = layerGrowthTagBackground	
 				unitText.parent = layerGrowthTagBackground
+				textLayer.text = "+10-14"
+				unitText.text = "percent"
 			textLayer.y = 30
-			unitText.y = 50
+			unitText.y = 55
 			
 			
 			
