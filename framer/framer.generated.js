@@ -28463,7 +28463,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 			"x": -813,
 			"y": 537,
 			"width": 375,
-			"height": 1116
+			"height": 979
 		},
 		"visible": true,
 		"metadata": {},
@@ -28477,7 +28477,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 103,
-					"y": 517,
+					"y": 457,
 					"width": 174,
 					"height": 42
 				},
@@ -28499,7 +28499,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"path": "images/Layer-futuresFavoriteEmpty-qke3mzez.png",
 					"frame": {
 						"x": 103,
-						"y": 517,
+						"y": 457,
 						"width": 174,
 						"height": 42
 					}
@@ -28541,7 +28541,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": -3,
-					"y": 1055,
+					"y": 918,
 					"width": 380,
 					"height": 61
 				},
@@ -28553,7 +28553,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"path": "images/Layer-navBar-mzqzqzyw.png",
 					"frame": {
 						"x": -3,
-						"y": 1055,
+						"y": 918,
 						"width": 380,
 						"height": 61
 					}
@@ -28567,7 +28567,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": -3,
-							"y": 1055,
+							"y": 918,
 							"width": 191,
 							"height": 8
 						},
@@ -28579,7 +28579,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-navActiveIndicator-qtuwndu2.png",
 							"frame": {
 								"x": -3,
-								"y": 1055,
+								"y": 918,
 								"width": 191,
 								"height": 8
 							}
@@ -28594,7 +28594,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 189,
-							"y": 1062,
+							"y": 925,
 							"width": 188,
 							"height": 54
 						},
@@ -28606,7 +28606,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-navButtonMe-rjkzrjfc.png",
 							"frame": {
 								"x": 189,
-								"y": 1062,
+								"y": 925,
 								"width": 188,
 								"height": 54
 							}
@@ -28621,7 +28621,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 1,
-							"y": 1062,
+							"y": 925,
 							"width": 188,
 							"height": 54
 						},
@@ -28633,7 +28633,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-navButtonFuture-rtlerdg0.png",
 							"frame": {
 								"x": 1,
-								"y": 1062,
+								"y": 925,
 								"width": 188,
 								"height": 54
 							}
@@ -28652,7 +28652,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"x": 27,
 					"y": 0,
 					"width": 327,
-					"height": 93
+					"height": 33
 				},
 				"visible": true,
 				"metadata": {
@@ -28664,7 +28664,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"x": 27,
 						"y": 0,
 						"width": 327,
-						"height": 93
+						"height": 33
 					}
 				},
 				"children": []
@@ -28677,7 +28677,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
-					"y": 86,
+					"y": 26,
 					"width": 327,
 					"height": 346
 				},
@@ -28694,7 +28694,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 73,
-							"y": 136,
+							"y": 76,
 							"width": 233,
 							"height": 261
 						},
@@ -28706,7 +28706,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-futureQuestionsGraphic-rtg3rdvc.png",
 							"frame": {
 								"x": 73,
-								"y": 136,
+								"y": 76,
 								"width": 233,
 								"height": 261
 							}
@@ -28721,7 +28721,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 27,
-							"y": 86,
+							"y": 26,
 							"width": 327,
 							"height": 346
 						},
@@ -28733,7 +28733,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureNewQuestionsBackground-mdm5mkfc.png",
 							"frame": {
 								"x": 27,
-								"y": 86,
+								"y": 26,
 								"width": 327,
 								"height": 346
 							}
@@ -28750,7 +28750,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 30,
-					"y": 465,
+					"y": 405,
 					"width": 312,
 					"height": 14
 				},
@@ -28762,7 +28762,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"path": "images/Layer-futuresFavoriteHeader-oejgqkiz.png",
 					"frame": {
 						"x": 30,
-						"y": 465,
+						"y": 405,
 						"width": 312,
 						"height": 14
 					}
@@ -28777,7 +28777,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 495,
+					"y": 435,
 					"width": 333,
 					"height": 99
 				},
@@ -28789,7 +28789,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"path": "images/Layer-futuresFavoriteJob1-ndlfntc3.png",
 					"frame": {
 						"x": 22,
-						"y": 495,
+						"y": 435,
 						"width": 333,
 						"height": 99
 					}
@@ -28803,7 +28803,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 495,
+							"y": 435,
 							"width": 333,
 							"height": 99
 						},
@@ -28815,7 +28815,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Highlight-nzu1qzne.png",
 							"frame": {
 								"x": 22,
-								"y": 495,
+								"y": 435,
 								"width": 333,
 								"height": 99
 							}
@@ -28835,7 +28835,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 508,
+							"y": 448,
 							"width": 79,
 							"height": 79
 						},
@@ -28847,7 +28847,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Photo-qjvbruzb.png",
 							"frame": {
 								"x": 37,
-								"y": 508,
+								"y": 448,
 								"width": 79,
 								"height": 79
 							}
@@ -28862,7 +28862,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 524,
+							"y": 464,
 							"width": 187,
 							"height": 16
 						},
@@ -28883,7 +28883,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob1Title-rde0ree1.png",
 							"frame": {
 								"x": 124,
-								"y": 524,
+								"y": 464,
 								"width": 187,
 								"height": 16
 							}
@@ -28898,7 +28898,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 555,
+							"y": 495,
 							"width": 60,
 							"height": 20
 						},
@@ -28915,7 +28915,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 562,
+									"y": 502,
 									"width": 21,
 									"height": 7
 								},
@@ -28936,7 +28936,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1EducationLevel-rkfgrtbg.png",
 									"frame": {
 										"x": 151,
-										"y": 562,
+										"y": 502,
 										"width": 21,
 										"height": 7
 									}
@@ -28951,7 +28951,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 555,
+									"y": 495,
 									"width": 60,
 									"height": 20
 								},
@@ -28963,7 +28963,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-nkmyoeiz.png",
 									"frame": {
 										"x": 124,
-										"y": 555,
+										"y": 495,
 										"width": 60,
 										"height": 20
 									}
@@ -28977,7 +28977,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 559,
+											"y": 499,
 											"width": 17,
 											"height": 12
 										},
@@ -28994,7 +28994,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 559,
+													"y": 499,
 													"width": 17,
 													"height": 12
 												},
@@ -29006,7 +29006,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-odgwque5.png",
 													"frame": {
 														"x": 127,
-														"y": 559,
+														"y": 499,
 														"width": 17,
 														"height": 12
 													}
@@ -29027,7 +29027,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 555,
+							"y": 495,
 							"width": 60,
 							"height": 20
 						},
@@ -29044,7 +29044,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 561,
+									"y": 501,
 									"width": 25,
 									"height": 9
 								},
@@ -29065,7 +29065,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1GrowthLevel-muiznza2.png",
 									"frame": {
 										"x": 289,
-										"y": 561,
+										"y": 501,
 										"width": 25,
 										"height": 9
 									}
@@ -29080,7 +29080,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 555,
+									"y": 495,
 									"width": 60,
 									"height": 20
 								},
@@ -29092,7 +29092,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-ntrenefd.png",
 									"frame": {
 										"x": 264,
-										"y": 555,
+										"y": 495,
 										"width": 60,
 										"height": 20
 									}
@@ -29106,7 +29106,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 561,
+											"y": 501,
 											"width": 15,
 											"height": 8
 										},
@@ -29118,7 +29118,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-mti2nuzf.png",
 											"frame": {
 												"x": 267,
-												"y": 561,
+												"y": 501,
 												"width": 15,
 												"height": 8
 											}
@@ -29137,7 +29137,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 555,
+							"y": 495,
 							"width": 60,
 							"height": 20
 						},
@@ -29154,7 +29154,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 561,
+									"y": 501,
 									"width": 25,
 									"height": 9
 								},
@@ -29175,7 +29175,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1SalaryLevel-oem1mde1.png",
 									"frame": {
 										"x": 219,
-										"y": 561,
+										"y": 501,
 										"width": 25,
 										"height": 9
 									}
@@ -29190,7 +29190,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 555,
+									"y": 495,
 									"width": 60,
 									"height": 20
 								},
@@ -29202,7 +29202,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob1SalaryStatic-qjixnji5.png",
 									"frame": {
 										"x": 194,
-										"y": 555,
+										"y": 495,
 										"width": 60,
 										"height": 20
 									}
@@ -29216,7 +29216,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 558,
+											"y": 498,
 											"width": 8,
 											"height": 15
 										},
@@ -29233,7 +29233,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 558,
+													"y": 498,
 													"width": 8,
 													"height": 15
 												},
@@ -29245,7 +29245,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-rjzeoduz.png",
 													"frame": {
 														"x": 200,
-														"y": 558,
+														"y": 498,
 														"width": 8,
 														"height": 15
 													}
@@ -29268,7 +29268,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 601,
+					"y": 541,
 					"width": 333,
 					"height": 99
 				},
@@ -29285,7 +29285,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 601,
+							"y": 541,
 							"width": 333,
 							"height": 99
 						},
@@ -29297,7 +29297,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Highlight-rtzemuez.png",
 							"frame": {
 								"x": 22,
-								"y": 601,
+								"y": 541,
 								"width": 333,
 								"height": 99
 							}
@@ -29312,7 +29312,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 658,
+							"y": 598,
 							"width": 60,
 							"height": 20
 						},
@@ -29329,7 +29329,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 665,
+									"y": 605,
 									"width": 21,
 									"height": 7
 								},
@@ -29350,7 +29350,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2EducationLevel-rjc0nzyw.png",
 									"frame": {
 										"x": 151,
-										"y": 665,
+										"y": 605,
 										"width": 21,
 										"height": 7
 									}
@@ -29365,7 +29365,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 658,
+									"y": 598,
 									"width": 60,
 									"height": 20
 								},
@@ -29377,7 +29377,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-otvgmzbc.png",
 									"frame": {
 										"x": 124,
-										"y": 658,
+										"y": 598,
 										"width": 60,
 										"height": 20
 									}
@@ -29391,7 +29391,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 662,
+											"y": 602,
 											"width": 17,
 											"height": 12
 										},
@@ -29408,7 +29408,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 662,
+													"y": 602,
 													"width": 17,
 													"height": 12
 												},
@@ -29420,7 +29420,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-n0uxm0zd.png",
 													"frame": {
 														"x": 127,
-														"y": 662,
+														"y": 602,
 														"width": 17,
 														"height": 12
 													}
@@ -29441,7 +29441,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 658,
+							"y": 598,
 							"width": 60,
 							"height": 20
 						},
@@ -29458,7 +29458,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 664,
+									"y": 604,
 									"width": 25,
 									"height": 9
 								},
@@ -29479,7 +29479,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2SalaryLevel-m0fcmknb.png",
 									"frame": {
 										"x": 219,
-										"y": 664,
+										"y": 604,
 										"width": 25,
 										"height": 9
 									}
@@ -29494,7 +29494,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 658,
+									"y": 598,
 									"width": 60,
 									"height": 20
 								},
@@ -29506,7 +29506,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-mtq5ouux.png",
 									"frame": {
 										"x": 194,
-										"y": 658,
+										"y": 598,
 										"width": 60,
 										"height": 20
 									}
@@ -29520,7 +29520,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 661,
+											"y": 601,
 											"width": 8,
 											"height": 15
 										},
@@ -29537,7 +29537,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 661,
+													"y": 601,
 													"width": 8,
 													"height": 15
 												},
@@ -29549,7 +29549,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mdbenuve.png",
 													"frame": {
 														"x": 200,
-														"y": 661,
+														"y": 601,
 														"width": 8,
 														"height": 15
 													}
@@ -29570,7 +29570,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 658,
+							"y": 598,
 							"width": 60,
 							"height": 20
 						},
@@ -29587,7 +29587,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 664,
+									"y": 604,
 									"width": 25,
 									"height": 9
 								},
@@ -29608,7 +29608,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob2GrowthLevel-mki4mtdd.png",
 									"frame": {
 										"x": 289,
-										"y": 664,
+										"y": 604,
 										"width": 25,
 										"height": 9
 									}
@@ -29623,7 +29623,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 658,
+									"y": 598,
 									"width": 60,
 									"height": 20
 								},
@@ -29635,7 +29635,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-mevdrtiz.png",
 									"frame": {
 										"x": 264,
-										"y": 658,
+										"y": 598,
 										"width": 60,
 										"height": 20
 									}
@@ -29649,7 +29649,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 664,
+											"y": 604,
 											"width": 15,
 											"height": 8
 										},
@@ -29661,7 +29661,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-m0eyqjle.png",
 											"frame": {
 												"x": 267,
-												"y": 664,
+												"y": 604,
 												"width": 15,
 												"height": 8
 											}
@@ -29680,7 +29680,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 627,
+							"y": 567,
 							"width": 101,
 							"height": 16
 						},
@@ -29701,7 +29701,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Title-ouizruy3.png",
 							"frame": {
 								"x": 125,
-								"y": 627,
+								"y": 567,
 								"width": 101,
 								"height": 16
 							}
@@ -29721,7 +29721,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 611,
+							"y": 551,
 							"width": 79,
 							"height": 79
 						},
@@ -29733,7 +29733,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Photo-otk5mei2.png",
 							"frame": {
 								"x": 37,
-								"y": 611,
+								"y": 551,
 								"width": 79,
 								"height": 79
 							}
@@ -29748,7 +29748,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 604,
+							"y": 544,
 							"width": 327,
 							"height": 93
 						},
@@ -29760,7 +29760,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob2Card-otncrufe.png",
 							"frame": {
 								"x": 25,
-								"y": 604,
+								"y": 544,
 								"width": 327,
 								"height": 93
 							}
@@ -29777,7 +29777,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 707,
+					"y": 647,
 					"width": 333,
 					"height": 99
 				},
@@ -29794,7 +29794,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 707,
+							"y": 647,
 							"width": 333,
 							"height": 99
 						},
@@ -29806,7 +29806,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Highlight-rdq0qtnf.png",
 							"frame": {
 								"x": 22,
-								"y": 707,
+								"y": 647,
 								"width": 333,
 								"height": 99
 							}
@@ -29821,7 +29821,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 730,
+							"y": 670,
 							"width": 115,
 							"height": 14
 						},
@@ -29842,7 +29842,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Title-nzmxn0u2.png",
 							"frame": {
 								"x": 125,
-								"y": 730,
+								"y": 670,
 								"width": 115,
 								"height": 14
 							}
@@ -29857,7 +29857,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 761,
+							"y": 701,
 							"width": 60,
 							"height": 20
 						},
@@ -29874,7 +29874,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 768,
+									"y": 708,
 									"width": 21,
 									"height": 7
 								},
@@ -29895,7 +29895,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3EducationLevel-nzmwquu1.png",
 									"frame": {
 										"x": 151,
-										"y": 768,
+										"y": 708,
 										"width": 21,
 										"height": 7
 									}
@@ -29910,7 +29910,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 761,
+									"y": 701,
 									"width": 60,
 									"height": 20
 								},
@@ -29922,7 +29922,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-qjcznefe.png",
 									"frame": {
 										"x": 124,
-										"y": 761,
+										"y": 701,
 										"width": 60,
 										"height": 20
 									}
@@ -29936,7 +29936,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 765,
+											"y": 705,
 											"width": 17,
 											"height": 12
 										},
@@ -29953,7 +29953,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 765,
+													"y": 705,
 													"width": 17,
 													"height": 12
 												},
@@ -29965,7 +29965,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-qjm0quiy.png",
 													"frame": {
 														"x": 127,
-														"y": 765,
+														"y": 705,
 														"width": 17,
 														"height": 12
 													}
@@ -29991,7 +29991,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 714,
+							"y": 654,
 							"width": 79,
 							"height": 79
 						},
@@ -30003,7 +30003,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Photo-mezfmjmy.png",
 							"frame": {
 								"x": 37,
-								"y": 714,
+								"y": 654,
 								"width": 79,
 								"height": 79
 							}
@@ -30018,7 +30018,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 761,
+							"y": 701,
 							"width": 60,
 							"height": 20
 						},
@@ -30035,7 +30035,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 767,
+									"y": 707,
 									"width": 25,
 									"height": 9
 								},
@@ -30056,7 +30056,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3SalaryLevel-nji0ntey.png",
 									"frame": {
 										"x": 219,
-										"y": 767,
+										"y": 707,
 										"width": 25,
 										"height": 9
 									}
@@ -30071,7 +30071,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 761,
+									"y": 701,
 									"width": 60,
 									"height": 20
 								},
@@ -30083,7 +30083,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-rjg3qzq5.png",
 									"frame": {
 										"x": 194,
-										"y": 761,
+										"y": 701,
 										"width": 60,
 										"height": 20
 									}
@@ -30097,7 +30097,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 764,
+											"y": 704,
 											"width": 8,
 											"height": 15
 										},
@@ -30114,7 +30114,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 764,
+													"y": 704,
 													"width": 8,
 													"height": 15
 												},
@@ -30126,7 +30126,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mei2mjfg.png",
 													"frame": {
 														"x": 200,
-														"y": 764,
+														"y": 704,
 														"width": 8,
 														"height": 15
 													}
@@ -30147,7 +30147,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 761,
+							"y": 701,
 							"width": 60,
 							"height": 20
 						},
@@ -30164,7 +30164,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 767,
+									"y": 707,
 									"width": 25,
 									"height": 9
 								},
@@ -30185,7 +30185,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob3GrowthLevel-nzg1qzc4.png",
 									"frame": {
 										"x": 289,
-										"y": 767,
+										"y": 707,
 										"width": 25,
 										"height": 9
 									}
@@ -30200,7 +30200,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 761,
+									"y": 701,
 									"width": 60,
 									"height": 20
 								},
@@ -30212,7 +30212,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-ntaxmejc.png",
 									"frame": {
 										"x": 264,
-										"y": 761,
+										"y": 701,
 										"width": 60,
 										"height": 20
 									}
@@ -30226,7 +30226,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 767,
+											"y": 707,
 											"width": 15,
 											"height": 8
 										},
@@ -30238,7 +30238,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-otrgmja2.png",
 											"frame": {
 												"x": 267,
-												"y": 767,
+												"y": 707,
 												"width": 15,
 												"height": 8
 											}
@@ -30257,7 +30257,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 707,
+							"y": 647,
 							"width": 327,
 							"height": 93
 						},
@@ -30269,7 +30269,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob3Card-mdqznkzb.png",
 							"frame": {
 								"x": 25,
-								"y": 707,
+								"y": 647,
 								"width": 327,
 								"height": 93
 							}
@@ -30286,7 +30286,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 810,
+					"y": 750,
 					"width": 333,
 					"height": 102
 				},
@@ -30303,7 +30303,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 813,
+							"y": 753,
 							"width": 333,
 							"height": 99
 						},
@@ -30315,7 +30315,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Highlight-mtbeq0i2.png",
 							"frame": {
 								"x": 22,
-								"y": 813,
+								"y": 753,
 								"width": 333,
 								"height": 99
 							}
@@ -30330,7 +30330,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 833,
+							"y": 773,
 							"width": 115,
 							"height": 14
 						},
@@ -30351,7 +30351,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Title-mja5rtuw.png",
 							"frame": {
 								"x": 125,
-								"y": 833,
+								"y": 773,
 								"width": 115,
 								"height": 14
 							}
@@ -30371,7 +30371,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 817,
+							"y": 757,
 							"width": 79,
 							"height": 79
 						},
@@ -30383,7 +30383,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Photo-q0jgodkx.png",
 							"frame": {
 								"x": 37,
-								"y": 817,
+								"y": 757,
 								"width": 79,
 								"height": 79
 							}
@@ -30398,7 +30398,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 864,
+							"y": 804,
 							"width": 60,
 							"height": 20
 						},
@@ -30415,7 +30415,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 871,
+									"y": 811,
 									"width": 21,
 									"height": 7
 								},
@@ -30436,7 +30436,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4EducationLevel-merenjm1.png",
 									"frame": {
 										"x": 151,
-										"y": 871,
+										"y": 811,
 										"width": 21,
 										"height": 7
 									}
@@ -30451,7 +30451,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 864,
+									"y": 804,
 									"width": 60,
 									"height": 20
 								},
@@ -30463,7 +30463,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-qzq5mkyz.png",
 									"frame": {
 										"x": 124,
-										"y": 864,
+										"y": 804,
 										"width": 60,
 										"height": 20
 									}
@@ -30477,7 +30477,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 868,
+											"y": 808,
 											"width": 17,
 											"height": 12
 										},
@@ -30494,7 +30494,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 868,
+													"y": 808,
 													"width": 17,
 													"height": 12
 												},
@@ -30506,7 +30506,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-odqwmdgz.png",
 													"frame": {
 														"x": 127,
-														"y": 868,
+														"y": 808,
 														"width": 17,
 														"height": 12
 													}
@@ -30527,7 +30527,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 864,
+							"y": 804,
 							"width": 60,
 							"height": 20
 						},
@@ -30544,7 +30544,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 870,
+									"y": 810,
 									"width": 25,
 									"height": 9
 								},
@@ -30565,7 +30565,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4GrowthLevel-neu2oezg.png",
 									"frame": {
 										"x": 289,
-										"y": 870,
+										"y": 810,
 										"width": 25,
 										"height": 9
 									}
@@ -30580,7 +30580,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 864,
+									"y": 804,
 									"width": 60,
 									"height": 20
 								},
@@ -30592,7 +30592,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-oem1ndjb.png",
 									"frame": {
 										"x": 264,
-										"y": 864,
+										"y": 804,
 										"width": 60,
 										"height": 20
 									}
@@ -30606,7 +30606,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 870,
+											"y": 810,
 											"width": 15,
 											"height": 8
 										},
@@ -30618,7 +30618,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-oufgruje.png",
 											"frame": {
 												"x": 267,
-												"y": 870,
+												"y": 810,
 												"width": 15,
 												"height": 8
 											}
@@ -30637,7 +30637,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 864,
+							"y": 804,
 							"width": 60,
 							"height": 20
 						},
@@ -30654,7 +30654,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 870,
+									"y": 810,
 									"width": 25,
 									"height": 9
 								},
@@ -30675,7 +30675,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob4SalaryLevel-rtgxqja3.png",
 									"frame": {
 										"x": 219,
-										"y": 870,
+										"y": 810,
 										"width": 25,
 										"height": 9
 									}
@@ -30690,7 +30690,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 864,
+									"y": 804,
 									"width": 60,
 									"height": 20
 								},
@@ -30702,7 +30702,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-oda1ndrc.png",
 									"frame": {
 										"x": 194,
-										"y": 864,
+										"y": 804,
 										"width": 60,
 										"height": 20
 									}
@@ -30716,7 +30716,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 867,
+											"y": 807,
 											"width": 8,
 											"height": 15
 										},
@@ -30733,7 +30733,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 867,
+													"y": 807,
 													"width": 8,
 													"height": 15
 												},
@@ -30745,7 +30745,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mknbmzm2.png",
 													"frame": {
 														"x": 200,
-														"y": 867,
+														"y": 807,
 														"width": 8,
 														"height": 15
 													}
@@ -30766,7 +30766,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 810,
+							"y": 750,
 							"width": 327,
 							"height": 93
 						},
@@ -30778,7 +30778,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob4Card-qzm2mdlb.png",
 							"frame": {
 								"x": 25,
-								"y": 810,
+								"y": 750,
 								"width": 327,
 								"height": 93
 							}
@@ -30795,7 +30795,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 22,
-					"y": 913,
+					"y": 853,
 					"width": 333,
 					"height": 105
 				},
@@ -30812,7 +30812,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 22,
-							"y": 919,
+							"y": 859,
 							"width": 333,
 							"height": 99
 						},
@@ -30824,7 +30824,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Highlight-rdq0otu2.png",
 							"frame": {
 								"x": 22,
-								"y": 919,
+								"y": 859,
 								"width": 333,
 								"height": 99
 							}
@@ -30839,7 +30839,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 125,
-							"y": 936,
+							"y": 876,
 							"width": 115,
 							"height": 14
 						},
@@ -30860,7 +30860,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Title-mujcndqx.png",
 							"frame": {
 								"x": 125,
-								"y": 936,
+								"y": 876,
 								"width": 115,
 								"height": 14
 							}
@@ -30880,7 +30880,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"layerFrame": {
 							"x": 37,
-							"y": 920,
+							"y": 860,
 							"width": 79,
 							"height": 79
 						},
@@ -30892,7 +30892,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Photo-nzm2q0u1.png",
 							"frame": {
 								"x": 37,
-								"y": 920,
+								"y": 860,
 								"width": 79,
 								"height": 79
 							}
@@ -30907,7 +30907,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 124,
-							"y": 967,
+							"y": 907,
 							"width": 60,
 							"height": 20
 						},
@@ -30924,7 +30924,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 151,
-									"y": 974,
+									"y": 914,
 									"width": 21,
 									"height": 7
 								},
@@ -30945,7 +30945,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5EducationLevel-nuqzotvb.png",
 									"frame": {
 										"x": 151,
-										"y": 974,
+										"y": 914,
 										"width": 21,
 										"height": 7
 									}
@@ -30960,7 +30960,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 124,
-									"y": 967,
+									"y": 907,
 									"width": 60,
 									"height": 20
 								},
@@ -30972,7 +30972,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-qki2rtux.png",
 									"frame": {
 										"x": 124,
-										"y": 967,
+										"y": 907,
 										"width": 60,
 										"height": 20
 									}
@@ -30986,7 +30986,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 127,
-											"y": 971,
+											"y": 911,
 											"width": 17,
 											"height": 12
 										},
@@ -31003,7 +31003,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 127,
-													"y": 971,
+													"y": 911,
 													"width": 17,
 													"height": 12
 												},
@@ -31015,7 +31015,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-rtfcotc5.png",
 													"frame": {
 														"x": 127,
-														"y": 971,
+														"y": 911,
 														"width": 17,
 														"height": 12
 													}
@@ -31036,7 +31036,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 264,
-							"y": 967,
+							"y": 907,
 							"width": 60,
 							"height": 20
 						},
@@ -31053,7 +31053,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 289,
-									"y": 973,
+									"y": 913,
 									"width": 25,
 									"height": 9
 								},
@@ -31074,7 +31074,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5GrowthLevel-rje1qjk3.png",
 									"frame": {
 										"x": 289,
-										"y": 973,
+										"y": 913,
 										"width": 25,
 										"height": 9
 									}
@@ -31089,7 +31089,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 264,
-									"y": 967,
+									"y": 907,
 									"width": 60,
 									"height": 20
 								},
@@ -31101,7 +31101,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-mem3njfd.png",
 									"frame": {
 										"x": 264,
-										"y": 967,
+										"y": 907,
 										"width": 60,
 										"height": 20
 									}
@@ -31115,7 +31115,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 267,
-											"y": 973,
+											"y": 913,
 											"width": 15,
 											"height": 8
 										},
@@ -31127,7 +31127,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"path": "images/Layer-Group_3-nezcrju1.png",
 											"frame": {
 												"x": 267,
-												"y": 973,
+												"y": 913,
 												"width": 15,
 												"height": 8
 											}
@@ -31146,7 +31146,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 194,
-							"y": 967,
+							"y": 907,
 							"width": 60,
 							"height": 20
 						},
@@ -31163,7 +31163,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 219,
-									"y": 973,
+									"y": 913,
 									"width": 25,
 									"height": 9
 								},
@@ -31184,7 +31184,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-profileFutureFavoriteJob5SalaryLevel-qjewree5.png",
 									"frame": {
 										"x": 219,
-										"y": 973,
+										"y": 913,
 										"width": 25,
 										"height": 9
 									}
@@ -31199,7 +31199,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"maskFrame": null,
 								"layerFrame": {
 									"x": 194,
-									"y": 967,
+									"y": 907,
 									"width": 60,
 									"height": 20
 								},
@@ -31211,7 +31211,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"path": "images/Layer-static-ndlemzqz.png",
 									"frame": {
 										"x": 194,
-										"y": 967,
+										"y": 907,
 										"width": 60,
 										"height": 20
 									}
@@ -31225,7 +31225,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										"maskFrame": null,
 										"layerFrame": {
 											"x": 200,
-											"y": 970,
+											"y": 910,
 											"width": 8,
 											"height": 15
 										},
@@ -31242,7 +31242,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 												"maskFrame": null,
 												"layerFrame": {
 													"x": 200,
-													"y": 970,
+													"y": 910,
 													"width": 8,
 													"height": 15
 												},
@@ -31254,7 +31254,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"path": "images/Layer-Group-mtiwq0mw.png",
 													"frame": {
 														"x": 200,
-														"y": 970,
+														"y": 910,
 														"width": 8,
 														"height": 15
 													}
@@ -31275,7 +31275,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"maskFrame": null,
 						"layerFrame": {
 							"x": 25,
-							"y": 913,
+							"y": 853,
 							"width": 327,
 							"height": 93
 						},
@@ -31287,7 +31287,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"path": "images/Layer-profileFutureFavoriteJob5Card-qtdente4.png",
 							"frame": {
 								"x": 25,
-								"y": 913,
+								"y": 853,
 								"width": 327,
 								"height": 93
 							}
@@ -35739,7 +35739,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"objectId": "C8C7A521-573F-41E1-80BD-718B6BC66DCF",
 				"kind": "group",
 				"name": "questionPersonalityProgress1",
-				"originalName": "questionPersonalityProgress1",
+				"originalName": "questionPersonalityProgress1*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -35751,111 +35751,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "3DCA1954-6C9A-47BF-8A82-E6DD7539F29E",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 182,
-							"y": 566,
-							"width": 10,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "1",
-							"css": [
-								"/* 1: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-m0rdqte5.png",
-							"frame": {
-								"x": 182,
-								"y": 566,
-								"width": 10,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "89314984-4634-4672-94DC-AFCAD3DDCDF5",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-odkzmtq5.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "2C10923B-563A-460C-98E8-50DB14D61624",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mkmxmdky.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress1-qzhdn0e1.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "FB8B1E55-4A76-43F9-A470-8E5A42AE5768",
 				"kind": "group",
 				"name": "questionPersonalityProgress2",
-				"originalName": "questionPersonalityProgress2",
+				"originalName": "questionPersonalityProgress2*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -35867,111 +35778,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "AFF18334-1C3B-437A-BE50-5CDC4691B866",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber1",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 180,
-							"y": 566,
-							"width": 17,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "2",
-							"css": [
-								"/* 2: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-quzgmtgz.png",
-							"frame": {
-								"x": 180,
-								"y": 566,
-								"width": 17,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "DCEB35D3-FAE9-4B7D-A382-1834BD4343F1",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal1",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-renfqjm1.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "BFA9A968-2466-410C-A31F-55B8BF1EC30D",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline1",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-qkzboue5.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress2-rki4qjff.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "75755624-CC43-457D-A8E7-336FC0B00D54",
 				"kind": "group",
 				"name": "questionPersonalityProgress3",
-				"originalName": "questionPersonalityProgress3",
+				"originalName": "questionPersonalityProgress3*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -35983,111 +35805,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "84431F87-85A1-4180-83B2-B9A1FFB9DC45",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber2",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 180,
-							"y": 566,
-							"width": 17,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "3",
-							"css": [
-								"/* 3: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-odq0mzfg.png",
-							"frame": {
-								"x": 180,
-								"y": 566,
-								"width": 17,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "4E0ED8D2-A8AB-438D-B699-664218400751",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal2",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-neuwruq4.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "0A6A5E98-5F36-46CC-B0C2-F0D9461DE426",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline2",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mee2qtvf.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress3-nzu3ntu2.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "C9DA72F6-F3EE-4F09-9CF2-26B5701E127A",
 				"kind": "group",
 				"name": "questionPersonalityProgress4",
-				"originalName": "questionPersonalityProgress4",
+				"originalName": "questionPersonalityProgress4*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36099,111 +35832,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "41EEF181-4991-40B7-8E3A-6C38B99DFFE0",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber3",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 179,
-							"y": 566,
-							"width": 20,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "4",
-							"css": [
-								"/* 4: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-ndffruyx.png",
-							"frame": {
-								"x": 179,
-								"y": 566,
-								"width": 20,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "E556465D-478C-4516-88A4-F9FEA3BC5DBC",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal3",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-rtu1njq2.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "5D8E36C4-245E-4296-9E2A-BE96A066A05F",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline3",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-nuq4rtm2.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress4-qzleqtcy.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "A0542EDD-EF20-45C8-A604-0F7E07782FB2",
 				"kind": "group",
 				"name": "questionPersonalityProgress5",
-				"originalName": "questionPersonalityProgress5",
+				"originalName": "questionPersonalityProgress5*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36215,111 +35859,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "0D932F70-2071-4591-9E3A-3EAF867A2BD3",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber4",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 180,
-							"y": 566,
-							"width": 17,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "5",
-							"css": [
-								"/* 5: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-meq5mzjg.png",
-							"frame": {
-								"x": 180,
-								"y": 566,
-								"width": 17,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "17296BBE-AB33-48F2-ADD7-131532910C38",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal4",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-mtcyotzc.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "F916BD7B-383A-4866-BE95-FCC0DAD9B52D",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline4",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-rjkxnkje.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress5-qta1ndjf.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "99EA4B76-CD7C-4D74-9FBE-94752FBB2589",
 				"kind": "group",
 				"name": "questionPersonalityProgress6",
-				"originalName": "questionPersonalityProgress6",
+				"originalName": "questionPersonalityProgress6*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36331,111 +35886,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "8017DE2D-6F88-409E-BBE9-C13A58B6B615",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber5",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 179,
-							"y": 566,
-							"width": 19,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "6",
-							"css": [
-								"/* 6: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-odaxn0rf.png",
-							"frame": {
-								"x": 179,
-								"y": 566,
-								"width": 19,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "2763C14F-16C8-4496-8B44-5428F4F891BC",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal5",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-mjc2m0mx.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "FE5759C6-67E6-44CC-92D1-3DF1AD276170",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline5",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-rku1nzu5.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress6-otlfqtrc.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "6C6C12AB-A389-4F98-A688-73335EBD42B5",
 				"kind": "group",
 				"name": "questionPersonalityProgress7",
-				"originalName": "questionPersonalityProgress7",
+				"originalName": "questionPersonalityProgress7*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36447,111 +35913,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "C9318587-BA6F-41A3-8FF9-3AB994B5389D",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber6",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 181,
-							"y": 566,
-							"width": 16,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "7",
-							"css": [
-								"/* 7: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-qzkzmtg1.png",
-							"frame": {
-								"x": 181,
-								"y": 566,
-								"width": 16,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "E801E72A-DE74-4C1A-BB8F-2840B5F4BC7D",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal6",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-rtgwmuu3.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "0C4CA86D-DCB2-404B-BFEB-F2FDE6286B60",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline6",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mem0q0e4.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress7-nkm2qzey.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "93A50CB1-3ACE-42D6-9C24-4BDC3569B1CD",
 				"kind": "group",
 				"name": "questionPersonalityProgress8",
-				"originalName": "questionPersonalityProgress8",
+				"originalName": "questionPersonalityProgress8*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36563,227 +35940,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "3235E866-E3EA-40BE-AF45-9A8E2B444D95",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber7",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 179,
-							"y": 566,
-							"width": 18,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "8",
-							"css": [
-								"/* 8: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-mziznuu4.png",
-							"frame": {
-								"x": 179,
-								"y": 566,
-								"width": 18,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "75160541-D5CB-4EE7-A7C2-AE41E95FD6BE",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal7",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-nzuxnja1.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "7CC33921-645C-4A99-B25E-435BCF809A63",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline7",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-n0ndmzm5.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress8-otnbntbd.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
-			},
-			{
-				"objectId": "7D65C24F-9E0A-4336-9242-58A572BA07C5",
-				"kind": "group",
-				"name": "questionPersonalityProgress11",
-				"originalName": "questionPersonalityProgress11",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 148,
-					"y": 545,
-					"width": 81,
-					"height": 81
 				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"children": [
-					{
-						"objectId": "2AADC1F6-E217-4419-A6FC-DD5999178367",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber8",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 176,
-							"y": 566,
-							"width": 23,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "11",
-							"css": [
-								"/* 11: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-mkfbremx.png",
-							"frame": {
-								"x": 176,
-								"y": 566,
-								"width": 23,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "C3F6AB79-8A05-4205-A9B2-76001C307CF7",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal8",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-qzngnkfc.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "72C1A611-A704-4320-8E5E-65B4EA57AA17",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline8",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-nzjdmue2.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
-					}
-				]
+				"children": []
 			},
 			{
 				"objectId": "18C0DE92-F6AA-4937-9597-86CD809DD782",
 				"kind": "group",
 				"name": "questionPersonalityProgress9",
-				"originalName": "questionPersonalityProgress9",
+				"originalName": "questionPersonalityProgress9*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36795,111 +35967,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "4692D209-E8BE-4FD4-B7F3-76403EBF5991",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber9",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 179,
-							"y": 566,
-							"width": 19,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "9\t",
-							"css": [
-								"/* 9: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-ndy5mkqy.png",
-							"frame": {
-								"x": 179,
-								"y": 566,
-								"width": 19,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "CF5AECD5-0022-4591-9B3D-7670035183FD",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal9",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-q0y1quvd.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "9AC15722-43E9-4D54-BC01-1C13FFDFE817",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline9",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-oufdmtu3.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress9-mthdmerf.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "E412930E-E3E9-4A99-BEF2-72E6FF3BB476",
 				"kind": "group",
 				"name": "questionPersonalityProgress10",
-				"originalName": "questionPersonalityProgress10",
+				"originalName": "questionPersonalityProgress10*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -36911,111 +35994,49 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "91D1BA45-CE46-4269-8849-7BFB38C9394F",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber10",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 171,
-							"y": 566,
-							"width": 34,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "10",
-							"css": [
-								"/* 10: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-otfemujb.png",
-							"frame": {
-								"x": 171,
-								"y": 566,
-								"width": 34,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "3D6324A5-462B-4369-883F-A598905C0866",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal10",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-m0q2mzi0.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "15EDB6C6-3025-466C-8C82-3CD723097E7A",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline10",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mtvfrei2.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress10-rtqxmjkz.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
+			},
+			{
+				"objectId": "7D65C24F-9E0A-4336-9242-58A572BA07C5",
+				"kind": "group",
+				"name": "questionPersonalityProgress11",
+				"originalName": "questionPersonalityProgress11*",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress11-n0q2numy.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
+					}
+				},
+				"children": []
 			},
 			{
 				"objectId": "2FC74BD3-9BA5-4C63-A3A4-0539BDBEBF3B",
 				"kind": "group",
 				"name": "questionPersonalityProgress12",
-				"originalName": "questionPersonalityProgress12",
+				"originalName": "questionPersonalityProgress12*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37027,111 +36048,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "F3116DDB-3ECA-4BA6-9B36-750488487206",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber11",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 31,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "12",
-							"css": [
-								"/* 12: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-rjmxmtze.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 31,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "6F3AB496-F1AF-45CE-85DD-B0170248006A",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal11",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-nkyzqui0.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "186A0DF2-1432-4B2F-8298-D5B0A146086D",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline11",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mtg2qtbe.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress12-mkzdnzrc.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "699C966B-6E11-477E-AD84-D2587BFF8033",
 				"kind": "group",
 				"name": "questionPersonalityProgress13",
-				"originalName": "questionPersonalityProgress13",
+				"originalName": "questionPersonalityProgress13*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37143,111 +36075,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "8F992D53-9593-47E8-B44B-55656FC5F066",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber12",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 31,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "13",
-							"css": [
-								"/* 13: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-oey5otje.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 31,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "CB2A7088-CD02-4F77-A4F5-4C1A513E158D",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal12",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-q0iyqtcw.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "5F98DC64-C3E2-4D20-860D-DD27D60EE428",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline12",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-nuy5oerd.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress13-njk5qzk2.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "FDBA97D6-72B6-47AF-AB7E-C2EDA641F1FD",
 				"kind": "group",
 				"name": "questionPersonalityProgress14",
-				"originalName": "questionPersonalityProgress14",
+				"originalName": "questionPersonalityProgress14*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37259,111 +36102,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "30B613C8-F373-4A09-9EEB-0174FF48FC51",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber13",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 171,
-							"y": 566,
-							"width": 33,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "14",
-							"css": [
-								"/* 14: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-mzbcnjez.png",
-							"frame": {
-								"x": 171,
-								"y": 566,
-								"width": 33,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "97754AF3-8E5F-47DE-809E-8474009490ED",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal13",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-otc3ntrb.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "56FACEAF-3D30-4793-88BD-69DA6F65A131",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline13",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-ntzgqunf.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress14-rkrcqtk3.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "48DC28A2-DE16-499D-B397-1DEAD887A82C",
 				"kind": "group",
 				"name": "questionPersonalityProgress15",
-				"originalName": "questionPersonalityProgress15",
+				"originalName": "questionPersonalityProgress15*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37375,111 +36129,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "86878827-97AB-4021-9D86-F522D3054179",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber14",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 31,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "15",
-							"css": [
-								"/* 15: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-ody4nzg4.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 31,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "AC367B29-6E18-4855-8832-790EA8987C04",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal14",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-qumznjdc.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "13E26B43-23A7-4E1A-B11E-ADB9C82CA6CC",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline14",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mtnfmjzc.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress15-ndheqzi4.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "B45F7FCE-F3F4-48A8-B158-75CC740AB6C6",
 				"kind": "group",
 				"name": "questionPersonalityProgress16",
-				"originalName": "questionPersonalityProgress16",
+				"originalName": "questionPersonalityProgress16*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37491,111 +36156,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "455D9B8F-3D9E-416D-8AB5-672978D63B79",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber15",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 32,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "16",
-							"css": [
-								"/* 16: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-ndu1rdlc.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 32,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "ED26E9C2-61BC-43CB-A517-C9A88450DAD2",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal15",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-ruqynku5.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "D1189AA0-2309-4F83-B2C6-E3D582957221",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline15",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-rdexodlb.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress16-qjq1rjdg.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "A5456FE8-2AF5-4B7A-A071-72FD218E92E3",
 				"kind": "group",
 				"name": "questionPersonalityProgress17",
-				"originalName": "questionPersonalityProgress17",
+				"originalName": "questionPersonalityProgress17*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37607,111 +36183,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "B313BDB1-E671-482D-8337-AC49A101D8E9",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber16",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 31,
-							"height": 23
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "17",
-							"css": [
-								"/* 17: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-qjmxm0je.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 31,
-								"height": 23
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "CF7CA750-6CAB-45D8-BEE7-D499581203CD",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal16",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-q0y3q0e3.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "25394BC5-96AF-4A4C-9978-B67C48A9A97D",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline16",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mjuzotrc.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress17-qtu0ntzg.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "D174CFEC-173D-463E-A374-2D24CCFA6C01",
 				"kind": "group",
 				"name": "questionPersonalityProgress18",
-				"originalName": "questionPersonalityProgress18",
+				"originalName": "questionPersonalityProgress18*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37723,111 +36210,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "59D01E8C-2192-418B-9E0A-CA4A1156E2AC",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber17",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 32,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "18",
-							"css": [
-								"/* 18: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-ntlemdff.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 32,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "9D60AAF2-DD97-4401-B6DD-0D26A5089E51",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal17",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-ouq2mefb.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "16550308-BE36-4CBB-84A4-3105919BDFD3",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline17",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-mty1ntaz.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress18-rde3neng.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "8ED946C3-F1C5-4B69-8738-E5D2443B4D67",
 				"kind": "group",
 				"name": "questionPersonalityProgress19",
-				"originalName": "questionPersonalityProgress19",
+				"originalName": "questionPersonalityProgress19*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37839,111 +36237,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "870B4BF3-061A-464A-A810-3E7E489D2A48",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber18",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 172,
-							"y": 566,
-							"width": 32,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "19",
-							"css": [
-								"/* 19: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-odcwqjrc.png",
-							"frame": {
-								"x": 172,
-								"y": 566,
-								"width": 32,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "69754301-832D-42EB-976E-D66927F77BA2",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal18",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-njk3ntqz.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "973CEEA3-3897-4538-9204-D05DF7C6BB6C",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline18",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-otczq0vf.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress19-oeveotq2.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			},
 			{
 				"objectId": "BB7BB7CC-644C-4FB5-9791-500E6F98EE80",
 				"kind": "group",
 				"name": "questionPersonalityProgress20",
-				"originalName": "questionPersonalityProgress20",
+				"originalName": "questionPersonalityProgress20*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -37955,105 +36264,16 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "EA5F34CF-FDA7-4D56-AC4A-46A00F8C634F",
-						"kind": "text",
-						"name": "questionMultChoiceProgressNumber19",
-						"originalName": "questionMultChoiceProgressNumber",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 168,
-							"y": 566,
-							"width": 40,
-							"height": 24
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "20",
-							"css": [
-								"/* 20: */",
-								"font-family: Gotham-Medium;",
-								"font-size: 32px;",
-								"color: #363435;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressNumber-rue1rjm0.png",
-							"frame": {
-								"x": 168,
-								"y": 566,
-								"width": 40,
-								"height": 24
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "829F37D4-F532-4DA8-B35A-88199DBF3A8E",
-						"kind": "text",
-						"name": "questionMultChoiceProgressTotal19",
-						"originalName": "questionMultChoiceProgressTotal",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 173,
-							"y": 595,
-							"width": 31,
-							"height": 11
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1,
-							"string": "of 20",
-							"css": [
-								"/* of 20: */",
-								"font-family: Gotham-Book;",
-								"font-size: 12px;",
-								"color: #767676;",
-								"letter-spacing: 0;"
-							]
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressTotal-odi5rjm3.png",
-							"frame": {
-								"x": 173,
-								"y": 595,
-								"width": 31,
-								"height": 11
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "3CC5788D-E744-41DF-BC32-2B41B6AC4A42",
-						"kind": "group",
-						"name": "questionMultChoiceProgressOutline19",
-						"originalName": "questionMultChoiceProgressOutline",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 148,
-							"y": 545,
-							"width": 81,
-							"height": 81
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-questionMultChoiceProgressOutline-m0ndntc4.png",
-							"frame": {
-								"x": 148,
-								"y": 545,
-								"width": 81,
-								"height": 81
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-questionPersonalityProgress20-qki3qki3.jpg",
+					"frame": {
+						"x": 148,
+						"y": 545,
+						"width": 81,
+						"height": 81
 					}
-				]
+				},
+				"children": []
 			}
 		]
 	},

@@ -3,7 +3,7 @@ sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)
 
 Utils.globalLayers(sketch)
 
-pointScale = 1
+pointScale = 2
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -943,24 +943,24 @@ sketch.futuresQuestions.onClick (event, layer) ->
 			else
 				flow.showOverlayCenter(persFlow)
 	#check if second user visit, then direct to daily questions
-	else if userSession == 1
-		if dailyQuizFlow is "" 
-				dailyQuizFlow = new FlowComponent
-				questionsFlow = new FlowComponent
-					x: 0
-					y: 70
-					height: 470
-					width: Screen.width
-					scrollVertical: false
-					scrollHorizontal: false
-					parent: questionsBackground
-					backgroundColor: '#FFFFFF'
-				flow.showOverlayCenter(dailyQuizFlow)
-				dailyQuizFlow.showNext(questionsBackground)
-				questionsFlow.showNext(question1)
-				questionCurrent += 1
-			else
-				flow.showOverlayCenter(dailyQuizFlow)
+# 	else if userSession == 1
+# 		if dailyQuizFlow is "" 
+# 				dailyQuizFlow = new FlowComponent
+# 				questionsFlow = new FlowComponent
+# 					x: 0
+# 					y: 70
+# 					height: 470
+# 					width: Screen.width
+# 					scrollVertical: false
+# 					scrollHorizontal: false
+# 					parent: questionsBackground
+# 					backgroundColor: '#FFFFFF'
+# 				flow.showOverlayCenter(dailyQuizFlow)
+# 				dailyQuizFlow.showNext(questionsBackground)
+# 				questionsFlow.showNext(question1)
+# 				questionCurrent += 1
+# 			else
+# 				flow.showOverlayCenter(dailyQuizFlow)
 
 #PERSONALITY QUESTIONS
 #close questions button
@@ -1126,7 +1126,18 @@ for i in [0..19]
 			populatePersonality()
 			#increment to count complete user visit
 			userSession = userSession + 1
-			flow.showNext(mainFlow)
+			flow.showNext(jobCardLoading)
+			#wait 5 seconds to show jobscards
+			Utils.delay 5, ->
+				#using answered Qs to choose which jobs
+				getJobSession()
+				#populate jobs into cards
+				populateJobSession()
+				jobFlow = new FlowComponent
+					scrollVertical: false
+					scrollHorizontal: false
+				flow.showNext(jobFlow)
+				jobFlow.showNext(jobCardBackground)
 	#set on click no
 	noSelectedBg.onClick (event, layer) ->
 		this.animate
@@ -1920,7 +1931,7 @@ for number in [0...7]
 			#add the tags to every cards
 			
 			#create original card parameters for tag elements
-			tagOrigHeight = 20
+			tagOrigHeight = 20 
 			tagOrigWidth = 60
 			tagOrigY = 328
 			tagIconOrigY = 1
@@ -2141,12 +2152,27 @@ for number in [0...7]
 # 					y: 646
 			
 		else if number = 1 #create an insight card
-			card.image = "images/detail-oriented-insight.png"
-# 			for workstyle in user.workstyles
-# 				if workstyle == "Detail Oriented"
-# 					card.image = "images/detail-oriented-insight.png"
-# 				if workstyle == "Big Picture"
-# 					card.image = "images/big-picture-insight.png"
+			card.image = "images/doer-insight.png"
+# 			if userSession == 0
+# 				if user.personality[0] == "Thinker"
+# 					card.image = "images/thinker-insight.png"
+# 				if user.personality[0] == "Doer"
+# 					card.image = "images/doer-insight.png"
+# 				if user.personality[0] == "Creator"
+# 					card.image = "images/creator-insight.png"	
+# 				if user.personality[0] == "Persuader"
+# 					card.image = "images/persuader-insight.png"
+# 				if user.personality[0] == "Organizer"
+# 					card.image = "images/organizer-insight.png"	
+# 				if user.personality[0] == "Helper"
+# 					card.image = "images/helper-insight.png"	
+# 			else
+# 				card.image = "images/detail-oriented-insight.png"
+	# 			for workstyle in user.workstyles
+	# 				if workstyle == "Detail Oriented"
+	# 					card.image = "images/detail-oriented-insight.png"
+	# 				if workstyle == "Big Picture"
+	# 					card.image = "images/big-picture-insight.png"
 		else	
 			#empty
 
@@ -2360,15 +2386,33 @@ jobCardSlider.on "change:currentPage",->
 			#increment to count complete user visit
 			userSession = userSession + 1
 			flow.showNext(mainFlow)
-			futuresQuestionsDone.opacity = 1
-			futuresQuestions.visible = false
 	else 
 		jobCardBackgroundDone.opacity = 0
 		for layer in Framer.CurrentContext.layers
 			layer.destroy() if layer.name is "backToFuturesButton"
 
-#favorite jobs
+# 	futuresQuestions.onClick (event,layer) ->
+# 		if userSession == 1
+# 			if dailyQuizFlow is "" 
+# 					dailyQuizFlow = new FlowComponent
+# 					questionsFlow = new FlowComponent
+# 						x: 0
+# 						y: 70
+# 						height: 470
+# 						width: Screen.width
+# 						scrollVertical: false
+# 						scrollHorizontal: false
+# 						parent: questionsBackground
+# 						backgroundColor: '#FFFFFF'
+# 					flow.showOverlayCenter(dailyQuizFlow)
+# 					dailyQuizFlow.showNext(questionsBackground)
+# 					questionsFlow.showNext(question1)
+# 					questionCurrent += 1
+# 				else
+# 					flow.showOverlayCenter(dailyQuizFlow)
 
+
+#favorite jobs
 for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
@@ -2395,7 +2439,7 @@ jobExpand.states =
 		height: 548
 		width: 330
 	expanded: 
-		opacity: 1
+		opacity: 1 
 		x: 0
 		y: 0
 		height: Screen.height
