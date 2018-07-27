@@ -1,5 +1,5 @@
 window.__imported__ = window.__imported__ || {};
-window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
+window.__imported__["Final Screens (Master @ 66ca9cf)@1x/layers.json.js"] = [
 	{
 		"objectId": "DDF5A95A-8963-42FA-84D6-95BE3AC230CF",
 		"kind": "artboard",
@@ -12531,10 +12531,173 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 		]
 	},
 	{
-		"objectId": "1B83400C-0A70-4FD1-A964-A58D6BF6432E",
+		"objectId": "FC72C312-0623-4984-8339-1D77F44648D9",
 		"kind": "artboard",
 		"name": "questionPersonality",
 		"originalName": "questionPersonality",
+		"maskFrame": null,
+		"layerFrame": {
+			"x": -137,
+			"y": 2672,
+			"width": 375,
+			"height": 460
+		},
+		"visible": true,
+		"metadata": {},
+		"backgroundColor": "rgba(255, 255, 255, 1)",
+		"children": [
+			{
+				"objectId": "BBEEA98E-EB17-44A9-9E32-2CC1D96685CD",
+				"kind": "text",
+				"name": "questionPersonalityQuestion",
+				"originalName": "questionPersonalityQuestion",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 49,
+					"y": 16,
+					"width": 278,
+					"height": 76
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1,
+					"string": "This is a question related to personality that they will answer?",
+					"css": [
+						"/* This is a question r: */",
+						"font-family: Gotham-Medium;",
+						"font-size: 20px;",
+						"color: #6229EA;",
+						"letter-spacing: 0;",
+						"text-align: center;",
+						"line-height: 30px;"
+					]
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityQuestion-qkjfrue5.png",
+					"frame": {
+						"x": 49,
+						"y": 16,
+						"width": 278,
+						"height": 76
+					}
+				},
+				"children": []
+			},
+			{
+				"objectId": "3391CC3A-C4E9-4C5F-8B9D-B1740457B046",
+				"kind": "group",
+				"name": "questionPersonalityOption1Selected",
+				"originalName": "questionPersonalityOption1Selected",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 53,
+					"y": 157,
+					"width": 270,
+					"height": 98
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityOption1Selected-mzm5mund.png",
+					"frame": {
+						"x": 53,
+						"y": 157,
+						"width": 270,
+						"height": 98
+					}
+				},
+				"children": []
+			},
+			{
+				"objectId": "0F2A8027-6177-45EA-A055-843141126060",
+				"kind": "group",
+				"name": "questionPersonalityOption1Default",
+				"originalName": "questionPersonalityOption1Default",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 53,
+					"y": 157,
+					"width": 270,
+					"height": 98
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityOption1Default-meyyqtgw.png",
+					"frame": {
+						"x": 53,
+						"y": 157,
+						"width": 270,
+						"height": 98
+					}
+				},
+				"children": []
+			},
+			{
+				"objectId": "79A1C9A2-A64B-436B-8B00-26B01E0BF163",
+				"kind": "group",
+				"name": "questionPersonalityOption2Selected",
+				"originalName": "questionPersonalityOption2Selected",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 53,
+					"y": 271,
+					"width": 270,
+					"height": 98
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityOption2Selected-nzlbmum5.png",
+					"frame": {
+						"x": 53,
+						"y": 271,
+						"width": 270,
+						"height": 98
+					}
+				},
+				"children": []
+			},
+			{
+				"objectId": "8D43FBDC-FB39-4C16-82B1-BE61AE4C9A98",
+				"kind": "group",
+				"name": "questionPersonalityOption2Default",
+				"originalName": "questionPersonalityOption2Default",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 53,
+					"y": 271,
+					"width": 270,
+					"height": 98
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"image": {
+					"path": "images/Layer-questionPersonalityOption2Default-oeq0m0zc.png",
+					"frame": {
+						"x": 53,
+						"y": 271,
+						"width": 270,
+						"height": 98
+					}
+				},
+				"children": []
+			}
+		]
+	},
+	{
+		"objectId": "1B83400C-0A70-4FD1-A964-A58D6BF6432E",
+		"kind": "artboard",
+		"name": "questionPersonalityBackground",
+		"originalName": "questionPersonalityBackground",
 		"maskFrame": null,
 		"layerFrame": {
 			"x": -539,
@@ -12546,141 +12709,6 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 		"metadata": {},
 		"backgroundColor": "rgba(255, 255, 255, 1)",
 		"children": [
-			{
-				"objectId": "2560356C-AACC-44F3-BD0D-812FDE4FE613",
-				"kind": "group",
-				"name": "questionPersonalityQuestion",
-				"originalName": "questionPersonalityQuestion",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 55,
-					"y": 101,
-					"width": 278,
-					"height": 76
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-questionPersonalityQuestion-mju2mdm1.png",
-					"frame": {
-						"x": 55,
-						"y": 101,
-						"width": 278,
-						"height": 76
-					}
-				},
-				"children": []
-			},
-			{
-				"objectId": "CC50FBAE-5198-4119-AD35-6931DA02BEA2",
-				"kind": "group",
-				"name": "questionPersonalityOption1Selected",
-				"originalName": "questionPersonalityOption1Selected",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 56,
-					"y": 250,
-					"width": 270,
-					"height": 98
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-questionPersonalityOption1Selected-q0m1mezc.png",
-					"frame": {
-						"x": 56,
-						"y": 250,
-						"width": 270,
-						"height": 98
-					}
-				},
-				"children": []
-			},
-			{
-				"objectId": "2FB9F1E0-7193-4133-AA32-48BEAA8DDCEB",
-				"kind": "group",
-				"name": "questionPersonalityOption1Default",
-				"originalName": "questionPersonalityOption1Default",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 56,
-					"y": 250,
-					"width": 270,
-					"height": 98
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-questionPersonalityOption1Default-mkzcouyx.png",
-					"frame": {
-						"x": 56,
-						"y": 250,
-						"width": 270,
-						"height": 98
-					}
-				},
-				"children": []
-			},
-			{
-				"objectId": "296F7CA7-4085-40C3-A085-65E0705C244C",
-				"kind": "group",
-				"name": "questionPersonalityOption2Selected",
-				"originalName": "questionPersonalityOption2Selected",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 56,
-					"y": 368,
-					"width": 270,
-					"height": 98
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-questionPersonalityOption2Selected-mjk2rjdd.png",
-					"frame": {
-						"x": 56,
-						"y": 368,
-						"width": 270,
-						"height": 98
-					}
-				},
-				"children": []
-			},
-			{
-				"objectId": "AEDE9F60-21D3-41D6-BDB8-689934144F79",
-				"kind": "group",
-				"name": "questionPersonalityOption2Default",
-				"originalName": "questionPersonalityOption2Default",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 56,
-					"y": 368,
-					"width": 270,
-					"height": 98
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-questionPersonalityOption2Default-quvertlg.png",
-					"frame": {
-						"x": 56,
-						"y": 368,
-						"width": 270,
-						"height": 98
-					}
-				},
-				"children": []
-			},
 			{
 				"objectId": "4B54F55C-EEFA-41F0-8467-0E248A4DCE66",
 				"kind": "group",
@@ -12711,8 +12739,8 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 			{
 				"objectId": "C8C7A521-573F-41E1-80BD-718B6BC66DCF",
 				"kind": "group",
-				"name": "questionPersonalityProgress",
-				"originalName": "questionPersonalityProgress",
+				"name": "questionPersonalityProgress1",
+				"originalName": "questionPersonalityProgress1",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 148,
@@ -12732,7 +12760,7 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 						"originalName": "questionMultChoiceProgressNumber",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 181,
+							"x": 182,
 							"y": 566,
 							"width": 10,
 							"height": 23
@@ -12752,7 +12780,7 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 						"image": {
 							"path": "images/Layer-questionMultChoiceProgressNumber-m0rdqte5.png",
 							"frame": {
-								"x": 181,
+								"x": 182,
 								"y": 566,
 								"width": 10,
 								"height": 23
@@ -12767,17 +12795,17 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 						"originalName": "questionMultChoiceProgressTotal",
 						"maskFrame": null,
 						"layerFrame": {
-							"x": 175,
+							"x": 173,
 							"y": 595,
-							"width": 30,
+							"width": 31,
 							"height": 11
 						},
 						"visible": true,
 						"metadata": {
 							"opacity": 1,
-							"string": "of 23",
+							"string": "of 20",
 							"css": [
-								"/* of 23: */",
+								"/* of 20: */",
 								"font-family: Gotham-Book;",
 								"font-size: 12px;",
 								"color: #767676;",
@@ -12787,9 +12815,9 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 						"image": {
 							"path": "images/Layer-questionMultChoiceProgressTotal-odkzmtq5.png",
 							"frame": {
-								"x": 175,
+								"x": 173,
 								"y": 595,
-								"width": 30,
+								"width": 31,
 								"height": 11
 							}
 						},
@@ -12813,6 +12841,2210 @@ window.__imported__["Final Screens (Master @ 2824d8d)@1x/layers.json.js"] = [
 						},
 						"image": {
 							"path": "images/Layer-questionMultChoiceProgressOutline-mkmxmdky.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "FB8B1E55-4A76-43F9-A470-8E5A42AE5768",
+				"kind": "group",
+				"name": "questionPersonalityProgress2",
+				"originalName": "questionPersonalityProgress2",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "AFF18334-1C3B-437A-BE50-5CDC4691B866",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber1",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 180,
+							"y": 566,
+							"width": 17,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "2",
+							"css": [
+								"/* 2: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-quzgmtgz.png",
+							"frame": {
+								"x": 180,
+								"y": 566,
+								"width": 17,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "DCEB35D3-FAE9-4B7D-A382-1834BD4343F1",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal1",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-renfqjm1.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "BFA9A968-2466-410C-A31F-55B8BF1EC30D",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline1",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-qkzboue5.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "75755624-CC43-457D-A8E7-336FC0B00D54",
+				"kind": "group",
+				"name": "questionPersonalityProgress3",
+				"originalName": "questionPersonalityProgress3",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "84431F87-85A1-4180-83B2-B9A1FFB9DC45",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber2",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 180,
+							"y": 566,
+							"width": 17,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "3",
+							"css": [
+								"/* 3: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-odq0mzfg.png",
+							"frame": {
+								"x": 180,
+								"y": 566,
+								"width": 17,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "4E0ED8D2-A8AB-438D-B699-664218400751",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal2",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-neuwruq4.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "0A6A5E98-5F36-46CC-B0C2-F0D9461DE426",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline2",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mee2qtvf.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "C9DA72F6-F3EE-4F09-9CF2-26B5701E127A",
+				"kind": "group",
+				"name": "questionPersonalityProgress4",
+				"originalName": "questionPersonalityProgress4",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "41EEF181-4991-40B7-8E3A-6C38B99DFFE0",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber3",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 179,
+							"y": 566,
+							"width": 20,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "4",
+							"css": [
+								"/* 4: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-ndffruyx.png",
+							"frame": {
+								"x": 179,
+								"y": 566,
+								"width": 20,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "E556465D-478C-4516-88A4-F9FEA3BC5DBC",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal3",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-rtu1njq2.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "5D8E36C4-245E-4296-9E2A-BE96A066A05F",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline3",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-nuq4rtm2.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "A0542EDD-EF20-45C8-A604-0F7E07782FB2",
+				"kind": "group",
+				"name": "questionPersonalityProgress5",
+				"originalName": "questionPersonalityProgress5",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "0D932F70-2071-4591-9E3A-3EAF867A2BD3",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber4",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 180,
+							"y": 566,
+							"width": 17,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "5",
+							"css": [
+								"/* 5: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-meq5mzjg.png",
+							"frame": {
+								"x": 180,
+								"y": 566,
+								"width": 17,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "17296BBE-AB33-48F2-ADD7-131532910C38",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal4",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-mtcyotzc.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "F916BD7B-383A-4866-BE95-FCC0DAD9B52D",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline4",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-rjkxnkje.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "99EA4B76-CD7C-4D74-9FBE-94752FBB2589",
+				"kind": "group",
+				"name": "questionPersonalityProgress6",
+				"originalName": "questionPersonalityProgress6",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "8017DE2D-6F88-409E-BBE9-C13A58B6B615",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber5",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 179,
+							"y": 566,
+							"width": 19,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "6",
+							"css": [
+								"/* 6: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-odaxn0rf.png",
+							"frame": {
+								"x": 179,
+								"y": 566,
+								"width": 19,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "2763C14F-16C8-4496-8B44-5428F4F891BC",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal5",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-mjc2m0mx.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "FE5759C6-67E6-44CC-92D1-3DF1AD276170",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline5",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-rku1nzu5.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "6C6C12AB-A389-4F98-A688-73335EBD42B5",
+				"kind": "group",
+				"name": "questionPersonalityProgress7",
+				"originalName": "questionPersonalityProgress7",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "C9318587-BA6F-41A3-8FF9-3AB994B5389D",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber6",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 181,
+							"y": 566,
+							"width": 16,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "7",
+							"css": [
+								"/* 7: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-qzkzmtg1.png",
+							"frame": {
+								"x": 181,
+								"y": 566,
+								"width": 16,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "E801E72A-DE74-4C1A-BB8F-2840B5F4BC7D",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal6",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-rtgwmuu3.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "0C4CA86D-DCB2-404B-BFEB-F2FDE6286B60",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline6",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mem0q0e4.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "93A50CB1-3ACE-42D6-9C24-4BDC3569B1CD",
+				"kind": "group",
+				"name": "questionPersonalityProgress8",
+				"originalName": "questionPersonalityProgress8",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "3235E866-E3EA-40BE-AF45-9A8E2B444D95",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber7",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 179,
+							"y": 566,
+							"width": 18,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "8",
+							"css": [
+								"/* 8: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-mziznuu4.png",
+							"frame": {
+								"x": 179,
+								"y": 566,
+								"width": 18,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "75160541-D5CB-4EE7-A7C2-AE41E95FD6BE",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal7",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-nzuxnja1.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "7CC33921-645C-4A99-B25E-435BCF809A63",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline7",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-n0ndmzm5.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "7D65C24F-9E0A-4336-9242-58A572BA07C5",
+				"kind": "group",
+				"name": "questionPersonalityProgress11",
+				"originalName": "questionPersonalityProgress11",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "2AADC1F6-E217-4419-A6FC-DD5999178367",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber8",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 176,
+							"y": 566,
+							"width": 23,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "11",
+							"css": [
+								"/* 11: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-mkfbremx.png",
+							"frame": {
+								"x": 176,
+								"y": 566,
+								"width": 23,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "C3F6AB79-8A05-4205-A9B2-76001C307CF7",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal8",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-qzngnkfc.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "72C1A611-A704-4320-8E5E-65B4EA57AA17",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline8",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-nzjdmue2.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "18C0DE92-F6AA-4937-9597-86CD809DD782",
+				"kind": "group",
+				"name": "questionPersonalityProgress9",
+				"originalName": "questionPersonalityProgress9",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "4692D209-E8BE-4FD4-B7F3-76403EBF5991",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber9",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 179,
+							"y": 566,
+							"width": 19,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "9\t",
+							"css": [
+								"/* 9: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-ndy5mkqy.png",
+							"frame": {
+								"x": 179,
+								"y": 566,
+								"width": 19,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "CF5AECD5-0022-4591-9B3D-7670035183FD",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal9",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-q0y1quvd.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "9AC15722-43E9-4D54-BC01-1C13FFDFE817",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline9",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-oufdmtu3.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "E412930E-E3E9-4A99-BEF2-72E6FF3BB476",
+				"kind": "group",
+				"name": "questionPersonalityProgress10",
+				"originalName": "questionPersonalityProgress10",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "91D1BA45-CE46-4269-8849-7BFB38C9394F",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber10",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 171,
+							"y": 566,
+							"width": 34,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "10",
+							"css": [
+								"/* 10: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-otfemujb.png",
+							"frame": {
+								"x": 171,
+								"y": 566,
+								"width": 34,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "3D6324A5-462B-4369-883F-A598905C0866",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal10",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-m0q2mzi0.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "15EDB6C6-3025-466C-8C82-3CD723097E7A",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline10",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mtvfrei2.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "2FC74BD3-9BA5-4C63-A3A4-0539BDBEBF3B",
+				"kind": "group",
+				"name": "questionPersonalityProgress12",
+				"originalName": "questionPersonalityProgress12",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "F3116DDB-3ECA-4BA6-9B36-750488487206",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber11",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 31,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "12",
+							"css": [
+								"/* 12: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-rjmxmtze.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 31,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "6F3AB496-F1AF-45CE-85DD-B0170248006A",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal11",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-nkyzqui0.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "186A0DF2-1432-4B2F-8298-D5B0A146086D",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline11",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mtg2qtbe.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "699C966B-6E11-477E-AD84-D2587BFF8033",
+				"kind": "group",
+				"name": "questionPersonalityProgress13",
+				"originalName": "questionPersonalityProgress13",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "8F992D53-9593-47E8-B44B-55656FC5F066",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber12",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 31,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "13",
+							"css": [
+								"/* 13: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-oey5otje.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 31,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "CB2A7088-CD02-4F77-A4F5-4C1A513E158D",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal12",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-q0iyqtcw.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "5F98DC64-C3E2-4D20-860D-DD27D60EE428",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline12",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-nuy5oerd.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "FDBA97D6-72B6-47AF-AB7E-C2EDA641F1FD",
+				"kind": "group",
+				"name": "questionPersonalityProgress14",
+				"originalName": "questionPersonalityProgress14",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "30B613C8-F373-4A09-9EEB-0174FF48FC51",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber13",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 171,
+							"y": 566,
+							"width": 33,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "14",
+							"css": [
+								"/* 14: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-mzbcnjez.png",
+							"frame": {
+								"x": 171,
+								"y": 566,
+								"width": 33,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "97754AF3-8E5F-47DE-809E-8474009490ED",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal13",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-otc3ntrb.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "56FACEAF-3D30-4793-88BD-69DA6F65A131",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline13",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-ntzgqunf.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "48DC28A2-DE16-499D-B397-1DEAD887A82C",
+				"kind": "group",
+				"name": "questionPersonalityProgress15",
+				"originalName": "questionPersonalityProgress15",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "86878827-97AB-4021-9D86-F522D3054179",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber14",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 31,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "15",
+							"css": [
+								"/* 15: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-ody4nzg4.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 31,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "AC367B29-6E18-4855-8832-790EA8987C04",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal14",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-qumznjdc.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "13E26B43-23A7-4E1A-B11E-ADB9C82CA6CC",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline14",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mtnfmjzc.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "B45F7FCE-F3F4-48A8-B158-75CC740AB6C6",
+				"kind": "group",
+				"name": "questionPersonalityProgress16",
+				"originalName": "questionPersonalityProgress16",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "455D9B8F-3D9E-416D-8AB5-672978D63B79",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber15",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 32,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "16",
+							"css": [
+								"/* 16: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-ndu1rdlc.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 32,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "ED26E9C2-61BC-43CB-A517-C9A88450DAD2",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal15",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-ruqynku5.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "D1189AA0-2309-4F83-B2C6-E3D582957221",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline15",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-rdexodlb.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "A5456FE8-2AF5-4B7A-A071-72FD218E92E3",
+				"kind": "group",
+				"name": "questionPersonalityProgress17",
+				"originalName": "questionPersonalityProgress17",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "B313BDB1-E671-482D-8337-AC49A101D8E9",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber16",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 31,
+							"height": 23
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "17",
+							"css": [
+								"/* 17: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-qjmxm0je.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 31,
+								"height": 23
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "CF7CA750-6CAB-45D8-BEE7-D499581203CD",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal16",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-q0y3q0e3.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "25394BC5-96AF-4A4C-9978-B67C48A9A97D",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline16",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mjuzotrc.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "D174CFEC-173D-463E-A374-2D24CCFA6C01",
+				"kind": "group",
+				"name": "questionPersonalityProgress18",
+				"originalName": "questionPersonalityProgress18",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "59D01E8C-2192-418B-9E0A-CA4A1156E2AC",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber17",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 32,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "18",
+							"css": [
+								"/* 18: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-ntlemdff.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 32,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "9D60AAF2-DD97-4401-B6DD-0D26A5089E51",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal17",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-ouq2mefb.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "16550308-BE36-4CBB-84A4-3105919BDFD3",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline17",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-mty1ntaz.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "8ED946C3-F1C5-4B69-8738-E5D2443B4D67",
+				"kind": "group",
+				"name": "questionPersonalityProgress19",
+				"originalName": "questionPersonalityProgress19",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "870B4BF3-061A-464A-A810-3E7E489D2A48",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber18",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 172,
+							"y": 566,
+							"width": 32,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "19",
+							"css": [
+								"/* 19: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-odcwqjrc.png",
+							"frame": {
+								"x": 172,
+								"y": 566,
+								"width": 32,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "69754301-832D-42EB-976E-D66927F77BA2",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal18",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-njk3ntqz.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "973CEEA3-3897-4538-9204-D05DF7C6BB6C",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline18",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-otczq0vf.png",
+							"frame": {
+								"x": 148,
+								"y": 545,
+								"width": 81,
+								"height": 81
+							}
+						},
+						"children": []
+					}
+				]
+			},
+			{
+				"objectId": "BB7BB7CC-644C-4FB5-9791-500E6F98EE80",
+				"kind": "group",
+				"name": "questionPersonalityProgress20",
+				"originalName": "questionPersonalityProgress20",
+				"maskFrame": null,
+				"layerFrame": {
+					"x": 148,
+					"y": 545,
+					"width": 81,
+					"height": 81
+				},
+				"visible": true,
+				"metadata": {
+					"opacity": 1
+				},
+				"children": [
+					{
+						"objectId": "EA5F34CF-FDA7-4D56-AC4A-46A00F8C634F",
+						"kind": "text",
+						"name": "questionMultChoiceProgressNumber19",
+						"originalName": "questionMultChoiceProgressNumber",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 168,
+							"y": 566,
+							"width": 40,
+							"height": 24
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "20",
+							"css": [
+								"/* 20: */",
+								"font-family: Gotham-Medium;",
+								"font-size: 32px;",
+								"color: #363435;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressNumber-rue1rjm0.png",
+							"frame": {
+								"x": 168,
+								"y": 566,
+								"width": 40,
+								"height": 24
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "829F37D4-F532-4DA8-B35A-88199DBF3A8E",
+						"kind": "text",
+						"name": "questionMultChoiceProgressTotal19",
+						"originalName": "questionMultChoiceProgressTotal",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 173,
+							"y": 595,
+							"width": 31,
+							"height": 11
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1,
+							"string": "of 20",
+							"css": [
+								"/* of 20: */",
+								"font-family: Gotham-Book;",
+								"font-size: 12px;",
+								"color: #767676;",
+								"letter-spacing: 0;"
+							]
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressTotal-odi5rjm3.png",
+							"frame": {
+								"x": 173,
+								"y": 595,
+								"width": 31,
+								"height": 11
+							}
+						},
+						"children": []
+					},
+					{
+						"objectId": "3CC5788D-E744-41DF-BC32-2B41B6AC4A42",
+						"kind": "group",
+						"name": "questionMultChoiceProgressOutline19",
+						"originalName": "questionMultChoiceProgressOutline",
+						"maskFrame": null,
+						"layerFrame": {
+							"x": 148,
+							"y": 545,
+							"width": 81,
+							"height": 81
+						},
+						"visible": true,
+						"metadata": {
+							"opacity": 1
+						},
+						"image": {
+							"path": "images/Layer-questionMultChoiceProgressOutline-m0ndntc4.png",
 							"frame": {
 								"x": 148,
 								"y": 545,

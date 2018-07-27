@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 2824d8d)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202824d8d)@1x", scale: 1)
+# Import file "Final Screens (Master @ 66ca9cf)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2066ca9cf)@1x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -78,12 +78,11 @@ interestData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/app
 
 jobData = JSON.parse Utils.domLoadDataSync "https://api.airtable.com/v0/appCZfN8YJIVjk5vJ/Jobs?api_key=keydGpK7XeREMvLjd&view=Grid%20view"
 
-
 #personality questions array 
 questionText = []
 
 # for i in [0..data.records.length-1]
-# 	questionText.push(data.records[i].fields.QuestionText)
+# 	questionText.push(personalityData.records[i].fields.QuestionText)
 
 
 #Responsive
@@ -150,6 +149,11 @@ for layer in ƒƒ('profileInterestsTag*')
 
 sketch.profileInterestsSeeMore.opacity = 0
 
+sketch.questionPersonalityQuestion.opacity = 0
+
+for layer in ƒƒ('questionPersonalityOption*')
+	layer.opacity = 0
+
 #User Profile Object
 user = 
 	interestsRaw: []
@@ -157,15 +161,17 @@ user =
 	workstyles: []
 	drives: []
 	personalityRaw: []
-	personality: ["Thinker", "Doer", "Creator"]
+	personality: []
 	favorites: []
 	history: []
 # Workstyles Input:
 # [0] Independent or Collaborative
 # [1] Empathic or Logical
 # [2] Detail Oriented or Big Picture
+# PersonalityRaw: 1 or 0 int
 
-#Instantiate arrays
+#Instantiate global variables
+#Arrays to populate job session cards
 jobCardsPreviewImage = []
 jobCardsTitle = []
 jobCardsEducationTextTag = []
@@ -178,8 +184,10 @@ jobCardsReadMoreButton = []
 #array to what jobs to show in session
 jobSession = []
 
-# Custom Functions
+#variable to track user visits
+userSession = 0
 
+# Custom Functions
 #populateInterests
 #Function to dynamically display interests on profile
 #Called after submitting interests
@@ -355,6 +363,8 @@ calculatePersonality = ->
 #Called after completing personality quiz
 populatePersonality = ->
 	if user.personality.length != 0
+		sketch.profileMePersonalityDisabled.opacity = 0
+		sketch.profileMePersonalityFilled.opacity = 1
 		if user.personality[0]
 			personality0 = sketch.profileMePersonality1Text.convertToTextLayer()
 			personality0.fontSize = personality0.fontSize * pointScale
@@ -394,6 +404,7 @@ populatePersonality = ->
 					x: 260
 					y: 727
 			personalityImg2.image = getPersonalityImg(user.personality[2])
+			sketch.profilePersonalitySeeMore.opacity = 1
 
 #populateFavJobs
 favJobCards = [] #futuresFavoriteJob1
@@ -771,6 +782,72 @@ sketch.buttonGetStarted.onClick (event, layer) ->
 
 mainFlow = ""
 
+
+#SELECT INTERESTS SCREEN
+#Interest tag states
+for tag in ƒƒ('interestTag*Default')
+	#Add states
+	tag.states.add
+		active: {opacity: 0}
+		default: {opacity: 1}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+
+for tag in ƒƒ('interestTag*Active')
+	#Add states
+	tag.states.add
+		active: {opacity: 1}
+		default: {opacity: 0}
+	#Set animation options
+	tag.states.animationOptions = 
+		time: 0.2
+	#Toggle on click
+	tag.onClick ->
+		this.stateCycle()
+#Save interests button
+sketch.buttonSaveInterests.onClick (event, layer) ->
+	#Initialize arrays and counters
+	user.interestsRaw = []
+	nameInterest = []
+	statusInterest = []
+	numInterest = 0
+	count = 0
+	#Collect name and status of all interests to arrays
+	for tag in ƒƒ('interestTag*Active')
+		statusInterest.push(tag.states.current.name)
+		nameInterest.push(tag.name)
+	#Check how many interests are active
+	for i in statusInterest
+		#If active, increment count and add to user profile
+		if i == "active"
+			numInterest = numInterest + 1
+			user.interestsRaw.push(nameInterest[count])
+		count = count + 1
+	#Show warning if < 3 interests
+	if numInterest < 3
+		sketch.interestWarningNotification.animate
+			opacity: 1
+			options:
+				time: .3
+				curve: Bezier.ease
+	#Allow user to continue if >= 3
+	else
+		#Convert raw interests to interests
+		convertInterests(user.interestsRaw)
+		#Populate interests on profile
+		populateInterests()
+		mainFlow = new FlowComponent
+			backgroundColor: '#F8F8F8'
+		flow.showNext(mainFlow)
+		#assigning screen headers and navigation
+		mainFlow.header = sketch.header
+		mainFlow.footer = sketch.navBar
+		mainFlow.showNext(futures)
+
 #MAIN FUTURE / PROFILE NAVIGATION
 #assign states to the button styles and default me to inactive
 for layer in ƒƒ('navButton*')
@@ -803,29 +880,244 @@ sketch.navButtonFuture.onClick (event, layer) ->
 # ####dev comment!
 # flow.showNext(futures)
 
+
+#PERSONALITY FLOW
+persFlow = ""
+persQuestionsFlow = ""
+persQuestionCurrent = 0
 #QUESTIONS FLOW
 dailyQuizFlow = ""
 questionsFlow = ""
 questionCurrent = 0
 sketch.futuresQuestions.onClick (event, layer) ->
-	if dailyQuizFlow is "" 
-			dailyQuizFlow = new FlowComponent
-			questionsFlow = new FlowComponent
-				x: 0
-				y: 70
-				height: 470
-				width: Screen.width
-				scrollVertical: false
-				scrollHorizontal: false
-				parent: questionsBackground
-				backgroundColor: '#FFFFFF'
-			flow.showOverlayCenter(dailyQuizFlow)
-			dailyQuizFlow.showNext(questionsBackground)
-			questionsFlow.showNext(question1)
-			questionCurrent += 1
-		else
-			flow.showOverlayCenter(dailyQuizFlow)
+	#check if first user visit, then direct to personality
+	if userSession == 0
+		if persFlow is "" 
+				persFlow = new FlowComponent
+				persQuestionsFlow = new FlowComponent
+					x: 0
+					y: 70
+					height: 470
+					width: Screen.width
+					scrollVertical: false
+					scrollHorizontal: false
+					parent: questionPersonalityBackground
+					backgroundColor: '#FFFFFF'
+				flow.showOverlayCenter(persFlow)
+				persFlow.showNext(questionPersonalityBackground)
+				persQuestionsFlow.showNext(questionPersonality) #need to generate all these pages before hand
+				persQuestionCurrent += 1
+			else
+				flow.showOverlayCenter(persFlow)
+	#check if second user visit, then direct to daily questions
+	else if userSession == 1
+		if dailyQuizFlow is "" 
+				dailyQuizFlow = new FlowComponent
+				questionsFlow = new FlowComponent
+					x: 0
+					y: 70
+					height: 470
+					width: Screen.width
+					scrollVertical: false
+					scrollHorizontal: false
+					parent: questionsBackground
+					backgroundColor: '#FFFFFF'
+				flow.showOverlayCenter(dailyQuizFlow)
+				dailyQuizFlow.showNext(questionsBackground)
+				questionsFlow.showNext(question1)
+				questionCurrent += 1
+			else
+				flow.showOverlayCenter(dailyQuizFlow)
 
+#PERSONALITY QUESTIONS
+#close questions button
+questionPersonalityClose.onClick (event,layer) ->
+	flow.showPrevious()
+
+persQuestionProgress = []
+persQuestionProgress.push(questionPersonalityProgress1)
+persQuestionProgress.push(questionPersonalityProgress2)
+persQuestionProgress.push(questionPersonalityProgress3)
+persQuestionProgress.push(questionPersonalityProgress4)
+persQuestionProgress.push(questionPersonalityProgress5)
+persQuestionProgress.push(questionPersonalityProgress6)
+persQuestionProgress.push(questionPersonalityProgress7)
+persQuestionProgress.push(questionPersonalityProgress8)
+persQuestionProgress.push(questionPersonalityProgress9)
+persQuestionProgress.push(questionPersonalityProgress10)
+persQuestionProgress.push(questionPersonalityProgress11)
+persQuestionProgress.push(questionPersonalityProgress12)
+persQuestionProgress.push(questionPersonalityProgress13)
+persQuestionProgress.push(questionPersonalityProgress14)
+persQuestionProgress.push(questionPersonalityProgress15)
+persQuestionProgress.push(questionPersonalityProgress16)
+persQuestionProgress.push(questionPersonalityProgress17)
+persQuestionProgress.push(questionPersonalityProgress18)
+persQuestionProgress.push(questionPersonalityProgress19)
+persQuestionProgress.push(questionPersonalityProgress20)
+
+persQuestionsArray = []
+persYesDefault = []
+persNoDefault = []
+persYesSelected = []
+persNoSelected = []
+persQuestionsArray.push(sketch.questionPersonality)
+#create personality card copies
+for i in [1..19]
+	#create copy
+	qCopy = sketch.questionPersonality.copy()
+	#rename question group
+	qCopy.name = "questionPersonality" + i
+	#push to array
+	persQuestionsArray.push(qCopy)
+
+#loop through all personality questions
+for i in [0..19]
+	#set all parents
+	persQuestionsArray[i].parent = sketch.questionsFlow
+	#for each card, set its text
+	questionText = new TextLayer
+		parent: persQuestionsArray[i]
+		color: "#6229EA"
+		textAlign: "center"
+		width: 300
+		height: 103
+		fontSize: 20 * pointScale
+		x: 38
+		y: 6
+		fontFamily: "Gotham-Med"
+		text: personalityData.records[i].fields.QuestionText
+	#yes default button
+	yesDefaultBg = new Layer
+		parent: persQuestionsArray[i]
+		backgroundColor: "#fff"
+		borderColor: "#B8B8B8"
+		borderRadius: 7
+		borderWidth: 1
+		width: 270
+		height: 98
+		x: 53
+		y: 157
+	yesDefaultTxt = new TextLayer
+		parent: yesDefaultBg
+		text: "Yes"
+		fontFamily: "Gotham-Med"
+		textAlign: "center"
+		fontSize: 16 * pointScale
+		color: "#16181E"
+		paddingTop: 4 * pointScale
+		autoSize: true
+	yesDefaultTxt.center()
+	#push to arrayNext
+	persYesDefault.push(yesDefaultBg)
+	#no default button
+	noDefaultBg = new Layer
+		parent: persQuestionsArray[i]
+		backgroundColor: "#fff"
+		borderColor: "#B8B8B8"
+		borderRadius: 7
+		borderWidth: 1
+		width: 270
+		height: 98
+		x: 53
+		y: 271
+	noDefaultTxt = new TextLayer
+		parent: noDefaultBg
+		text: "No"
+		fontFamily: "Gotham-Med"
+		textAlign: "center"
+		fontSize: 16 * pointScale
+		color: "#16181E"
+		paddingTop: 4 * pointScale
+		autoSize: true
+	noDefaultTxt.center()
+	#push to arrayNext
+	persNoDefault.push(noDefaultBg)
+	#yes selected button
+	yesSelectedBg = new Layer
+		parent: persQuestionsArray[i]
+		backgroundColor: "#4AC8AC"
+		borderRadius: 7
+		width: 270
+		height: 98
+		x: 53
+		y: 157
+		opacity: 0
+	yesSelectedTxt = new TextLayer
+		parent: yesSelectedBg
+		text: "Yes"
+		fontFamily: "Gotham-Med"
+		textAlign: "center"
+		fontSize: 16 * pointScale
+		color: "#fff"
+		paddingTop: 4 * pointScale
+		autoSize: true
+	yesSelectedTxt.center()
+	#push to arrayNext
+	persYesSelected.push(yesSelectedBg)
+	#no selected button
+	noSelectedBg = new Layer
+		parent: persQuestionsArray[i]
+		backgroundColor: "#4AC8AC"
+		borderRadius: 7
+		width: 270
+		height: 98
+		x: 53
+		y: 271
+		opacity: 0
+	noSelectedTxt = new TextLayer
+		parent: noSelectedBg
+		text: "No"
+		fontFamily: "Gotham-Med"
+		textAlign: "center"
+		fontSize: 16 * pointScale
+		color: "#fff"
+		paddingTop: 4 * pointScale
+		autoSize: true
+	noSelectedTxt.center()
+	#push to arrayNext
+	persNoSelected.push(noSelectedBg)
+	yesSelectedBg.onClick ->
+		this.animate
+			opacity: 1
+			options: 
+				time: .2
+		index =  persYesSelected.indexOf(this)
+		user.personalityRaw[index] = 1
+		persQuestionCurrent = persQuestionCurrent + 1
+		persQuestionProgress[index].opacity = 0
+		if index + 1 < persYesSelected.length
+			persQuestionsFlow.showNext(persQuestionsArray[index+1])
+		else
+			calculatePersonality()
+			populatePersonality()
+			#increment to count complete user visit
+			userSession = userSession + 1
+			flow.showNext(mainFlow)
+			print user
+	#set on click no
+	noSelectedBg.onClick (event, layer) ->
+		this.animate
+			opacity: 1
+			options: 
+				time: .2
+		index =  persNoSelected.indexOf(this)
+		user.personalityRaw[index] = 0
+		persQuestionCurrent = persQuestionCurrent + 1
+		persQuestionProgress[index].opacity = 0
+		if index + 1 < persYesSelected.length
+			persQuestionsFlow.showNext(persQuestionsArray[index+1])
+		else
+			calculatePersonality()
+			populatePersonality()
+			#increment to count complete user visit
+			userSession = userSession + 1
+			flow.showNext(mainFlow)
+			print user
+
+
+
+#DAILY QUESTIONS
 #close questions button
 questionsClose.onClick (event,layer) ->
 	flow.showPrevious()
@@ -1438,7 +1730,9 @@ sketch.question10SkipButton.onClick (event,layer) ->
 	flow.showNext(jobCardLoading)
 	#wait 5 seconds to show jobscards
 	Utils.delay 5, ->
+		#using answered Qs to choose which jobs
 		getJobSession()
+		#populate jobs into cards
 		populateJobSession()
 		jobFlow = new FlowComponent
 			scrollVertical: false
@@ -1635,7 +1929,13 @@ for number in [0...7]
 
 		else #create an insight card
 			# add correct icon Object
-			
+			insightImg = new Layer
+				parent: card
+			for workstyle in user.workstyles
+				if workstyle == "Detail Oriented"
+					insightImg.image = "images/detail-oriented-insight.png"
+				if workstyle == "Big Picture"
+					insightImg.image = "images/big-picture-insight.png"
 			#add icon
 			
 			
@@ -1693,10 +1993,15 @@ jobCardSlider.on "change:currentPage",->
 			x: 84
 			y: 456
 		backToFuturesButton.onClick (event, layer) ->
+			#populate profile based on answered Qs
 			populateWorkstyles()
 			populateDrives()
+			#store viewed and favorited jobs
 			storeJobSession()
+			#populate favorited jobs onto profile
 			populateFavJobs()
+			#increment to count complete user visit
+			userSession = userSession + 1
 			flow.showNext(mainFlow)
 			futuresQuestionsDone.opacity = 1
 			futuresQuestions.visible = false
@@ -1958,68 +2263,3 @@ inputRetypePassword.onFocus ->
 		options:
 			time: .3
 			curve: Bezier.ease
-
-#SELECT INTERESTS SCREEN
-#Interest tag states
-for tag in ƒƒ('interestTag*Default')
-	#Add states
-	tag.states.add
-		active: {opacity: 0}
-		default: {opacity: 1}
-	#Set animation options
-	tag.states.animationOptions = 
-		time: 0.2
-	#Toggle on click
-	tag.onClick ->
-		this.stateCycle()
-
-for tag in ƒƒ('interestTag*Active')
-	#Add states
-	tag.states.add
-		active: {opacity: 1}
-		default: {opacity: 0}
-	#Set animation options
-	tag.states.animationOptions = 
-		time: 0.2
-	#Toggle on click
-	tag.onClick ->
-		this.stateCycle()
-#Save interests button
-sketch.buttonSaveInterests.onClick (event, layer) ->
-	#Initialize arrays and counters
-	user.interestsRaw = []
-	nameInterest = []
-	statusInterest = []
-	numInterest = 0
-	count = 0
-	#Collect name and status of all interests to arrays
-	for tag in ƒƒ('interestTag*Active')
-		statusInterest.push(tag.states.current.name)
-		nameInterest.push(tag.name)
-	#Check how many interests are active
-	for i in statusInterest
-		#If active, increment count and add to user profile
-		if i == "active"
-			numInterest = numInterest + 1
-			user.interestsRaw.push(nameInterest[count])
-		count = count + 1
-	#Show warning if < 3 interests
-	if numInterest < 3
-		sketch.interestWarningNotification.animate
-			opacity: 1
-			options:
-				time: .3
-				curve: Bezier.ease
-	#Allow user to continue if >= 3
-	else
-		#Convert raw interests to interests
-		convertInterests(user.interestsRaw)
-		#Populate interests on profile
-		populateInterests()
-		mainFlow = new FlowComponent
-			backgroundColor: '#F8F8F8'
-		flow.showNext(mainFlow)
-		#assigning screen headers and navigation
-		mainFlow.header = sketch.header
-		mainFlow.footer = sketch.navBar
-		mainFlow.showNext(futures)
