@@ -481,6 +481,11 @@ populateFavJobs = ->
 					borderRadius: 45.5
 
 #getJobsSession
+#Returns array[5] with record ids of which jobs to show
+
+#array to what jobs to show in session
+jobSession = [0,1,2,3,4]
+
 getJobsSession = ->
 	#select what jobs to show
 	jobsPool = []
@@ -512,8 +517,6 @@ getJobsSession = ->
 		if jobData.records[id].fields.HDJ
 			jobsPoolHDJ.push(id)
 	# print jobsPoolHDJ
-	#array to what jobs to show in session
-	jobSession = []
 	#store first guaranteed HDJ job
 	jobSession.push(Utils.randomChoice(jobsPoolHDJ))
 	#store next 4 jobs
@@ -797,7 +800,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-flow.showNext(futures)
+# flow.showNext(futures)
 
 #QUESTIONS FLOW
 dailyQuizFlow = ""
@@ -1444,10 +1447,10 @@ youtubeQ10.onClick ->
 jobFlow = ""
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
-	
 	flow.showNext(jobCardLoading)
 	#wait 5 seconds to show jobscards
 	Utils.delay 5, ->
+		getJobsSession()
 		jobFlow = new FlowComponent
 			scrollVertical: false
 			scrollHorizontal: false
@@ -1641,8 +1644,11 @@ for number in [0...7]
 				opacity: 0
 			#state for hearts on /off
 			jobFavoriteHeartSelected.states = 
-					selected: {opacity: 1}
-					default: {opacity: 0}
+				selected: {opacity: 1}
+				default: {opacity: 0}
+			jobFavoriteHeartSelected.states.animationOptions = 
+				curve: Spring
+				time: .3
 
 		else #create an insight card
 			# add correct icon Object
@@ -1652,19 +1658,17 @@ for number in [0...7]
 			
 			## CREATE INSIGHT CARD HERE
 			## CREATE INSIGHT CARD HERE
-			
+
+########################################			
 #emily this is how you populate the job cards
 # filling out the first
-jobCardsPreviewImage[1].image = Utils.randomImage()
-jobCardsTitle[1].text = "Custome Title yo"
-jobCardsEducationTextTag[1].text = "YO"
-jobCardsSalaryTextTag[1].text = "SUP"
-jobCardsGrowthTextTag[1].text = "HI"
-jobCardsSummaryText[1].text = "woahhhhhhh it's a summary that's randomly generated"
-
-
-
-
+for i in [0..4]
+	jobCardsPreviewImage[i+1].image = jobData.records[jobSession[i]].fields.Image1[0].url
+	jobCardsTitle[i+1].text = jobData.records[jobSession[i]].fields.Job
+	jobCardsEducationTextTag[i+1].text = jobData.records[jobSession[i]].fields.EduShort
+	jobCardsSalaryTextTag[i+1].text = jobData.records[jobSession[i]].fields.SalaryShort
+	jobCardsGrowthTextTag[i+1].text = jobData.records[jobSession[i]].fields.OutlookShort
+	jobCardsSummaryText[i+1].text = jobData.records[jobSession[i]].fields.Description
 
 #create pagination for the cards
 activeCard = new Layer
