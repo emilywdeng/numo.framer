@@ -160,13 +160,25 @@ user =
 	drives: []
 	personalityRaw: []
 	personality: []
-	favorites: []
+	favorites: ["Animal Control Worker", "Pharmacy Technician", "Elementary School Teacher"]
 	history: []
 # Workstyles Input:
 # [0] Independent or Collaborative
 # [1] Empathic or Logical
 # [2] Detail Oriented or Big Picture
 
+#Instantiate arrays
+jobCardsPreviewImage = []
+jobCardsTitle = []
+jobCardsEducationTextTag = []
+jobCardsSalaryTextTag = []
+jobCardsGrowthTextTag = []
+jobCardsSummaryText = []
+jobCardsFavoriteHeartDefault = []
+jobCardsFavoriteHeartSelected = []
+jobCardsReadMoreButton = []
+#array to what jobs to show in session
+jobSession = [0,1,2,3,4]
 
 # Custom Functions
 
@@ -460,6 +472,8 @@ populateFavJobs = ->
 				jobTitle = favJobTitle[i].convertToTextLayer()
 				jobTitle.fontSize = jobTitle.fontSize * pointScale
 				jobTitle.text = fieldsJob
+				jobTitle.width = 195
+				jobTitle.truncate = true
 				#populate education
 				jobEdu = favJobEdu[i].convertToTextLayer()
 				jobEdu.fontSize = jobEdu.fontSize * pointScale
@@ -482,9 +496,8 @@ populateFavJobs = ->
 
 #getJobsSession
 #Returns array[5] with record ids of which jobs to show
+#call after user answers questions, before sees job cards
 
-#array to what jobs to show in session
-jobSession = [0,1,2,3,4]
 
 getJobsSession = ->
 	#select what jobs to show
@@ -525,6 +538,19 @@ getJobsSession = ->
 		if randomJob not in jobSession
 			jobSession.push(randomJob)
 	return jobSession
+
+#storeJobSession
+#call after user reviews 5 job cards
+storeJobSession = ->
+	#loop through jobs session
+	for i in [0..4]
+		#store jobs into history
+		user.history.push(jobSession[i])
+		#check status for active
+		if jobCardsFavoriteHeartSelected.length != 0
+			if jobCardsFavoriteHeartSelected[i].states.current.name == "selected"
+				user.favorites.push(jobData.records[jobSession[i]].fields.Job)
+#jobData.records[jobSession[i]].fields.Job
 
 #Highlight functions
 highlightInterests = ->
@@ -634,46 +660,7 @@ convertInterests = (array) ->
 		if tag == "interestTagArtActive"
 			user.interests.push("Art")
 
-#populateInterests
-#Check that interests was inputted
-populateInterests = ->
-	initialX = 37
-	initialY = 76
-	lastWidth = 0
-	lastHeight = 0
-	if user.interests.length != 0
-		for i in [0..user.interests.length-1]
-			interestBg = new Layer
-				backgroundColor: "4AC8AC"
-				parent: sketch.profile
-				borderRadius: 5
-				height: 32
-			interestTxt = new TextLayer
-				text: user.interests[i]
-				color: "#fff"
-				textAlign: "center"
-				fontFamily: "Gotham-Med"
-				fontSize: 12 * pointScale
-				parent: interestBg
-				autoSize: true
-				autoSizeHeight: true
-				paddingTop: 9
-				paddingBottom: 4
-				paddingLeft: 10
-				paddingRight: 10
-			interestBg.x = initialX + lastWidth
-			interestBg.y = initialY + lastHeight
-			interestBg.width = interestTxt.width
-			lastWidth = lastWidth + interestBg.width + 10
-			if (interestBg.x + interestBg.width) > 333
-				lastWidth = 0
-				lastHeight = lastHeight + 32 + 10
-				interestBg.x = initialX + lastWidth
-				interestBg.y = initialY + lastHeight
-				lastWidth = lastWidth + interestBg.width + 10
-			if interestBg.y > 150
-				interestBg.opacity = 0
-				sketch.profileInterestsSeeMore.opacity = 1
+populateFavJobs()
 
 #Preloader
 Framer.Extras.Preloader.enable()
@@ -1457,7 +1444,8 @@ sketch.question10SkipButton.onClick (event,layer) ->
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
-flow.showNext(jobCardBackground)
+# dev comment
+# flow.showNext(jobCardBackground)
 #JobCards Flow
 #creating the job card swiping
 #create page component + cards
@@ -1478,15 +1466,7 @@ jobCardSlider = new PageComponent
 	y: 98
 jobCardSlider.centerX()
 
-jobCardsPreviewImage = []
-jobCardsTitle = []
-jobCardsEducationTextTag = []
-jobCardsSalaryTextTag = []
-jobCardsGrowthTextTag = []
-jobCardsSummaryText = []
-jobCardsFavoriteHeartDefault = []
-jobCardsFavoriteHeartSelected = []
-jobCardsReadMoreButton = []
+
 
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
@@ -1515,6 +1495,7 @@ for number in [0...7]
 
 	#create the job card layouts + insight layouts
 	if number > 0 & number < 6 
+			indexNum = number - 1
 			#add the tags to every cards
 			for i in [0..2]
 				tagsEmpty = new Layer
@@ -1536,7 +1517,7 @@ for number in [0...7]
 					tagsEmpty.x = 24
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagEducationIcon.png'
-					tagText = jobCardsEducationTextTag[number] = new TextLayer
+					tagText = jobCardsEducationTextTag[indexNum] = new TextLayer
 						name: 'job' + number + 'EducationText'
 						parent: tagIcon
 						text: 'SUP'
@@ -1551,7 +1532,7 @@ for number in [0...7]
 					tagsEmpty.x = 94
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagSalaryIcon.png'
-					tagText = jobCardsSalaryTextTag[number] = new TextLayer
+					tagText = jobCardsSalaryTextTag[indexNum] = new TextLayer
 						name: 'job' + number + 'SalaryText'
 						parent: tagIcon
 						text: 'SAL'
@@ -1567,7 +1548,7 @@ for number in [0...7]
 					tagsEmpty.y = 328
 					tagIcon.image = 'images/tagGrowthIcon.png'
 					tagText.name = 'job' + number + 'GrowthText'
-					tagText = jobCardsGrowthTextTag[number] = new TextLayer
+					tagText = jobCardsGrowthTextTag[indexNum] = new TextLayer
 						name: 'job' + number + 'GrowthText'
 						parent: tagIcon
 						text: 'GRO'
@@ -1579,7 +1560,7 @@ for number in [0...7]
 						textTransform: 'uppercase'
 		
 			#add preview image to every card
-			jobPreviewImage = jobCardsPreviewImage[number] = new Layer
+			jobPreviewImage = jobCardsPreviewImage[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'PreviewImage'
 				width: 300
@@ -1590,7 +1571,7 @@ for number in [0...7]
 				image: 'images/jobPreviewImageExample.png' 
 				
 			#add title to every card
-			jobTitle = jobCardsTitle[number] = new TextLayer
+			jobTitle = jobCardsTitle[indexNum] = new TextLayer
 				parent: card
 				name: 'job' + number + 'Title'
 				fontFamily: 'Gotham-Med'
@@ -1602,7 +1583,7 @@ for number in [0...7]
 				text: "Computer Programmer" ## INSERT HERE
 			
 			#add job description to every card
-			jobDescription= jobCardsSummaryText[number] = new TextLayer
+			jobDescription= jobCardsSummaryText[indexNum] = new TextLayer
 				parent: card
 				name: 'job' + number + 'Description'
 				width: 290
@@ -1615,7 +1596,7 @@ for number in [0...7]
 				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
 			
 			#add read more to expand arrow
-			jobReadMoreButton = jobCardsReadMoreButton[number] = new Layer
+			jobReadMoreButton = jobCardsReadMoreButton[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'ReadMoreButton'
 				width: 110
@@ -1625,7 +1606,7 @@ for number in [0...7]
 				image: 'images/jobCardExpandButton.png'
 			
 			#add heart to favorite
-			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[number] = new Layer
+			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartDefault'
 				x: 265
@@ -1633,7 +1614,7 @@ for number in [0...7]
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartDefault.png'
-			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[number] = new Layer
+			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartSelected'
 				x: 265
@@ -1663,12 +1644,12 @@ for number in [0...7]
 #emily this is how you populate the job cards
 # filling out the first
 for i in [0..4]
-	jobCardsPreviewImage[i+1].image = jobData.records[jobSession[i]].fields.Image1[0].url
-	jobCardsTitle[i+1].text = jobData.records[jobSession[i]].fields.Job
-	jobCardsEducationTextTag[i+1].text = jobData.records[jobSession[i]].fields.EduShort
-	jobCardsSalaryTextTag[i+1].text = jobData.records[jobSession[i]].fields.SalaryShort
-	jobCardsGrowthTextTag[i+1].text = jobData.records[jobSession[i]].fields.OutlookShort
-	jobCardsSummaryText[i+1].text = jobData.records[jobSession[i]].fields.Description
+	jobCardsPreviewImage[i].image = jobData.records[jobSession[i]].fields.Image1[0].url
+	jobCardsTitle[i].text = jobData.records[jobSession[i]].fields.Job
+	jobCardsEducationTextTag[i].text = jobData.records[jobSession[i]].fields.EduShort
+	jobCardsSalaryTextTag[i].text = jobData.records[jobSession[i]].fields.SalaryShort
+	jobCardsGrowthTextTag[i].text = jobData.records[jobSession[i]].fields.OutlookShort
+	jobCardsSummaryText[i].text = jobData.records[jobSession[i]].fields.Description
 
 #create pagination for the cards
 activeCard = new Layer
@@ -1723,6 +1704,8 @@ jobCardSlider.on "change:currentPage",->
 		backToFuturesButton.onClick (event, layer) ->
 			populateWorkstyles()
 			populateDrives()
+			storeJobSession()
+			populateFavJobs()
 			flow.showNext(mainFlow)
 			futuresQuestionsDone.opacity = 1
 			futuresQuestions.visible = false
@@ -1733,14 +1716,13 @@ jobCardSlider.on "change:currentPage",->
 
 #favorite jobs
 
-for number in [1...6]
+for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
+		print this.states.current.name
 
 
 #expand job card
-
-
 
 
 
