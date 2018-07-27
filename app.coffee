@@ -1387,7 +1387,7 @@ for number in [0...7]
 		page.opacity = 0.9
 	#create cards for all the sections, except last
 	if number < 6
-			card = new Layer
+			card= new Layer
 				superLayer: page
 				width: page.width - padding
 				height: 548
@@ -1399,7 +1399,7 @@ for number in [0...7]
 	#create the job card layouts + insight layouts
 	#### add "number > 0 &" back in when done
 	if  number < 6 
-			#create original card parameters for all elements
+			#create original card parameters for tag elements
 			tagOrigHeight = 20
 			tagOrigWidth = 60
 			tagOrigY = 328
@@ -1408,23 +1408,11 @@ for number in [0...7]
 			tagEducationOrigX = 24
 			tagSalaryOrigX = 94
 			tagGrowthOrigX = 164
-			imageOrigHeight = 225
-			imageOrigWidth = 300
-			imageOrigRadius = 3
-			imageOrigY = 12
-			titleOrigWidth = 232
-			titleOrigX = 24
-			titleOrigY = 250
-			descriptionOrigWidth = 290
-			descriptionOrigX = 24
-			descriptionOrigY = 380
-			heartOrigX = 265
-			heartOrigY = 261
-			
 			#create tags
 			for i in [0..2]
 				tagsBackground = new Layer
 					parent: card
+					name: 'tag' + number 
 					width: tagOrigWidth
 					height: tagOrigHeight
 					y: tagOrigY
@@ -1463,22 +1451,31 @@ for number in [0...7]
 					jobCardsGrowthTextTag.push(tagText)
 					jobCardsGrowthBackground.push(tagsBackground)
 					jobCardsGrowthIcon.push(tagIcon)
-				
 			
-			
-		
+			#create original card parameters for images	
+			imageOrigHeight = 225
+			imageOrigWidth = 300
+			imageOrigRadius = 3
+			imageOrigX = 13.5
+			imageOrigY = 12
 			#create preview images 
 			jobPreviewImage = jobCardsPreviewImage[number] = new Layer
+				name: 'job' + number + 'Image'
 				parent: card
 				width: imageOrigWidth
 				height: imageOrigHeight
-				x: Align.center
+				x: imageOrigX
 				y: imageOrigY
 				borderRadius: imageOrigRadius
 				image: 'images/jobPreviewImageExample.png' 
-				
+			
+			#create original card parameters for job titles
+			titleOrigWidth = 232
+			titleOrigX = 24
+			titleOrigY = 250
 			#add title to every card
 			jobTitle = jobCardsTitle[number] = new TextLayer
+				name: 'job' + number + 'Title'
 				parent: card
 				fontFamily: 'Gotham-Med'
 				fontSize: 28 * pointScale
@@ -1488,9 +1485,14 @@ for number in [0...7]
 				y: titleOrigY
 				text: "Computer Placeholder" 
 			
+			#create original card parameters for descriptions
+			descriptionOrigWidth = 290
+			descriptionOrigX = 24
+			descriptionOrigY = 380
 			#add job description to every card
 			jobDescription= jobCardsSummaryText[number] = new TextLayer
 				parent: card
+				name: 'job' + number + 'Description'
 				fontFamily: 'Gotham-Book'
 				fontSize: 14 * pointScale
 				lineHeight: 1.4
@@ -1509,7 +1511,11 @@ for number in [0...7]
 				x: 108
 				y: 495
 				image: 'images/jobCardExpandButton.png'
+				
 			
+			#create original card parameters to heart
+			heartOrigX = 265
+			heartOrigY = 261
 			#add heart to favorite
 			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[number] = new Layer
 				parent: card
@@ -1528,25 +1534,45 @@ for number in [0...7]
 				height: 29
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
-			#state for selected hearts on off
-			jobFavoriteHeartSelected.states = 
-					selected: {opacity: 1}
-					default: {opacity: 0}
-
+			
+			#hidden elements
+			
+			#gradientOverlay
+			gradientOverlay = new Layer #gradient for job cards
+				parent: jobPreviewImage
+				image: 'images/pictureOverlay.png'
+				width: jobPreviewImage.width
+				height: 61
+				opacity : 1
+			gradientOverlay.states = 
+				card: 
+					width: jobPreviewImage.width	
+				expanded:
+					width: Screen.width
+			
+			#closeButton
+			closeButton = new Layer #close btn for job cards
+				parent: jobPreviewImage
+				image: 'images/jobClose.png'
+				height: 30
+				width: 30
+				x: 20
+				y: 20
+				opacity: 0
+			closeButton.states = 
+				card: 
+					opacity: 0
+				expanded:
+					opacity: 1
 		else #create an insight card
-			# add correct icon Object
-			
-			#add icon
-			
-			
 			## CREATE INSIGHT CARD HERE 
 			## CREATE INSIGHT CARD HERE
+
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
 	layer.states = 
 		card :
-			parent: card
 			height: tagOrigHeight
 			width: tagOrigWidth
 			y: tagOrigY
@@ -1567,7 +1593,6 @@ for layer in jobCardsEducationIcon #states for education icon
 for layer in jobCardsSalaryBackground #states for salary tag
 	layer.states = 
 		card :
-			parent: card
 			height: tagOrigHeight
 			width: tagOrigWidth
 			y: tagOrigY
@@ -1588,7 +1613,6 @@ for layer in jobCardsSalaryIcon #states for salary icon
 for layer in jobCardsGrowthBackground
 	layer.states = 
 		card :
-			parent: card
 			height: tagOrigHeight
 			width: tagOrigWidth
 			y: tagOrigY
@@ -1606,6 +1630,54 @@ for layer in jobCardsGrowthIcon #states for growth icon
 		expanded: 
 			x: 25
 			y: 5
+
+#create states for job Privew Images
+for layer in jobCardsPreviewImage
+	layer.states = 
+		card :
+			height: imageOrigHeight
+			width: imageOrigWidth
+			x: imageOrigX
+			y: imageOrigY
+			borderRadius: imageOrigRadius
+		expanded :
+			x: 0
+			y: 0
+			width: Screen.width
+			height:	286
+			borderRadius: 0
+
+#create states for job titles
+for layer in jobCardsTitle
+	layer.states = 
+		card :
+			width: titleOrigWidth
+			x: titleOrigX
+			y: titleOrigY
+		expanded :
+			x: 26
+			y: 320
+			width: 264
+
+for layer in jobCardsFavoriteHeartSelected
+	layer.states = 
+		select: 
+			opacity: 1
+		default: 
+			opacity: 0		
+
+#create states for job titles
+for layer in jobCardsSummaryText #states for job titles
+	layer.states = 
+		card :
+			width: descriptionOrigWidth
+			x: descriptionOrigX
+			y: descriptionOrigY
+		expanded :
+			width: 327
+			x: 26
+			y: 515	
+
 
 #emily this is how you populate the job cards
 # filling out the first
@@ -1688,36 +1760,33 @@ for number in [1...6]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-# ScrollComp = new ScrollComponent
-# 	parent: jobCardBackground
-# 	width: Screen.width
-# 	height: 0
-# 	opacity: 1
-# 	index: 0
-# 	backgroundColor: 'null'
-
-# cardExpandLayer = new Layer
-# 	parent: jobCardBackground
-# 	height: 550
-# 	width: 327
-# 	x: Align.center
-# 	y: 100
-# 	backgroundColor: 'null'	
-# 	index: 4
-
 jobExpand = new ScrollComponent
 	parent: jobCardBackground
+	index: 4
+	scrollHorizontal: false
+	x: 21
+	y: 98
 	height: 548
 	width: 330
-	x: Align.center
-	y: 98
 	opacity:0
-	index: 4
-# 	borderRadius: 10
-	scrollHorizontal: false
+	backgroundColor: 'white'
+originalPos = jobExpand.screenFrame
 jobExpand.placeBehind(jobCardSlider)
 jobExpand.content.draggable.overdrag = false
 
+jobExpand.states =
+	card: 
+		x: 21
+		y: 98
+		height: 548
+		width: 330
+	expanded: 
+		opacity: 1
+		x: 0
+		y: 0
+		height: Screen.height
+		width: Screen.width
+		
 
 #expand job card
 for number in [0...6]
@@ -1725,18 +1794,11 @@ for number in [0...6]
 		#get and expand card element
 		jobExpand.bringToFront()
 		jobExpand.opacity = 1
-		jobExpand.animate
-			x: 0
-			y: 0
-			backgroundColor: 'white'
-			opacity: 1
-			height: Screen.height
-			width: Screen.width
-		
+		jobExpand.animate("expanded")
 			 
 		#get all elements and set new parent of 'jobExpand' ScrollComponent
-		page = this.parent
-		for child in page.subLayers
+		homeCard =  this.parent
+		for child in homeCard.subLayers
 			child.parent = jobExpand.content
 		#get all layers
 		layerEducationTagBackground = this.parent.children[0]
@@ -1746,64 +1808,63 @@ for number in [0...6]
 		layerGrowthTagBackground = this.parent.children[2]
 		layerGrowthTagIcon = this.parent.children[2].children[0]
 		previewImage = this.parent.children[3]
+		gradient = this.parent.children[3].children[0]
+		closeButton = this.parent.children[3].children[1]
+		jobTitle = this.parent.children[4]
+		description = this.parent.children[5]
+		readMoreButton = this.parent.children[6]
+		layerFavoriteButtonDefault = this.parent.children[7]
+		layerFavoriteButtonSelected = this.parent.children[8]
+		
 		#expand layers to expanded state
+		readMoreButton.opacity = 0
 		layerEducationTagBackground.animate("expanded")
 		layerSalaryTagBackground.animate("expanded")
 		layerGrowthTagBackground.animate("expanded")
 		layerEducationTagIcon.animate("expanded")
 		layerSalaryTagIcon.animate("expanded")
 		layerGrowthTagIcon.animate("expanded")
-
-		
-		previewImage.animate
-			x: 0
-			y: 0
-			width: Screen.width
-			height:	286
-			borderRadius: 0
-		jobTitle = this.parent.children[4]
-		jobTitle.animate
-			x: 26
-			y: 320
-			width: 264
-		description = this.parent.children[5]
-		description.animate
-			width: 327
-			x: 26
-			y: 515
-		readMoreButton = this.parent.children[6]
-		readMoreButton.opacity = 0
-		layerFavoriteButtonDefault = this.parent.children[7]
-		layerFavoriteButtonSelected = this.parent.children[8]
+		previewImage.animate("expanded")
+		jobTitle.animate("expanded")
+		description.animate("expanded")
+		gradient.animate("expanded")
+		closeButton.animate("expanded")
 		layerFavoriteButtonDefault.animate
 			x: 300
 			y: 320
 		layerFavoriteButtonSelected.animate
 			x: 300
 			y: 320
-		gradientOverlay = new Layer #gradient for job cards
-			parent: jobExpand.content
-			image: 'images/pictureOverlay.png'
-			width: Screen.width
-			height: 61
-			opacity : 1
-			
-		closeButton = new Layer #close btn for job cards
-			parent: jobExpand.content
-			image: 'images/jobClose.png'
-			height: 30
-			width: 30
-			x: 20
-			y: 20
 		
 		closeButton.onClick (event, layer) ->
 			#add close states
+			jobExpand.animate("card")
 			layerEducationTagBackground.animate("card")
 			layerSalaryTagBackground.animate("card")
 			layerGrowthTagBackground.animate("card")
 			layerEducationTagIcon.animate("card")
 			layerSalaryTagIcon.animate("card")
 			layerGrowthTagIcon.animate("card")
+			previewImage.animate("card")
+			jobTitle.animate("card")
+			description.animate("card")
+			closeButton.animate("card")
+			gradient.animate("card")
+			layerFavoriteButtonDefault.animate
+				x: 265
+				y: 261
+			layerFavoriteButtonSelected.animate
+				x: 265
+				y: 261
+			
+			jobTitle.onAnimationEnd ->
+				if jobExpand.states.current.name is "card"
+					for layer in jobExpand.content.subLayers
+						layer.parent = homeCard
+						readMoreButton.opacity = 1
+					jobExpand.opacity = 0
+					jobExpand.sendToBack()
+					
 		
 		for i in [0...3]
 			textLayer = new TextLayer
@@ -1837,11 +1898,8 @@ for number in [0...6]
 				unitText.text = "percent"
 			textLayer.y = 30
 			unitText.y = 55
-			
-			
-			
-			
-			
+
+	
 			
 
 
