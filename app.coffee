@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 66ca9cf)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2066ca9cf)@1x", scale: 1)
+# Import file "Final Screens (Master @ 55f14ac)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -84,7 +84,6 @@ questionText = []
 # for i in [0..data.records.length-1]
 # 	questionText.push(personalityData.records[i].fields.QuestionText)
 
-
 #Responsive
 
 # # Framer.Device.customize
@@ -148,11 +147,6 @@ for layer in ƒƒ('profileInterestsTag*')
 	layer.opacity = 0
 
 sketch.profileInterestsSeeMore.opacity = 0
-
-sketch.questionPersonalityQuestion.opacity = 0
-
-for layer in ƒƒ('questionPersonalityOption*')
-	layer.opacity = 0
 
 #User Profile Object
 user = 
@@ -687,6 +681,46 @@ convertInterests = (array) ->
 		if tag == "interestTagArtActive"
 			user.interests.push("Art")
 
+#Check that interests was inputted
+populateInterests = ->
+	initialX = 37
+	initialY = 76
+	lastWidth = 0
+	lastHeight = 0
+	if user.interests.length != 0
+		for i in [0..user.interests.length-1]
+			interestBg = new Layer
+				backgroundColor: "4AC8AC"
+				parent: sketch.profile
+				borderRadius: 5
+				height: 32
+			interestTxt = new TextLayer
+				text: user.interests[i]
+				color: "#fff"
+				textAlign: "center"
+				fontFamily: "Gotham-Med"
+				fontSize: 12 * pointScale
+				parent: interestBg
+				autoSize: true
+				autoSizeHeight: true
+				paddingTop: 9
+				paddingBottom: 4
+				paddingLeft: 10
+				paddingRight: 10
+			interestBg.x = initialX + lastWidth
+			interestBg.y = initialY + lastHeight
+			interestBg.width = interestTxt.width
+			lastWidth = lastWidth + interestBg.width + 10
+			if (interestBg.x + interestBg.width) > 333
+				lastWidth = 0
+				lastHeight = lastHeight + 32 + 10
+				interestBg.x = initialX + lastWidth
+				interestBg.y = initialY + lastHeight
+				lastWidth = lastWidth + interestBg.width + 10
+			if interestBg.y > 150
+				interestBg.opacity = 0
+				sketch.profileInterestsSeeMore.opacity = 1
+
 #Preloader
 Framer.Extras.Preloader.enable()
 Framer.Extras.Preloader.addImage("images/preloader-logo.png")
@@ -779,10 +813,7 @@ onboardingPages.on "change:currentPage",->
 #add transitions between create account and interests
 sketch.buttonGetStarted.onClick (event, layer) ->
 	onboardingFlow.showNext(interest)
-
 mainFlow = ""
-
-
 #SELECT INTERESTS SCREEN
 #Interest tag states
 for tag in ƒƒ('interestTag*Default')
@@ -889,6 +920,8 @@ persQuestionCurrent = 0
 dailyQuizFlow = ""
 questionsFlow = ""
 questionCurrent = 0
+#JOB FLOW
+jobFlow = ""
 sketch.futuresQuestions.onClick (event, layer) ->
 	#check if first user visit, then direct to personality
 	if userSession == 0
@@ -973,7 +1006,7 @@ for i in [1..19]
 
 #loop through all personality questions
 for i in [0..19]
-	#set all parents
+	#set all parents 
 	persQuestionsArray[i].parent = sketch.questionsFlow
 	#for each card, set its text
 	questionText = new TextLayer
@@ -1094,7 +1127,6 @@ for i in [0..19]
 			#increment to count complete user visit
 			userSession = userSession + 1
 			flow.showNext(mainFlow)
-			print user
 	#set on click no
 	noSelectedBg.onClick (event, layer) ->
 		this.animate
@@ -1112,9 +1144,18 @@ for i in [0..19]
 			populatePersonality()
 			#increment to count complete user visit
 			userSession = userSession + 1
-			flow.showNext(mainFlow)
-			print user
-
+			flow.showNext(jobCardLoading)
+			#wait 5 seconds to show jobscards
+			Utils.delay 5, ->
+				#using answered Qs to choose which jobs
+				getJobSession()
+				#populate jobs into cards
+				populateJobSession()
+				jobFlow = new FlowComponent
+					scrollVertical: false
+					scrollHorizontal: false
+				flow.showNext(jobFlow)
+				jobFlow.showNext(jobCardBackground)
 
 
 #DAILY QUESTIONS
@@ -1698,8 +1739,7 @@ interestID = 0
 for i in [0..interestData.records.length-1]
 	if randomInterest == interestData.records[i].fields.Name
 		interestID = i
-
-#populate title
+#populate title 
 captionTitle = sketch.questionVideoContentCaptionTitle.convertToTextLayer()
 captionTitle.fontSize = captionTitle.fontSize * pointScale
 captionTitle.text = interestData.records[interestID].fields.Title
@@ -1708,21 +1748,85 @@ captionTitle.text = interestData.records[interestID].fields.Title
 captionBody = sketch.questionVideoContentCaptionBody.convertToTextLayer()
 captionBody.fontSize = captionBody.fontSize * pointScale
 captionBody.text = interestData.records[interestID].fields.Description
-
-# Youtube
-youtubeQ10 = new YouTubePlayer
+#hide preview bg
+sketch.question10ContentPreview.backgroundColor = "#fff"
+#show skip video option
+sketch.question10SkipButton.opacity = 1
+videoQ10 = new VideoLayer
 	parent: sketch.question10ContentPreview
-	video: interestData.records[interestID].fields.VideoID
-# 	x: Align.center
-# 	y: Align.center
-	width: 303 * pointScale
-	height: 140 * pointScale
+	video: interestData.records[interestID].fields.VideoAttachment[0].url
+	width: 303
+	height: 140
 
-# when they click play...
-youtubeQ10.onClick ->
-	player.playVideo()
-	#hide skip button, show like / dislike buttons
+#click play icon to play
+sketch.question10ContentPlay.onClick ->
+	videoQ10.player.play()
+	sketch.question10ContentPlay.opacity = 0
 	sketch.question10SkipButton.opacity = 0
+	sketch.question10DislikeOptionActive.opacity = 1
+	sketch.question10LikeOptionActive.opacity = 1
+#click overall video to pause
+videoQ10.onClick ->
+	videoQ10.player.pause()
+	sketch.question10ContentPlay.opacity = 1
+	sketch.question10SkipButton.opacity = 0
+	sketch.question10DislikeOptionActive.opacity = 1
+	sketch.question10LikeOptionActive.opacity = 1
+
+
+#skip question don't watch video
+sketch.question10SkipButton.onClick (event,layer) ->
+	videoQ10.player.pause()
+	flow.showNext(jobCardLoading)
+	#wait 5 seconds to show jobscards
+	Utils.delay 5, ->
+		#using answered Qs to choose which jobs
+		getJobSession()
+		#populate jobs into cards
+		populateJobSession()
+		jobFlow = new FlowComponent
+			scrollVertical: false
+			scrollHorizontal: false
+		flow.showNext(jobFlow)
+		jobFlow.showNext(jobCardBackground)
+
+sketch.question10DislikeOptionActive.onClick (event,layer) ->
+	videoQ10.player.pause()
+	sketch.question10DislikeOptionSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	flow.showNext(jobCardLoading)
+	#wait 5 seconds to show jobscards
+	Utils.delay 5, ->
+		#using answered Qs to choose which jobs
+		getJobSession()
+		#populate jobs into cards
+		populateJobSession()
+		jobFlow = new FlowComponent
+			scrollVertical: false
+			scrollHorizontal: false
+		flow.showNext(jobFlow)
+		jobFlow.showNext(jobCardBackground)
+
+sketch.question10LikeOptionActive.onClick (event,layer) ->
+	videoQ10.player.pause()
+	sketch.question10LikeOptionSelected.animate
+		opacity: 1
+		options: 
+			time: .2
+	flow.showNext(jobCardLoading)
+	#wait 5 seconds to show jobscards
+	Utils.delay 5, ->
+		#using answered Qs to choose which jobs
+		getJobSession()
+		#populate jobs into cards
+		populateJobSession()
+		jobFlow = new FlowComponent
+			scrollVertical: false
+			scrollHorizontal: false
+		flow.showNext(jobFlow)
+		jobFlow.showNext(jobCardBackground)
 
 jobFlow = ""
 #skip question don't watch video
@@ -1745,6 +1849,7 @@ sketch.question10SkipButton.onClick (event,layer) ->
 #JobCards Flow
 #creating the job card swiping
 #create page component + cards
+
 #define parameters for page and padding
 pageSize = 
 	width: Screen.width
@@ -1752,6 +1857,7 @@ pageSize =
 	
 padding = 15
 
+#create job card slider
 jobCardSlider = new PageComponent
 	parent: jobCardBackground
 	width: pageSize.width - padding*2
@@ -1763,6 +1869,29 @@ jobCardSlider = new PageComponent
 jobCardSlider.centerX()
 
 
+jobCardsPreviewImage = []
+jobCardsTitle = []
+jobCardsEducationBackground = []
+jobCardsEducationIcon = []
+jobCardsEducationTextTag = []
+jobCardsEducationTextDetailed = []
+jobCardsEducationUnit = []
+jobCardsSalaryBackground = []
+jobCardsSalaryIcon = []
+jobCardsSalaryTextTag = []
+jobCardsSalaryTextDetailed = []
+jobCardsSalaryUnit = []
+jobCardsGrowthBackground = []
+jobCardsGrowthIcon = []
+jobCardsGrowthTextTag = []
+jobCardsGrowthTextDetailed = []
+jobCardsGrowthUnit = []
+jobCardsSummaryText = []
+jobCardsFavoriteHeartDefault = []
+jobCardsFavoriteHeartSelected = []
+jobCardsDailyTasksList = []
+jobCardsSkills = []
+jobCardsCareerJourney = []
 
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
@@ -1771,13 +1900,11 @@ for number in [0...7]
 		name: 'page' + number
 		size: jobCardSlider.size
 		backgroundColor: "null"
-
 	if number > 0
 		page.opacity = 0.9
-
 	#create cards for all the sections, except last
 	if number < 6
-			card = new Layer
+			card= new Layer
 				superLayer: page
 				width: page.width - padding
 				height: 548
@@ -1785,110 +1912,144 @@ for number in [0...7]
 				borderRadius: 7
 				name: 'job' + number
 			card.center()
-	
 	jobCardSlider.addPage(page)
-
-
 	#create the job card layouts + insight layouts
+	
 	if number > 0 & number < 6 
 			indexNum = number - 1
 			#add the tags to every cards
+			
+			#create original card parameters for tag elements
+			tagOrigHeight = 20
+			tagOrigWidth = 60
+			tagOrigY = 328
+			tagIconOrigY = 1
+			tagIconOrigX = 5
+			tagEducationOrigX = 24
+			tagSalaryOrigX = 94
+			tagGrowthOrigX = 164
+			#create tags
 			for i in [0..2]
-				tagsEmpty = new Layer
+				tagsBackground = new Layer
 					parent: card
-					width: 60
-					height: 20
+					name: 'tag' + number 
+					width: tagOrigWidth
+					height: tagOrigHeight
+					y: tagOrigY
 					backgroundColor: '#F6F6F6'
 					borderRadius: 3
 				tagIcon = new Layer
-					parent: tagsEmpty
+					parent: tagsBackground
 					width: 18
 					height: 18
-					y: Align.center
-					x: 5
-					
-					
-				if i is 0
-					tagsEmpty.name = 'job' + number + 'EducationCareerTag'
-					tagsEmpty.x = 24
-					tagsEmpty.y = 328
+					y: tagIconOrigY
+					x: tagIconOrigX
+				tagText = new TextLayer
+					parent: tagIcon
+					text: 'TXT'
+					y: 4
+					x: 20
+					fontFamily: 'Gotham-Book' 
+					fontSize: 10 * pointScale
+					color: '#656565'
+					textTransform: 'uppercase'
+				detailText = new TextLayer
+					parent: tagsBackground
+					fontSize: 20 * pointScale
+					fontFamily: "Gotham-Book"
+					width: 100
+					color: '#46474A'
+					text: "HI"
+					textAlign: "center"
+					y: 30
+					opacity: 0
+				unitText = new TextLayer
+					parent: tagsBackground
+					fontSize: 12 * pointScale
+					fontFamily: "Gotham-Book"
+					width: 100
+					color: '#46474A'
+					text: "unit"
+					textAlign: "center"
+					y: 55
+					opacity: 0
+				if i is 0 #create custom specs for education tag
+					tagsBackground.x = tagEducationOrigX
 					tagIcon.image = 'images/tagEducationIcon.png'
-					tagText = jobCardsEducationTextTag[indexNum] = new TextLayer
-						name: 'job' + number + 'EducationText'
-						parent: tagIcon
-						text: 'SUP'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
-				else if i is 1
-					tagsEmpty.name = 'job' + number + 'SalaryCareerTag'
-					tagsEmpty.x = 94
-					tagsEmpty.y = 328
+					unitText.text = 'years'
+					jobCardsEducationTextTag.push(tagText)
+					jobCardsEducationBackground.push(tagsBackground)
+					jobCardsEducationIcon.push(tagIcon)
+					jobCardsEducationTextDetailed.push(detailText)
+					jobCardsEducationUnit.push(unitText)
+				else if i is 1 #create custom specs for salary tag
+					tagsBackground.x = tagSalaryOrigX
 					tagIcon.image = 'images/tagSalaryIcon.png'
-					tagText = jobCardsSalaryTextTag[indexNum] = new TextLayer
-						name: 'job' + number + 'SalaryText'
-						parent: tagIcon
-						text: 'SAL'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
-				else 
-					tagsEmpty.name = 'job' + number + 'GrowthCareerTag'
-					tagsEmpty.x = 164
-					tagsEmpty.y = 328
+					unitText.text = 'dollars'
+					jobCardsSalaryTextTag.push(tagText)
+					jobCardsSalaryBackground.push(tagsBackground)
+					jobCardsSalaryIcon.push(tagIcon)
+					jobCardsSalaryTextDetailed.push(detailText)
+					jobCardsSalaryUnit.push(unitText)
+				else #create custom specs for growth tag
+					tagsBackground.x = tagGrowthOrigX
 					tagIcon.image = 'images/tagGrowthIcon.png'
-					tagText.name = 'job' + number + 'GrowthText'
-					tagText = jobCardsGrowthTextTag[indexNum] = new TextLayer
-						name: 'job' + number + 'GrowthText'
-						parent: tagIcon
-						text: 'GRO'
-						y: 4
-						x: 20
-						fontFamily: 'Gotham-Book' 
-						fontSize: 10 * pointScale
-						color: '#656565'
-						textTransform: 'uppercase'
-		
-			#add preview image to every card
+					unitText.text = 'percent'
+					jobCardsGrowthTextTag.push(tagText)
+					jobCardsGrowthBackground.push(tagsBackground)
+					jobCardsGrowthIcon.push(tagIcon)
+					jobCardsGrowthTextDetailed.push(detailText)
+					jobCardsGrowthUnit.push(unitText)
+			
+			#create original card parameters for images	
+			imageOrigHeight = 225
+			imageOrigWidth = 300
+			imageOrigRadius = 3
+			imageOrigX = 13.5
+			imageOrigY = 12
+			#create preview images 
 			jobPreviewImage = jobCardsPreviewImage[indexNum] = new Layer
+				name: 'job' + number + 'Image'
 				parent: card
-				name: 'job' + number + 'PreviewImage'
-				width: 300
-				height: 225
-				x: Align.center
-				y: 12
-				borderRadius: 3
+				width: imageOrigWidth
+				height: imageOrigHeight
+				x: imageOrigX
+				y: imageOrigY
+				borderRadius: imageOrigRadius
 				image: 'images/jobPreviewImageExample.png' 
-				
+			
+			#create original card parameters for job titles
+			titleOrigWidth = 232
+			titleOrigX = 24
+			titleOrigY = 250
 			#add title to every card
+
 			jobTitle = jobCardsTitle[indexNum] = new TextLayer
-				parent: card
 				name: 'job' + number + 'Title'
+				parent: card
 				fontFamily: 'Gotham-Med'
 				fontSize: 28 * pointScale
-				color: "black"
-				width: 232
-				x: 24
-				y: 250
-				text: "Computer Programmer" ## INSERT HERE
+				color: "#46474A"
+				width: titleOrigWidth
+				x: titleOrigX
+				y: titleOrigY
+				text: "Computer Placeholder" 
 			
+			#create original card parameters for descriptions
+			descriptionOrigWidth = 290
+			descriptionOrigX = 24
+			descriptionOrigY = 380
 			#add job description to every card
 			jobDescription= jobCardsSummaryText[indexNum] = new TextLayer
 				parent: card
 				name: 'job' + number + 'Description'
-				width: 290
 				fontFamily: 'Gotham-Book'
 				fontSize: 14 * pointScale
 				lineHeight: 1.4
 				color: '#46474A'
-				x: 24
-				y: 380
+				width: descriptionOrigWidth
+				x: descriptionOrigX
+				y: descriptionOrigY
 				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
 			
 			#add read more to expand arrow
@@ -1900,25 +2061,30 @@ for number in [0...7]
 				x: 108
 				y: 495
 				image: 'images/jobCardExpandButton.png'
+				
 			
+			#create original card parameters to heart
+			heartOrigX = 265
+			heartOrigY = 261
 			#add heart to favorite
 			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartDefault'
-				x: 265
-				y: 261
+				x: heartOrigX
+				y: heartOrigY
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartDefault.png'
 			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartSelected'
-				x: 265
-				y: 261
+				x: heartOrigX
+				y: heartOrigY
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
+
 			#state for hearts on /off
 			jobFavoriteHeartSelected.states = 
 				selected: {opacity: 1}
@@ -1927,20 +2093,210 @@ for number in [0...7]
 				curve: Spring
 				time: .3
 
-		else #create an insight card
-			# add correct icon Object
-			insightImg = new Layer
-				parent: card
-			for workstyle in user.workstyles
-				if workstyle == "Detail Oriented"
-					insightImg.image = "images/detail-oriented-insight.png"
-				if workstyle == "Big Picture"
-					insightImg.image = "images/big-picture-insight.png"
-			#add icon
+			#gradientOverlay
+			gradientOverlay = new Layer #gradient for job cards
+				parent: jobPreviewImage
+				image: 'images/pictureOverlay.png'
+				width: jobPreviewImage.width
+				height: 61
+				opacity : 1
+			gradientOverlay.states = 
+				card: 
+					width: jobPreviewImage.width	
+				expanded:
+					width: Screen.width
 			
+			#closeButton
+			closeButton = new Layer #close btn for job cards
+				parent: jobPreviewImage
+				image: 'images/jobClose.png'
+				height: 30
+				width: 30
+				x: 20
+				y: 20
+				opacity: 0
+			closeButton.states = 
+				card: 
+					opacity: 0
+				expanded:
+					opacity: 1
 			
-			## CREATE INSIGHT CARD HERE
-			## CREATE INSIGHT CARD HERE
+# 			#dailyTasks
+# 			#create copy
+# 			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+# 			#rename question group
+# 			dTCopy.name = "job" + number + "Tasks"
+# 			dTCopy.parent = card
+# 			dTCopy.x = 26
+# 			dTCopy.x = 646
+# # 			dTCopy.opacity = 0
+# 			#push to array
+# 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
+# 			jobCardsDailyTasksList[number].states = 
+# 				card: 
+# 					opacity: 0
+# 					y: 800
+# 				expanded:
+# 					opacity: 1
+# 					y: 646
+			
+		else if number = 1 #create an insight card
+			card.image = "images/detail-oriented-insight.png"
+# 			for workstyle in user.workstyles
+# 				if workstyle == "Detail Oriented"
+# 					card.image = "images/detail-oriented-insight.png"
+# 				if workstyle == "Big Picture"
+# 					card.image = "images/big-picture-insight.png"
+		else	
+			#empty
+
+
+#create states for all Backgrounds + Icons
+for layer in jobCardsEducationBackground #states for education tag
+	layer.states = 
+		card :
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagEducationOrigX
+		expanded :
+			height: 75
+			width: 100
+			y: 408
+			x: 26
+for layer in jobCardsEducationIcon #states for education icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
+for layer in jobCardsEducationUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsEducationTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsSalaryBackground #states for salary tag
+	layer.states = 
+		card :
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagSalaryOrigX
+		expanded :
+			height: 75
+			width: 100
+			x: 134			
+			y: 408
+for layer in jobCardsSalaryIcon #states for salary icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
+for layer in jobCardsSalaryUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsSalaryTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsGrowthBackground
+	layer.states = 
+		card :
+			height: tagOrigHeight
+			width: tagOrigWidth
+			y: tagOrigY
+			x: tagGrowthOrigX
+		expanded :
+			height: 75
+			width: 100
+			x: 242
+			y: 408
+for layer in jobCardsGrowthIcon #states for growth icon
+	layer.states = 
+		card: 
+			x: tagIconOrigX
+			y: tagIconOrigY
+		expanded: 
+			x: 25
+			y: 5
+for layer in jobCardsGrowthUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsGrowthTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+			
+#create states for job Privew Images
+for layer in jobCardsPreviewImage
+	layer.states = 
+		card :
+			height: imageOrigHeight
+			width: imageOrigWidth
+			x: imageOrigX
+			y: imageOrigY
+			borderRadius: imageOrigRadius
+		expanded :
+			x: 0
+			y: 0
+			width: Screen.width
+			height:	286
+			borderRadius: 0
+
+#create states for job titles
+for layer in jobCardsTitle
+	layer.states = 
+		card :
+			width: titleOrigWidth
+			x: titleOrigX
+			y: titleOrigY
+		expanded :
+			x: 26
+			y: 320
+			width: 264
+
+for layer in jobCardsFavoriteHeartSelected
+	layer.states = 
+		select: 
+			opacity: 1
+		default: 
+			opacity: 0		
+
+#create states for job titles
+for layer in jobCardsSummaryText #states for job titles
+	layer.states = 
+		card :
+			width: descriptionOrigWidth
+			x: descriptionOrigX
+			y: descriptionOrigY
+		expanded :
+			width: 327
+			x: 26
+			y: 515	
+
+
 
 #create pagination for the cards
 activeCard = new Layer
@@ -1978,6 +2334,7 @@ jobCardSlider.on "change:currentPage",->
 	
 	#move pagintation indicator dot to correct placement
 	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
+	
 	currentPage = 'job' + currentPage
 	activeCard.states.switchInstant currentPage
 	#show done when done swiping
@@ -2016,10 +2373,135 @@ for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
+jobExpand = new ScrollComponent
+	parent: jobCardBackground
+	index: 4
+	scrollHorizontal: false
+	x: 21
+	y: 98
+# 	height: 548
+# 	width: 330
+	height: 20
+	width: 330
+	opacity: 0
+	backgroundColor: 'white'
+jobExpand.placeBehind(jobCardSlider)
+jobExpand.content.draggable.overdrag = false
+
+jobExpand.states =
+	card: 
+		x: 21
+		y: 98
+		height: 548
+		width: 330
+	expanded: 
+		opacity: 1
+		x: 0
+		y: 0
+		height: Screen.height
+		width: Screen.width
+		
 
 #expand job card
+for number in [1...5]
+	jobCardsReadMoreButton[number].onClick (event,layer) ->
+		#get and expand card element
+		jobExpand.bringToFront()
+		jobExpand.opacity = 1
+		jobExpand.animate("expanded")
+			 
+		#get all elements and set new parent of 'jobExpand' ScrollComponent
+		homeCard =  this.parent
+		for child in homeCard.subLayers
+			child.parent = jobExpand.content
+		#get all layers
+		layerEducationTagBackground = this.parent.children[0]
+		layerEducationTagIcon = this.parent.children[0].children[0]
+		layerEducationDetail = this.parent.children[0].children[1]
+		layerEducationUnit = this.parent.children[0].children[2]
+		layerSalaryTagBackground = this.parent.children[1]
+		layerSalaryTagIcon = this.parent.children[1].children[0]
+		layerSalaryDetail = this.parent.children[1].children[1]
+		layerSalaryUnit = this.parent.children[1].children[2]
+		layerGrowthTagBackground = this.parent.children[2]
+		layerGrowthTagIcon = this.parent.children[2].children[0]
+		layerGrowthDetail = this.parent.children[2].children[1]
+		layerGrowthUnit = this.parent.children[2].children[2]
+		previewImage = this.parent.children[3]
+		gradient = this.parent.children[3].children[0]
+		closeButton = this.parent.children[3].children[1]
+		jobTitle = this.parent.children[4]
+		description = this.parent.children[5]
+		readMoreButton = this.parent.children[6]
+		layerFavoriteButtonDefault = this.parent.children[7]
+		layerFavoriteButtonSelected = this.parent.children[8]
+		jobTasks = this.parent.children[9]
+		
+		#expand layers to expanded state
+		readMoreButton.opacity = 0
+		layerEducationTagBackground.animate("expanded")
+		layerEducationTagIcon.animate("expanded")
+		layerEducationUnit.animate("expanded")
+		layerEducationDetail.animate("expanded")
+		layerSalaryTagBackground.animate("expanded")
+		layerSalaryTagIcon.animate("expanded")
+		layerSalaryUnit.animate("expanded")
+		layerSalaryDetail.animate("expanded")
+		layerGrowthTagBackground.animate("expanded")
+		layerGrowthTagIcon.animate("expanded")
+		layerGrowthUnit.animate("expanded")
+		layerGrowthDetail.animate("expanded")
+		previewImage.animate("expanded")
+		jobTitle.animate("expanded")
+		description.animate("expanded")
+		gradient.animate("expanded")
+		closeButton.animate("expanded")
+# 		jobTasks.animate("expanded")
+		
+		
+		layerFavoriteButtonDefault.animate
+			x: 300
+			y: 320
+		layerFavoriteButtonSelected.animate
+			x: 300
+			y: 320
+		
+		closeButton.onClick (event, layer) ->
+			#add close states
+			jobExpand.animate("card")
+			layerEducationTagBackground.animate("card")
+			layerEducationTagIcon.animate("card")
+			layerEducationUnit.animate("card")
+			layerEducationDetail.animate("card")
+			layerSalaryTagBackground.animate("card")
+			layerSalaryTagIcon.animate("card")
+			layerSalaryUnit.animate("card")
+			layerSalaryDetail.animate("card")
+			layerGrowthTagBackground.animate("card")
+			layerGrowthTagIcon.animate("card")
+			layerGrowthUnit.animate("card")
+			layerGrowthDetail.animate("card")
+			previewImage.animate("card")
+			jobTitle.animate("card")
+			description.animate("card")
+			closeButton.animate("card")
+			gradient.animate("card")
+# 			jobTasks.animate("card")
 
-
+			layerFavoriteButtonDefault.animate
+				x: 265
+				y: 261
+			layerFavoriteButtonSelected.animate
+				x: 265
+				y: 261
+			
+			jobTitle.onAnimationEnd ->
+				if jobExpand.states.current.name is "card"
+					for layer in jobExpand.content.subLayers
+						layer.parent = homeCard
+						readMoreButton.opacity = 1
+					jobExpand.opacity = 0
+					jobExpand.sendToBack()
 
 #CREATE ACCOUNT SCREEN
 #Click first name
