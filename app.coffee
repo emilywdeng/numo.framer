@@ -1363,14 +1363,17 @@ jobCardsEducationBackground = []
 jobCardsEducationIcon = []
 jobCardsEducationTextTag = []
 jobCardsEducationTextDetailed = []
+jobCardsEducationUnit = []
 jobCardsSalaryBackground = []
 jobCardsSalaryIcon = []
 jobCardsSalaryTextTag = []
 jobCardsSalaryTextDetailed = []
+jobCardsSalaryUnit = []
 jobCardsGrowthBackground = []
 jobCardsGrowthIcon = []
 jobCardsGrowthTextTag = []
 jobCardsGrowthTextDetailed = []
+jobCardsGrowthUnit = []
 jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
@@ -1433,24 +1436,53 @@ for number in [0...7]
 					fontSize: 10 * pointScale
 					color: '#656565'
 					textTransform: 'uppercase'
+				detailText = new TextLayer
+					parent: tagsBackground
+					fontSize: 20 * pointScale
+					fontFamily: "Gotham-Book"
+					width: 100
+					color: '#46474A'
+					text: "HI"
+					textAlign: "center"
+					y: 30
+					opacity: 0
+				unitText = new TextLayer
+					parent: tagsBackground
+					fontSize: 12 * pointScale
+					fontFamily: "Gotham-Book"
+					width: 100
+					color: '#46474A'
+					text: "unit"
+					textAlign: "center"
+					y: 55
+					opacity: 0
 				if i is 0 #create custom specs for education tag
 					tagsBackground.x = tagEducationOrigX
 					tagIcon.image = 'images/tagEducationIcon.png'
+					unitText.text = 'years'
 					jobCardsEducationTextTag.push(tagText)
 					jobCardsEducationBackground.push(tagsBackground)
 					jobCardsEducationIcon.push(tagIcon)
+					jobCardsEducationTextDetailed.push(detailText)
+					jobCardsEducationUnit.push(unitText)
 				else if i is 1 #create custom specs for salary tag
 					tagsBackground.x = tagSalaryOrigX
 					tagIcon.image = 'images/tagSalaryIcon.png'
+					unitText.text = 'dollars'
 					jobCardsSalaryTextTag.push(tagText)
 					jobCardsSalaryBackground.push(tagsBackground)
 					jobCardsSalaryIcon.push(tagIcon)
+					jobCardsSalaryTextDetailed.push(detailText)
+					jobCardsSalaryUnit.push(unitText)
 				else #create custom specs for growth tag
 					tagsBackground.x = tagGrowthOrigX
 					tagIcon.image = 'images/tagGrowthIcon.png'
+					unitText.text = 'percent'
 					jobCardsGrowthTextTag.push(tagText)
 					jobCardsGrowthBackground.push(tagsBackground)
 					jobCardsGrowthIcon.push(tagIcon)
+					jobCardsGrowthTextDetailed.push(detailText)
+					jobCardsGrowthUnit.push(unitText)
 			
 			#create original card parameters for images	
 			imageOrigHeight = 225
@@ -1564,6 +1596,9 @@ for number in [0...7]
 					opacity: 0
 				expanded:
 					opacity: 1
+					
+	
+				
 		else #create an insight card
 			## CREATE INSIGHT CARD HERE 
 			## CREATE INSIGHT CARD HERE
@@ -1590,6 +1625,18 @@ for layer in jobCardsEducationIcon #states for education icon
 		expanded: 
 			x: 25
 			y: 5
+for layer in jobCardsEducationUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsEducationTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
 for layer in jobCardsSalaryBackground #states for salary tag
 	layer.states = 
 		card :
@@ -1610,6 +1657,18 @@ for layer in jobCardsSalaryIcon #states for salary icon
 		expanded: 
 			x: 25
 			y: 5
+for layer in jobCardsSalaryUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsSalaryTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
 for layer in jobCardsGrowthBackground
 	layer.states = 
 		card :
@@ -1630,7 +1689,19 @@ for layer in jobCardsGrowthIcon #states for growth icon
 		expanded: 
 			x: 25
 			y: 5
-
+for layer in jobCardsGrowthUnit #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+for layer in jobCardsGrowthTextDetailed #states for education icon
+	layer.states = 
+		card: 
+			opacity: 0
+		expanded: 
+			opacity: 1
+			
 #create states for job Privew Images
 for layer in jobCardsPreviewImage
 	layer.states = 
@@ -1803,10 +1874,16 @@ for number in [0...6]
 		#get all layers
 		layerEducationTagBackground = this.parent.children[0]
 		layerEducationTagIcon = this.parent.children[0].children[0]
+		layerEducationDetail = this.parent.children[0].children[1]
+		layerEducationUnit = this.parent.children[0].children[2]
 		layerSalaryTagBackground = this.parent.children[1]
 		layerSalaryTagIcon = this.parent.children[1].children[0]
+		layerSalaryDetail = this.parent.children[1].children[1]
+		layerSalaryUnit = this.parent.children[1].children[2]
 		layerGrowthTagBackground = this.parent.children[2]
 		layerGrowthTagIcon = this.parent.children[2].children[0]
+		layerGrowthDetail = this.parent.children[2].children[1]
+		layerGrowthUnit = this.parent.children[2].children[2]
 		previewImage = this.parent.children[3]
 		gradient = this.parent.children[3].children[0]
 		closeButton = this.parent.children[3].children[1]
@@ -1819,16 +1896,24 @@ for number in [0...6]
 		#expand layers to expanded state
 		readMoreButton.opacity = 0
 		layerEducationTagBackground.animate("expanded")
-		layerSalaryTagBackground.animate("expanded")
-		layerGrowthTagBackground.animate("expanded")
 		layerEducationTagIcon.animate("expanded")
+		layerEducationUnit.animate("expanded")
+		layerEducationDetail.animate("expanded")
+		layerSalaryTagBackground.animate("expanded")
 		layerSalaryTagIcon.animate("expanded")
+		layerSalaryUnit.animate("expanded")
+		layerSalaryDetail.animate("expanded")
+		layerGrowthTagBackground.animate("expanded")
 		layerGrowthTagIcon.animate("expanded")
+		layerGrowthUnit.animate("expanded")
+		layerGrowthDetail.animate("expanded")
 		previewImage.animate("expanded")
 		jobTitle.animate("expanded")
 		description.animate("expanded")
 		gradient.animate("expanded")
 		closeButton.animate("expanded")
+		
+		
 		layerFavoriteButtonDefault.animate
 			x: 300
 			y: 320
@@ -1840,16 +1925,23 @@ for number in [0...6]
 			#add close states
 			jobExpand.animate("card")
 			layerEducationTagBackground.animate("card")
-			layerSalaryTagBackground.animate("card")
-			layerGrowthTagBackground.animate("card")
 			layerEducationTagIcon.animate("card")
+			layerEducationUnit.animate("card")
+			layerEducationDetail.animate("card")
+			layerSalaryTagBackground.animate("card")
 			layerSalaryTagIcon.animate("card")
+			layerSalaryUnit.animate("card")
+			layerSalaryDetail.animate("card")
+			layerGrowthTagBackground.animate("card")
 			layerGrowthTagIcon.animate("card")
+			layerGrowthUnit.animate("card")
+			layerGrowthDetail.animate("card")
 			previewImage.animate("card")
 			jobTitle.animate("card")
 			description.animate("card")
 			closeButton.animate("card")
 			gradient.animate("card")
+			
 			layerFavoriteButtonDefault.animate
 				x: 265
 				y: 261
@@ -1864,40 +1956,7 @@ for number in [0...6]
 						readMoreButton.opacity = 1
 					jobExpand.opacity = 0
 					jobExpand.sendToBack()
-					
-		
-		for i in [0...3]
-			textLayer = new TextLayer
-				fontSize: 20 * pointScale
-				fontFamily: "Gotham-Book"
-				width: 100
-				color: '#46474A'
-				text: ""
-				textAlign: "center"
-			unitText = new TextLayer
-				fontSize: 12 * pointScale
-				fontFamily: "Gotham-Book"
-				width: 100
-				color: '#46474A'
-				text: ""
-				textAlign: "center"
-			if i is 0 # education text
-				textLayer.parent = layerEducationTagBackground
-				unitText.parent = layerEducationTagBackground
-				textLayer.text = "6+"
-				unitText.text = "years"
-			else if i is 1 #salary text
-				textLayer.parent = layerSalaryTagBackground
-				unitText.parent = layerSalaryTagBackground
-				textLayer.text = "58k"
-				unitText.text = "dollars"
-			else #growth text
-				textLayer.parent = layerGrowthTagBackground	
-				unitText.parent = layerGrowthTagBackground
-				textLayer.text = "+10-14"
-				unitText.text = "percent"
-			textLayer.y = 30
-			unitText.y = 55
+
 
 	
 			
