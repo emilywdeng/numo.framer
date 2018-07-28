@@ -1221,7 +1221,7 @@ pageSize =
 
 padding = 15
 
-cardAnimTime = .25
+cardAnimTime = .2
 jobExpand = new ScrollComponent
 	parent: jobCardBackground
 	index: 4
@@ -1261,6 +1261,15 @@ jobCardSlider = new PageComponent
 	y: 98
 jobCardSlider.centerX()
 
+
+jobCardsSkill1 = []
+jobCardsSkill2 = []
+jobCardsSkill3 = []
+
+jobCardsTask1 = []
+jobCardsTask2 = []
+jobCardsTask3 = []
+
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
 	#create page wrapper for the cards
@@ -1284,284 +1293,296 @@ for number in [0...7]
 	#create the job card layouts + insight layouts
 	
 	if number > 0 & number < 6 
-			indexNum = number - 1
-			#add the tags to every cards
-			
-			#create original card parameters for tag elements
-			tagOrigHeight = 20 
-			tagOrigWidth = 60
-			tagOrigY = 328
-			tagIconOrigY = 1
-			tagIconOrigX = 5
-			tagEducationOrigX = 24
-			tagSalaryOrigX = 94
-			tagGrowthOrigX = 164
-			#create tags
-			for i in [0..2]
-				tagsBackground = new Layer
-					parent: card
-					name: 'tag' + number 
-					width: tagOrigWidth
-					height: tagOrigHeight
-					y: tagOrigY
-					backgroundColor: '#F6F6F6'
-					borderRadius: 3
-					animationOptions: 
-						time: cardAnimTime
-				tagIcon = new Layer
-					parent: tagsBackground
-					width: 18
-					height: 18
-					y: tagIconOrigY
-					x: tagIconOrigX
-					animationOptions: 
-						time: cardAnimTime
-				tagText = new TextLayer
-					parent: tagIcon
-					text: 'TXT'
-					y: 4
-					x: 20
-					fontFamily: 'Gotham-Book' 
-					fontSize: 10 * pointScale
-					color: '#656565'
-					textTransform: 'uppercase'
-					animationOptions: 
-						time: cardAnimTime
-				detailText = new TextLayer
-					parent: tagsBackground
-					fontSize: 20 * pointScale
-					fontFamily: "Gotham-Book"
-					width: 100
-					color: '#46474A'
-					text: "HI"
-					textAlign: "center"
-					y: 30
-					opacity: 0
-					animationOptions: 
-						time: cardAnimTime
-				unitText = new TextLayer
-					parent: tagsBackground
-					fontSize: 12 * pointScale
-					fontFamily: "Gotham-Book"
-					width: 100
-					color: '#46474A'
-					text: "unit"
-					textAlign: "center"
-					y: 55
-					opacity: 0
-					animationOptions: 
-						time: cardAnimTime
-				if i is 0 #create custom specs for education tag
-					tagsBackground.x = tagEducationOrigX
-					tagIcon.image = 'images/tagEducationIcon.png'
-					unitText.text = 'years'
-					jobCardsEducationTextTag.push(tagText)
-					jobCardsEducationBackground.push(tagsBackground)
-					jobCardsEducationIcon.push(tagIcon)
-					jobCardsEducationTextDetailed.push(detailText)
-					jobCardsEducationUnit.push(unitText)
-				else if i is 1 #create custom specs for salary tag
-					tagsBackground.x = tagSalaryOrigX
-					tagIcon.image = 'images/tagSalaryIcon.png'
-					unitText.text = 'dollars'
-					jobCardsSalaryTextTag.push(tagText)
-					jobCardsSalaryBackground.push(tagsBackground)
-					jobCardsSalaryIcon.push(tagIcon)
-					jobCardsSalaryTextDetailed.push(detailText)
-					jobCardsSalaryUnit.push(unitText)
-				else #create custom specs for growth tag
-					tagsBackground.x = tagGrowthOrigX
-					tagIcon.image = 'images/tagGrowthIcon.png'
-					unitText.text = 'percent'
-					jobCardsGrowthTextTag.push(tagText)
-					jobCardsGrowthBackground.push(tagsBackground)
-					jobCardsGrowthIcon.push(tagIcon)
-					jobCardsGrowthTextDetailed.push(detailText)
-					jobCardsGrowthUnit.push(unitText)
-			
-			#create original card parameters for images	
-			imageOrigHeight = 225
-			imageOrigWidth = 300
-			imageOrigRadius = 3
-			imageOrigX = 13.5
-			imageOrigY = 12
-			#create preview images 
-			jobPreviewImage = jobCardsPreviewImage[indexNum] = new Layer
-				name: 'job' + number + 'Image'
+		indexNum = number - 1
+		#add the tags to every cards
+		
+		#create original card parameters for tag elements
+		tagOrigHeight = 20 
+		tagOrigWidth = 60
+		tagOrigY = 328
+		tagIconOrigY = 1
+		tagIconOrigX = 5
+		tagEducationOrigX = 24
+		tagSalaryOrigX = 94
+		tagGrowthOrigX = 164
+		#create tags
+		for i in [0..2]
+			tagsBackground = new Layer
 				parent: card
-				width: imageOrigWidth
-				height: imageOrigHeight
-				x: imageOrigX
-				y: imageOrigY
-				borderRadius: imageOrigRadius
-				image: 'images/jobPreviewImageExample.png' 
+				name: 'tag' + number 
+				width: tagOrigWidth
+				height: tagOrigHeight
+				y: tagOrigY
+				backgroundColor: '#F6F6F6'
+				borderRadius: 3
 				animationOptions: 
 					time: cardAnimTime
-			
-			#create original card parameters for job titles
-			titleOrigWidth = 232
-			titleOrigX = 24
-			titleOrigY = 250
-			#add title to every card
-			jobTitle = jobCardsTitle[indexNum] = new TextLayer
-				name: 'job' + number + 'Title'
-				parent: card
-				fontFamily: 'Gotham-Med'
-				fontSize: 28 * pointScale
-				color: "#46474A"
-				width: titleOrigWidth
-				x: titleOrigX
-				y: titleOrigY
-				text: "Computer Placeholder"
-				animationOptions: 
-					time: cardAnimTime 
-			
-			#create original card parameters for descriptions
-			descriptionOrigWidth = 290
-			descriptionOrigX = 24
-			descriptionOrigY = 380
-			#add job description to every card
-			jobDescription= jobCardsSummaryText[indexNum] = new TextLayer
-				parent: card
-				name: 'job' + number + 'Description'
-				fontFamily: 'Gotham-Book'
-				fontSize: 14 * pointScale
-				lineHeight: 1.4
-				color: '#46474A'
-				width: descriptionOrigWidth
-				x: descriptionOrigX
-				y: descriptionOrigY
+			tagIcon = new Layer
+				parent: tagsBackground
+				width: 18
+				height: 18
+				y: tagIconOrigY
+				x: tagIconOrigX
 				animationOptions: 
 					time: cardAnimTime
-				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
-			
-			#add read more to expand arrow
-			jobReadMoreButton = jobCardsReadMoreButton[indexNum] = new Layer
-				parent: card
-				name: 'job' + number + 'ReadMoreButton'
-				width: 110
-				height: 47
-				x: 108
-				y: 495
-				image: 'images/jobCardExpandButton.png'
-				animationOptions: 
-					time: cardAnimTime
-				
-			
-			#create original card parameters to heart
-			heartOrigX = 265
-			heartOrigY = 255
-			#add heart to favorite
-			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[indexNum] = new Layer
-				parent: card
-				name: 'job' + number + 'favoriteHeartDefault'
-				x: heartOrigX
-				y: heartOrigY
-				width: 35
-				height: 29
-				image: 'images/favoriteJobHeartDefault.png'
-				animationOptions: 
-					time: cardAnimTime
-			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[indexNum] = new Layer
-				parent: card
-				name: 'job' + number + 'favoriteHeartSelected'
-				x: heartOrigX
-				y: heartOrigY
-				width: 35
-				height: 29
-				image: 'images/favoriteJobHeartFilled.png'
-				opacity: 0
-				animationOptions: 
-					time: cardAnimTime
-
-			#state for hearts on /off
-			jobFavoriteHeartSelected.states = 
-				selected: {opacity: 1}
-				default: {opacity: 0}
-
-			#gradientOverlay
-			gradientOverlay = new Layer #gradient for job cards
-				parent: jobPreviewImage
-				image: 'images/pictureOverlay.png'
-				width: jobPreviewImage.width
-				height: 61
-				opacity : 0
-				animationOptions: 
-					time: cardAnimTime
-			gradientOverlay.states = 
-				card: 
-					width: jobPreviewImage.width	
-					opacity: 0
-				expanded:
-					width: Screen.width
-					opacity: 1
-			
-			#closeButton
-			closeButton = new Layer #close btn for job cards
-				parent: jobPreviewImage
-				image: 'images/jobClose.png'
-				height: 30
-				width: 30
+			tagText = new TextLayer
+				parent: tagIcon
+				text: 'TXT'
+				y: 4
 				x: 20
-				y: 20
+				fontFamily: 'Gotham-Book' 
+				fontSize: 10 * pointScale
+				color: '#656565'
+				textTransform: 'uppercase'
+				animationOptions: 
+					time: cardAnimTime
+			detailText = new TextLayer
+				parent: tagsBackground
+				fontSize: 20 * pointScale
+				fontFamily: "Gotham-Book"
+				width: 100
+				color: '#46474A'
+				text: "HI"
+				textAlign: "center"
+				y: 30
 				opacity: 0
 				animationOptions: 
 					time: cardAnimTime
-			closeButton.states = 
-				card: 
-					opacity: 0
-				expanded:
-					opacity: 1
+			unitText = new TextLayer
+				parent: tagsBackground
+				fontSize: 12 * pointScale
+				fontFamily: "Gotham-Book"
+				width: 100
+				color: '#46474A'
+				text: "unit"
+				textAlign: "center"
+				y: 55
+				opacity: 0
+				animationOptions: 
+					time: cardAnimTime
+			if i is 0 #create custom specs for education tag
+				tagsBackground.x = tagEducationOrigX
+				tagIcon.image = 'images/tagEducationIcon.png'
+				unitText.text = 'years'
+				jobCardsEducationTextTag.push(tagText)
+				jobCardsEducationBackground.push(tagsBackground)
+				jobCardsEducationIcon.push(tagIcon)
+				jobCardsEducationTextDetailed.push(detailText)
+				jobCardsEducationUnit.push(unitText)
+			else if i is 1 #create custom specs for salary tag
+				tagsBackground.x = tagSalaryOrigX
+				tagIcon.image = 'images/tagSalaryIcon.png'
+				unitText.text = 'dollars'
+				jobCardsSalaryTextTag.push(tagText)
+				jobCardsSalaryBackground.push(tagsBackground)
+				jobCardsSalaryIcon.push(tagIcon)
+				jobCardsSalaryTextDetailed.push(detailText)
+				jobCardsSalaryUnit.push(unitText)
+			else #create custom specs for growth tag
+				tagsBackground.x = tagGrowthOrigX
+				tagIcon.image = 'images/tagGrowthIcon.png'
+				unitText.text = 'percent'
+				jobCardsGrowthTextTag.push(tagText)
+				jobCardsGrowthBackground.push(tagsBackground)
+				jobCardsGrowthIcon.push(tagIcon)
+				jobCardsGrowthTextDetailed.push(detailText)
+				jobCardsGrowthUnit.push(unitText)
+		
+		#create original card parameters for images	
+		imageOrigHeight = 225
+		imageOrigWidth = 300
+		imageOrigRadius = 3
+		imageOrigX = 13.5
+		imageOrigY = 12
+		#create preview images 
+		jobPreviewImage = jobCardsPreviewImage[indexNum] = new Layer
+			name: 'job' + number + 'Image'
+			parent: card
+			width: imageOrigWidth
+			height: imageOrigHeight
+			x: imageOrigX
+			y: imageOrigY
+			borderRadius: imageOrigRadius
+			image: 'images/jobPreviewImageExample.png' 
+			animationOptions: 
+				time: cardAnimTime
+		
+		#create original card parameters for job titles
+		titleOrigWidth = 232
+		titleOrigX = 24
+		titleOrigY = 250
+		#add title to every card
+		jobTitle = jobCardsTitle[indexNum] = new TextLayer
+			name: 'job' + number + 'Title'
+			parent: card
+			fontFamily: 'Gotham-Med'
+			fontSize: 28 * pointScale
+			color: "#46474A"
+			width: titleOrigWidth
+			x: titleOrigX
+			y: titleOrigY
+			text: "Computer Placeholder"
+			animationOptions: 
+				time: cardAnimTime 
+		
+		#create original card parameters for descriptions
+		descriptionOrigWidth = 290
+		descriptionOrigX = 24
+		descriptionOrigY = 380
+		#add job description to every card
+		jobDescription= jobCardsSummaryText[indexNum] = new TextLayer
+			parent: card
+			name: 'job' + number + 'Description'
+			fontFamily: 'Gotham-Book'
+			fontSize: 14 * pointScale
+			lineHeight: 1.4
+			color: '#46474A'
+			width: descriptionOrigWidth
+			x: descriptionOrigX
+			y: descriptionOrigY
+			animationOptions: 
+				time: cardAnimTime
+			text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
+		
+		#add read more to expand arrow
+		jobReadMoreButton = jobCardsReadMoreButton[indexNum] = new Layer
+			parent: card
+			name: 'job' + number + 'ReadMoreButton'
+			width: 110
+			height: 47
+			x: 108
+			y: 495
+			image: 'images/jobCardExpandButton.png'
+			animationOptions: 
+				time: cardAnimTime
 			
-			#dailyTasks
-			#create copy
-			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
-			#rename question group
-			dTCopy.name = "job" + number + "Tasks"
-			dTCopy.parent = card
-			dTCopy.x = 0
-			dTCopy.y = 620
-			#push to array
-			jobCardsDailyTasksList.push(dTCopy)
+		
+		#create original card parameters to heart
+		heartOrigX = 265
+		heartOrigY = 255
+		#add heart to favorite
+		jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[indexNum] = new Layer
+			parent: card
+			name: 'job' + number + 'favoriteHeartDefault'
+			x: heartOrigX
+			y: heartOrigY
+			width: 35
+			height: 29
+			image: 'images/favoriteJobHeartDefault.png'
+			animationOptions: 
+				time: cardAnimTime
+		jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[indexNum] = new Layer
+			parent: card
+			name: 'job' + number + 'favoriteHeartSelected'
+			x: heartOrigX
+			y: heartOrigY
+			width: 35
+			height: 29
+			image: 'images/favoriteJobHeartFilled.png'
+			opacity: 0
+			animationOptions: 
+				time: cardAnimTime
+
+		#state for hearts on /off
+		jobFavoriteHeartSelected.states = 
+			selected: {opacity: 1}
+			default: {opacity: 0}
+
+		#gradientOverlay
+		gradientOverlay = new Layer #gradient for job cards
+			parent: jobPreviewImage
+			image: 'images/pictureOverlay.png'
+			width: jobPreviewImage.width
+			height: 61
+			opacity : 0
+			animationOptions: 
+				time: cardAnimTime
+		gradientOverlay.states = 
+			card: 
+				width: jobPreviewImage.width	
+				opacity: 0
+			expanded:
+				width: Screen.width
+				opacity: 1
+		
+		#closeButton
+		closeButton = new Layer #close btn for job cards
+			parent: jobPreviewImage
+			image: 'images/jobClose.png'
+			height: 30
+			width: 30
+			x: 20
+			y: 20
+			opacity: 0
+			animationOptions: 
+				time: cardAnimTime
+		closeButton.states = 
+			card: 
+				opacity: 0
+			expanded:
+				opacity: 1
+		
+		#dailyTasks
+		#create copy
+		dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+		#rename question group
+		dTCopy.name = "job" + number + "Tasks"
+		dTCopy.parent = card
+		dTCopy.x = 0
+		dTCopy.y = 620
+		task1 = sketch.DailyTask1.convertToTextLayer()
+		task2 = sketch.DailyTask2.convertToTextLayer()
+		task3 = sketch.DailyTask3.convertToTextLayer()
+# 		task1.text = "did it change?!"
+# 		task2.text = "helloooo"
+# 		task3.text = "yesyesyes it did"
+		
+		
+		
+		
+		
+		
+		#push to array
+		jobCardsDailyTasksList.push(dTCopy)
 # 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
-			
-			#jobSkills
-			#create copy
-			skillsCopy = sketch.jobSkills.copy()
-			#rename question group
-			skillsCopy.name = "job" + number + "Skills"
-			skillsCopy.parent = card
-			skillsCopy.x = 0
-			skillsCopy.y = 800
-			#push to array
-			jobCardsSkills.push(skillsCopy)
+		
+		#jobSkills
+		#create copy
+		skillsCopy = sketch.jobSkills.copy()
+		#rename question group
+		skillsCopy.name = "job" + number + "Skills"
+		skillsCopy.parent = card
+		skillsCopy.x = 0
+		skillsCopy.y = 800
+		#push to array
+		jobCardsSkills.push(skillsCopy)
 # 			jobCardsSkills[number] = "job" + number + "Tasks"
 
-			#careerJourney
-			#create copy
-			journey = new Layer
-				name: "job" + number + "Journey"
-				parent: card
-				width: 285
-				height: 365 
-				x: 5
-				y: 950
-				backgroundColor: 'white'
-			journey.image = "images/careerJourneyExample.png"
-			#push to array
-			jobCardsCareerJourney.push(journey)
+		#careerJourney
+		#create copy
+		journey = new Layer
+			name: "job" + number + "Journey"
+			parent: card
+			width: 285
+			height: 365 
+			x: 5
+			y: 950
+			backgroundColor: 'white'
+		journey.image = "images/careerJourneyExample.png"
+		#push to array
+		jobCardsCareerJourney.push(journey)
 
-			#careerCompatibility
-			#create copy
-			compatCopy = sketch.jobCompability.copy()
-			#rename question group
-			compatCopy.name = "job" + number + "Compatibility"
-			compatCopy.parent = card
-			compatCopy.x = 0
-			compatCopy.y = 1340
+		#careerCompatibility
+		#create copy
+		compatCopy = sketch.jobCompability.copy()
+		#rename question group
+		compatCopy.name = "job" + number + "Compatibility"
+		compatCopy.parent = card
+		compatCopy.x = 0
+		compatCopy.y = 1340
 
-			#push to array
-			jobCardsCompat.push(compatCopy)
+		#push to array
+		jobCardsCompat.push(compatCopy)
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
@@ -1802,14 +1823,12 @@ sketch.futuresQuestions2.onClick (event, layer) ->
 		else
 			flow.showOverlayCenter(dailyQuizFlow)		
 
-
 #favorite jobs
 for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-		
-
+	
 #expand job card
 for number in [0...5]
 	jobCardsReadMoreButton[number].onClick (event,layer) ->
