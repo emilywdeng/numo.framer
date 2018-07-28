@@ -2496,10 +2496,11 @@ sketch.question10DislikeOptionActive.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-# 		jobFlow = new FlowComponent
-# 			scrollVertical: false
-# 			scrollHorizontal: false
-		
+		#populate insight into first card
+		if user.workstyles[2] == "Detail Oriented"
+			jobCards[0].image = "images/detail-oriented-insight.png"
+		if user.workstyles[2] == "Big Picture"
+			jobCards[0].image = "images/big-picture-insight.png"
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
@@ -2516,9 +2517,11 @@ sketch.question10LikeOptionActive.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-# 		jobFlow = new FlowComponent
-# 			scrollVertical: false
-# 			scrollHorizontal: false
+		#populate insight into first card
+		if user.workstyles[2] == "Detail Oriented"
+			jobCards[0].image = "images/detail-oriented-insight.png"
+		if user.workstyles[2] == "Big Picture"
+			jobCards[0].image = "images/big-picture-insight.png"
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
