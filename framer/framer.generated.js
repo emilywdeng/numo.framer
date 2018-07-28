@@ -27881,6 +27881,15 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(248, 248, 248, 1)",
+		"image": {
+			"path": "images/Layer-jobCardBackground-nuixqze0.png",
+			"frame": {
+				"x": -522,
+				"y": 3872,
+				"width": 375,
+				"height": 667
+			}
+		},
 		"children": [
 			{
 				"objectId": "F10D8F70-546C-48E8-8F25-DBCD0CDD1810",
@@ -28036,33 +28045,6 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					}
 				]
-			},
-			{
-				"objectId": "5199AD14-36FA-40FE-9076-F8691D82AF3D",
-				"kind": "group",
-				"name": "jobCardPreviewTopNav",
-				"originalName": "jobCardPreviewTopNav*",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 0,
-					"y": 0,
-					"width": 375,
-					"height": 60
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-jobCardPreviewTopNav-nte5oufe.png",
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"width": 375,
-						"height": 60
-					}
-				},
-				"children": []
 			}
 		]
 	},
@@ -28460,8 +28442,8 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 		"originalName": "futures",
 		"maskFrame": null,
 		"layerFrame": {
-			"x": -813,
-			"y": 537,
+			"x": -539,
+			"y": 758,
 			"width": 375,
 			"height": 979
 		},
@@ -28470,7 +28452,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 		"backgroundColor": "rgba(247.62077487244898, 247.57680811554692, 247.57680811554692, 1)",
 		"children": [
 			{
-				"objectId": "BA7313EF-77B7-4E93-A994-924BB8F247EA",
+				"objectId": "39CD26FB-0DCA-42E1-87BB-373BBF40B937",
 				"kind": "text",
 				"name": "futuresFavoriteEmpty",
 				"originalName": "futuresFavoriteEmpty",
@@ -28496,7 +28478,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					]
 				},
 				"image": {
-					"path": "images/Layer-futuresFavoriteEmpty-qke3mzez.png",
+					"path": "images/Layer-futuresFavoriteEmpty-mzldrdi2.png",
 					"frame": {
 						"x": 103,
 						"y": 457,
@@ -28507,7 +28489,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "E49F5BC2-1FC6-478A-AAFA-99E22C6F90BA",
+				"objectId": "AE6DF697-631E-49F6-8ED2-D26227AF0694",
 				"kind": "group",
 				"name": "header",
 				"originalName": "header",
@@ -28523,7 +28505,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-header-rtq5rjvc.png",
+					"path": "images/Layer-header-quu2rey2.png",
 					"frame": {
 						"x": 1,
 						"y": 0,
@@ -28534,7 +28516,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "343C6098-EBCD-4D3A-9800-4C6D0BA20EC3",
+				"objectId": "FE036D30-2CD0-4CC7-A9E0-0D8683B44579",
 				"kind": "group",
 				"name": "navBar",
 				"originalName": "navBar",
@@ -28550,7 +28532,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-navBar-mzqzqzyw.png",
+					"path": "images/Layer-navBar-rkuwmzze.png",
 					"frame": {
 						"x": -3,
 						"y": 918,
@@ -28560,7 +28542,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "A5045683-28C8-49F2-9EA9-0A22BD7F4FDA",
+						"objectId": "7E2F44EF-2CEC-4B8B-B2CB-B544DDA191EB",
 						"kind": "group",
 						"name": "navActiveIndicator",
 						"originalName": "navActiveIndicator",
@@ -28576,7 +28558,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-navActiveIndicator-qtuwndu2.png",
+							"path": "images/Layer-navActiveIndicator-n0uyrjq0.png",
 							"frame": {
 								"x": -3,
 								"y": 918,
@@ -28587,7 +28569,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "F93F1B4B-EE94-4AEA-A92B-A4A84B92A406",
+						"objectId": "5389D411-F751-4878-BC85-1D982B899D76",
 						"kind": "group",
 						"name": "navButtonMe",
 						"originalName": "navButtonMe",
@@ -28603,7 +28585,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-navButtonMe-rjkzrjfc.png",
+							"path": "images/Layer-navButtonMe-ntm4ouq0.png",
 							"frame": {
 								"x": 189,
 								"y": 925,
@@ -28614,7 +28596,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "E9DD8438-28DC-4579-803A-2348983C3B95",
+						"objectId": "3B37A301-F15B-436F-9A9C-31ABD3366E20",
 						"kind": "group",
 						"name": "navButtonFuture",
 						"originalName": "navButtonFuture",
@@ -28630,7 +28612,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-navButtonFuture-rtlerdg0.png",
+							"path": "images/Layer-navButtonFuture-m0izn0ez.png",
 							"frame": {
 								"x": 1,
 								"y": 925,
@@ -28643,10 +28625,10 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				]
 			},
 			{
-				"objectId": "631FFF1D-44CF-416E-AF44-1BD99158B50D",
+				"objectId": "EE8104E4-5F48-4847-BCA7-20A99CBFC9D1",
 				"kind": "group",
 				"name": "futuresQuestionsDone",
-				"originalName": "futuresQuestionsDone",
+				"originalName": "futuresQuestionsDone*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
@@ -28659,7 +28641,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-futuresQuestionsDone-njmxrkzg.png",
+					"path": "images/Layer-futuresQuestionsDone-ruu4mta0.png",
 					"frame": {
 						"x": 27,
 						"y": 0,
@@ -28670,10 +28652,10 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "C93BA0B7-4BE6-4508-AF29-0DC36094A609",
+				"objectId": "EAE2D554-10C5-4339-A5CD-D779F875FD7F",
 				"kind": "group",
 				"name": "futuresQuestions1",
-				"originalName": "futuresQuestions1",
+				"originalName": "futuresQuestions1*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
@@ -28685,68 +28667,22 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "E87D5B9A-7895-4408-9161-6E9071389239",
-						"kind": "group",
-						"name": "futureQuestionsGraphic",
-						"originalName": "futureQuestionsGraphic*",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 73,
-							"y": 76,
-							"width": 233,
-							"height": 261
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-futureQuestionsGraphic-rtg3rdvc.png",
-							"frame": {
-								"x": 73,
-								"y": 76,
-								"width": 233,
-								"height": 261
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "0392AB5D-9E5E-4F4C-9067-0E0B234DE9EA",
-						"kind": "group",
-						"name": "profileFutureNewQuestionsBackground",
-						"originalName": "profileFutureNewQuestionsBackground",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 27,
-							"y": 26,
-							"width": 327,
-							"height": 346
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-profileFutureNewQuestionsBackground-mdm5mkfc.png",
-							"frame": {
-								"x": 27,
-								"y": 26,
-								"width": 327,
-								"height": 346
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-futuresQuestions1-ruffmkq1.jpg",
+					"frame": {
+						"x": 27,
+						"y": 26,
+						"width": 327,
+						"height": 346
 					}
-				]
+				},
+				"children": []
 			},
 			{
-				"objectId": "D2D37C16-AAE4-4AE7-AE28-46837B748398",
+				"objectId": "EAE3C24F-5D6B-4B7F-9E92-CF7A2D47A069",
 				"kind": "group",
 				"name": "futuresQuestions2",
-				"originalName": "futuresQuestions2",
+				"originalName": "futuresQuestions2*",
 				"maskFrame": null,
 				"layerFrame": {
 					"x": 27,
@@ -28758,65 +28694,19 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"metadata": {
 					"opacity": 1
 				},
-				"children": [
-					{
-						"objectId": "7ADBDE75-1936-4A57-98B0-AF0A99268186",
-						"kind": "group",
-						"name": "futureQuestionsGraphic1",
-						"originalName": "futureQuestionsGraphic*",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 73,
-							"y": 76,
-							"width": 233,
-							"height": 261
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-futureQuestionsGraphic-n0feqkrf.png",
-							"frame": {
-								"x": 73,
-								"y": 76,
-								"width": 233,
-								"height": 261
-							}
-						},
-						"children": []
-					},
-					{
-						"objectId": "D9BDD58E-485C-4673-9522-8F39E372EBFF",
-						"kind": "group",
-						"name": "profileFutureNewQuestionsBackground1",
-						"originalName": "profileFutureNewQuestionsBackground",
-						"maskFrame": null,
-						"layerFrame": {
-							"x": 27,
-							"y": 26,
-							"width": 327,
-							"height": 346
-						},
-						"visible": true,
-						"metadata": {
-							"opacity": 1
-						},
-						"image": {
-							"path": "images/Layer-profileFutureNewQuestionsBackground-rdlcreq1.png",
-							"frame": {
-								"x": 27,
-								"y": 26,
-								"width": 327,
-								"height": 346
-							}
-						},
-						"children": []
+				"image": {
+					"path": "images/Layer-futuresQuestions2-ruffm0my.jpg",
+					"frame": {
+						"x": 27,
+						"y": 26,
+						"width": 327,
+						"height": 346
 					}
-				]
+				},
+				"children": []
 			},
 			{
-				"objectId": "8BFBB3AD-84D2-49EE-9738-51E7BCA3E764",
+				"objectId": "50A9C844-B435-410F-B080-8B9EC6B65E2F",
 				"kind": "group",
 				"name": "futuresFavoriteHeader",
 				"originalName": "futuresFavoriteHeader",
@@ -28832,7 +28722,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-futuresFavoriteHeader-oejgqkiz.png",
+					"path": "images/Layer-futuresFavoriteHeader-ntbboum4.png",
 					"frame": {
 						"x": 30,
 						"y": 405,
@@ -28843,7 +28733,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "49E57794-310B-48D9-AB21-0D8F1148E69C",
+				"objectId": "F11F2B38-1C0E-4480-9679-C06EDF778D95",
 				"kind": "group",
 				"name": "futuresFavoriteJob1",
 				"originalName": "futuresFavoriteJob1",
@@ -28859,7 +28749,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-futuresFavoriteJob1-ndlfntc3.png",
+					"path": "images/Layer-futuresFavoriteJob1-rjexrjjc.png",
 					"frame": {
 						"x": 22,
 						"y": 435,
@@ -28869,7 +28759,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "755C3D1A-5C13-4275-AED3-D0B74186D65C",
+						"objectId": "086168E2-B1B3-4B4B-94BA-CB99110CCF21",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob1Highlight",
 						"originalName": "profileFutureFavoriteJob1Highlight",
@@ -28885,7 +28775,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob1Highlight-nzu1qzne.png",
+							"path": "images/Layer-profileFutureFavoriteJob1Highlight-mdg2mty4.png",
 							"frame": {
 								"x": 22,
 								"y": 435,
@@ -28896,7 +28786,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "B5AEFA36-50E0-46CC-A90C-CDB3A0A1B1A7",
+						"objectId": "818268F2-E133-4FF6-92C0-DF7951896102",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob1Photo",
 						"originalName": "profileFutureFavoriteJob1Photo",
@@ -28917,7 +28807,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob1Photo-qjvbruzb.png",
+							"path": "images/Layer-profileFutureFavoriteJob1Photo-ode4mjy4.png",
 							"frame": {
 								"x": 37,
 								"y": 448,
@@ -28928,7 +28818,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "D14DA5CA-C3C5-4CD6-8C10-2CBE75869EBC",
+						"objectId": "E8AC0A40-8144-4B07-9873-4A04B51F623C",
 						"kind": "text",
 						"name": "profileFutureFavoriteJob1Title",
 						"originalName": "profileFutureFavoriteJob1Title",
@@ -28953,7 +28843,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							]
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob1Title-rde0ree1.png",
+							"path": "images/Layer-profileFutureFavoriteJob1Title-rthbqzbb.png",
 							"frame": {
 								"x": 124,
 								"y": 464,
@@ -28964,7 +28854,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "FA084873-5450-4485-A3C9-BD8CCAFA4669",
+						"objectId": "4436B892-857D-46B0-966B-235B93CB5344",
 						"kind": "group",
 						"name": "profileFutureFavroiteJob1Education",
 						"originalName": "profileFutureFavroiteJob1Education",
@@ -28981,7 +28871,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "FAFE0FC9-6ED4-4AD5-9771-271B7D801123",
+								"objectId": "B1C3FEB2-9B10-43F3-842A-4B0A6E17B508",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob1EducationLevel",
 								"originalName": "profileFutureFavoriteJob1EducationLevel",
@@ -29006,7 +28896,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob1EducationLevel-rkfgrtbg.png",
+									"path": "images/Layer-profileFutureFavoriteJob1EducationLevel-qjfdm0zf.png",
 									"frame": {
 										"x": 151,
 										"y": 502,
@@ -29017,7 +28907,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "6C28B359-F041-45BB-BACA-5FF24676745B",
+								"objectId": "8D7C1A54-1150-472D-8C22-7F15B9CD248E",
 								"kind": "group",
 								"name": "static",
 								"originalName": "static",
@@ -29033,7 +28923,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-nkmyoeiz.png",
+									"path": "images/Layer-static-oeq3qzfb.png",
 									"frame": {
 										"x": 124,
 										"y": 495,
@@ -29043,7 +28933,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "B6CF4411-2302-4D7E-B3FF-7AEA18966154",
+										"objectId": "5AA197FE-1F37-4331-A7BB-C140F86F43CA",
 										"kind": "group",
 										"name": "education_icon",
 										"originalName": "education-icon",
@@ -29060,7 +28950,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "880AA98C-1253-4270-8702-BFABE9F4A6B6",
+												"objectId": "8B0B7B35-66FE-4A15-929E-A868633E35D6",
 												"kind": "group",
 												"name": "Group",
 												"originalName": "Group",
@@ -29076,7 +28966,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-odgwque5.png",
+													"path": "images/Layer-Group-oeiwqjdc.png",
 													"frame": {
 														"x": 127,
 														"y": 499,
@@ -29093,7 +28983,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "DA36C172-A040-40E1-9848-0770B60FED8E",
+						"objectId": "EB71679A-DDE3-496E-8CB5-67547CA1FADE",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob1Growth",
 						"originalName": "profileFutureFavoriteJob1Growth",
@@ -29110,7 +29000,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "1B370606-4ED7-433C-8F20-FF98EFE29BC1",
+								"objectId": "CE8348ED-08F8-4113-BC44-B1B2D7A1D9FA",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob1GrowthLevel",
 								"originalName": "profileFutureFavoriteJob1GrowthLevel",
@@ -29135,7 +29025,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob1GrowthLevel-muiznza2.png",
+									"path": "images/Layer-profileFutureFavoriteJob1GrowthLevel-q0u4mzq4.png",
 									"frame": {
 										"x": 289,
 										"y": 501,
@@ -29146,7 +29036,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "54D4ACB9-82C0-405D-9AD2-B03851FD2A01",
+								"objectId": "EB77EF0B-EC62-4D91-8BDA-1D12EBA14F15",
 								"kind": "group",
 								"name": "static1",
 								"originalName": "static",
@@ -29162,7 +29052,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-ntrenefd.png",
+									"path": "images/Layer-static-rui3n0vg.png",
 									"frame": {
 										"x": 264,
 										"y": 495,
@@ -29172,7 +29062,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "1265FEE8-6812-46BB-81C2-857F1CD673F5",
+										"objectId": "8D30A5A4-23C4-488C-9F9E-091FE5EC0B72",
 										"kind": "group",
 										"name": "Group_3",
 										"originalName": "Group 3",
@@ -29188,7 +29078,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Group_3-mti2nuzf.png",
+											"path": "images/Layer-Group_3-oeqzmee1.png",
 											"frame": {
 												"x": 267,
 												"y": 501,
@@ -29203,7 +29093,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "9C69DDB0-4101-481F-8944-DE6D522C4E7A",
+						"objectId": "FD040644-ED10-42D4-9A4E-15DDE42443FD",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob1Salary",
 						"originalName": "profileFutureFavoriteJob1Salary",
@@ -29220,7 +29110,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "8C50157A-2AA3-423B-BE4A-54CAE018F5D6",
+								"objectId": "D2315605-C2FC-46D3-BA59-4ECFFB10FF26",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob1SalaryLevel",
 								"originalName": "profileFutureFavoriteJob1SalaryLevel",
@@ -29245,7 +29135,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob1SalaryLevel-oem1mde1.png",
+									"path": "images/Layer-profileFutureFavoriteJob1SalaryLevel-rdizmtu2.png",
 									"frame": {
 										"x": 219,
 										"y": 501,
@@ -29256,7 +29146,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "B21629D1-BE91-4E77-BCB5-F5D076890830",
+								"objectId": "2FC40671-263A-46D0-B12A-29EDF383077C",
 								"kind": "group",
 								"name": "profileFutureFavoriteJob1SalaryStatic",
 								"originalName": "profileFutureFavoriteJob1SalaryStatic",
@@ -29272,7 +29162,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob1SalaryStatic-qjixnji5.png",
+									"path": "images/Layer-profileFutureFavoriteJob1SalaryStatic-mkzdnda2.png",
 									"frame": {
 										"x": 194,
 										"y": 495,
@@ -29282,7 +29172,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "68BE42F3-8FF5-4475-B71B-A9396F339A0F",
+										"objectId": "45E7807E-AA5B-456C-B156-332060F4AA35",
 										"kind": "group",
 										"name": "dollar_icon",
 										"originalName": "dollar-icon",
@@ -29299,7 +29189,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "F6D853D6-1FD7-4299-AF9A-30F7A6DFB028",
+												"objectId": "4F3E84A7-EC01-4324-9768-3D4303F08DDB",
 												"kind": "group",
 												"name": "Group1",
 												"originalName": "Group",
@@ -29315,7 +29205,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-rjzeoduz.png",
+													"path": "images/Layer-Group-neyzrtg0.png",
 													"frame": {
 														"x": 200,
 														"y": 498,
@@ -29334,7 +29224,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				]
 			},
 			{
-				"objectId": "507A34E2-8486-4196-9704-495C0FFE965A",
+				"objectId": "2F7185DB-8655-4CCC-A533-2E6B4EDCB55D",
 				"kind": "group",
 				"name": "futuresFavoriteJob2",
 				"originalName": "futuresFavoriteJob2",
@@ -29351,7 +29241,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "E6D1A3E5-39DD-4127-B8EF-85C2D620F86B",
+						"objectId": "D7E5A30D-24B4-4033-9F6F-61584DAA6F74",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob2Highlight",
 						"originalName": "profileFutureFavoriteJob2Highlight",
@@ -29367,7 +29257,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob2Highlight-rtzemuez.png",
+							"path": "images/Layer-profileFutureFavoriteJob2Highlight-rddfnuez.png",
 							"frame": {
 								"x": 22,
 								"y": 541,
@@ -29378,7 +29268,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "0A0D8DEC-24E0-4AC3-AB59-782227A92494",
+						"objectId": "C4018810-3E9B-4290-8271-19A71FAD2A32",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob2Education",
 						"originalName": "profileFutureFavoriteJob2Education",
@@ -29395,7 +29285,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "F747605F-3880-4C09-9320-A922D0A99CD7",
+								"objectId": "8A95E7D4-60B8-43B7-A259-2A643206659B",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob2EducationLevel",
 								"originalName": "profileFutureFavoriteJob2EducationLevel",
@@ -29420,7 +29310,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob2EducationLevel-rjc0nzyw.png",
+									"path": "images/Layer-profileFutureFavoriteJob2EducationLevel-oee5nuu3.png",
 									"frame": {
 										"x": 151,
 										"y": 605,
@@ -29431,7 +29321,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "95F30B5E-A6CF-4021-8341-CD3F10B98883",
+								"objectId": "76A81066-E1E2-45B3-944F-020AEE62E956",
 								"kind": "group",
 								"name": "static2",
 								"originalName": "static",
@@ -29447,7 +29337,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-otvgmzbc.png",
+									"path": "images/Layer-static-nzzbodew.png",
 									"frame": {
 										"x": 124,
 										"y": 598,
@@ -29457,7 +29347,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "47D698D0-DE82-43E4-8778-2A2DC5139477",
+										"objectId": "A5A83EFA-90C1-4FAA-BC41-FA17C54BAF60",
 										"kind": "group",
 										"name": "education_icon1",
 										"originalName": "education-icon",
@@ -29474,7 +29364,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "7E13FC90-ED36-48CC-9E1A-4FEF6DF7B6CC",
+												"objectId": "C89A580C-B861-4DC8-8A7D-92E8D67BB7E5",
 												"kind": "group",
 												"name": "Group2",
 												"originalName": "Group",
@@ -29490,7 +29380,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-n0uxm0zd.png",
+													"path": "images/Layer-Group-qzg5qtu4.png",
 													"frame": {
 														"x": 127,
 														"y": 602,
@@ -29507,7 +29397,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "3FF117A8-921B-4E79-86B3-F8EFFFF070A2",
+						"objectId": "8C2BA673-CA74-498D-ADBC-558DC9CA096A",
 						"kind": "group",
 						"name": "profileFutureFavroiteJob2Salary",
 						"originalName": "profileFutureFavroiteJob2Salary",
@@ -29524,7 +29414,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "3AB2CAA9-0E91-4ED6-A770-FD82565BBF2B",
+								"objectId": "A2F2FCD8-017F-4EFB-9055-37204B6FA7E2",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob2SalaryLevel",
 								"originalName": "profileFutureFavoriteJob2SalaryLevel",
@@ -29549,7 +29439,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob2SalaryLevel-m0fcmknb.png",
+									"path": "images/Layer-profileFutureFavoriteJob2SalaryLevel-qtjgmkzd.png",
 									"frame": {
 										"x": 219,
 										"y": 604,
@@ -29560,7 +29450,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "1499E124-D43D-4208-8F15-2B3C29EB30DF",
+								"objectId": "96F25D1D-B2B8-4838-90D7-621BE1007B26",
 								"kind": "group",
 								"name": "static3",
 								"originalName": "static",
@@ -29576,7 +29466,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-mtq5ouux.png",
+									"path": "images/Layer-static-otzgmjve.png",
 									"frame": {
 										"x": 194,
 										"y": 598,
@@ -29586,7 +29476,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "734902F9-8CF9-4885-8CB0-4271DD41DD92",
+										"objectId": "9EAEB03A-3DE5-4E76-9E9C-E6631599D8FE",
 										"kind": "group",
 										"name": "dollar_icon1",
 										"originalName": "dollar-icon",
@@ -29603,7 +29493,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "00D5ED67-E3CC-4175-84BB-D61D3F292B20",
+												"objectId": "16A9439D-7C55-4189-A340-499F135B1E0A",
 												"kind": "group",
 												"name": "Group3",
 												"originalName": "Group",
@@ -29619,7 +29509,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-mdbenuve.png",
+													"path": "images/Layer-Group-mtzbotqz.png",
 													"frame": {
 														"x": 200,
 														"y": 601,
@@ -29636,7 +29526,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "2C477DB4-0737-49FD-B64D-5281F8FECCE3",
+						"objectId": "E75F3E89-B3F8-4DF2-A196-46E81D5AE95F",
 						"kind": "group",
 						"name": "profileFutureFavroiteJob2Growth",
 						"originalName": "profileFutureFavroiteJob2Growth",
@@ -29653,7 +29543,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "2B817CDE-7ADC-4727-83A1-D4A5F97775F3",
+								"objectId": "42AF06D1-171B-4DB5-AB20-07CFCB60BEBA",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob2GrowthLevel",
 								"originalName": "profileFutureFavoriteJob2GrowthLevel",
@@ -29678,7 +29568,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob2GrowthLevel-mki4mtdd.png",
+									"path": "images/Layer-profileFutureFavoriteJob2GrowthLevel-ndjbrja2.png",
 									"frame": {
 										"x": 289,
 										"y": 604,
@@ -29689,7 +29579,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "0ECE234C-BFBF-481D-B57E-41643AC73F4A",
+								"objectId": "5582E041-2C1C-46E4-BE4E-8DA7277118DE",
 								"kind": "group",
 								"name": "static4",
 								"originalName": "static",
@@ -29705,7 +29595,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-mevdrtiz.png",
+									"path": "images/Layer-static-ntu4mkuw.png",
 									"frame": {
 										"x": 264,
 										"y": 598,
@@ -29715,7 +29605,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "3A2B9D7B-7752-4ABA-B996-D610730CE36A",
+										"objectId": "B9BF1D22-F36E-454C-944C-37BCC209CC03",
 										"kind": "group",
 										"name": "Group_31",
 										"originalName": "Group 3",
@@ -29731,7 +29621,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Group_3-m0eyqjle.png",
+											"path": "images/Layer-Group_3-qjlcrjfe.png",
 											"frame": {
 												"x": 267,
 												"y": 604,
@@ -29746,7 +29636,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "9B3EF7E2-B63F-4D0A-A1CA-9CCF9BF9AB49",
+						"objectId": "0C45997C-415E-44A8-808C-D335C6BFD7E7",
 						"kind": "text",
 						"name": "profileFutureFavoriteJob2Title",
 						"originalName": "profileFutureFavoriteJob2Title",
@@ -29771,7 +29661,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							]
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob2Title-ouizruy3.png",
+							"path": "images/Layer-profileFutureFavoriteJob2Title-mem0ntk5.png",
 							"frame": {
 								"x": 125,
 								"y": 567,
@@ -29782,7 +29672,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "9990B6E9-4147-4D41-8BD1-A2EA543449C5",
+						"objectId": "90CC6AE2-C6C1-4593-ADC6-58F5572FAB5D",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob2Photo",
 						"originalName": "profileFutureFavoriteJob2Photo",
@@ -29803,7 +29693,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob2Photo-otk5mei2.png",
+							"path": "images/Layer-profileFutureFavoriteJob2Photo-otbdqzzb.png",
 							"frame": {
 								"x": 37,
 								"y": 551,
@@ -29814,7 +29704,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "93BEADC8-1C1E-4ACB-A9D3-8B9F2965D9D6",
+						"objectId": "6A72137F-C72E-4858-8776-68AC8561E30C",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob2Card",
 						"originalName": "profileFutureFavoriteJob2Card",
@@ -29830,7 +29720,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob2Card-otncrufe.png",
+							"path": "images/Layer-profileFutureFavoriteJob2Card-nke3mjez.png",
 							"frame": {
 								"x": 25,
 								"y": 544,
@@ -29843,7 +29733,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				]
 			},
 			{
-				"objectId": "2CEC6038-EBA6-4802-8100-0B5F42D0DDDB",
+				"objectId": "8FA505D5-CF51-4A62-94B7-F5CF1E6035A6",
 				"kind": "group",
 				"name": "futuresFavoriteJob3",
 				"originalName": "futuresFavoriteJob3",
@@ -29860,7 +29750,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "D44A3EC6-E193-4884-9785-4DBD4188D93B",
+						"objectId": "166FCBF2-B383-4AFC-B21C-80F95BC34BB8",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob3Highlight",
 						"originalName": "profileFutureFavoriteJob3Highlight",
@@ -29876,7 +29766,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob3Highlight-rdq0qtnf.png",
+							"path": "images/Layer-profileFutureFavoriteJob3Highlight-mty2rknc.png",
 							"frame": {
 								"x": 22,
 								"y": 647,
@@ -29887,7 +29777,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "7317E652-9A88-4A64-A9DE-0C843EB4F95A",
+						"objectId": "0067B5BE-4BC8-4A81-993F-FF453953E868",
 						"kind": "text",
 						"name": "profileFutureFavoriteJob3Title",
 						"originalName": "profileFutureFavoriteJob3Title",
@@ -29912,7 +29802,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							]
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob3Title-nzmxn0u2.png",
+							"path": "images/Layer-profileFutureFavoriteJob3Title-mda2n0i1.png",
 							"frame": {
 								"x": 125,
 								"y": 670,
@@ -29923,7 +29813,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "CAC813CC-9E81-4A1B-AF23-13ADDD2020A7",
+						"objectId": "FE7848C0-102E-4AFF-A972-0FF1BEF78B61",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob3Education",
 						"originalName": "profileFutureFavoriteJob3Education",
@@ -29940,7 +29830,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "730AE526-F4AB-4F96-9370-01F4745F8A45",
+								"objectId": "FAEFBC49-1310-455D-A33F-6E02004DC476",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob3EducationLevel",
 								"originalName": "profileFutureFavoriteJob3EducationLevel",
@@ -29965,7 +29855,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob3EducationLevel-nzmwquu1.png",
+									"path": "images/Layer-profileFutureFavoriteJob3EducationLevel-rkffrkjd.png",
 									"frame": {
 										"x": 151,
 										"y": 708,
@@ -29976,7 +29866,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "B734AD9B-1BC2-4103-883F-5A1B3B8BEE24",
+								"objectId": "856C0DB7-9794-46B7-9F2D-B5310079B1E9",
 								"kind": "group",
 								"name": "static5",
 								"originalName": "static",
@@ -29992,7 +29882,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-qjcznefe.png",
+									"path": "images/Layer-static-odu2qzbe.png",
 									"frame": {
 										"x": 124,
 										"y": 701,
@@ -30002,7 +29892,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "4729A91F-7560-4797-BB52-51DE80A78579",
+										"objectId": "CC675FB0-5C00-4C4B-ABE6-A2D3C51DBDD1",
 										"kind": "group",
 										"name": "education_icon2",
 										"originalName": "education-icon",
@@ -30019,7 +29909,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "B34AB26C-8BBD-4787-AA0A-194D59028A5B",
+												"objectId": "36E2A6DA-87A5-42EA-B046-CCD23CCD83DA",
 												"kind": "group",
 												"name": "Group4",
 												"originalName": "Group",
@@ -30035,7 +29925,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-qjm0quiy.png",
+													"path": "images/Layer-Group-mzzfmke2.png",
 													"frame": {
 														"x": 127,
 														"y": 705,
@@ -30052,7 +29942,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "0FE232DF-1DDC-4039-9105-E784BD425B41",
+						"objectId": "A165C9D8-CF18-47EB-A61D-807AE9FA861F",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob3Photo",
 						"originalName": "profileFutureFavoriteJob3Photo",
@@ -30073,7 +29963,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob3Photo-mezfmjmy.png",
+							"path": "images/Layer-profileFutureFavoriteJob3Photo-qte2num5.png",
 							"frame": {
 								"x": 37,
 								"y": 654,
@@ -30084,7 +29974,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "4A61D193-D4C7-4019-9D0A-A18056D84184",
+						"objectId": "02433AF9-8978-4684-9ABD-A1206EB83856",
 						"kind": "group",
 						"name": "profileFutureFavoriteJobe3Salary",
 						"originalName": "profileFutureFavoriteJobe3Salary",
@@ -30101,7 +29991,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "6245123A-A8F7-4F3C-A200-7A8A9B129D35",
+								"objectId": "C250C6C5-203A-4D29-96F4-786BB10DCB7A",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob3SalaryLevel",
 								"originalName": "profileFutureFavoriteJob3SalaryLevel",
@@ -30126,7 +30016,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob3SalaryLevel-nji0ntey.png",
+									"path": "images/Layer-profileFutureFavoriteJob3SalaryLevel-qzi1mem2.png",
 									"frame": {
 										"x": 219,
 										"y": 707,
@@ -30137,7 +30027,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "F87C4971-2FD7-4C22-B931-CDA48209D536",
+								"objectId": "E927C1AA-5078-4702-84AD-0BC9478FD3FC",
 								"kind": "group",
 								"name": "static6",
 								"originalName": "static",
@@ -30153,7 +30043,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-rjg3qzq5.png",
+									"path": "images/Layer-static-rtkyn0mx.png",
 									"frame": {
 										"x": 194,
 										"y": 701,
@@ -30163,7 +30053,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "A658EF69-1C03-45BE-9F54-5505FE1EA63A",
+										"objectId": "12A9E6F5-7BB2-4CC3-9AF5-F5518660CEA9",
 										"kind": "group",
 										"name": "dollar_icon2",
 										"originalName": "dollar-icon",
@@ -30180,7 +30070,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "0B621F53-AB4E-485F-933A-A0D0AEC219F5",
+												"objectId": "DF4FC90E-E28B-485D-A827-2F0223B387DC",
 												"kind": "group",
 												"name": "Group5",
 												"originalName": "Group",
@@ -30196,7 +30086,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-mei2mjfg.png",
+													"path": "images/Layer-Group-rey0rkm5.png",
 													"frame": {
 														"x": 200,
 														"y": 704,
@@ -30213,7 +30103,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "8C7BCE04-BC83-4DA4-8AB4-1C67FBA27B2C",
+						"objectId": "9E90129C-305C-4DC7-8A2A-81658B5D2AA5",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob3Growth",
 						"originalName": "profileFutureFavoriteJob3Growth",
@@ -30230,7 +30120,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "785C7857-A4F3-48E8-8EDB-FEB6D0DED7DB",
+								"objectId": "FDF91D3E-DCC5-47EB-AB68-2E61E540998B",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob3GrowthLevel",
 								"originalName": "profileFutureFavoriteJob3GrowthLevel",
@@ -30255,7 +30145,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob3GrowthLevel-nzg1qzc4.png",
+									"path": "images/Layer-profileFutureFavoriteJob3GrowthLevel-rkrgotfe.png",
 									"frame": {
 										"x": 289,
 										"y": 707,
@@ -30266,7 +30156,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "5010BBDB-95C1-4A00-9404-06BF915C2D3D",
+								"objectId": "5698A9EB-9929-4BDE-A9D4-7D85E0671125",
 								"kind": "group",
 								"name": "static7",
 								"originalName": "static",
@@ -30282,7 +30172,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-ntaxmejc.png",
+									"path": "images/Layer-static-nty5oee5.png",
 									"frame": {
 										"x": 264,
 										"y": 701,
@@ -30292,7 +30182,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "94F20653-619F-4C51-9F95-46515C3FA1FF",
+										"objectId": "BB20F44E-69F2-4688-968C-C82A18064A27",
 										"kind": "group",
 										"name": "Group_32",
 										"originalName": "Group 3",
@@ -30308,7 +30198,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Group_3-otrgmja2.png",
+											"path": "images/Layer-Group_3-qkiymey0.png",
 											"frame": {
 												"x": 267,
 												"y": 707,
@@ -30323,7 +30213,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "0436FA6D-5001-4D42-A292-C52DF50C96D4",
+						"objectId": "78FAD27C-167C-4EF0-B1D6-C472B2FE1881",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob3Card",
 						"originalName": "profileFutureFavoriteJob3Card",
@@ -30339,7 +30229,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob3Card-mdqznkzb.png",
+							"path": "images/Layer-profileFutureFavoriteJob3Card-nzhgquqy.png",
 							"frame": {
 								"x": 25,
 								"y": 647,
@@ -30352,7 +30242,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				]
 			},
 			{
-				"objectId": "5E71CC0D-339E-45F4-A06D-29A91A31AABB",
+				"objectId": "284BBDAA-4C77-41C2-A8F9-EC50815DE997",
 				"kind": "group",
 				"name": "futuresFavoriteJob4",
 				"originalName": "futuresFavoriteJob4",
@@ -30369,7 +30259,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "10DCB6E9-D9F1-4079-AD7E-F17DE9C9F4F0",
+						"objectId": "FDA721E7-52D0-4EF2-8F4F-435A292749C3",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Highlight",
 						"originalName": "profileFutureFavoriteJob4Highlight",
@@ -30385,7 +30275,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob4Highlight-mtbeq0i2.png",
+							"path": "images/Layer-profileFutureFavoriteJob4Highlight-rkrbnzix.png",
 							"frame": {
 								"x": 22,
 								"y": 753,
@@ -30396,7 +30286,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "209E5008-AA36-4384-B598-C86011B9A8BA",
+						"objectId": "C22BD22D-DB61-4EB4-A124-D88EF781F5F1",
 						"kind": "text",
 						"name": "profileFutureFavoriteJob4Title",
 						"originalName": "profileFutureFavoriteJob4Title",
@@ -30421,7 +30311,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							]
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob4Title-mja5rtuw.png",
+							"path": "images/Layer-profileFutureFavoriteJob4Title-qziyqkqy.png",
 							"frame": {
 								"x": 125,
 								"y": 773,
@@ -30432,7 +30322,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "CBF89151-959D-4F59-A249-3C7377E75709",
+						"objectId": "1810AA40-8F34-4820-BB9F-5476C4CA92F8",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Photo",
 						"originalName": "profileFutureFavoriteJob4Photo",
@@ -30453,7 +30343,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob4Photo-q0jgodkx.png",
+							"path": "images/Layer-profileFutureFavoriteJob4Photo-mtgxmefb.png",
 							"frame": {
 								"x": 37,
 								"y": 757,
@@ -30464,7 +30354,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "BC78ED0D-5DF8-4BDA-BD5A-748E4434FD52",
+						"objectId": "B2C4D55A-582D-444A-B6A3-F42BF622434A",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Education",
 						"originalName": "profileFutureFavoriteJob4Education",
@@ -30481,7 +30371,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "0DD635F2-DF9B-4903-9199-1DC029EE9EB8",
+								"objectId": "31DECCF9-E1D7-40BA-A4F1-863035F7D63E",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob4EducationLevel",
 								"originalName": "profileFutureFavoriteJob4EducationLevel",
@@ -30506,7 +30396,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob4EducationLevel-merenjm1.png",
+									"path": "images/Layer-profileFutureFavoriteJob4EducationLevel-mzferund.png",
 									"frame": {
 										"x": 151,
 										"y": 811,
@@ -30517,7 +30407,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "C492F305-64B4-46F3-8018-73ACC47F3462",
+								"objectId": "2CB68EC2-3D5D-4B09-90BE-8A349F9C84AE",
 								"kind": "group",
 								"name": "static8",
 								"originalName": "static",
@@ -30533,7 +30423,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-qzq5mkyz.png",
+									"path": "images/Layer-static-mkncnjhf.png",
 									"frame": {
 										"x": 124,
 										"y": 804,
@@ -30543,7 +30433,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "A870A884-71D5-4B07-881B-31BD3938BC21",
+										"objectId": "129D58C5-B600-41B6-BF4A-59CD42929A4B",
 										"kind": "group",
 										"name": "education_icon3",
 										"originalName": "education-icon",
@@ -30560,7 +30450,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "84008388-AE2B-4818-AA03-4F33CFBE3E74",
+												"objectId": "BB53FB51-CB4C-4733-9256-D3D85526901D",
 												"kind": "group",
 												"name": "Group6",
 												"originalName": "Group",
@@ -30576,7 +30466,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-odqwmdgz.png",
+													"path": "images/Layer-Group-qki1m0zc.png",
 													"frame": {
 														"x": 127,
 														"y": 808,
@@ -30593,7 +30483,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "B1E00B33-5211-4543-B8C3-97AB9DC4EB78",
+						"objectId": "D7352602-80A0-4FA7-8C0D-A95D0ECEA224",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Growth",
 						"originalName": "profileFutureFavoriteJob4Growth",
@@ -30610,7 +30500,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "4E68FFA3-051C-44FF-A51A-C18CFC5E1271",
+								"objectId": "78F50F94-573C-4149-8800-A2F3BF321F00",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob4GrowthLevel",
 								"originalName": "profileFutureFavoriteJob4GrowthLevel",
@@ -30635,7 +30525,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob4GrowthLevel-neu2oezg.png",
+									"path": "images/Layer-profileFutureFavoriteJob4GrowthLevel-nzhgntbg.png",
 									"frame": {
 										"x": 289,
 										"y": 810,
@@ -30646,7 +30536,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "8C542A89-296F-4F0A-8084-DE97E51E4345",
+								"objectId": "C565BD33-0417-453A-BFF1-02FABA70BDEC",
 								"kind": "group",
 								"name": "static9",
 								"originalName": "static",
@@ -30662,7 +30552,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-oem1ndjb.png",
+									"path": "images/Layer-static-qzu2nuje.png",
 									"frame": {
 										"x": 264,
 										"y": 804,
@@ -30672,7 +30562,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "9AFEBDC3-A1C1-4E7F-91FF-A602EAB706EE",
+										"objectId": "D6130503-1DBB-438E-A4EC-BE62B682C6DA",
 										"kind": "group",
 										"name": "Group_33",
 										"originalName": "Group 3",
@@ -30688,7 +30578,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Group_3-oufgruje.png",
+											"path": "images/Layer-Group_3-rdyxmza1.png",
 											"frame": {
 												"x": 267,
 												"y": 810,
@@ -30703,7 +30593,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "6CA8E73E-8559-4FE4-969E-4C353337D08F",
+						"objectId": "8C080784-2305-4BD3-9F5B-5D811AAD32EF",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Salary",
 						"originalName": "profileFutureFavoriteJob4Salary",
@@ -30720,7 +30610,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "E81B0783-A092-4E83-BC87-CE49C0D20271",
+								"objectId": "99B4540B-0E95-443B-8804-E623071A65CE",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob4SalaryLevel",
 								"originalName": "profileFutureFavoriteJob4SalaryLevel",
@@ -30745,7 +30635,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob4SalaryLevel-rtgxqja3.png",
+									"path": "images/Layer-profileFutureFavoriteJob4SalaryLevel-otlcndu0.png",
 									"frame": {
 										"x": 219,
 										"y": 810,
@@ -30756,7 +30646,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "80544B83-BAE5-404E-93AC-CA1DBC6645FD",
+								"objectId": "2F64F946-4B88-439C-ADC1-C09E9048D337",
 								"kind": "group",
 								"name": "static10",
 								"originalName": "static",
@@ -30772,7 +30662,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-oda1ndrc.png",
+									"path": "images/Layer-static-mky2ney5.png",
 									"frame": {
 										"x": 194,
 										"y": 804,
@@ -30782,7 +30672,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "8A4FF9B4-B88B-4C98-AF24-EBE0E5053203",
+										"objectId": "C7A2EF56-E0FE-4C4F-BE56-8034554448CC",
 										"kind": "group",
 										"name": "dollar_icon3",
 										"originalName": "dollar-icon",
@@ -30799,7 +30689,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "2CA33686-1FEB-4D54-91E9-E757C96889EE",
+												"objectId": "E37A6CCC-CDA9-4AF5-83EE-5665F8E4067C",
 												"kind": "group",
 												"name": "Group7",
 												"originalName": "Group",
@@ -30815,7 +30705,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-mknbmzm2.png",
+													"path": "images/Layer-Group-rtm3qtzd.png",
 													"frame": {
 														"x": 200,
 														"y": 807,
@@ -30832,7 +30722,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "C3609ABF-6714-4B99-A0A1-040EDDEDA474",
+						"objectId": "1F600ACA-D7BA-42B5-9224-709D70D2D628",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob4Card",
 						"originalName": "profileFutureFavoriteJob4Card",
@@ -30848,7 +30738,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob4Card-qzm2mdlb.png",
+							"path": "images/Layer-profileFutureFavoriteJob4Card-muy2mdbb.png",
 							"frame": {
 								"x": 25,
 								"y": 750,
@@ -30861,7 +30751,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				]
 			},
 			{
-				"objectId": "AF87DE1B-A4FF-4963-891F-FAA7319A8CA4",
+				"objectId": "EAB6CDAD-4DCE-43A7-BB22-283246D31F6F",
 				"kind": "group",
 				"name": "futuresFavoriteJob5",
 				"originalName": "futuresFavoriteJob5",
@@ -30878,7 +30768,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				},
 				"children": [
 					{
-						"objectId": "D449566F-C4B5-49C8-BECA-CB479DD6E0E2",
+						"objectId": "D862272A-AE28-4C23-86D1-76A7087CCE38",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Highlight",
 						"originalName": "profileFutureFavoriteJob5Highlight",
@@ -30894,7 +30784,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob5Highlight-rdq0otu2.png",
+							"path": "images/Layer-profileFutureFavoriteJob5Highlight-rdg2mji3.png",
 							"frame": {
 								"x": 22,
 								"y": 859,
@@ -30905,7 +30795,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "1BB441EE-4E5D-4C0D-8223-F5F07B84701A",
+						"objectId": "85BFF401-15B6-40D7-9BA4-28AF62CC95D9",
 						"kind": "text",
 						"name": "profileFutureFavoriteJob5Title",
 						"originalName": "profileFutureFavoriteJob5Title",
@@ -30930,7 +30820,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							]
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob5Title-mujcndqx.png",
+							"path": "images/Layer-profileFutureFavoriteJob5Title-odvcrky0.png",
 							"frame": {
 								"x": 125,
 								"y": 876,
@@ -30941,7 +30831,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "736CE5DA-3671-4C02-8209-166E56316299",
+						"objectId": "C7512F96-5E84-4719-A2AE-4109D24B488F",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Photo",
 						"originalName": "profileFutureFavoriteJob5Photo",
@@ -30962,7 +30852,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob5Photo-nzm2q0u1.png",
+							"path": "images/Layer-profileFutureFavoriteJob5Photo-qzc1mtjg.png",
 							"frame": {
 								"x": 37,
 								"y": 860,
@@ -30973,7 +30863,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						"children": []
 					},
 					{
-						"objectId": "3901B35A-8ADE-4D2A-A3C5-0B8114F53763",
+						"objectId": "D5C80D01-A258-45D6-AC33-9D259F228410",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Education",
 						"originalName": "profileFutureFavoriteJob5Education",
@@ -30990,7 +30880,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "5D395AC1-5830-4D8A-A38C-709421562924",
+								"objectId": "FD2A65C3-8DCF-460C-85CB-FCD3F6B65D69",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob5EducationLevel",
 								"originalName": "profileFutureFavoriteJob5EducationLevel",
@@ -31015,7 +30905,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob5EducationLevel-nuqzotvb.png",
+									"path": "images/Layer-profileFutureFavoriteJob5EducationLevel-rkqyqty1.png",
 									"frame": {
 										"x": 151,
 										"y": 914,
@@ -31026,7 +30916,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "BB6E5118-26EC-43C7-8599-7562D7128FCB",
+								"objectId": "94CF0776-FF96-4578-908E-9BCCB9EFCC54",
 								"kind": "group",
 								"name": "static11",
 								"originalName": "static",
@@ -31042,7 +30932,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-qki2rtux.png",
+									"path": "images/Layer-static-otrdrja3.png",
 									"frame": {
 										"x": 124,
 										"y": 907,
@@ -31052,7 +30942,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "2336C98A-8AC8-458B-9938-ADE23FBBD434",
+										"objectId": "A7DAAB02-702E-4518-92E6-6605E3171E38",
 										"kind": "group",
 										"name": "education_icon4",
 										"originalName": "education-icon",
@@ -31069,7 +30959,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "E1B97920-53DF-4F81-8B07-EABCE200CE89",
+												"objectId": "54BA0CE6-E265-4F8C-8D57-417AAD0AED86",
 												"kind": "group",
 												"name": "Group8",
 												"originalName": "Group",
@@ -31085,7 +30975,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-rtfcotc5.png",
+													"path": "images/Layer-Group-ntrcqtbd.png",
 													"frame": {
 														"x": 127,
 														"y": 911,
@@ -31102,7 +30992,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "707664CC-995F-448F-808B-08604FBAEEDC",
+						"objectId": "5E3DE9F0-3ECF-4A47-B1CA-051F5CAF350C",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Growth",
 						"originalName": "profileFutureFavoriteJob5Growth",
@@ -31119,7 +31009,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "F15B9705-8CFD-435D-BD3E-38F53FC1E180",
+								"objectId": "B764B5D2-BACB-429B-B5C2-63A2243FE78F",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob5GrowthLevel",
 								"originalName": "profileFutureFavoriteJob5GrowthLevel",
@@ -31144,7 +31034,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob5GrowthLevel-rje1qjk3.png",
+									"path": "images/Layer-profileFutureFavoriteJob5GrowthLevel-qjc2nei1.png",
 									"frame": {
 										"x": 289,
 										"y": 913,
@@ -31155,7 +31045,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "0C761C70-AB9A-4121-BD90-DC38E41BA10D",
+								"objectId": "0F5AA5D7-52A4-40AF-8709-9AB32A778741",
 								"kind": "group",
 								"name": "static12",
 								"originalName": "static",
@@ -31171,7 +31061,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-mem3njfd.png",
+									"path": "images/Layer-static-mey1que1.png",
 									"frame": {
 										"x": 264,
 										"y": 907,
@@ -31181,7 +31071,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "4FBF555B-0020-4112-AC5F-83DD74D45DB3",
+										"objectId": "4D5B9558-980D-48C8-86C8-4F37C4D988DE",
 										"kind": "group",
 										"name": "Group_34",
 										"originalName": "Group 3",
@@ -31197,7 +31087,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 											"opacity": 1
 										},
 										"image": {
-											"path": "images/Layer-Group_3-nezcrju1.png",
+											"path": "images/Layer-Group_3-neq1qjk1.png",
 											"frame": {
 												"x": 267,
 												"y": 913,
@@ -31212,7 +31102,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "ADD1DBFC-B80C-4B85-88F6-F78306E2371F",
+						"objectId": "6896257F-A511-4AD9-A6CB-9323565E228A",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Salary",
 						"originalName": "profileFutureFavoriteJob5Salary",
@@ -31229,7 +31119,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						},
 						"children": [
 							{
-								"objectId": "B10DA952-4E92-446F-8034-03E4C4B8DAA6",
+								"objectId": "6536EFCB-715D-4A25-9091-C591C410BBC4",
 								"kind": "text",
 								"name": "profileFutureFavoriteJob5SalaryLevel",
 								"originalName": "profileFutureFavoriteJob5SalaryLevel",
@@ -31254,7 +31144,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									]
 								},
 								"image": {
-									"path": "images/Layer-profileFutureFavoriteJob5SalaryLevel-qjewree5.png",
+									"path": "images/Layer-profileFutureFavoriteJob5SalaryLevel-njuznkvg.png",
 									"frame": {
 										"x": 219,
 										"y": 913,
@@ -31265,7 +31155,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								"children": []
 							},
 							{
-								"objectId": "49D34333-4ABD-4D8D-94A7-30E09B003A93",
+								"objectId": "C3858AF4-39F8-481F-93E9-168398CB8560",
 								"kind": "group",
 								"name": "static13",
 								"originalName": "static",
@@ -31281,7 +31171,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 									"opacity": 1
 								},
 								"image": {
-									"path": "images/Layer-static-ndlemzqz.png",
+									"path": "images/Layer-static-qzm4nthb.png",
 									"frame": {
 										"x": 194,
 										"y": 907,
@@ -31291,7 +31181,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 								},
 								"children": [
 									{
-										"objectId": "E095B532-0D06-48F5-B88E-C15F8236FAA2",
+										"objectId": "81205304-3A63-4BE6-A0C8-11ADFFBF8571",
 										"kind": "group",
 										"name": "dollar_icon4",
 										"originalName": "dollar-icon",
@@ -31308,7 +31198,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 										},
 										"children": [
 											{
-												"objectId": "120CC034-7113-4955-BE59-C09ABE7DC105",
+												"objectId": "A1484D3D-B3F1-436B-BACF-FBE5B0336797",
 												"kind": "group",
 												"name": "Group9",
 												"originalName": "Group",
@@ -31324,7 +31214,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 													"opacity": 1
 												},
 												"image": {
-													"path": "images/Layer-Group-mtiwq0mw.png",
+													"path": "images/Layer-Group-qte0odre.png",
 													"frame": {
 														"x": 200,
 														"y": 910,
@@ -31341,7 +31231,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 						]
 					},
 					{
-						"objectId": "A7D51838-87F4-45CC-A979-4318D837D540",
+						"objectId": "A1A3D67B-C999-49F7-B88F-7217E45F27C3",
 						"kind": "group",
 						"name": "profileFutureFavoriteJob5Card",
 						"originalName": "profileFutureFavoriteJob5Card",
@@ -31357,7 +31247,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 							"opacity": 1
 						},
 						"image": {
-							"path": "images/Layer-profileFutureFavoriteJob5Card-qtdente4.png",
+							"path": "images/Layer-profileFutureFavoriteJob5Card-qtfbm0q2.png",
 							"frame": {
 								"x": 25,
 								"y": 853,
@@ -33603,10 +33493,10 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"originalName": "question1Question",
 				"maskFrame": null,
 				"layerFrame": {
-					"x": 47,
+					"x": 52,
 					"y": 16,
-					"width": 281,
-					"height": 79
+					"width": 271,
+					"height": 76
 				},
 				"visible": true,
 				"metadata": {
@@ -33615,10 +33505,10 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"image": {
 					"path": "images/Layer-question1Question-ndiwotq0.png",
 					"frame": {
-						"x": 47,
+						"x": 52,
 						"y": 16,
-						"width": 281,
-						"height": 79
+						"width": 271,
+						"height": 76
 					}
 				},
 				"children": []
@@ -35782,7 +35672,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 		"backgroundColor": "rgba(255, 255, 255, 1)",
 		"children": [
 			{
-				"objectId": "4B54F55C-EEFA-41F0-8467-0E248A4DCE66",
+				"objectId": "EEDB3346-5562-400E-8BFB-F95DB9D86B50",
 				"kind": "group",
 				"name": "questionPersonalityClose",
 				"originalName": "questionPersonalityClose",
@@ -35798,7 +35688,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityClose-nei1ney1.png",
+					"path": "images/Layer-questionPersonalityClose-ruveqjmz.png",
 					"frame": {
 						"x": 20,
 						"y": 21,
@@ -35809,7 +35699,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "C8C7A521-573F-41E1-80BD-718B6BC66DCF",
+				"objectId": "EDB8A311-59E5-43A9-8B7F-E1EC3B8BAA8D",
 				"kind": "group",
 				"name": "questionPersonalityProgress1",
 				"originalName": "questionPersonalityProgress1*",
@@ -35825,7 +35715,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress1-qzhdn0e1.jpg",
+					"path": "images/Layer-questionPersonalityProgress1-rurcoeez.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35836,7 +35726,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "FB8B1E55-4A76-43F9-A470-8E5A42AE5768",
+				"objectId": "3676AC22-C5DD-4111-A790-571B90EF24BF",
 				"kind": "group",
 				"name": "questionPersonalityProgress2",
 				"originalName": "questionPersonalityProgress2*",
@@ -35852,7 +35742,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress2-rki4qjff.jpg",
+					"path": "images/Layer-questionPersonalityProgress2-mzy3nkfd.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35863,7 +35753,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "75755624-CC43-457D-A8E7-336FC0B00D54",
+				"objectId": "344B071A-916E-4173-9822-F4CA71E08FFE",
 				"kind": "group",
 				"name": "questionPersonalityProgress3",
 				"originalName": "questionPersonalityProgress3*",
@@ -35879,7 +35769,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress3-nzu3ntu2.jpg",
+					"path": "images/Layer-questionPersonalityProgress3-mzq0qja3.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35890,7 +35780,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "C9DA72F6-F3EE-4F09-9CF2-26B5701E127A",
+				"objectId": "EFBDDAFA-1CA0-4621-839B-361BD6A35851",
 				"kind": "group",
 				"name": "questionPersonalityProgress4",
 				"originalName": "questionPersonalityProgress4*",
@@ -35906,7 +35796,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress4-qzleqtcy.jpg",
+					"path": "images/Layer-questionPersonalityProgress4-ruzcrerb.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35917,7 +35807,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "A0542EDD-EF20-45C8-A604-0F7E07782FB2",
+				"objectId": "D193107E-4B55-4A0C-97CE-DDB22FB63E95",
 				"kind": "group",
 				"name": "questionPersonalityProgress5",
 				"originalName": "questionPersonalityProgress5*",
@@ -35933,7 +35823,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress5-qta1ndjf.jpg",
+					"path": "images/Layer-questionPersonalityProgress5-rde5mzew.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35944,7 +35834,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "99EA4B76-CD7C-4D74-9FBE-94752FBB2589",
+				"objectId": "A826A3AF-3D8C-4F9E-81C8-8EAFB09EE855",
 				"kind": "group",
 				"name": "questionPersonalityProgress6",
 				"originalName": "questionPersonalityProgress6*",
@@ -35960,7 +35850,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress6-otlfqtrc.jpg",
+					"path": "images/Layer-questionPersonalityProgress6-qtgynkez.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35971,7 +35861,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "6C6C12AB-A389-4F98-A688-73335EBD42B5",
+				"objectId": "978832E6-E38C-4623-90F3-EA18D63CEBAE",
 				"kind": "group",
 				"name": "questionPersonalityProgress7",
 				"originalName": "questionPersonalityProgress7*",
@@ -35987,7 +35877,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress7-nkm2qzey.jpg",
+					"path": "images/Layer-questionPersonalityProgress7-otc4odmy.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -35998,7 +35888,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "93A50CB1-3ACE-42D6-9C24-4BDC3569B1CD",
+				"objectId": "317A3B38-FA25-4F2C-9050-477C143AEF6E",
 				"kind": "group",
 				"name": "questionPersonalityProgress8",
 				"originalName": "questionPersonalityProgress8*",
@@ -36014,7 +35904,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress8-otnbntbd.jpg",
+					"path": "images/Layer-questionPersonalityProgress8-mze3qtnc.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36025,7 +35915,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "18C0DE92-F6AA-4937-9597-86CD809DD782",
+				"objectId": "D1FD6A4F-C0BC-4AD5-A8FB-062B7BF01246",
 				"kind": "group",
 				"name": "questionPersonalityProgress9",
 				"originalName": "questionPersonalityProgress9*",
@@ -36041,7 +35931,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress9-mthdmerf.jpg",
+					"path": "images/Layer-questionPersonalityProgress9-rdfgrdzb.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36052,7 +35942,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "E412930E-E3E9-4A99-BEF2-72E6FF3BB476",
+				"objectId": "9D0CA2BC-54AF-4890-A824-B73F153226D1",
 				"kind": "group",
 				"name": "questionPersonalityProgress10",
 				"originalName": "questionPersonalityProgress10*",
@@ -36068,7 +35958,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress10-rtqxmjkz.jpg",
+					"path": "images/Layer-questionPersonalityProgress10-ouqwq0ey.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36079,7 +35969,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "7D65C24F-9E0A-4336-9242-58A572BA07C5",
+				"objectId": "F0A8A67C-1047-426D-9D3C-0F2728B66F55",
 				"kind": "group",
 				"name": "questionPersonalityProgress11",
 				"originalName": "questionPersonalityProgress11*",
@@ -36095,7 +35985,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress11-n0q2numy.jpg",
+					"path": "images/Layer-questionPersonalityProgress11-rjbboee2.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36106,7 +35996,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "2FC74BD3-9BA5-4C63-A3A4-0539BDBEBF3B",
+				"objectId": "CA9BFCEB-65EC-42CA-8D81-34DC4FCB394C",
 				"kind": "group",
 				"name": "questionPersonalityProgress12",
 				"originalName": "questionPersonalityProgress12*",
@@ -36122,7 +36012,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress12-mkzdnzrc.jpg",
+					"path": "images/Layer-questionPersonalityProgress12-q0e5qkzd.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36133,7 +36023,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "699C966B-6E11-477E-AD84-D2587BFF8033",
+				"objectId": "380B2ED3-0DE4-4DD2-B5C1-291DD935DD2A",
 				"kind": "group",
 				"name": "questionPersonalityProgress13",
 				"originalName": "questionPersonalityProgress13*",
@@ -36149,7 +36039,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress13-njk5qzk2.jpg",
+					"path": "images/Layer-questionPersonalityProgress13-mzgwqjjf.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36160,7 +36050,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "FDBA97D6-72B6-47AF-AB7E-C2EDA641F1FD",
+				"objectId": "83AC11C0-0800-4428-A0B3-3718E4E4EA34",
 				"kind": "group",
 				"name": "questionPersonalityProgress14",
 				"originalName": "questionPersonalityProgress14*",
@@ -36176,7 +36066,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress14-rkrcqtk3.jpg",
+					"path": "images/Layer-questionPersonalityProgress14-odnbqzex.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36187,7 +36077,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "48DC28A2-DE16-499D-B397-1DEAD887A82C",
+				"objectId": "E38DACDB-0C49-4F41-9E92-1A4B3520ED33",
 				"kind": "group",
 				"name": "questionPersonalityProgress15",
 				"originalName": "questionPersonalityProgress15*",
@@ -36203,7 +36093,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress15-ndheqzi4.jpg",
+					"path": "images/Layer-questionPersonalityProgress15-rtm4refd.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36214,7 +36104,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "B45F7FCE-F3F4-48A8-B158-75CC740AB6C6",
+				"objectId": "E8EACBC4-BF8A-4B83-ADDE-5A3D5AF48064",
 				"kind": "group",
 				"name": "questionPersonalityProgress16",
 				"originalName": "questionPersonalityProgress16*",
@@ -36230,7 +36120,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress16-qjq1rjdg.jpg",
+					"path": "images/Layer-questionPersonalityProgress16-rthfqunc.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36241,7 +36131,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "A5456FE8-2AF5-4B7A-A071-72FD218E92E3",
+				"objectId": "2EC98009-EF49-48E9-AAF7-E3142059628C",
 				"kind": "group",
 				"name": "questionPersonalityProgress17",
 				"originalName": "questionPersonalityProgress17*",
@@ -36257,7 +36147,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress17-qtu0ntzg.jpg",
+					"path": "images/Layer-questionPersonalityProgress17-mkvdotgw.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36268,7 +36158,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "D174CFEC-173D-463E-A374-2D24CCFA6C01",
+				"objectId": "8BC71501-B45E-471B-8CA8-BE5D5C516453",
 				"kind": "group",
 				"name": "questionPersonalityProgress18",
 				"originalName": "questionPersonalityProgress18*",
@@ -36284,7 +36174,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress18-rde3neng.jpg",
+					"path": "images/Layer-questionPersonalityProgress18-oejdnze1.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36295,7 +36185,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "8ED946C3-F1C5-4B69-8738-E5D2443B4D67",
+				"objectId": "E89FDB74-EF92-40B2-92CF-FA5EEC540EC7",
 				"kind": "group",
 				"name": "questionPersonalityProgress19",
 				"originalName": "questionPersonalityProgress19*",
@@ -36311,7 +36201,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress19-oeveotq2.jpg",
+					"path": "images/Layer-questionPersonalityProgress19-rtg5rkrc.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
@@ -36322,7 +36212,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 				"children": []
 			},
 			{
-				"objectId": "BB7BB7CC-644C-4FB5-9791-500E6F98EE80",
+				"objectId": "C51FC847-2A44-44E7-9813-A72BE823208F",
 				"kind": "group",
 				"name": "questionPersonalityProgress20",
 				"originalName": "questionPersonalityProgress20*",
@@ -36338,7 +36228,7 @@ window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 					"opacity": 1
 				},
 				"image": {
-					"path": "images/Layer-questionPersonalityProgress20-qki3qki3.jpg",
+					"path": "images/Layer-questionPersonalityProgress20-qzuxrkm4.jpg",
 					"frame": {
 						"x": 148,
 						"y": 545,
