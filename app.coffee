@@ -593,7 +593,7 @@ storeJobSession = ->
 		user.history.push(jobSession[i])
 		#check status for active
 		if jobCardsFavoriteHeartSelected.length != 0
-			if jobCardsFavoriteHeartSelected[i].states.current.name == "selected"
+			if jobCardsFavoriteHeartSelected[i].states.current.name == "select"
 				user.favorites.push(jobData.records[jobSession[i]].fields.Job)
 #jobData.records[jobSession[i]].fields.Job
 
@@ -933,7 +933,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-flow.showNext(futures)
+# flow.showNext(futures)
 
 
 #PERSONALITY FLOW
@@ -946,6 +946,8 @@ questionsFlow = ""
 questionCurrent = 0
 #JOB FLOW
 jobFlow = ""
+
+#Click Futures Questions First Time for Personality Questions
 sketch.futuresQuestions1.onClick (event, layer) ->
 	#check if first user visit, then direct to personality
 		if persFlow is "" 
@@ -965,25 +967,6 @@ sketch.futuresQuestions1.onClick (event, layer) ->
 				persQuestionCurrent += 1
 			else
 				flow.showOverlayCenter(persFlow)
-# 	#check if second user visit, then direct to daily questions
-# 	else if userSession == 1
-# 		if dailyQuizFlow is "" 
-# 				dailyQuizFlow = new FlowComponent
-# 				questionsFlow = new FlowComponent
-# 					x: 0
-# 					y: 70
-# 					height: 470 
-# 					width: Screen.width
-# 					scrollVertical: false
-# 					scrollHorizontal: false
-# 					parent: questionsBackground
-# 					backgroundColor: '#FFFFFF'
-# 				flow.showOverlayCenter(dailyQuizFlow)
-# 				dailyQuizFlow.showNext(questionsBackground)
-# 				questionsFlow.showNext(question1)
-# 				questionCurrent += 1
-# 			else
-# 				flow.showOverlayCenter(dailyQuizFlow)
 
 #PERSONALITY QUESTIONS
 #close questions button
@@ -1212,13 +1195,12 @@ for i in [0..19]
 					jobCards[0].image = "images/persuader-insight.png" 
 				if user.personality[0] == "Creator"
 					jobCards[0].image = "images/creator-insight.png"
-				sketch.futuresQuestions1.destroy() ####
+				sketch.futuresQuestions1.destroy() 
 				jobFlow = new FlowComponent
 					scrollVertical: false
 					scrollHorizontal: false
 				flow.showNext(jobFlow)
 				jobFlow.showNext(jobCardBackground)
-
 
 #close questions button
 questionsClose.onClick (event,layer) ->
@@ -1232,7 +1214,7 @@ questionsClose.onClick (event,layer) ->
 pageSize = 
 	width: Screen.width
 	height: 548
-	
+
 padding = 15
 
 #create job card slider
@@ -1245,7 +1227,6 @@ jobCardSlider = new PageComponent
 	x: padding
 	y: 98
 jobCardSlider.centerX()
-
 
 #create pages and cards in pages, then add to the page component
 for number in [0...7]
@@ -1640,8 +1621,6 @@ for layer in jobCardsSummaryText #states for job titles
 			x: 26
 			y: 515	
 
-
-
 #create pagination for the cards
 activeCard = new Layer
 	width: 8
@@ -1652,7 +1631,7 @@ activeCard = new Layer
 	y: 75
 	x: 138
 
-#define states for paginatino dot
+#define states for pagination dot
 activeCard.states = 
 	job1: x: 138
 	job2: x: 152
@@ -1704,41 +1683,37 @@ jobCardSlider.on "change:currentPage",->
 			#increment to count complete user visit
 			userSession = userSession + 1
 			mainFlow = new FlowComponent
+				backgroundColor: "#F8F8F8"
 			mainFlow.header = header
 			mainFlow.footer = navBar
 			flow.showNext(mainFlow)
 			mainFlow.showNext(futures)
 			
 	else 
-		jobCardBackgroundDone.opacity = 0
 		for layer in Framer.CurrentContext.layers
 			if layer.name is "backToFuturesButton" 
 				layer.destroy() 
+				 
 
-			sketch.futuresQuestions2.onClick (event, layer) ->
-				print "hi"
+sketch.futuresQuestions2.onClick (event, layer) ->	
+	if dailyQuizFlow is "" 
+			dailyQuizFlow = new FlowComponent
+			questionsFlow = new FlowComponent
+				x: 0
+				y: 70
+				height: 470
+				width: Screen.width
+				scrollVertical: false
+				scrollHorizontal: false
+				parent: questionsBackground
+				backgroundColor: '#FFFFFF'
+			flow.showOverlayCenter(dailyQuizFlow)
+			dailyQuizFlow.showNext(questionsBackground)
+			questionsFlow.showNext(question1)
+			questionCurrent += 1
+		else
+			flow.showOverlayCenter(dailyQuizFlow)		
 
-sketch.futuresQuestions2.onClick (event, layer) -> 
-	if userSession == 1
-		print 'hellow'
-		if dailyQuizFlow is "" 
-				dailyQuizFlow = new FlowComponent
-				questionsFlow = new FlowComponent
-					x: 0
-					y: 70
-					height: 470
-					width: Screen.width
-					scrollVertical: false
-					scrollHorizontal: false
-					parent: questionsBackground
-					backgroundColor: '#FFFFFF'
-				flow.showOverlayCenter(dailyQuizFlow)
-				dailyQuizFlow.showNext(questionsBackground)
-				questionsFlow.showNext(question1)
-				questionCurrent += 1
-			else
-				flow.showOverlayCenter(dailyQuizFlow)		
-	
 
 #favorite jobs
 for number in [0...5]
@@ -2479,14 +2454,14 @@ videoQ10 = new VideoLayer
 sketch.question10ContentPlay.onClick ->
 	videoQ10.player.play()
 	sketch.question10ContentPlay.opacity = 0
-	sketch.question10SkipButton.opacity = 0
+	sketch.question10SkipButton.visible = false
 	sketch.question10DislikeOptionActive.opacity = 1
 	sketch.question10LikeOptionActive.opacity = 1
 #click overall video to pause
 videoQ10.onClick ->
 	videoQ10.player.pause()
 	sketch.question10ContentPlay.opacity = 1
-	sketch.question10SkipButton.opacity = 0 
+	sketch.question10SkipButton.visible = false
 	sketch.question10DislikeOptionActive.opacity = 1
 	sketch.question10LikeOptionActive.opacity = 1
 
@@ -2501,9 +2476,7 @@ sketch.question10SkipButton.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-		jobFlow = new FlowComponent
-			scrollVertical: false
-			scrollHorizontal: false
+		
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
@@ -2520,9 +2493,10 @@ sketch.question10DislikeOptionActive.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-		jobFlow = new FlowComponent
-			scrollVertical: false
-			scrollHorizontal: false
+# 		jobFlow = new FlowComponent
+# 			scrollVertical: false
+# 			scrollHorizontal: false
+		
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
@@ -2539,28 +2513,12 @@ sketch.question10LikeOptionActive.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-		jobFlow = new FlowComponent
-			scrollVertical: false
-			scrollHorizontal: false
+# 		jobFlow = new FlowComponent
+# 			scrollVertical: false
+# 			scrollHorizontal: false
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
-jobFlow = ""
-#skip question don't watch video
-sketch.question10SkipButton.onClick (event,layer) ->
-	flow.showNext(jobCardLoading)
-	#wait 5 seconds to show jobscards
-	Utils.delay 5, ->
-		#using answered Qs to choose which jobs
-		getJobSession()
-		#populate jobs into cards
-		populateJobSession()
-		jobFlow = new FlowComponent
-			scrollVertical: false
-			scrollHorizontal: false
-		flow.showNext(jobFlow)
-		jobFlow.showNext(jobCardBackground)
-		
 
 #CREATE ACCOUNT SCREEN
 #Click first name
