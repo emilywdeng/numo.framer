@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 2643697)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202643697)@2x", scale: 1)
+# Import file "Final Screens (Master @ 55f14ac)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
