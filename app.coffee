@@ -587,6 +587,7 @@ populateJobSession = ->
 #storeJobSession
 #call after user reviews 5 job cards
 storeJobSession = ->
+	print jobSession
 	#loop through jobs session
 	for i in [0..4]
 		#store jobs into history
@@ -595,6 +596,10 @@ storeJobSession = ->
 		if jobCardsFavoriteHeartSelected.length != 0
 			if jobCardsFavoriteHeartSelected[i].states.current.name == "select"
 				user.favorites.push(jobData.records[jobSession[i]].fields.Job)
+				jobCardsFavoriteHeartSelected[i].states.switch "default"
+	#clear last job session
+	jobSession = []
+	print jobSession
 #jobData.records[jobSession[i]].fields.Job
 
 #Highlight functions
