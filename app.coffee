@@ -199,6 +199,7 @@ jobCardsFavoriteHeartSelected = []
 jobCardsDailyTasksList = []
 jobCardsSkills = []
 jobCardsCareerJourney = []
+jobCardsCompat = []
 #array to what jobs to show in session
 jobSession = []
 
@@ -595,6 +596,9 @@ storeJobSession = ->
 		if jobCardsFavoriteHeartSelected.length != 0
 			if jobCardsFavoriteHeartSelected[i].states.current.name == "select"
 				user.favorites.push(jobData.records[jobSession[i]].fields.Job)
+				jobCardsFavoriteHeartSelected[i].states.switch "default"
+	#clear last job session
+	jobSession = []
 #jobData.records[jobSession[i]].fields.Job
 
 #Highlight functions
@@ -759,13 +763,6 @@ flow = new FlowComponent
 # 	width: all.width
 # 	height: all.height
 
-#create varaibles for all flows in system
-mainFlow = "" 
-persFlow = ""
-persQuestionsFlow = ""
-dailyQuizFlow = ""
-questionsFlow = ""
-jobFlow = ""
 
 #ONBOARDING SCREENS
 # create onboarding FlowComponent and add to overarching flow
@@ -844,7 +841,7 @@ onboardingPages.on "change:currentPage",->
 #add transitions between create account and interests
 sketch.buttonGetStarted.onClick (event, layer) ->
 	onboardingFlow.showNext(interest)
-
+mainFlow = ""
 #SELECT INTERESTS SCREEN
 #Interest tag states
 for tag in ƒƒ('interestTag*Default')
@@ -896,7 +893,8 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 			options:
 				time: .3
 				curve: Bezier.ease
-	else #Allow user to continue if >= 3
+	#Allow user to continue if >= 3
+	else
 		#Convert raw interests to interests
 		convertInterests(user.interestsRaw)
 		#Populate interests on profile
@@ -941,9 +939,18 @@ sketch.navButtonFuture.onClick (event, layer) ->
 # ####dev comment!
 # flow.showNext(jobCardBackground)
 
-#question counter
+
+#PERSONALITY FLOW
+persFlow = ""
+persQuestionsFlow = ""
 persQuestionCurrent = 0
+#QUESTIONS FLOW
+dailyQuizFlow = ""
+questionsFlow = ""
 questionCurrent = 0
+#JOB FLOW
+jobFlow = ""
+
 #Click Futures Questions First Time for Personality Questions
 sketch.futuresQuestions1.onClick (event, layer) ->
 	#check if first user visit, then direct to personality
@@ -1207,11 +1214,40 @@ questionsClose.onClick (event,layer) ->
 #creating the job card swiping
 #create page component + cards
 
-#define parameters for job page and padding
+#define parameters for page and padding
 pageSize = 
 	width: Screen.width
 	height: 548
+
 padding = 15
+
+jobExpand = new ScrollComponent
+	parent: jobCardBackground
+	index: 4
+	scrollHorizontal: false
+	x: 21
+	y: 98
+	height: 548
+	width: 330
+# 	height: 20
+# 	width: 330
+	opacity: 0
+	backgroundColor: 'white'
+jobExpand.placeBehind(jobCardSlider)
+jobExpand.content.draggable.overdrag = false
+
+jobExpand.states =
+	card: 
+		x: 21
+		y: 98
+		height: 548
+		width: 330
+	expanded: 
+		opacity: 1 
+		x: 0
+		y: 0
+		height: Screen.height
+		width: Screen.width
 
 #create job card slider
 jobCardSlider = new PageComponent
@@ -1420,9 +1456,9 @@ for number in [0...7]
 			jobFavoriteHeartSelected.states = 
 				selected: {opacity: 1}
 				default: {opacity: 0}
-			jobFavoriteHeartSelected.states.animationOptions = 
-				curve: Spring
-				time: .3
+# 			jobFavoriteHeartSelected.states.animationOptions = 
+# 				curve: Spring
+# 				time: .3
 
 			#gradientOverlay
 			gradientOverlay = new Layer #gradient for job cards
@@ -1458,19 +1494,43 @@ for number in [0...7]
 			#rename question group
 			dTCopy.name = "job" + number + "Tasks"
 			dTCopy.parent = card
-			dTCopy.x = 26
-			dTCopy.x = 646
-# 			dTCopy.opacity = 0
+			dTCopy.x = 0
+			dTCopy.y = 620
 			#push to array
 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
-			jobCardsDailyTasksList[number].states = 
-				card: 
-					opacity: 0
-					y: 800
-				expanded:
-					opacity: 1
-					y: 646
 			
+			#jobSkills
+			#create copy
+			skillsCopy = sketch.jobSkills.copy()
+			#rename question group
+			skillsCopy.name = "job" + number + "Skills"
+			skillsCopy.parent = card
+			skillsCopy.x = 0
+			skillsCopy.y = 800
+			#push to array
+			jobCardsSkills[number] = "job" + number + "Tasks"
+
+			#careerJourney
+			#create copy
+			journeyCopy = sketch.jobSkills.copy()
+			#rename question group
+			journeyCopy.x.name = "job" + number + "Skills"
+			journeyCopy.parent = card
+			journeyCopy.x = 0
+			journeyCopy.y = 950
+			#push to array
+			jobCardsCareerJourney[number] = "job" + number + "Tasks"
+
+			#careerCompatibility
+			#create copy
+			compatCopy = sketch.jobSkills.copy()
+			#rename question group
+			compatCopy.x.name = "job" + number + "Skills"
+			compatCopy.parent = card
+			compatCopy.x = 0
+			compatCopy.y = 1275
+			#push to array
+			jobCardsCompat[number] = "job" + number + "Tasks"
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
@@ -1716,37 +1776,10 @@ for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-jobExpand = new ScrollComponent
-	parent: jobCardBackground
-	index: 4
-	scrollHorizontal: false
-	x: 21
-	y: 98
-# 	height: 548
-# 	width: 330
-	height: 20
-	width: 330
-	opacity: 0
-	backgroundColor: 'white'
-jobExpand.placeBehind(jobCardSlider)
-jobExpand.content.draggable.overdrag = false
-
-jobExpand.states =
-	card: 
-		x: 21
-		y: 98
-		height: 548
-		width: 330
-	expanded: 
-		opacity: 1 
-		x: 0
-		y: 0
-		height: Screen.height
-		width: Screen.width
 		
 
 #expand job card
-for number in [1...5]
+for number in [0...5]
 	jobCardsReadMoreButton[number].onClick (event,layer) ->
 		#get and expand card element
 		jobExpand.bringToFront()
