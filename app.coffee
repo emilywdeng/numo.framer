@@ -1221,6 +1221,7 @@ pageSize =
 
 padding = 15
 
+cardAnimTime = .25
 jobExpand = new ScrollComponent
 	parent: jobCardBackground
 	index: 4
@@ -1231,6 +1232,8 @@ jobExpand = new ScrollComponent
 	width: 330
 	opacity: 0
 	backgroundColor: 'white'
+	animationOptions: 
+		time: cardAnimTime
 jobExpand.placeBehind(jobCardSlider)
 jobExpand.content.draggable.overdrag = false
 
@@ -1303,12 +1306,16 @@ for number in [0...7]
 					y: tagOrigY
 					backgroundColor: '#F6F6F6'
 					borderRadius: 3
+					animationOptions: 
+						time: cardAnimTime
 				tagIcon = new Layer
 					parent: tagsBackground
 					width: 18
 					height: 18
 					y: tagIconOrigY
 					x: tagIconOrigX
+					animationOptions: 
+						time: cardAnimTime
 				tagText = new TextLayer
 					parent: tagIcon
 					text: 'TXT'
@@ -1318,6 +1325,8 @@ for number in [0...7]
 					fontSize: 10 * pointScale
 					color: '#656565'
 					textTransform: 'uppercase'
+					animationOptions: 
+						time: cardAnimTime
 				detailText = new TextLayer
 					parent: tagsBackground
 					fontSize: 20 * pointScale
@@ -1328,6 +1337,8 @@ for number in [0...7]
 					textAlign: "center"
 					y: 30
 					opacity: 0
+					animationOptions: 
+						time: cardAnimTime
 				unitText = new TextLayer
 					parent: tagsBackground
 					fontSize: 12 * pointScale
@@ -1338,6 +1349,8 @@ for number in [0...7]
 					textAlign: "center"
 					y: 55
 					opacity: 0
+					animationOptions: 
+						time: cardAnimTime
 				if i is 0 #create custom specs for education tag
 					tagsBackground.x = tagEducationOrigX
 					tagIcon.image = 'images/tagEducationIcon.png'
@@ -1382,6 +1395,8 @@ for number in [0...7]
 				y: imageOrigY
 				borderRadius: imageOrigRadius
 				image: 'images/jobPreviewImageExample.png' 
+				animationOptions: 
+					time: cardAnimTime
 			
 			#create original card parameters for job titles
 			titleOrigWidth = 232
@@ -1397,7 +1412,9 @@ for number in [0...7]
 				width: titleOrigWidth
 				x: titleOrigX
 				y: titleOrigY
-				text: "Computer Placeholder" 
+				text: "Computer Placeholder"
+				animationOptions: 
+					time: cardAnimTime 
 			
 			#create original card parameters for descriptions
 			descriptionOrigWidth = 290
@@ -1414,6 +1431,8 @@ for number in [0...7]
 				width: descriptionOrigWidth
 				x: descriptionOrigX
 				y: descriptionOrigY
+				animationOptions: 
+					time: cardAnimTime
 				text: "Develops computer software from code. They write code that allows software to run: specifying, designing, and solving problems that arise when converting programs to code."
 			
 			#add read more to expand arrow
@@ -1425,6 +1444,8 @@ for number in [0...7]
 				x: 108
 				y: 495
 				image: 'images/jobCardExpandButton.png'
+				animationOptions: 
+					time: cardAnimTime
 				
 			
 			#create original card parameters to heart
@@ -1439,6 +1460,8 @@ for number in [0...7]
 				width: 35
 				height: 29
 				image: 'images/favoriteJobHeartDefault.png'
+				animationOptions: 
+					time: cardAnimTime
 			jobFavoriteHeartSelected = jobCardsFavoriteHeartSelected[indexNum] = new Layer
 				parent: card
 				name: 'job' + number + 'favoriteHeartSelected'
@@ -1448,14 +1471,13 @@ for number in [0...7]
 				height: 29
 				image: 'images/favoriteJobHeartFilled.png'
 				opacity: 0
+				animationOptions: 
+					time: cardAnimTime
 
 			#state for hearts on /off
 			jobFavoriteHeartSelected.states = 
 				selected: {opacity: 1}
 				default: {opacity: 0}
-# 			jobFavoriteHeartSelected.states.animationOptions = 
-# 				curve: Spring
-# 				time: .3
 
 			#gradientOverlay
 			gradientOverlay = new Layer #gradient for job cards
@@ -1463,12 +1485,16 @@ for number in [0...7]
 				image: 'images/pictureOverlay.png'
 				width: jobPreviewImage.width
 				height: 61
-				opacity : 1
+				opacity : 0
+				animationOptions: 
+					time: cardAnimTime
 			gradientOverlay.states = 
 				card: 
 					width: jobPreviewImage.width	
+					opacity: 0
 				expanded:
 					width: Screen.width
+					opacity: 1
 			
 			#closeButton
 			closeButton = new Layer #close btn for job cards
@@ -1479,6 +1505,8 @@ for number in [0...7]
 				x: 20
 				y: 20
 				opacity: 0
+				animationOptions: 
+					time: cardAnimTime
 			closeButton.states = 
 				card: 
 					opacity: 0
@@ -1548,6 +1576,7 @@ for layer in jobCardsEducationBackground #states for education tag
 			width: 100
 			y: 408
 			x: 26
+
 for layer in jobCardsEducationIcon #states for education icon
 	layer.states = 
 		card: 
@@ -1814,30 +1843,32 @@ for number in [0...5]
 		readMoreButton = this.parent.children[6]
 		layerFavoriteButtonDefault = this.parent.children[7]
 		layerFavoriteButtonSelected = this.parent.children[8]
-		jobTasks = this.parent.children[9]
 		
 		#expand layers to expanded state
 		readMoreButton.opacity = 0
 		layerEducationTagBackground.animate("expanded")
 		layerEducationTagIcon.animate("expanded")
-		layerEducationUnit.animate("expanded")
-		layerEducationDetail.animate("expanded")
+		layerEducationTagBackground.onAnimationEnd ->
+			if this.states.current.name == "expanded"
+				layerEducationUnit.animate("expanded")
+				layerEducationDetail.animate("expanded")
 		layerSalaryTagBackground.animate("expanded")
 		layerSalaryTagIcon.animate("expanded")
-		layerSalaryUnit.animate("expanded")
-		layerSalaryDetail.animate("expanded")
+		layerSalaryTagBackground.onAnimationEnd ->
+			if this.states.current.name == "expanded"
+				layerSalaryUnit.animate("expanded")
+				layerSalaryDetail.animate("expanded")
 		layerGrowthTagBackground.animate("expanded")
 		layerGrowthTagIcon.animate("expanded")
-		layerGrowthUnit.animate("expanded")
-		layerGrowthDetail.animate("expanded")
+		layerGrowthTagBackground.onAnimationEnd ->
+			if this.states.current.name == "expanded"
+				layerGrowthUnit.animate("expanded")
+				layerGrowthDetail.animate("expanded")
 		previewImage.animate("expanded")
 		jobTitle.animate("expanded")
 		description.animate("expanded")
 		gradient.animate("expanded")
 		closeButton.animate("expanded")
-# 		jobTasks.animate("expanded")
-		
-		
 		layerFavoriteButtonDefault.animate
 			x: 300
 			y: 320
@@ -1847,32 +1878,32 @@ for number in [0...5]
 		
 		closeButton.onClick (event, layer) ->
 			#add close states
-			jobExpand.animate("card")
-			layerEducationTagBackground.animate("card")
-			layerEducationTagIcon.animate("card")
 			layerEducationUnit.animate("card")
 			layerEducationDetail.animate("card")
-			layerSalaryTagBackground.animate("card")
-			layerSalaryTagIcon.animate("card")
 			layerSalaryUnit.animate("card")
 			layerSalaryDetail.animate("card")
-			layerGrowthTagBackground.animate("card")
-			layerGrowthTagIcon.animate("card")
 			layerGrowthUnit.animate("card")
 			layerGrowthDetail.animate("card")
-			previewImage.animate("card")
-			jobTitle.animate("card")
-			description.animate("card")
-			closeButton.animate("card")
-			gradient.animate("card")
-# 			jobTasks.animate("card")
-
-			layerFavoriteButtonDefault.animate
-				x: 265
-				y: 261
-			layerFavoriteButtonSelected.animate
-				x: 265
-				y: 261
+			layerEducationUnit.onAnimationEnd ->
+				if this.states.current.name == "card"
+					jobExpand.animate("card")
+					layerEducationTagBackground.animate("card")
+					layerEducationTagIcon.animate("card")
+					layerSalaryTagBackground.animate("card")
+					layerSalaryTagIcon.animate("card")
+					layerGrowthTagBackground.animate("card")
+					layerGrowthTagIcon.animate("card")
+					previewImage.animate("card")
+					jobTitle.animate("card")
+					description.animate("card")
+					closeButton.animate("card")
+					gradient.animate("card")
+					layerFavoriteButtonDefault.animate
+						x: 265
+						y: 261
+					layerFavoriteButtonSelected.animate
+						x: 265
+						y: 261
 			
 			jobTitle.onAnimationEnd ->
 				if jobExpand.states.current.name is "card"
