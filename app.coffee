@@ -1269,9 +1269,12 @@ jobCardsSkill3 = []
 jobCardsTask1 = []
 jobCardsTask2 = []
 jobCardsTask3 = []
+task1 = sketch.DailyTask1.convertToTextLayer()
+task2 = sketch.DailyTask2.convertToTextLayer()
+task3 = sketch.DailyTask3.convertToTextLayer()
 
 #create pages and cards in pages, then add to the page component
-for number in [0...7]
+for number in [0..7]
 	#create page wrapper for the cards
 	page = new Layer
 		name: 'page' + number
@@ -1494,7 +1497,7 @@ for number in [0...7]
 			image: 'images/pictureOverlay.png'
 			width: jobPreviewImage.width
 			height: 61
-			opacity : 0
+			opacity: 0
 			animationOptions: 
 				time: cardAnimTime
 		gradientOverlay.states = 
@@ -1524,21 +1527,21 @@ for number in [0...7]
 		
 		#dailyTasks
 		#create copy
-		dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+		dTCopy = sketch.jobCardFull1DailyTasksSection.copySingle()
 		#rename question group
 		dTCopy.name = "job" + number + "Tasks"
 		dTCopy.parent = card
 		dTCopy.x = 0
 		dTCopy.y = 620
-		task1 = sketch.DailyTask1.convertToTextLayer()
-		task2 = sketch.DailyTask2.convertToTextLayer()
-		task3 = sketch.DailyTask3.convertToTextLayer()
-# 		task1.text = "did it change?!"
-# 		task2.text = "helloooo"
-# 		task3.text = "yesyesyes it did"
-		
-		
-		
+		jobTask1 = task1.copy()
+		jobTask2 = task2.copy()
+		jobTask3 = task3.copy()
+		jobTask1.parent = dTCopy
+		jobTask2.parent = dTCopy
+		jobTask3.parent = dTCopy
+		jobCardsSkill1.push(jobTask1)
+		jobCardsSkill2.push(jobTask2)
+		jobCardsSkill3.push(jobTask3)
 		
 		
 		
@@ -1583,6 +1586,7 @@ for number in [0...7]
 
 		#push to array
 		jobCardsCompat.push(compatCopy)
+
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
