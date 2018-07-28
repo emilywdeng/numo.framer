@@ -3,7 +3,7 @@ sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)
 
 Utils.globalLayers(sketch)
 
-pointScale = 2
+pointScale = 1
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -759,6 +759,13 @@ flow = new FlowComponent
 # 	width: all.width
 # 	height: all.height
 
+#create varaibles for all flows in system
+mainFlow = "" 
+persFlow = ""
+persQuestionsFlow = ""
+dailyQuizFlow = ""
+questionsFlow = ""
+jobFlow = ""
 
 #ONBOARDING SCREENS
 # create onboarding FlowComponent and add to overarching flow
@@ -837,7 +844,7 @@ onboardingPages.on "change:currentPage",->
 #add transitions between create account and interests
 sketch.buttonGetStarted.onClick (event, layer) ->
 	onboardingFlow.showNext(interest)
-mainFlow = ""
+
 #SELECT INTERESTS SCREEN
 #Interest tag states
 for tag in ƒƒ('interestTag*Default')
@@ -889,8 +896,7 @@ sketch.buttonSaveInterests.onClick (event, layer) ->
 			options:
 				time: .3
 				curve: Bezier.ease
-	#Allow user to continue if >= 3
-	else
+	else #Allow user to continue if >= 3
 		#Convert raw interests to interests
 		convertInterests(user.interestsRaw)
 		#Populate interests on profile
@@ -933,20 +939,11 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(futures)
+# flow.showNext(jobCardBackground)
 
-
-#PERSONALITY FLOW
-persFlow = ""
-persQuestionsFlow = ""
+#question counter
 persQuestionCurrent = 0
-#QUESTIONS FLOW
-dailyQuizFlow = ""
-questionsFlow = ""
 questionCurrent = 0
-#JOB FLOW
-jobFlow = ""
-
 #Click Futures Questions First Time for Personality Questions
 sketch.futuresQuestions1.onClick (event, layer) ->
 	#check if first user visit, then direct to personality
@@ -1210,11 +1207,10 @@ questionsClose.onClick (event,layer) ->
 #creating the job card swiping
 #create page component + cards
 
-#define parameters for page and padding
+#define parameters for job page and padding
 pageSize = 
 	width: Screen.width
 	height: 548
-
 padding = 15
 
 #create job card slider
@@ -1456,24 +1452,24 @@ for number in [0...7]
 				expanded:
 					opacity: 1
 			
-# 			#dailyTasks
-# 			#create copy
-# 			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
-# 			#rename question group
-# 			dTCopy.name = "job" + number + "Tasks"
-# 			dTCopy.parent = card
-# 			dTCopy.x = 26
-# 			dTCopy.x = 646
-# # 			dTCopy.opacity = 0
-# 			#push to array
-# 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
-# 			jobCardsDailyTasksList[number].states = 
-# 				card: 
-# 					opacity: 0
-# 					y: 800
-# 				expanded:
-# 					opacity: 1
-# 					y: 646
+			#dailyTasks
+			#create copy
+			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+			#rename question group
+			dTCopy.name = "job" + number + "Tasks"
+			dTCopy.parent = card
+			dTCopy.x = 26
+			dTCopy.x = 646
+# 			dTCopy.opacity = 0
+			#push to array
+			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
+			jobCardsDailyTasksList[number].states = 
+				card: 
+					opacity: 0
+					y: 800
+				expanded:
+					opacity: 1
+					y: 646
 			
 
 #create states for all Backgrounds + Icons
