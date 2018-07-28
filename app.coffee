@@ -937,7 +937,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(jobCardBackground)
+flow.showNext(jobCardBackground)
 
 
 #PERSONALITY FLOW
@@ -1229,8 +1229,6 @@ jobExpand = new ScrollComponent
 	y: 98
 	height: 548
 	width: 330
-# 	height: 20
-# 	width: 330
 	opacity: 0
 	backgroundColor: 'white'
 jobExpand.placeBehind(jobCardSlider)
@@ -1390,7 +1388,6 @@ for number in [0...7]
 			titleOrigX = 24
 			titleOrigY = 250
 			#add title to every card
-
 			jobTitle = jobCardsTitle[indexNum] = new TextLayer
 				name: 'job' + number + 'Title'
 				parent: card
@@ -1432,7 +1429,7 @@ for number in [0...7]
 			
 			#create original card parameters to heart
 			heartOrigX = 265
-			heartOrigY = 261
+			heartOrigY = 255
 			#add heart to favorite
 			jobFavoriteHeartDefault = jobCardsFavoriteHeartDefault[indexNum] = new Layer
 				parent: card
@@ -1497,7 +1494,8 @@ for number in [0...7]
 			dTCopy.x = 0
 			dTCopy.y = 620
 			#push to array
-			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
+			jobCardsDailyTasksList.push(dTCopy)
+# 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
 			
 			#jobSkills
 			#create copy
@@ -1508,29 +1506,34 @@ for number in [0...7]
 			skillsCopy.x = 0
 			skillsCopy.y = 800
 			#push to array
-			jobCardsSkills[number] = "job" + number + "Tasks"
+			jobCardsSkills.push(skillsCopy)
+# 			jobCardsSkills[number] = "job" + number + "Tasks"
 
 			#careerJourney
 			#create copy
-			journeyCopy = sketch.jobSkills.copy()
-			#rename question group
-			journeyCopy.x.name = "job" + number + "Skills"
-			journeyCopy.parent = card
-			journeyCopy.x = 0
-			journeyCopy.y = 950
+			journey = new Layer
+				name: "job" + number + "Journey"
+				parent: card
+				width: 285
+				height: 365 
+				x: 5
+				y: 950
+				backgroundColor: 'white'
+			journey.image = "images/careerJourneyExample.png"
 			#push to array
-			jobCardsCareerJourney[number] = "job" + number + "Tasks"
+			jobCardsCareerJourney.push(journey)
 
 			#careerCompatibility
 			#create copy
-			compatCopy = sketch.jobSkills.copy()
+			compatCopy = sketch.jobCompability.copy()
 			#rename question group
-			compatCopy.x.name = "job" + number + "Skills"
+			compatCopy.name = "job" + number + "Compatibility"
 			compatCopy.parent = card
 			compatCopy.x = 0
-			compatCopy.y = 1275
+			compatCopy.y = 1340
+
 			#push to array
-			jobCardsCompat[number] = "job" + number + "Tasks"
+			jobCardsCompat.push(compatCopy)
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
