@@ -1714,6 +1714,32 @@ sketch.futuresQuestions2.onClick (event, layer) ->
 		else
 			flow.showOverlayCenter(dailyQuizFlow)		
 
+<<<<<<< HEAD
+=======
+			sketch.futuresQuestions2.onClick (event, layer) ->
+				print "hi"
+
+sketch.futuresQuestions2.onClick (event, layer) -> 
+	if userSession == 1
+		if dailyQuizFlow is "" 
+				dailyQuizFlow = new FlowComponent
+				questionsFlow = new FlowComponent
+					x: 0
+					y: 70
+					height: 470
+					width: Screen.width
+					scrollVertical: false
+					scrollHorizontal: false
+					parent: questionsBackground
+					backgroundColor: '#FFFFFF'
+				flow.showOverlayCenter(dailyQuizFlow)
+				dailyQuizFlow.showNext(questionsBackground)
+				questionsFlow.showNext(question1)
+				questionCurrent += 1
+			else
+				flow.showOverlayCenter(dailyQuizFlow)		
+	
+>>>>>>> 410d2a8d5ef527c394ed700df238fc05a18922d4
 
 #favorite jobs
 for number in [0...5]
