@@ -3,7 +3,7 @@ sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202643697)
 
 Utils.globalLayers(sketch)
 
-pointScale = 2
+pointScale = 1
  
 #Modules
 {ƒ,ƒƒ} = require 'findModule'
@@ -199,6 +199,7 @@ jobCardsFavoriteHeartSelected = []
 jobCardsDailyTasksList = []
 jobCardsSkills = []
 jobCardsCareerJourney = []
+jobCardsCompat = []
 #array to what jobs to show in session
 jobSession = []
 
@@ -936,7 +937,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-# flow.showNext(futures)
+# flow.showNext(jobCardBackground)
 
 
 #PERSONALITY FLOW
@@ -1220,6 +1221,34 @@ pageSize =
 
 padding = 15
 
+jobExpand = new ScrollComponent
+	parent: jobCardBackground
+	index: 4
+	scrollHorizontal: false
+	x: 21
+	y: 98
+	height: 548
+	width: 330
+# 	height: 20
+# 	width: 330
+	opacity: 0
+	backgroundColor: 'white'
+jobExpand.placeBehind(jobCardSlider)
+jobExpand.content.draggable.overdrag = false
+
+jobExpand.states =
+	card: 
+		x: 21
+		y: 98
+		height: 548
+		width: 330
+	expanded: 
+		opacity: 1 
+		x: 0
+		y: 0
+		height: Screen.height
+		width: Screen.width
+
 #create job card slider
 jobCardSlider = new PageComponent
 	parent: jobCardBackground
@@ -1427,9 +1456,9 @@ for number in [0...7]
 			jobFavoriteHeartSelected.states = 
 				selected: {opacity: 1}
 				default: {opacity: 0}
-			jobFavoriteHeartSelected.states.animationOptions = 
-				curve: Spring
-				time: .3
+# 			jobFavoriteHeartSelected.states.animationOptions = 
+# 				curve: Spring
+# 				time: .3
 
 			#gradientOverlay
 			gradientOverlay = new Layer #gradient for job cards
@@ -1459,25 +1488,49 @@ for number in [0...7]
 				expanded:
 					opacity: 1
 			
-# 			#dailyTasks
-# 			#create copy
-# 			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
-# 			#rename question group
-# 			dTCopy.name = "job" + number + "Tasks"
-# 			dTCopy.parent = card
-# 			dTCopy.x = 26
-# 			dTCopy.x = 646
-# # 			dTCopy.opacity = 0
-# 			#push to array
-# 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
-# 			jobCardsDailyTasksList[number].states = 
-# 				card: 
-# 					opacity: 0
-# 					y: 800
-# 				expanded:
-# 					opacity: 1
-# 					y: 646
+			#dailyTasks
+			#create copy
+			dTCopy = sketch.jobCardFull1DailyTasksSection.copy()
+			#rename question group
+			dTCopy.name = "job" + number + "Tasks"
+			dTCopy.parent = card
+			dTCopy.x = 0
+			dTCopy.y = 620
+			#push to array
+			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
 			
+			#jobSkills
+			#create copy
+			skillsCopy = sketch.jobSkills.copy()
+			#rename question group
+			skillsCopy.name = "job" + number + "Skills"
+			skillsCopy.parent = card
+			skillsCopy.x = 0
+			skillsCopy.y = 800
+			#push to array
+			jobCardsSkills[number] = "job" + number + "Tasks"
+
+			#careerJourney
+			#create copy
+			journeyCopy = sketch.jobSkills.copy()
+			#rename question group
+			journeyCopy.x.name = "job" + number + "Skills"
+			journeyCopy.parent = card
+			journeyCopy.x = 0
+			journeyCopy.y = 950
+			#push to array
+			jobCardsCareerJourney[number] = "job" + number + "Tasks"
+
+			#careerCompatibility
+			#create copy
+			compatCopy = sketch.jobSkills.copy()
+			#rename question group
+			compatCopy.x.name = "job" + number + "Skills"
+			compatCopy.parent = card
+			compatCopy.x = 0
+			compatCopy.y = 1275
+			#push to array
+			jobCardsCompat[number] = "job" + number + "Tasks"
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
@@ -1723,37 +1776,10 @@ for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
 
-jobExpand = new ScrollComponent
-	parent: jobCardBackground
-	index: 4
-	scrollHorizontal: false
-	x: 21
-	y: 98
-# 	height: 548
-# 	width: 330
-	height: 20
-	width: 330
-	opacity: 0
-	backgroundColor: 'white'
-jobExpand.placeBehind(jobCardSlider)
-jobExpand.content.draggable.overdrag = false
-
-jobExpand.states =
-	card: 
-		x: 21
-		y: 98
-		height: 548
-		width: 330
-	expanded: 
-		opacity: 1 
-		x: 0
-		y: 0
-		height: Screen.height
-		width: Screen.width
 		
 
 #expand job card
-for number in [1...5]
+for number in [0...5]
 	jobCardsReadMoreButton[number].onClick (event,layer) ->
 		#get and expand card element
 		jobExpand.bringToFront()

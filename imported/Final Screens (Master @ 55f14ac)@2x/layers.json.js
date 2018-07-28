@@ -1,5 +1,5 @@
 window.__imported__ = window.__imported__ || {};
-window.__imported__["Final Screens (Master @ 2643697)@2x/layers.json.js"] = [
+window.__imported__["Final Screens (Master @ 55f14ac)@2x/layers.json.js"] = [
 	{
 		"objectId": "DDF5A95A-8963-42FA-84D6-95BE3AC230CF",
 		"kind": "artboard",
@@ -2122,6 +2122,15 @@ window.__imported__["Final Screens (Master @ 2643697)@2x/layers.json.js"] = [
 		"visible": true,
 		"metadata": {},
 		"backgroundColor": "rgba(248, 248, 248, 1)",
+		"image": {
+			"path": "images/Layer-jobCardBackground-nuixqze0.png",
+			"frame": {
+				"x": -522,
+				"y": 3872,
+				"width": 375,
+				"height": 667
+			}
+		},
 		"children": [
 			{
 				"objectId": "F10D8F70-546C-48E8-8F25-DBCD0CDD1810",
@@ -2277,33 +2286,6 @@ window.__imported__["Final Screens (Master @ 2643697)@2x/layers.json.js"] = [
 						"children": []
 					}
 				]
-			},
-			{
-				"objectId": "5199AD14-36FA-40FE-9076-F8691D82AF3D",
-				"kind": "group",
-				"name": "jobCardPreviewTopNav",
-				"originalName": "jobCardPreviewTopNav*",
-				"maskFrame": null,
-				"layerFrame": {
-					"x": 0,
-					"y": 0,
-					"width": 375,
-					"height": 60
-				},
-				"visible": true,
-				"metadata": {
-					"opacity": 1
-				},
-				"image": {
-					"path": "images/Layer-jobCardPreviewTopNav-nte5oufe.png",
-					"frame": {
-						"x": 0,
-						"y": 0,
-						"width": 375,
-						"height": 60
-					}
-				},
-				"children": []
 			}
 		]
 	},
