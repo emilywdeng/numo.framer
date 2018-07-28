@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 55f14ac)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)@2x", scale: 1)
+# Import file "Final Screens (Master @ 2643697)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%202643697)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -2479,7 +2479,11 @@ sketch.question10SkipButton.onClick (event,layer) ->
 		getJobSession()
 		#populate jobs into cards
 		populateJobSession()
-		
+		#populate insight into first card
+		if user.workstyles[2] == "Detail Oriented"
+			jobCards[0].image = "images/detail-oriented-insight.png"
+		if user.workstyles[2] == "Big Picture"
+			jobCards[0].image = "images/big-picture-insight.png"
 		flow.showNext(jobFlow)
 		jobFlow.showNext(jobCardBackground)
 
