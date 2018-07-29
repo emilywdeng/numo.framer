@@ -1306,7 +1306,6 @@ for number in [0..6]
 				borderRadius: 7
 				name: 'job' + number
 			card.center()
-			print card.width
 	jobCardSlider.addPage(page)
 	#create the job card layouts + insight layouts
 	
