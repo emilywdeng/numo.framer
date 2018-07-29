@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 55f14ac)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%2055f14ac)@2x", scale: 1)
+# Import file "Final Screens (Master @ 325a53a)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20325a53a)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -196,10 +196,39 @@ jobCardsGrowthUnit = []
 jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
-jobCardsDailyTasksList = []
-jobCardsSkills = []
+jobCardsTask1 = []
+jobCardsTask2 = []
+jobCardsTask3 = []
+jobCardsSkill1 = []
+jobCardsSkill2 = []
+jobCardsSkill3 = []
 jobCardsCareerJourney = []
-jobCardsCompat = []
+jobCardsNumInterestCompat = []
+jobCardsInterestsListMatch = []
+jobCardsNumWorkstyleCompat = []
+jobCardsWorkstyleListMatch = []
+#convert all task sketch layers
+task1 = sketch.DailyTask1.convertToTextLayer()
+task2 = sketch.DailyTask2.convertToTextLayer()
+task3 = sketch.DailyTask3.convertToTextLayer()
+task1.width = 290
+task2.width = 290
+task3.width = 290
+#convert all skills sketch layers
+skill1 = sketch.skill1.convertToTextLayer()
+skill2 = sketch.skill2.convertToTextLayer()
+skill3 = sketch.skill3.convertToTextLayer()
+skill1.width = 290
+skill2.width = 290
+skill3.width = 290
+#convert all Intersts and Workstyles numbers to text layers
+numInterests = sketch.numInterests.convertToTextLayer()
+interestCompatList = sketch.intCompatList.convertToTextLayer()
+interestCompatList.width = 100
+numWorkstyles = sketch.numWorkstyles.convertToTextLayer()
+workstyleCompatList = sketch.workstyleCompatList.convertToTextLayer()
+workstyleCompatList.width = 100
+
 #array to what jobs to show in session
 jobSession = []
 
@@ -939,7 +968,6 @@ sketch.navButtonFuture.onClick (event, layer) ->
 # ####dev comment!
 flow.showNext(jobCardBackground)
 
-
 #PERSONALITY FLOW
 persFlow = ""
 persQuestionsFlow = ""
@@ -1261,29 +1289,6 @@ jobCardSlider = new PageComponent
 	y: 98
 jobCardSlider.centerX()
 
-
-
-
-jobCardsTask1 = []
-jobCardsTask2 = []
-jobCardsTask3 = []
-task1 = sketch.DailyTask1.convertToTextLayer()
-task2 = sketch.DailyTask2.convertToTextLayer()
-task3 = sketch.DailyTask3.convertToTextLayer()
-task1.width = 290
-task2.width = 290
-task3.width = 290
-
-jobCardsSkill1 = []
-jobCardsSkill2 = []
-jobCardsSkill3 = []
-skill1 = sketch.skill1.convertToTextLayer()
-skill2 = sketch.skill2.convertToTextLayer()
-skill3 = sketch.skill3.convertToTextLayer()
-skill1.width = 290
-skill2.width = 290
-skill3.width = 290
-
 #create pages and cards in pages, then add to the page component
 for number in [0..7]
 	#create page wrapper for the cards
@@ -1291,8 +1296,6 @@ for number in [0..7]
 		name: 'page' + number
 		size: jobCardSlider.size
 		backgroundColor: "null"
-	if number > 0
-		page.opacity = 0.9
 	#create cards for all the sections, except last
 	if number < 6
 			card = jobCards[number] = new Layer
@@ -1595,16 +1598,33 @@ for number in [0..7]
 
 		#careerCompatibility
 		#create copy
-		compatCopy = sketch.jobCompability.copy()
+		compatCopy = sketch.jobCompability.copySingle()
 		#rename question group
 		compatCopy.name = "job" + number + "Compatibility"
 		compatCopy.parent = card
 		compatCopy.x = 0
 		compatCopy.y = 1340
-
-		#push to array
-		jobCardsCompat.push(compatCopy)
-
+		# copy interest sections
+		compatInterestIcon = sketch.interests.copySingle()
+		jobNumInterests = numInterests.copy()
+		listInterests = interestCompatList.copy()
+		compatInterestIcon.parent = compatCopy
+		jobNumInterests.parent = compatInterestIcon
+		jobNumInterests.y = 1
+		listInterests.parent = compatInterestIcon
+		# copy workstyles sections
+		compatWorkstylesIcon = sketch.workstyles.copySingle()
+		jobNumWorkstyles = numWorkstyles.copy()
+		listWorkstyles = workstyleCompatList.copy()
+		compatWorkstylesIcon.parent = compatCopy
+		jobNumWorkstyles.parent = compatWorkstylesIcon
+		jobNumWorkstyles.y = 1
+		listWorkstyles.parent = compatWorkstylesIcon
+		#push compatibilty type title and items to an array
+		jobCardsNumInterestCompat.push(jobNumInterests)
+		jobCardsInterestsListMatch.push(listInterests)
+		jobCardsNumWorkstyleCompat.push(jobNumWorkstyles)
+		jobCardsWorkstyleListMatch.push(listWorkstyles)
 
 #create states for all Backgrounds + Icons
 for layer in jobCardsEducationBackground #states for education tag
@@ -1764,36 +1784,26 @@ activeCard = new Layer
 
 #define states for pagination dot
 activeCard.states = 
-	job1: x: 138
-	job2: x: 152
-	job3: x: 167
-	job4: x: 184
-	job5: x: 200
-	job6: x: 215
-	job7: x: 231
-
+	page1: x: 138
+	page2: x: 152
+	page3: x: 167
+	page4: x: 184
+	page5: x: 200
+	page6: x: 215
+	page7: x: 231
 
 #listen for  page change
 jobCardSlider.on "change:currentPage",->
 	current = jobCardSlider.currentPage
 	previous = jobCardSlider.previousPage
 	
-# 	transition animations between pages
-	previous.animate
-		opacity: .9
-		options: time: .5
-	current.animate
-		opacity: 1
-		options: time: .5
-	
 	#move pagintation indicator dot to correct placement
 	currentPage = jobCardSlider.horizontalPageIndex(current) + 1
-	
-	currentPage = 'job' + currentPage
+	currentPage = 'page' + currentPage
 	activeCard.states.switchInstant currentPage
 	#show done when done swiping
 	
-	if currentPage is 'job7'
+	if currentPage is 'page7'
 		jobCardBackgroundDone.opacity = 1
 		backToFuturesButton = new Layer
 			parent: jobCardBackground 
@@ -1819,11 +1829,20 @@ jobCardSlider.on "change:currentPage",->
 			mainFlow.footer = navBar
 			flow.showNext(mainFlow)
 			mainFlow.showNext(futures)
-			
+			jobCardBackgroundDone.opacity = 0
+			#bring back to first page of slider
+			jobCardSlider.snapToPreviousPage("left", false)
+			jobCardSlider.snapToPreviousPage("left", false)
+			jobCardSlider.snapToPreviousPage("left", false)
+			jobCardSlider.snapToPreviousPage("left", false)
+			jobCardSlider.snapToPreviousPage("left", false)
+			jobCardSlider.snapToPreviousPage("left", false)
 	else 
 		for layer in Framer.CurrentContext.layers
 			if layer.name is "backToFuturesButton" 
 				layer.destroy() 
+		jobCardSlider.currentPage.opacity = 1
+		jobCardBackgroundDone.opacity = 0
 				 
 
 sketch.futuresQuestions2.onClick (event, layer) ->	
