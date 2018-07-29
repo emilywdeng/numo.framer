@@ -966,7 +966,7 @@ sketch.navButtonFuture.onClick (event, layer) ->
 	mainFlow.showPrevious(futures)
 
 # ####dev comment!
-flow.showNext(jobCardBackground)
+# flow.showNext(jobCardBackground)
 
 #PERSONALITY FLOW
 persFlow = ""
@@ -1290,7 +1290,7 @@ jobCardSlider = new PageComponent
 jobCardSlider.centerX()
 
 #create pages and cards in pages, then add to the page component
-for number in [0..7]
+for number in [0..6]
 	#create page wrapper for the cards
 	page = new Layer
 		name: 'page' + number
@@ -1831,6 +1831,7 @@ jobCardSlider.on "change:currentPage",->
 			mainFlow.showNext(futures)
 			jobCardBackgroundDone.opacity = 0
 			#bring back to first page of slider
+			jobCardSlider.snapToPreviousPage("left", false)
 			jobCardSlider.snapToPreviousPage("left", false)
 			jobCardSlider.snapToPreviousPage("left", false)
 			jobCardSlider.snapToPreviousPage("left", false)
