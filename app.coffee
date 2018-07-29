@@ -1262,9 +1262,7 @@ jobCardSlider = new PageComponent
 jobCardSlider.centerX()
 
 
-jobCardsSkill1 = []
-jobCardsSkill2 = []
-jobCardsSkill3 = []
+
 
 jobCardsTask1 = []
 jobCardsTask2 = []
@@ -1272,6 +1270,19 @@ jobCardsTask3 = []
 task1 = sketch.DailyTask1.convertToTextLayer()
 task2 = sketch.DailyTask2.convertToTextLayer()
 task3 = sketch.DailyTask3.convertToTextLayer()
+task1.width = 290
+task2.width = 290
+task3.width = 290
+
+jobCardsSkill1 = []
+jobCardsSkill2 = []
+jobCardsSkill3 = []
+skill1 = sketch.skill1.convertToTextLayer()
+skill2 = sketch.skill2.convertToTextLayer()
+skill3 = sketch.skill3.convertToTextLayer()
+skill1.width = 290
+skill2.width = 290
+skill3.width = 290
 
 #create pages and cards in pages, then add to the page component
 for number in [0..7]
@@ -1533,33 +1544,40 @@ for number in [0..7]
 		dTCopy.parent = card
 		dTCopy.x = 0
 		dTCopy.y = 620
+		#make copies of the text layers
 		jobTask1 = task1.copy()
 		jobTask2 = task2.copy()
 		jobTask3 = task3.copy()
+		#assign it to proper parent
 		jobTask1.parent = dTCopy
 		jobTask2.parent = dTCopy
 		jobTask3.parent = dTCopy
-		jobCardsSkill1.push(jobTask1)
-		jobCardsSkill2.push(jobTask2)
-		jobCardsSkill3.push(jobTask3)
-		
-		
-		
 		#push to array
-		jobCardsDailyTasksList.push(dTCopy)
-# 			jobCardsDailyTasksList[number] = "job" + number + "Tasks"
+		jobCardsTask1.push(jobTask1)
+		jobCardsTask2.push(jobTask2)
+		jobCardsTask3.push(jobTask3)
 		
 		#jobSkills
 		#create copy
-		skillsCopy = sketch.jobSkills.copy()
+		skillsCopy = sketch.jobSkills.copySingle()
 		#rename question group
 		skillsCopy.name = "job" + number + "Skills"
 		skillsCopy.parent = card
 		skillsCopy.x = 0
 		skillsCopy.y = 800
+		#make copies of the text layers
+		jobSkill1 = skill1.copy()
+		jobSkill2 = skill2.copy()
+		jobSkill3 = skill3.copy()
+		#assign it to proper parent
+		jobSkill1.parent = skillsCopy
+		jobSkill2.parent = skillsCopy
+		jobSkill3.parent = skillsCopy
 		#push to array
-		jobCardsSkills.push(skillsCopy)
-# 			jobCardsSkills[number] = "job" + number + "Tasks"
+		jobCardsSkill1.push(jobSkill1)
+		jobCardsSkill2.push(jobSkill2)
+		jobCardsSkill3.push(jobSkill3)
+		
 
 		#careerJourney
 		#create copy
