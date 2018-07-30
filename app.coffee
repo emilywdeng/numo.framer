@@ -1899,6 +1899,13 @@ jobCardSlider.on "change:currentPage",->
 			populateFavJobs()
 			#increment to count complete user visit
 			userSession = userSession + 1
+			#change buttons
+			sketch.futuresQuestionsDone.opacity = 1
+			sketch.futuresQuestions2.opacity = 0
+			sketch.futuresQuestions1.opacity = 0
+			#move favorites stuff up
+			for layer in ƒƒ('futuresFavorite*')
+				layer.y = layer.y - 339
 			mainFlow = new FlowComponent
 				backgroundColor: "#F8F8F8"
 			mainFlow.header = header
@@ -1922,24 +1929,40 @@ jobCardSlider.on "change:currentPage",->
 		jobCardBackgroundDone.opacity = 0
 				 
 
-sketch.futuresQuestions2.onClick (event, layer) ->	
-	if dailyQuizFlow is "" 
-			dailyQuizFlow = new FlowComponent
-			questionsFlow = new FlowComponent
-				x: 0
-				y: 70
-				height: 470
-				width: Screen.width
-				scrollVertical: false
-				scrollHorizontal: false
-				parent: questionsBackground
-				backgroundColor: '#FFFFFF'
-			flow.showOverlayCenter(dailyQuizFlow)
-			dailyQuizFlow.showNext(questionsBackground)
-			questionsFlow.showNext(question1)
-			questionCurrent += 1
-		else
-			flow.showOverlayCenter(dailyQuizFlow)		
+sketch.futuresQuestionsDone.onClick (event, layer) ->
+	sketch.futuresQuestionsDone.animate
+		opacity: 0
+		options: 
+			time: .2
+	sketch.futuresQuestions2.animate
+		opacity: 1
+		options: 
+			time: .2
+	for layer in ƒƒ('futuresFavorite*')
+		layer.animate
+			y: layer.y + 339
+			options: 
+				time: .2
+
+if sketch.futuresQuestions2.visible
+	sketch.futuresQuestions2.onClick (event, layer) ->	
+		if dailyQuizFlow is "" 
+				dailyQuizFlow = new FlowComponent
+				questionsFlow = new FlowComponent
+					x: 0
+					y: 70
+					height: 470
+					width: Screen.width
+					scrollVertical: false
+					scrollHorizontal: false
+					parent: questionsBackground
+					backgroundColor: '#FFFFFF'
+				flow.showOverlayCenter(dailyQuizFlow)
+				dailyQuizFlow.showNext(questionsBackground)
+				questionsFlow.showNext(question1)
+				questionCurrent += 1
+			else
+				flow.showOverlayCenter(dailyQuizFlow)		
 
 #favorite jobs
 for number in [0...5]
