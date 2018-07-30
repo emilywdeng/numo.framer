@@ -644,8 +644,9 @@ populateJobSessionCompat = ->
 					if interest == tag
 						#increment count
 						interestCount = interestCount + 1
-						#add to array
-						compatInterests.push(tag)
+						#check unique and add to array
+						if compatInterests.indexOf(tag) == -1#add to array
+							compatInterests.push(tag)
 			#set compatible interest text
 			if interestCount == 0
 				jobCardsNumInterestCompat[i].text = interestCount + interestCompatPlural
@@ -659,8 +660,8 @@ populateJobSessionCompat = ->
 			#check if workstyles inputted
 			if user.workstyles.length == 0
 				#If none, show message
-				jobCardsNumWorkstyleCompat[i].text = "ANSWER MORE QUESTIONS FOR WORKSTYLE"
-				jobCardsWorkstyleListMatch[i].text = ""
+				jobCardsNumWorkstyleCompat[i].text = "- WORKSTYLES"
+				jobCardsWorkstyleListMatch[i].text = "Answer more questions to see your workstyle"
 			else
 				#loop through user's workstyles
 				for workstyle in user.workstyles
