@@ -1,5 +1,5 @@
-# Import file "Final Screens (Master @ 325a53a)"
-sketch = Framer.Importer.load("imported/Final%20Screens%20(Master%20@%20325a53a)@2x", scale: 1)
+# Import file "Final Screens (fixing progress)"
+sketch = Framer.Importer.load("imported/Final%20Screens%20(fixing%20progress)@2x", scale: 1)
 
 Utils.globalLayers(sketch)
 
@@ -660,7 +660,7 @@ populateJobSessionCompat = ->
 			#check if workstyles inputted
 			if user.workstyles.length == 0
 				#If none, show message
-				jobCardsNumWorkstyleCompat[i].text = "- WORKSTYLES"
+				jobCardsNumWorkstyleCompat[i].text = "WORKSTYLES"
 				jobCardsWorkstyleListMatch[i].text = "Answer more questions to see your workstyle"
 			else
 				#loop through user's workstyles
@@ -1097,6 +1097,7 @@ persQuestionProgress.push(questionPersonalityProgress17)
 persQuestionProgress.push(questionPersonalityProgress18)
 persQuestionProgress.push(questionPersonalityProgress19)
 persQuestionProgress.push(questionPersonalityProgress20)
+persQuestionProgress.push(questionPersonalityProgress20Completed)
 
 persQuestionsArray = []
 persYesDefault = []
@@ -1235,6 +1236,8 @@ for i in [0..19]
 			populatePersonality()
 			#increment to count complete user visit
 			userSession = userSession + 1
+			Utils.delay 1, ->
+				persQuestionProgress[20].opacity = 0
 			flow.showNext(jobCardLoading)
 			#wait 5 seconds to show jobscards 
 			Utils.delay 5, ->
@@ -1278,6 +1281,8 @@ for i in [0..19]
 			populatePersonality()
 			#increment to count complete user visit
 			userSession = userSession + 1
+			Utils.delay 1, ->
+				persQuestionProgress[20].opacity = 0
 			flow.showNext(jobCardLoading)
 			#wait 5 seconds to show jobscards
 			Utils.delay 5, ->
@@ -1676,7 +1681,7 @@ for number in [0..6]
 		compatCopy.x = 0
 		compatCopy.y = 1340
 		# copy interest sections
-		compatInterestIcon = sketch.interests.copySingle()
+		compatInterestIcon = sketch.compatibilityInterests.copySingle()
 		jobNumInterests = numInterests.copy()
 		listInterests = interestCompatList.copy()
 		compatInterestIcon.parent = compatCopy
@@ -1684,7 +1689,7 @@ for number in [0..6]
 		jobNumInterests.y = 1
 		listInterests.parent = compatInterestIcon
 		# copy workstyles sections
-		compatWorkstylesIcon = sketch.workstyles.copySingle()
+		compatWorkstylesIcon = sketch.compatibilityWorkstyles.copySingle()
 		jobNumWorkstyles = numWorkstyles.copy()
 		listWorkstyles = workstyleCompatList.copy()
 		compatWorkstylesIcon.parent = compatCopy
@@ -1900,7 +1905,8 @@ jobCardSlider.on "change:currentPage",->
 			mainFlow.footer = navBar
 			flow.showNext(mainFlow)
 			mainFlow.showNext(futures)
-			jobCardBackgroundDone.opacity = 0
+# 			jobCardBackgroundDone.opacity = 0
+			jobCardBackgroundDone.opacity = 1
 			#bring back to first page of slider
 			jobCardSlider.snapToPreviousPage("left", false)
 			jobCardSlider.snapToPreviousPage("left", false)
@@ -1914,10 +1920,30 @@ jobCardSlider.on "change:currentPage",->
 			if layer.name is "backToFuturesButton" 
 				layer.destroy() 
 		jobCardSlider.currentPage.opacity = 1
-		jobCardBackgroundDone.opacity = 0
+# 		jobCardBackgroundDone.opacity = 0
+		jobCardBackgroundDone.opacity = 1
 				 
 
-sketch.futuresQuestions2.onClick (event, layer) ->	
+# sketch.futuresQuestions2.onClick (event, layer) ->	
+# 	if dailyQuizFlow is "" 
+# 			dailyQuizFlow = new FlowComponent
+# 			questionsFlow = new FlowComponent
+# 				x: 0
+# 				y: 70
+# 				height: 470
+# 				width: Screen.width
+# 				scrollVertical: false
+# 				scrollHorizontal: false
+# 				parent: questionsBackground
+# 				backgroundColor: '#FFFFFF'
+# 			flow.showOverlayCenter(dailyQuizFlow)
+# 			dailyQuizFlow.showNext(questionsBackground)
+# 			questionsFlow.showNext(question1)
+# 			questionCurrent += 1
+# 		else
+# 			flow.showOverlayCenter(dailyQuizFlow)	
+
+sketch.jobCardBackgroundDone.onClick (event, layer) ->	
 	if dailyQuizFlow is "" 
 			dailyQuizFlow = new FlowComponent
 			questionsFlow = new FlowComponent
@@ -1934,13 +1960,12 @@ sketch.futuresQuestions2.onClick (event, layer) ->
 			questionsFlow.showNext(question1)
 			questionCurrent += 1
 		else
-			flow.showOverlayCenter(dailyQuizFlow)		
+			flow.showOverlayCenter(dailyQuizFlow)			
 
 #favorite jobs
 for number in [0...5]
 	jobCardsFavoriteHeartSelected[number].onClick (event, layer) ->
 		this.stateCycle()
-
 	
 #expand job card
 for number in [0...5]
@@ -2663,6 +2688,8 @@ videoQ10.onClick ->
 
 #skip question don't watch video
 sketch.question10SkipButton.onClick (event,layer) ->
+	question10Progress.opacity = 0
+	question10ProgressCompleted.opacity = 1
 	videoQ10.player.pause()
 	flow.showNext(jobCardLoading)
 	#wait 5 seconds to show jobscards
@@ -2680,6 +2707,8 @@ sketch.question10SkipButton.onClick (event,layer) ->
 		jobFlow.showNext(jobCardBackground)
 
 sketch.question10DislikeOptionActive.onClick (event,layer) ->
+	question10Progress.opacity = 0
+	question10ProgressCompleted.opacity = 1
 	videoQ10.player.pause()
 	sketch.question10DislikeOptionSelected.animate
 		opacity: 1
@@ -2701,6 +2730,8 @@ sketch.question10DislikeOptionActive.onClick (event,layer) ->
 		jobFlow.showNext(jobCardBackground)
 
 sketch.question10LikeOptionActive.onClick (event,layer) ->
+	question10Progress.opacity = 0
+	question10ProgressCompleted.opacity = 1
 	videoQ10.player.pause()
 	sketch.question10LikeOptionSelected.animate
 		opacity: 1
