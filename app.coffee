@@ -166,18 +166,13 @@ user =
 
 #Instantiate global variables
 #Arrays to populate job session cards
+jobCards = []
 jobCardsPreviewImage = []
 jobCardsTitle = []
-jobCardsEducationTextTag = []
-jobCardsSalaryTextTag = []
-jobCardsGrowthTextTag = []
 jobCardsSummaryText = []
 jobCardsFavoriteHeartDefault = []
 jobCardsFavoriteHeartSelected = []
 jobCardsReadMoreButton = []
-jobCards = []
-jobCardsPreviewImage = []
-jobCardsTitle = []
 jobCardsEducationBackground = []
 jobCardsEducationIcon = []
 jobCardsEducationTextTag = []
@@ -601,6 +596,7 @@ getJobSession = ->
 		if randomJob not in jobSession and randomJob not in user.history
 			jobSession.push(randomJob)
 
+
 #populateJobSession
 #must be called after getJobSession
 #called after user completes questions
@@ -610,9 +606,83 @@ populateJobSession = ->
 			jobCardsPreviewImage[i].image = jobData.records[jobSession[i]].fields.Image1[0].url
 			jobCardsTitle[i].text = jobData.records[jobSession[i]].fields.Job
 			jobCardsEducationTextTag[i].text = jobData.records[jobSession[i]].fields.EduShort
+			jobCardsEducationTextDetailed[i].text = jobData.records[jobSession[i]].fields.EduLong
 			jobCardsSalaryTextTag[i].text = jobData.records[jobSession[i]].fields.SalaryShort
+			jobCardsSalaryTextDetailed[i].text = jobData.records[jobSession[i]].fields.SalaryLong
 			jobCardsGrowthTextTag[i].text = jobData.records[jobSession[i]].fields.OutlookShort
+			jobCardsGrowthTextDetailed[i].text = jobData.records[jobSession[i]].fields.OutlookLong
 			jobCardsSummaryText[i].text = jobData.records[jobSession[i]].fields.Description
+			jobCardsTask1[i].text = jobData.records[jobSession[i]].fields.DailyTask1
+			jobCardsTask2[i].text = jobData.records[jobSession[i]].fields.DailyTask2
+			jobCardsTask3[i].text = jobData.records[jobSession[i]].fields.DailyTask3
+			jobCardsSkill1[i].text = jobData.records[jobSession[i]].fields.JobSkills1
+			jobCardsSkill2[i].text = jobData.records[jobSession[i]].fields.JobSkills2
+			jobCardsSkill3[i].text = jobData.records[jobSession[i]].fields.JobSkills3
+			jobCardsCareerJourney[i].image = jobData.records[jobSession[i]].fields.CareerJourneyImg[0].url
+		populateJobSessionCompat()
+
+
+#populateJobSessionCompat
+#called at end of populateJobSession
+#determintes number of match with interests and workstyles
+populateJobSessionCompat = ->
+	interestCompatPlural = " INTERESTS"
+	interestCompatSingle = " INTEREST"
+	workstyleCompatPlural = " WORKSTYLES"
+	workstyleCompatSingle = " WORKSTYLE"
+	if jobSession.length != 0
+		#loop through job cards
+		for i in [0..4]
+			compatInterests = []
+			compatWorkstyles = []
+			interestCount = 0
+			workstyleCount = 0
+			#loop through user's interests
+			for interest in user.interests
+				#loop through interest tags in current job
+				for tag in jobData.records[jobSession[i]].fields.InterestTags
+					if interest == tag
+						#increment count
+						interestCount = interestCount + 1
+						#add to array
+						compatInterests.push(tag)
+			#set compatible interest text
+			if interestCount == 0
+				jobCardsNumInterestCompat[i].text = interestCount + interestCompatPlural
+				jobCardsInterestsListMatch[i].text = ""
+			else if interestCount ==  1
+				jobCardsNumInterestCompat[i].text = interestCount + interestCompatSingle
+				jobCardsInterestsListMatch[i].text = compatInterests.join(', ')
+			else if interestCount > 1
+				jobCardsNumInterestCompat[i].text = interestCount + interestCompatPlural
+				jobCardsInterestsListMatch[i].text = compatInterests.join(', ')
+			#check if workstyles inputted
+			if user.workstyles.length == 0
+				#If none, show message
+				jobCardsNumWorkstyleCompat[i].text = "ANSWER MORE QUESTIONS FOR WORKSTYLE"
+				jobCardsWorkstyleListMatch[i].text = ""
+			else
+				#loop through user's workstyles
+				for workstyle in user.workstyles
+					#loop through workstyle tags in current job
+					for tag in jobData.records[jobSession[i]].fields.WorkstyleTags
+						if workstyle == tag
+							#increment count
+							workstyleCount = workstyleCount + 1
+							#check unique and add to array
+							if compatWorkstyles.indexOf(tag) == -1
+								compatWorkstyles.push(tag)
+				#set compatible interest text
+				if workstyleCount == 0
+					jobCardsNumWorkstyleCompat[i].text = workstyleCount + workstyleCompatPlural
+					jobCardsWorkstyleListMatch[i].text = ""
+				else if workstyleCount ==  1
+					jobCardsNumWorkstyleCompat[i].text = workstyleCount + workstyleCompatSingle
+					jobCardsWorkstyleListMatch[i].text = compatWorkstyles.join(', ')
+				else if workstyleCount > 1
+					jobCardsNumWorkstyleCompat[i].text = workstyleCount + workstyleCompatPlural
+					jobCardsWorkstyleListMatch[i].text = compatWorkstyles.join(', ')
+			
 
 #storeJobSession
 #call after user reviews 5 job cards
