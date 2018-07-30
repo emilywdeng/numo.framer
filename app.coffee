@@ -1905,8 +1905,7 @@ jobCardSlider.on "change:currentPage",->
 			mainFlow.footer = navBar
 			flow.showNext(mainFlow)
 			mainFlow.showNext(futures)
-# 			jobCardBackgroundDone.opacity = 0
-			jobCardBackgroundDone.opacity = 1
+			jobCardBackgroundDone.opacity = 0
 			#bring back to first page of slider
 			jobCardSlider.snapToPreviousPage("left", false)
 			jobCardSlider.snapToPreviousPage("left", false)
@@ -1920,30 +1919,10 @@ jobCardSlider.on "change:currentPage",->
 			if layer.name is "backToFuturesButton" 
 				layer.destroy() 
 		jobCardSlider.currentPage.opacity = 1
-# 		jobCardBackgroundDone.opacity = 0
-		jobCardBackgroundDone.opacity = 1
+		jobCardBackgroundDone.opacity = 0
 				 
 
-# sketch.futuresQuestions2.onClick (event, layer) ->	
-# 	if dailyQuizFlow is "" 
-# 			dailyQuizFlow = new FlowComponent
-# 			questionsFlow = new FlowComponent
-# 				x: 0
-# 				y: 70
-# 				height: 470
-# 				width: Screen.width
-# 				scrollVertical: false
-# 				scrollHorizontal: false
-# 				parent: questionsBackground
-# 				backgroundColor: '#FFFFFF'
-# 			flow.showOverlayCenter(dailyQuizFlow)
-# 			dailyQuizFlow.showNext(questionsBackground)
-# 			questionsFlow.showNext(question1)
-# 			questionCurrent += 1
-# 		else
-# 			flow.showOverlayCenter(dailyQuizFlow)	
-
-sketch.jobCardBackgroundDone.onClick (event, layer) ->	
+sketch.futuresQuestions2.onClick (event, layer) ->	
 	if dailyQuizFlow is "" 
 			dailyQuizFlow = new FlowComponent
 			questionsFlow = new FlowComponent
@@ -1960,7 +1939,7 @@ sketch.jobCardBackgroundDone.onClick (event, layer) ->
 			questionsFlow.showNext(question1)
 			questionCurrent += 1
 		else
-			flow.showOverlayCenter(dailyQuizFlow)			
+			flow.showOverlayCenter(dailyQuizFlow)		
 
 #favorite jobs
 for number in [0...5]
