@@ -86,6 +86,8 @@ questionText = []
 
 #Responsive
 
+Framer.Device.deviceType = "apple-iphone-8-silver"
+
 # # Framer.Device.customize
 # # 	screenWidth: 375
 # # 	screenHeight: 667
